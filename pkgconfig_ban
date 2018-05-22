@@ -1,0 +1,16 @@
+# This file contains pkgconfig build requirements that get picked up
+# but are undesirable. One entry per line, no whitespace.
+QtGui
+QtNetwork
+avahi-client
+bzip2
+coinmp
+coinutils
+fbclient
+gstreamer-0.10
+gstreamer-interfaces-0.10
+gstreamer-pbutils-0.10
+gstreamer-plugins-base-0.10
+libclucene-core
+liblangtag
+mythes

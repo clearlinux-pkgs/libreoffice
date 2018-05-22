@@ -1,0 +1,7 @@
+# This file contains additional pkgconfig build requirements that did
+# not get picked up automatically. One name per line, no whitespace.
+ice
+sm
+xmlsec1-nss
+lcms2
+cppunit

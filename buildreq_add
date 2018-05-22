@@ -1,0 +1,26 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+cups-dev
+openjdk
+openjdk-dev
+doxygen
+gperf
+nasm
+krb5-dev
+e2fsprogs-dev
+flex
+bison
+gobject-introspection-dev
+apache-ant
+openssl-dev
+boost-dev
+curl-dev
+bluez-dev
+libgpg-error-dev
+gpgme-dev
+libjpeg-turbo-dev
+icu4c-dev
+nss-dev
+nspr-dev
+clucene-core-dev
+postgresql-dev
