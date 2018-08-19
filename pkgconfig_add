@@ -5,3 +5,11 @@ sm
 xmlsec1-nss
 lcms2
 cppunit
+sane-backends
+libexttextcat
+redland
+raptor2
+apr-util-1
+libnumbertext
+liblangtag
+
