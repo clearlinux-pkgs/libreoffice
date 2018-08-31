@@ -65,3 +65,5 @@ postgresql-dev
 bzip2-dev
 python3-dev
 gdb
+fakeroot
+epm
