@@ -5,15 +5,15 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 6.1.1.1
-Release  : 3
-URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.1.1/libreoffice-6.1.1.1.tar.xz
-Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.1.1/libreoffice-6.1.1.1.tar.xz
-Source99 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.1.1/libreoffice-6.1.1.1.tar.xz.asc
+Version  : 6.1.1.2
+Release  : 4
+URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.1.1/libreoffice-6.1.1.2.tar.xz
+Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.1.1/libreoffice-6.1.1.2.tar.xz
+Source99 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.1.1/libreoffice-6.1.1.2.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause BSD-3-Clause-Clear CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 HPND IJG LGPL-2.1 LGPL-3.0 LPPL-1.3a LPPL-1.3c Libpng MIT MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception OFL-1.0 OLDAP-2.8 OpenSSL Python-2.0 W3C-19980720 Zlib
-Requires: libreoffice-lib
+Requires: libreoffice-lib = %{version}-%{release}
 BuildRequires : apache-ant
 BuildRequires : apr-dev
 BuildRequires : bison
@@ -129,8 +129,8 @@ a dummy package
 %package dev
 Summary: dev components for the libreoffice package.
 Group: Development
-Requires: libreoffice-lib
-Provides: libreoffice-devel
+Requires: libreoffice-lib = %{version}-%{release}
+Provides: libreoffice-devel = %{version}-%{release}
 
 %description dev
 dev components for the libreoffice package.
@@ -145,14 +145,14 @@ lib components for the libreoffice package.
 
 
 %prep
-%setup -q -n libreoffice-6.1.1.1
+%setup -q -n libreoffice-6.1.1.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535697537
+export SOURCE_DATE_EPOCH=1541814962
 %configure --disable-static --without-java \
 --disable-fetch-external \
 --with-system-boost \
@@ -198,36 +198,37 @@ export SOURCE_DATE_EPOCH=1535697537
 make  %{?_smp_mflags} MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1535697537
+export SOURCE_DATE_EPOCH=1541814962
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/libreoffice
-cp COPYING %{buildroot}/usr/share/doc/libreoffice/COPYING
-cp COPYING.LGPL %{buildroot}/usr/share/doc/libreoffice/COPYING.LGPL
-cp COPYING.MPL %{buildroot}/usr/share/doc/libreoffice/COPYING.MPL
-cp bin/text_cat/COPYING %{buildroot}/usr/share/doc/libreoffice/bin_text_cat_COPYING
-cp bin/text_cat/Copyright %{buildroot}/usr/share/doc/libreoffice/bin_text_cat_Copyright
-cp connectivity/source/drivers/mork/license.txt %{buildroot}/usr/share/doc/libreoffice/connectivity_source_drivers_mork_license.txt
-cp desktop/source/deployment/gui/license_dialog.cxx %{buildroot}/usr/share/doc/libreoffice/desktop_source_deployment_gui_license_dialog.cxx
-cp desktop/source/deployment/gui/license_dialog.hxx %{buildroot}/usr/share/doc/libreoffice/desktop_source_deployment_gui_license_dialog.hxx
-cp extras/source/autocorr/lang/hr/licence.md %{buildroot}/usr/share/doc/libreoffice/extras_source_autocorr_lang_hr_licence.md
-cp extras/source/autocorr/lang/hr/licence_and_version.md %{buildroot}/usr/share/doc/libreoffice/extras_source_autocorr_lang_hr_licence_and_version.md
-cp icon-themes/breeze/COPYING %{buildroot}/usr/share/doc/libreoffice/icon-themes_breeze_COPYING
-cp icon-themes/breeze_dark/COPYING %{buildroot}/usr/share/doc/libreoffice/icon-themes_breeze_dark_COPYING
-cp icon-themes/colibre/COPYING-ICONS %{buildroot}/usr/share/doc/libreoffice/icon-themes_colibre_COPYING-ICONS
-cp icon-themes/colibre_svg/COPYING-ICONS %{buildroot}/usr/share/doc/libreoffice/icon-themes_colibre_svg_COPYING-ICONS
-cp icon-themes/elementary/Copyrights %{buildroot}/usr/share/doc/libreoffice/icon-themes_elementary_Copyrights
-cp icon-themes/elementary/LICENSE.GPL %{buildroot}/usr/share/doc/libreoffice/icon-themes_elementary_LICENSE.GPL
-cp icon-themes/elementary_svg/Copyrights %{buildroot}/usr/share/doc/libreoffice/icon-themes_elementary_svg_Copyrights
-cp icon-themes/elementary_svg/LICENSE.GPL %{buildroot}/usr/share/doc/libreoffice/icon-themes_elementary_svg_LICENSE.GPL
-cp icon-themes/karasa_jaga/COPYING %{buildroot}/usr/share/doc/libreoffice/icon-themes_karasa_jaga_COPYING
-cp icon-themes/sifr_svg/LICENSE %{buildroot}/usr/share/doc/libreoffice/icon-themes_sifr_svg_LICENSE
-cp odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.idl %{buildroot}/usr/share/doc/libreoffice/odk_examples_DevelopersGuide_Components_SimpleLicense_LicenseTest.idl
-cp odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.java %{buildroot}/usr/share/doc/libreoffice/odk_examples_DevelopersGuide_Components_SimpleLicense_LicenseTest.java
-cp offapi/com/sun/star/deployment/LicenseException.idl %{buildroot}/usr/share/doc/libreoffice/offapi_com_sun_star_deployment_LicenseException.idl
-cp offapi/com/sun/star/deployment/ui/LicenseDialog.idl %{buildroot}/usr/share/doc/libreoffice/offapi_com_sun_star_deployment_ui_LicenseDialog.idl
-cp readlicense_oo/license/LICENSE.fodt %{buildroot}/usr/share/doc/libreoffice/readlicense_oo_license_LICENSE.fodt
-cp readlicense_oo/license/NOTICE %{buildroot}/usr/share/doc/libreoffice/readlicense_oo_license_NOTICE
-cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/doc/libreoffice/sfx2_uiconfig_ui_licensedialog.ui
+mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
+cp COPYING %{buildroot}/usr/share/package-licenses/libreoffice/COPYING
+cp COPYING.LGPL %{buildroot}/usr/share/package-licenses/libreoffice/COPYING.LGPL
+cp COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/COPYING.MPL
+cp bin/text_cat/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/bin_text_cat_COPYING
+cp bin/text_cat/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/bin_text_cat_Copyright
+cp connectivity/source/drivers/mork/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/connectivity_source_drivers_mork_license.txt
+cp desktop/source/deployment/gui/license_dialog.cxx %{buildroot}/usr/share/package-licenses/libreoffice/desktop_source_deployment_gui_license_dialog.cxx
+cp desktop/source/deployment/gui/license_dialog.hxx %{buildroot}/usr/share/package-licenses/libreoffice/desktop_source_deployment_gui_license_dialog.hxx
+cp extras/source/autocorr/lang/hr/licence.md %{buildroot}/usr/share/package-licenses/libreoffice/extras_source_autocorr_lang_hr_licence.md
+cp extras/source/autocorr/lang/hr/licence_and_version.md %{buildroot}/usr/share/package-licenses/libreoffice/extras_source_autocorr_lang_hr_licence_and_version.md
+cp icon-themes/breeze/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_breeze_COPYING
+cp icon-themes/breeze_dark/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_breeze_dark_COPYING
+cp icon-themes/colibre/COPYING-ICONS %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_colibre_COPYING-ICONS
+cp icon-themes/colibre_svg/COPYING-ICONS %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_colibre_svg_COPYING-ICONS
+cp icon-themes/elementary/Copyrights %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_elementary_Copyrights
+cp icon-themes/elementary/LICENSE.GPL %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_elementary_LICENSE.GPL
+cp icon-themes/elementary_svg/Copyrights %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_elementary_svg_Copyrights
+cp icon-themes/elementary_svg/LICENSE.GPL %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_elementary_svg_LICENSE.GPL
+cp icon-themes/karasa_jaga/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_karasa_jaga_COPYING
+cp icon-themes/sifr_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_sifr_svg_LICENSE
+cp odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.idl %{buildroot}/usr/share/package-licenses/libreoffice/odk_examples_DevelopersGuide_Components_SimpleLicense_LicenseTest.idl
+cp odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.java %{buildroot}/usr/share/package-licenses/libreoffice/odk_examples_DevelopersGuide_Components_SimpleLicense_LicenseTest.java
+cp offapi/com/sun/star/deployment/LicenseException.idl %{buildroot}/usr/share/package-licenses/libreoffice/offapi_com_sun_star_deployment_LicenseException.idl
+cp offapi/com/sun/star/deployment/ui/LicenseDialog.idl %{buildroot}/usr/share/package-licenses/libreoffice/offapi_com_sun_star_deployment_ui_LicenseDialog.idl
+cp readlicense_oo/license/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/readlicense_oo_license_LICENSE
+cp readlicense_oo/license/LICENSE.fodt %{buildroot}/usr/share/package-licenses/libreoffice/readlicense_oo_license_LICENSE.fodt
+cp readlicense_oo/license/NOTICE %{buildroot}/usr/share/package-licenses/libreoffice/readlicense_oo_license_NOTICE
+cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/libreoffice/sfx2_uiconfig_ui_licensedialog.ui
 %make_install
 
 %files
