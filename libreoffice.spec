@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 6.1.1.2
-Release  : 4
+Release  : 5
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.1.1/libreoffice-6.1.1.2.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.1.1/libreoffice-6.1.1.2.tar.xz
 Source99 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.1.1/libreoffice-6.1.1.2.tar.xz.asc
