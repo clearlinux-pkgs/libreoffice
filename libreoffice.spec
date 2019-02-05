@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 6.1.1.2
-Release  : 6
-URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.1.1/libreoffice-6.1.1.2.tar.xz
-Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.1.1/libreoffice-6.1.1.2.tar.xz
-Source99 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.1.1/libreoffice-6.1.1.2.tar.xz.asc
+Version  : 6.1.4.2
+Release  : 9
+URL      : http://download.documentfoundation.org/libreoffice/src/6.1.4/libreoffice-6.1.4.2.tar.xz
+Source0  : http://download.documentfoundation.org/libreoffice/src/6.1.4/libreoffice-6.1.4.2.tar.xz
+Source99 : http://download.documentfoundation.org/libreoffice/src/6.1.4/libreoffice-6.1.4.2.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause BSD-3-Clause-Clear CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 HPND IJG LGPL-2.1 LGPL-3.0 LPPL-1.3a LPPL-1.3c Libpng MIT MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception OFL-1.0 OLDAP-2.8 OpenSSL Python-2.0 W3C-19980720 Zlib
@@ -115,6 +115,7 @@ BuildRequires : pkgconfig(xcb)
 BuildRequires : pkgconfig(xmlsec1-nss)
 BuildRequires : pkgconfig(xrandr)
 BuildRequires : pkgconfig(xrender)
+BuildRequires : poppler-dev
 BuildRequires : postgresql-dev
 BuildRequires : python3-dev
 BuildRequires : serf-dev
@@ -122,6 +123,7 @@ BuildRequires : ucpp
 BuildRequires : unixODBC-dev
 BuildRequires : valgrind
 BuildRequires : vlc-dev
+Patch1: 0001-Fix-build-with-poppler-0.73.0.patch
 
 %description
 a dummy package
@@ -145,14 +147,15 @@ lib components for the libreoffice package.
 
 
 %prep
-%setup -q -n libreoffice-6.1.1.2
+%setup -q -n libreoffice-6.1.4.2
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541814962
+export SOURCE_DATE_EPOCH=1549404560
 %configure --disable-static --without-java \
 --disable-fetch-external \
 --with-system-boost \
@@ -198,7 +201,7 @@ export SOURCE_DATE_EPOCH=1541814962
 make  %{?_smp_mflags} MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1541814962
+export SOURCE_DATE_EPOCH=1549404560
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp COPYING %{buildroot}/usr/share/package-licenses/libreoffice/COPYING
@@ -1525,21 +1528,26 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/bdwn.png
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/classes.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/closed.png
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_0f0f16d32eb617f7fc48a3eb90155999.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_194442ccfdda5330a9fc879f923cbd7f.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_2f3d4f4ab5e4c65c9b284e057ac39f91.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_3efc5a5bb3c9e14682f2f6925a0ce3cc.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_53aa4ad1b831e9847d1f4a68148b5df1.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_53f8dfee0aa4cf2e66daac8a07a99275.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_70666de572587294bbaffacc23288bec.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_76abd0e99dd7fac17b3d6a551048fb5f.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_9104d818b51e97c3517d665975e33dee.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_bafde31d93a9872d5e7ee9226a53aaa0.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_bd06d863670d5f8d05622f532d229dd1.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_c2a9678a71ecc8df7a241e4a1e033e9a.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_d78f2addc329a549a6452c069b780fab.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_e609e44c0c6812675f4b083eb3ed494f.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_faf84ad86f93adaf6613aa4211155a5e.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_3dd8a325b6e947d9574e463fe4d1b98c.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_40117655793a420412d34f8c7c3b0b5e.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_40945139179769859f46cfd31039efa9.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_4459a8794f5a106d3719406c16cddffc.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_5c1d6010112dad0aab9dd8d7c113bc54.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_655d0e5c68e4fbca7804822064ea0431.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_92568cd84f7c359f268457a0ce9b5fcb.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_93170db30850fed8adb7c66dea304a02.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_96669b33a9de2cbf7d7e7d53b70b7686.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_a537e08ec142d91712116991c2473fa5.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_a63a68463278289c54125e285a5e7555.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_c767a4a972d503d0efb0e03982dff9d2.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_d44c64559bbebec7f509842c48db8b23.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_e35664e801471bc2611b3ff4f45b4571.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_e3d34611f7c7e008f996da13dff01387.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_e674600c8efbe831c0ffbb837010577e.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_e9a49399279d05cc585d863e73e097d9.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_f0b726e7a40049811b7d924667f6f688.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_f78e6699e172c42206cffa619ca68cee.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/dir_fde75b309b06f15bfac947410c00ab3a.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/doc.png
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/doxygen.css
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/doxygen.png
@@ -1548,7 +1556,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/folderclosed.png
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/folderopen.png
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_0x7e.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_a.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_b.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_c.html
@@ -1558,7 +1565,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_eval.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_f.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_func.html
-/usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_func_0x7e.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_func_b.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_func_c.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_func_d.html
@@ -1581,6 +1587,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_func_v.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_func_w.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_func_y.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_func_~.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_g.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_h.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_i.html
@@ -1623,6 +1630,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_w.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_x.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_y.html
+/usr/lib64/libreoffice/sdk/docs/cpp/ref/functions_~.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/globals.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/globals_c.html
 /usr/lib64/libreoffice/sdk/docs/cpp/ref/globals_defs.html
@@ -11304,6 +11312,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/sdk/docs/idl/ref/functions_r.html
 /usr/lib64/libreoffice/sdk/docs/idl/ref/functions_s.html
 /usr/lib64/libreoffice/sdk/docs/idl/ref/functions_t.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/functions_type.html
 /usr/lib64/libreoffice/sdk/docs/idl/ref/functions_u.html
 /usr/lib64/libreoffice/sdk/docs/idl/ref/functions_v.html
 /usr/lib64/libreoffice/sdk/docs/idl/ref/functions_vars.html
@@ -17412,6 +17421,14 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_0.js
 /usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_1.html
 /usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_1.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_10.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_10.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_11.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_11.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_12.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_12.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_13.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_13.js
 /usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_2.html
 /usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_2.js
 /usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_3.html
@@ -17420,6 +17437,26 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_4.js
 /usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_5.html
 /usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_5.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_6.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_6.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_7.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_7.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_8.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_8.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_9.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_9.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_a.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_a.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_b.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_b.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_c.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_c.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_d.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_d.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_e.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_e.js
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_f.html
+/usr/lib64/libreoffice/sdk/docs/idl/ref/search/typedefs_f.js
 /usr/lib64/libreoffice/sdk/docs/idl/ref/search/variables_0.html
 /usr/lib64/libreoffice/sdk/docs/idl/ref/search/variables_0.js
 /usr/lib64/libreoffice/sdk/docs/idl/ref/search/variables_1.html

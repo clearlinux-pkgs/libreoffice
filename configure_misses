@@ -37,6 +37,7 @@ Configure miss: whether to enable breakpad
 Configure miss: whether to enable fuzzers
 Configure miss: whether to execute chart XShape tests
 Configure miss: whether to disable OpenSSL usage
+Configure miss: whether to enable the OpenSSL backend for rtl/cipher.h
 Configure miss: whether to use gnutls
 Configure miss: whether to build with lpsolve
 Configure miss: gnucp
