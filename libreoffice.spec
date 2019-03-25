@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 6.1.4.2
-Release  : 9
+Release  : 10
 URL      : http://download.documentfoundation.org/libreoffice/src/6.1.4/libreoffice-6.1.4.2.tar.xz
 Source0  : http://download.documentfoundation.org/libreoffice/src/6.1.4/libreoffice-6.1.4.2.tar.xz
 Source99 : http://download.documentfoundation.org/libreoffice/src/6.1.4/libreoffice-6.1.4.2.tar.xz.asc
