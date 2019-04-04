@@ -1,15 +1,15 @@
 # This file contains additional pkgconfig build requirements that did
 # not get picked up automatically. One name per line, no whitespace.
+apr-util-1
+cppunit
 ice
+lcms2
+libexttextcat
+libfontforge
+liblangtag
+libnumbertext
+raptor2
+redland
+sane-backends
 sm
 xmlsec1-nss
-lcms2
-cppunit
-sane-backends
-libexttextcat
-redland
-raptor2
-apr-util-1
-libnumbertext
-liblangtag
-

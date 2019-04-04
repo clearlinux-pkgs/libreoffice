@@ -40,3 +40,4 @@
 --with-system-postgresql
 --disable-postgresql-sdbc
 --with-vendor="Clear Linux OS for Intel Architecture"
+--enable-build-opensymbol
