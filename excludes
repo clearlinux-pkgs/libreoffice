@@ -1,2 +1,32 @@
 # This file contains the output files that need %exclude. Full path
 # names, one per line.
+/gid_Module_Brand_Prg_Base
+/gid_Module_Brand_Prg_Calc
+/gid_Module_Brand_Prg_Draw
+/gid_Module_Brand_Prg_Impress
+/gid_Module_Brand_Prg_Math
+/gid_Module_Brand_Prg_Wrt
+/gid_Module_Langpack_Basis_en_US
+/gid_Module_Langpack_Brand_en_US
+/gid_Module_Libreofficekit
+/gid_Module_Oo_Linguistic
+/gid_Module_Optional_Gnome
+/gid_Module_Optional_Grfflt
+/gid_Module_Optional_OGLTrans
+/gid_Module_Optional_Pyuno_LibreLogo
+/gid_Module_Optional_Xsltfiltersamples
+/gid_Module_Pdfimport
+/gid_Module_Prg_Base_Bin
+/gid_Module_Prg_Calc_Bin
+/gid_Module_Prg_Draw_Bin
+/gid_Module_Prg_Impress_Bin
+/gid_Module_Prg_Math_Bin
+/gid_Module_Prg_Wrt_Bin
+/gid_Module_Pyuno
+/gid_Module_Root
+/gid_Module_Root_Brand
+/gid_Module_Root_Extension_Dictionary_En
+/gid_Module_Root_Files_Images
+/gid_Module_Root_SDK
+/gid_Module_Root_Ure_Hidden
+/gid_Module_Script_Provider_For_Python

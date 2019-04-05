@@ -1,0 +1,3 @@
+mkdir -p %{buildroot}/usr/bin
+ln -s ../lib64/libreoffice/program/soffice %{buildroot}/usr/bin/soffice
+ln -s ../lib64/libreoffice/program/soffice %{buildroot}/usr/bin/libreoffice

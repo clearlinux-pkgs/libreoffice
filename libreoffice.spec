@@ -6,13 +6,14 @@
 #
 Name     : libreoffice
 Version  : 6.2.2.2
-Release  : 11
+Release  : 12
 URL      : http://download.documentfoundation.org/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz
 Source0  : http://download.documentfoundation.org/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz
 Source99 : http://download.documentfoundation.org/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA
+Requires: libreoffice-bin = %{version}-%{release}
 Requires: libreoffice-lib = %{version}-%{release}
 BuildRequires : apache-ant
 BuildRequires : apr-dev
@@ -128,10 +129,19 @@ BuildRequires : vlc-dev
 %description
 a dummy package
 
+%package bin
+Summary: bin components for the libreoffice package.
+Group: Binaries
+
+%description bin
+bin components for the libreoffice package.
+
+
 %package dev
 Summary: dev components for the libreoffice package.
 Group: Development
 Requires: libreoffice-lib = %{version}-%{release}
+Requires: libreoffice-bin = %{version}-%{release}
 Provides: libreoffice-devel = %{version}-%{release}
 
 %description dev
@@ -154,7 +164,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554422196
+export SOURCE_DATE_EPOCH=1554485047
 export LDFLAGS="${LDFLAGS} -fno-lto"
 %configure --disable-static --without-java \
 --disable-fetch-external \
@@ -202,7 +212,7 @@ export LDFLAGS="${LDFLAGS} -fno-lto"
 make  %{?_smp_mflags} MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1554422196
+export SOURCE_DATE_EPOCH=1554485047
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp COPYING %{buildroot}/usr/share/package-licenses/libreoffice/COPYING
@@ -230,39 +240,44 @@ cp offapi/com/sun/star/deployment/ui/LicenseDialog.idl %{buildroot}/usr/share/pa
 cp readlicense_oo/license/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/readlicense_oo_license_LICENSE
 cp readlicense_oo/license/NOTICE %{buildroot}/usr/share/package-licenses/libreoffice/readlicense_oo_license_NOTICE
 %make_install
+## install_append content
+mkdir -p %{buildroot}/usr/bin
+ln -s ../lib64/libreoffice/program/soffice %{buildroot}/usr/bin/soffice
+ln -s ../lib64/libreoffice/program/soffice %{buildroot}/usr/bin/libreoffice
+## install_append end
 
 %files
 %defattr(-,root,root,-)
-/gid_Module_Brand_Prg_Base
-/gid_Module_Brand_Prg_Calc
-/gid_Module_Brand_Prg_Draw
-/gid_Module_Brand_Prg_Impress
-/gid_Module_Brand_Prg_Math
-/gid_Module_Brand_Prg_Wrt
-/gid_Module_Langpack_Basis_en_US
-/gid_Module_Langpack_Brand_en_US
-/gid_Module_Libreofficekit
-/gid_Module_Oo_Linguistic
-/gid_Module_Optional_Gnome
-/gid_Module_Optional_Grfflt
-/gid_Module_Optional_OGLTrans
-/gid_Module_Optional_Pyuno_LibreLogo
-/gid_Module_Optional_Xsltfiltersamples
-/gid_Module_Pdfimport
-/gid_Module_Prg_Base_Bin
-/gid_Module_Prg_Calc_Bin
-/gid_Module_Prg_Draw_Bin
-/gid_Module_Prg_Impress_Bin
-/gid_Module_Prg_Math_Bin
-/gid_Module_Prg_Wrt_Bin
-/gid_Module_Pyuno
-/gid_Module_Root
-/gid_Module_Root_Brand
-/gid_Module_Root_Extension_Dictionary_En
-/gid_Module_Root_Files_Images
-/gid_Module_Root_SDK
-/gid_Module_Root_Ure_Hidden
-/gid_Module_Script_Provider_For_Python
+%exclude /gid_Module_Brand_Prg_Base
+%exclude /gid_Module_Brand_Prg_Calc
+%exclude /gid_Module_Brand_Prg_Draw
+%exclude /gid_Module_Brand_Prg_Impress
+%exclude /gid_Module_Brand_Prg_Math
+%exclude /gid_Module_Brand_Prg_Wrt
+%exclude /gid_Module_Langpack_Basis_en_US
+%exclude /gid_Module_Langpack_Brand_en_US
+%exclude /gid_Module_Libreofficekit
+%exclude /gid_Module_Oo_Linguistic
+%exclude /gid_Module_Optional_Gnome
+%exclude /gid_Module_Optional_Grfflt
+%exclude /gid_Module_Optional_OGLTrans
+%exclude /gid_Module_Optional_Pyuno_LibreLogo
+%exclude /gid_Module_Optional_Xsltfiltersamples
+%exclude /gid_Module_Pdfimport
+%exclude /gid_Module_Prg_Base_Bin
+%exclude /gid_Module_Prg_Calc_Bin
+%exclude /gid_Module_Prg_Draw_Bin
+%exclude /gid_Module_Prg_Impress_Bin
+%exclude /gid_Module_Prg_Math_Bin
+%exclude /gid_Module_Prg_Wrt_Bin
+%exclude /gid_Module_Pyuno
+%exclude /gid_Module_Root
+%exclude /gid_Module_Root_Brand
+%exclude /gid_Module_Root_Extension_Dictionary_En
+%exclude /gid_Module_Root_Files_Images
+%exclude /gid_Module_Root_SDK
+%exclude /gid_Module_Root_Ure_Hidden
+%exclude /gid_Module_Script_Provider_For_Python
 /usr/lib64/libreoffice/CREDITS.fodt
 /usr/lib64/libreoffice/LICENSE
 /usr/lib64/libreoffice/LICENSE.fodt
@@ -30674,6 +30689,11 @@ cp readlicense_oo/license/NOTICE %{buildroot}/usr/share/package-licenses/libreof
 /usr/lib64/libreoffice/share/xslt/import/wordml/wordml2ooo_settings.xsl
 /usr/lib64/libreoffice/share/xslt/import/wordml/wordml2ooo_table.xsl
 /usr/lib64/libreoffice/share/xslt/import/wordml/wordml2ooo_text.xsl
+
+%files bin
+%defattr(-,root,root,-)
+/usr/bin/libreoffice
+/usr/bin/soffice
 
 %files dev
 %defattr(-,root,root,-)
