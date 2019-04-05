@@ -2,7 +2,6 @@ Configure miss: whether to use link-time optimization
 Configure miss: explicit AFLAGS
 Configure miss: explicit OBJCFLAGS
 Configure miss: explicit OBJCXXFLAGS
-Configure miss: whether build target is Release Build
 Configure miss: whether to sign windows build
 Configure miss: whether to build with Java support
 Configure miss: whether to treat the installation as read-only

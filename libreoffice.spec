@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 6.2.2.2
-Release  : 12
+Release  : 13
 URL      : http://download.documentfoundation.org/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz
 Source0  : http://download.documentfoundation.org/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz
 Source99 : http://download.documentfoundation.org/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz.asc
@@ -164,7 +164,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554485047
+export SOURCE_DATE_EPOCH=1554491262
 export LDFLAGS="${LDFLAGS} -fno-lto"
 %configure --disable-static --without-java \
 --disable-fetch-external \
@@ -208,11 +208,12 @@ export LDFLAGS="${LDFLAGS} -fno-lto"
 --with-system-postgresql \
 --disable-postgresql-sdbc \
 --with-vendor="Clear Linux OS for Intel Architecture" \
---enable-build-opensymbol
+--enable-build-opensymbol \
+--enable-release-build
 make  %{?_smp_mflags} MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1554485047
+export SOURCE_DATE_EPOCH=1554491262
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp COPYING %{buildroot}/usr/share/package-licenses/libreoffice/COPYING
