@@ -13,8 +13,6 @@ Configure miss: which package format to use
 Configure miss: whether to turn warnings to errors
 Configure miss: whether to have assert() failures abort even without --enable-debug
 Configure miss: whether we want to fetch tarballs
-Configure miss: whether to build help
-Configure miss: whether to include MySpell dictionaries
 Configure miss: whether to enable pch feature
 Configure miss: x86_64-generic-linux-gnu-readelf
 Configure miss: sys/sdt.h usability

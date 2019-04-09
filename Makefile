@@ -1,5 +1,5 @@
 PKG_NAME := libreoffice
-URL = http://download.documentfoundation.org/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz
-ARCHIVES = 
+URL = https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz
+ARCHIVES = https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.2/libreoffice-dictionaries-6.2.2.2.tar.xz ./ https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.2/libreoffice-help-6.2.2.2.tar.xz ./ https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.2/libreoffice-translations-6.2.2.2.tar.xz ./
 
 include ../common/Makefile.common

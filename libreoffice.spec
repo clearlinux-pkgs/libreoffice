@@ -6,13 +6,16 @@
 #
 Name     : libreoffice
 Version  : 6.2.2.2
-Release  : 14
-URL      : http://download.documentfoundation.org/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz
-Source0  : http://download.documentfoundation.org/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz
-Source99 : http://download.documentfoundation.org/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz.asc
+Release  : 15
+URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz
+Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz
+Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.2/libreoffice-dictionaries-6.2.2.2.tar.xz
+Source2  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.2/libreoffice-help-6.2.2.2.tar.xz
+Source3  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.2/libreoffice-translations-6.2.2.2.tar.xz
+Source99 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.2/libreoffice-6.2.2.2.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
-License  : Apache-2.0 BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA
+License  : Apache-2.0 BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA
 Requires: libreoffice-bin = %{version}-%{release}
 Requires: libreoffice-data = %{version}-%{release}
 Requires: libreoffice-lib = %{version}-%{release}
@@ -155,6 +158,7 @@ Requires: libreoffice-lib = %{version}-%{release}
 Requires: libreoffice-bin = %{version}-%{release}
 Requires: libreoffice-data = %{version}-%{release}
 Provides: libreoffice-devel = %{version}-%{release}
+Requires: libreoffice = %{version}-%{release}
 
 %description dev
 dev components for the libreoffice package.
@@ -188,13 +192,25 @@ man components for the libreoffice package.
 
 %prep
 %setup -q -n libreoffice-6.2.2.2
+cd ..
+%setup -q -T -D -n libreoffice-6.2.2.2 -b 1
+cd ..
+%setup -q -T -D -n libreoffice-6.2.2.2 -b 2
+cd ..
+%setup -q -T -D -n libreoffice-6.2.2.2 -b 3
+mkdir -p ./
+cp -rn %{_topdir}/BUILD/libreoffice-6.2.2.2/* %{_topdir}/BUILD/libreoffice-6.2.2.2/./
+mkdir -p ./
+cp -rn %{_topdir}/BUILD/libreoffice-6.2.2.2/* %{_topdir}/BUILD/libreoffice-6.2.2.2/./
+mkdir -p ./
+cp -rn %{_topdir}/BUILD/libreoffice-6.2.2.2/* %{_topdir}/BUILD/libreoffice-6.2.2.2/./
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554498589
+export SOURCE_DATE_EPOCH=1554845610
 export LDFLAGS="${LDFLAGS} -fno-lto"
 %configure --disable-static --without-java \
 --disable-fetch-external \
@@ -239,11 +255,13 @@ export LDFLAGS="${LDFLAGS} -fno-lto"
 --disable-postgresql-sdbc \
 --with-vendor="Clear Linux OS for Intel Architecture" \
 --enable-build-opensymbol \
---enable-release-build
+--enable-release-build \
+--with-myspell-dicts \
+--with-help
 make  %{?_smp_mflags} MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1554498589
+export SOURCE_DATE_EPOCH=1554845610
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp COPYING %{buildroot}/usr/share/package-licenses/libreoffice/COPYING
@@ -254,6 +272,30 @@ cp bin/text_cat/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/bi
 cp compilerplugins/LICENSE.TXT %{buildroot}/usr/share/package-licenses/libreoffice/compilerplugins_LICENSE.TXT
 cp connectivity/source/drivers/mork/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/connectivity_source_drivers_mork_license.txt
 cp desktop/source/deployment/gui/license_dialog.hxx %{buildroot}/usr/share/package-licenses/libreoffice/desktop_source_deployment_gui_license_dialog.hxx
+cp dictionaries/bg_BG/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_bg_BG_COPYING
+cp dictionaries/bn_BD/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_bn_BD_COPYING
+cp dictionaries/de/COPYING_GPLv2 %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_de_COPYING_GPLv2
+cp dictionaries/de/COPYING_GPLv3 %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_de_COPYING_GPLv3
+cp dictionaries/de/COPYING_LGPL_v2.0.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_de_COPYING_LGPL_v2.0.txt
+cp dictionaries/de/COPYING_LGPL_v2.1.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_de_COPYING_LGPL_v2.1.txt
+cp dictionaries/en/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_en_license.txt
+cp dictionaries/gl/COPYING_th_gl %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_gl_COPYING_th_gl
+cp dictionaries/hi_IN/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_hi_IN_COPYING
+cp dictionaries/hi_IN/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_hi_IN_Copyright
+cp dictionaries/id/LICENSE-dict %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_id_LICENSE-dict
+cp dictionaries/id/LICENSE-thes %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_id_LICENSE-thes
+cp dictionaries/is/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_is_license.txt
+cp dictionaries/lt_LT/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_lt_LT_COPYING
+cp dictionaries/lv_LV/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_lv_LV_license.txt
+cp dictionaries/no/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_no_COPYING
+cp dictionaries/oc_FR/LICENCES-fr.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_oc_FR_LICENCES-fr.txt
+cp dictionaries/oc_FR/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_oc_FR_LICENSES-en.txt
+cp dictionaries/pt_PT/LICENSES.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_pt_PT_LICENSES.txt
+cp dictionaries/ro/COPYING.GPL %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_ro_COPYING.GPL
+cp dictionaries/ro/COPYING.LGPL %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_ro_COPYING.LGPL
+cp dictionaries/ro/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_ro_COPYING.MPL
+cp dictionaries/tr_TR/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_tr_TR_COPYING.MPL
+cp dictionaries/tr_TR/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_tr_TR_LICENSE
 cp extras/source/autocorr/lang/hr/licence.md %{buildroot}/usr/share/package-licenses/libreoffice/extras_source_autocorr_lang_hr_licence.md
 cp icon-themes/breeze/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_breeze_COPYING
 cp icon-themes/breeze_dark/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_breeze_dark_COPYING
@@ -281,6 +323,83 @@ cp readlicense_oo/license/NOTICE %{buildroot}/usr/share/package-licenses/libreof
 /usr/lib64/libreoffice/LICENSE.fodt
 /usr/lib64/libreoffice/LICENSE.html
 /usr/lib64/libreoffice/NOTICE
+/usr/lib64/libreoffice/help/en-US/default.css
+/usr/lib64/libreoffice/help/en-US/err.html
+/usr/lib64/libreoffice/help/en-US/highcontrast1.css
+/usr/lib64/libreoffice/help/en-US/highcontrast2.css
+/usr/lib64/libreoffice/help/en-US/highcontrastblack.css
+/usr/lib64/libreoffice/help/en-US/highcontrastwhite.css
+/usr/lib64/libreoffice/help/en-US/sbasic.cfg
+/usr/lib64/libreoffice/help/en-US/sbasic.db
+/usr/lib64/libreoffice/help/en-US/sbasic.ht
+/usr/lib64/libreoffice/help/en-US/sbasic.idxl/_0.cfs
+/usr/lib64/libreoffice/help/en-US/sbasic.idxl/segments.gen
+/usr/lib64/libreoffice/help/en-US/sbasic.idxl/segments_3
+/usr/lib64/libreoffice/help/en-US/sbasic.jar
+/usr/lib64/libreoffice/help/en-US/sbasic.key
+/usr/lib64/libreoffice/help/en-US/sbasic.tree
+/usr/lib64/libreoffice/help/en-US/scalc.cfg
+/usr/lib64/libreoffice/help/en-US/scalc.db
+/usr/lib64/libreoffice/help/en-US/scalc.ht
+/usr/lib64/libreoffice/help/en-US/scalc.idxl/_0.cfs
+/usr/lib64/libreoffice/help/en-US/scalc.idxl/segments.gen
+/usr/lib64/libreoffice/help/en-US/scalc.idxl/segments_3
+/usr/lib64/libreoffice/help/en-US/scalc.jar
+/usr/lib64/libreoffice/help/en-US/scalc.key
+/usr/lib64/libreoffice/help/en-US/scalc.tree
+/usr/lib64/libreoffice/help/en-US/schart.cfg
+/usr/lib64/libreoffice/help/en-US/schart.db
+/usr/lib64/libreoffice/help/en-US/schart.ht
+/usr/lib64/libreoffice/help/en-US/schart.idxl/_0.cfs
+/usr/lib64/libreoffice/help/en-US/schart.idxl/segments.gen
+/usr/lib64/libreoffice/help/en-US/schart.idxl/segments_3
+/usr/lib64/libreoffice/help/en-US/schart.jar
+/usr/lib64/libreoffice/help/en-US/schart.key
+/usr/lib64/libreoffice/help/en-US/schart.tree
+/usr/lib64/libreoffice/help/en-US/sdatabase.cfg
+/usr/lib64/libreoffice/help/en-US/sdatabase.db
+/usr/lib64/libreoffice/help/en-US/sdatabase.ht
+/usr/lib64/libreoffice/help/en-US/sdatabase.idxl/_0.cfs
+/usr/lib64/libreoffice/help/en-US/sdatabase.idxl/segments.gen
+/usr/lib64/libreoffice/help/en-US/sdatabase.idxl/segments_3
+/usr/lib64/libreoffice/help/en-US/sdatabase.key
+/usr/lib64/libreoffice/help/en-US/sdraw.cfg
+/usr/lib64/libreoffice/help/en-US/sdraw.db
+/usr/lib64/libreoffice/help/en-US/sdraw.ht
+/usr/lib64/libreoffice/help/en-US/sdraw.idxl/_0.cfs
+/usr/lib64/libreoffice/help/en-US/sdraw.idxl/segments.gen
+/usr/lib64/libreoffice/help/en-US/sdraw.idxl/segments_3
+/usr/lib64/libreoffice/help/en-US/sdraw.jar
+/usr/lib64/libreoffice/help/en-US/sdraw.key
+/usr/lib64/libreoffice/help/en-US/shared.jar
+/usr/lib64/libreoffice/help/en-US/shared.tree
+/usr/lib64/libreoffice/help/en-US/simpress.cfg
+/usr/lib64/libreoffice/help/en-US/simpress.db
+/usr/lib64/libreoffice/help/en-US/simpress.ht
+/usr/lib64/libreoffice/help/en-US/simpress.idxl/_0.cfs
+/usr/lib64/libreoffice/help/en-US/simpress.idxl/segments.gen
+/usr/lib64/libreoffice/help/en-US/simpress.idxl/segments_3
+/usr/lib64/libreoffice/help/en-US/simpress.jar
+/usr/lib64/libreoffice/help/en-US/simpress.key
+/usr/lib64/libreoffice/help/en-US/simpress.tree
+/usr/lib64/libreoffice/help/en-US/smath.cfg
+/usr/lib64/libreoffice/help/en-US/smath.db
+/usr/lib64/libreoffice/help/en-US/smath.ht
+/usr/lib64/libreoffice/help/en-US/smath.idxl/_0.cfs
+/usr/lib64/libreoffice/help/en-US/smath.idxl/segments.gen
+/usr/lib64/libreoffice/help/en-US/smath.idxl/segments_3
+/usr/lib64/libreoffice/help/en-US/smath.jar
+/usr/lib64/libreoffice/help/en-US/smath.key
+/usr/lib64/libreoffice/help/en-US/smath.tree
+/usr/lib64/libreoffice/help/en-US/swriter.cfg
+/usr/lib64/libreoffice/help/en-US/swriter.db
+/usr/lib64/libreoffice/help/en-US/swriter.ht
+/usr/lib64/libreoffice/help/en-US/swriter.idxl/_0.cfs
+/usr/lib64/libreoffice/help/en-US/swriter.idxl/segments.gen
+/usr/lib64/libreoffice/help/en-US/swriter.idxl/segments_3
+/usr/lib64/libreoffice/help/en-US/swriter.jar
+/usr/lib64/libreoffice/help/en-US/swriter.key
+/usr/lib64/libreoffice/help/en-US/swriter.tree
 /usr/lib64/libreoffice/help/idxcaption.xsl
 /usr/lib64/libreoffice/help/idxcontent.xsl
 /usr/lib64/libreoffice/help/main_transform.xsl
@@ -1234,6 +1353,7 @@ cp readlicense_oo/license/NOTICE %{buildroot}/usr/share/package-licenses/libreof
 /usr/lib64/libreoffice/share/config/images_colibre_svg.zip
 /usr/lib64/libreoffice/share/config/images_elementary.zip
 /usr/lib64/libreoffice/share/config/images_elementary_svg.zip
+/usr/lib64/libreoffice/share/config/images_helpimg.zip
 /usr/lib64/libreoffice/share/config/images_karasa_jaga.zip
 /usr/lib64/libreoffice/share/config/images_sifr.zip
 /usr/lib64/libreoffice/share/config/images_sifr_dark.zip
@@ -2933,6 +3053,77 @@ cp readlicense_oo/license/NOTICE %{buildroot}/usr/share/package-licenses/libreof
 /usr/lib64/libreoffice/share/dtd/officedocument/1_0/text.mod
 /usr/lib64/libreoffice/share/dtd/officedocument/1_0/toolbar.dtd
 /usr/lib64/libreoffice/share/emojiconfig/emoji.json
+/usr/lib64/libreoffice/share/extensions/dict-en/English.png
+/usr/lib64/libreoffice/share/extensions/dict-en/Lightproof.components
+/usr/lib64/libreoffice/share/extensions/dict-en/Lightproof.py
+/usr/lib64/libreoffice/share/extensions/dict-en/Linguistic.xcu
+/usr/lib64/libreoffice/share/extensions/dict-en/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-en/README.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/README_en_AU.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/README_en_CA.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/README_en_GB.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/README_en_GB_thes.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/README_en_US.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/README_en_ZA.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/README_hyph_en_GB.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/README_hyph_en_US.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/README_lightproof_en.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/WordNet_license.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/affDescription.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/changelog.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-en/dialog/OptionsDialog.xcs
+/usr/lib64/libreoffice/share/extensions/dict-en/dialog/OptionsDialog.xcu
+/usr/lib64/libreoffice/share/extensions/dict-en/dialog/en.xdl
+/usr/lib64/libreoffice/share/extensions/dict-en/dialog/en_en_US.default
+/usr/lib64/libreoffice/share/extensions/dict-en/dialog/en_en_US.properties
+/usr/lib64/libreoffice/share/extensions/dict-en/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-en/en_AU.aff
+/usr/lib64/libreoffice/share/extensions/dict-en/en_AU.dic
+/usr/lib64/libreoffice/share/extensions/dict-en/en_CA.aff
+/usr/lib64/libreoffice/share/extensions/dict-en/en_CA.dic
+/usr/lib64/libreoffice/share/extensions/dict-en/en_GB.aff
+/usr/lib64/libreoffice/share/extensions/dict-en/en_GB.dic
+/usr/lib64/libreoffice/share/extensions/dict-en/en_US.aff
+/usr/lib64/libreoffice/share/extensions/dict-en/en_US.dic
+/usr/lib64/libreoffice/share/extensions/dict-en/en_ZA.aff
+/usr/lib64/libreoffice/share/extensions/dict-en/en_ZA.dic
+/usr/lib64/libreoffice/share/extensions/dict-en/hyph_en_GB.dic
+/usr/lib64/libreoffice/share/extensions/dict-en/hyph_en_US.dic
+/usr/lib64/libreoffice/share/extensions/dict-en/license.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/package-description.txt
+/usr/lib64/libreoffice/share/extensions/dict-en/pythonpath/lightproof_en.py
+/usr/lib64/libreoffice/share/extensions/dict-en/pythonpath/lightproof_handler_en.py
+/usr/lib64/libreoffice/share/extensions/dict-en/pythonpath/lightproof_impl_en.py
+/usr/lib64/libreoffice/share/extensions/dict-en/pythonpath/lightproof_opts_en.py
+/usr/lib64/libreoffice/share/extensions/dict-en/th_en_US_v2.dat
+/usr/lib64/libreoffice/share/extensions/dict-en/th_en_US_v2.idx
+/usr/lib64/libreoffice/share/extensions/dict-es/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-es/README_es_ANY.txt
+/usr/lib64/libreoffice/share/extensions/dict-es/README_hyph_es_ANY.txt
+/usr/lib64/libreoffice/share/extensions/dict-es/README_th_es_ANY.txt
+/usr/lib64/libreoffice/share/extensions/dict-es/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-es/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-es/es_ANY.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_ANY.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/hyph_es_ANY.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/package-description.txt
+/usr/lib64/libreoffice/share/extensions/dict-es/th_es_ANY_v2.dat
+/usr/lib64/libreoffice/share/extensions/dict-es/th_es_ANY_v2.idx
+/usr/lib64/libreoffice/share/extensions/dict-fr/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-fr/README_fr.txt
+/usr/lib64/libreoffice/share/extensions/dict-fr/README_hyph_fr.txt
+/usr/lib64/libreoffice/share/extensions/dict-fr/README_thes_fr.txt
+/usr/lib64/libreoffice/share/extensions/dict-fr/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-fr/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-fr/fr.aff
+/usr/lib64/libreoffice/share/extensions/dict-fr/fr.dic
+/usr/lib64/libreoffice/share/extensions/dict-fr/hyph-fr.tex
+/usr/lib64/libreoffice/share/extensions/dict-fr/hyph_fr.dic
+/usr/lib64/libreoffice/share/extensions/dict-fr/icon.png
+/usr/lib64/libreoffice/share/extensions/dict-fr/package-description.txt
+/usr/lib64/libreoffice/share/extensions/dict-fr/thes_fr.dat
+/usr/lib64/libreoffice/share/extensions/dict-fr/thes_fr.idx
 /usr/lib64/libreoffice/share/extensions/package.txt
 /usr/lib64/libreoffice/share/filter/oox-drawingml-adj-names
 /usr/lib64/libreoffice/share/filter/oox-drawingml-cs-presets

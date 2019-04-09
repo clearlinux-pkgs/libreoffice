@@ -42,3 +42,5 @@
 --with-vendor="Clear Linux OS for Intel Architecture"
 --enable-build-opensymbol
 --enable-release-build
+--with-myspell-dicts
+--with-help
