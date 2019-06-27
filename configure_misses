@@ -2,6 +2,7 @@ Configure miss: whether to use link-time optimization
 Configure miss: explicit AFLAGS
 Configure miss: explicit OBJCFLAGS
 Configure miss: explicit OBJCXXFLAGS
+Configure miss: explicit LDFLAGS
 Configure miss: whether to sign windows build
 Configure miss: whether to build with Java support
 Configure miss: whether to treat the installation as read-only
@@ -18,10 +19,10 @@ Configure miss: x86_64-generic-linux-gnu-readelf
 Configure miss: sys/sdt.h usability
 Configure miss: sys/sdt.h presence
 Configure miss: sys/sdt.h
-Configure miss: whether gcc supports -fstack-protector-strong
 Configure miss: whether g++ defines __cxa_eh_globals in cxxabi.h
 Configure miss: whether g++ defines __cxa_exceptions in cxxabi.h
 Configure miss: whether using C++11 causes libstdc++ 4.7.0/4.7.1 ABI breakage
+Configure miss: whether g++ has GCC bug 87150
 Configure miss: if gcc has a visibility bug with class-level attributes (GCC bug 26905)
 Configure miss: whether to add custom build version
 Configure miss: whether to enable export file validation
@@ -41,7 +42,7 @@ Configure miss: gnucp
 Configure miss: whether to enable the GStreamer 0.10 avmedia backend
 Configure miss: whether to enable the VLC avmedia backend
 Configure miss: whether to build PDFium
-Configure miss: /run/user/1014
+Configure miss: /run/user/1000
 Configure miss: whether to build the Wiki Publisher extension
 Configure miss: whether to build the Report Builder
 Configure miss: whether to build support for scripts in BeanShell
