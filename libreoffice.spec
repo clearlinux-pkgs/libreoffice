@@ -5,14 +5,14 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 6.2.4.2
-Release  : 20
-URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.4/libreoffice-6.2.4.2.tar.xz
-Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.4/libreoffice-6.2.4.2.tar.xz
-Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.4/libreoffice-dictionaries-6.2.4.2.tar.xz
-Source2  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.4/libreoffice-help-6.2.4.2.tar.xz
-Source3  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.4/libreoffice-translations-6.2.4.2.tar.xz
-Source99 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.4/libreoffice-6.2.4.2.tar.xz.asc
+Version  : 6.2.5.2
+Release  : 21
+URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-6.2.5.2.tar.xz
+Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-6.2.5.2.tar.xz
+Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-dictionaries-6.2.5.2.tar.xz
+Source2  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-help-6.2.5.2.tar.xz
+Source3  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-translations-6.2.5.2.tar.xz
+Source99 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-6.2.5.2.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA
@@ -192,20 +192,20 @@ man components for the libreoffice package.
 
 
 %prep
-%setup -q -n libreoffice-6.2.4.2
+%setup -q -n libreoffice-6.2.5.2
 cd ..
-%setup -q -T -D -n libreoffice-6.2.4.2 -b 1
+%setup -q -T -D -n libreoffice-6.2.5.2 -b 1
 cd ..
-%setup -q -T -D -n libreoffice-6.2.4.2 -b 2
+%setup -q -T -D -n libreoffice-6.2.5.2 -b 2
 cd ..
-%setup -q -T -D -n libreoffice-6.2.4.2 -b 3
+%setup -q -T -D -n libreoffice-6.2.5.2 -b 3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1561622860
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562658046
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -260,7 +260,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags} MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1561622860
+export SOURCE_DATE_EPOCH=1562658046
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp COPYING %{buildroot}/usr/share/package-licenses/libreoffice/COPYING
