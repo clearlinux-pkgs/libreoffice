@@ -46,8 +46,8 @@ libharfbuzz-icu.so.0
 libharfbuzz.so.0
 libhunspell-1.6.so.0
 libhyphen.so.0
-libicui18n.so.63
-libicuuc.so.63
+libicui18n.so.64
+libicuuc.so.64
 libjpeg.so.62
 liblangtag.so.1
 liblcms2.so.2
@@ -67,14 +67,13 @@ libpagemaker-0.0.so.0
 libpango-1.0.so.0
 libplc4.so
 libpng16.so.16
-libpoppler.so.86
+libpoppler.so.89
 libpthread.so.0
 libpython3.7m.so.1.0
 libqxp-0.0.so.0
 libraptor2.so.0
 librdf.so.0
 librevenge-0.0.so.0
-librt.so.1
 libserf-1.so.1
 libsmime3.so
 libstaroffice-0.0.so.0

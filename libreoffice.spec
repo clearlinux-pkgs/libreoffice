@@ -6,13 +6,13 @@
 #
 Name     : libreoffice
 Version  : 6.2.5.2
-Release  : 21
+Release  : 22
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-6.2.5.2.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-6.2.5.2.tar.xz
 Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-dictionaries-6.2.5.2.tar.xz
 Source2  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-help-6.2.5.2.tar.xz
 Source3  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-translations-6.2.5.2.tar.xz
-Source99 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-6.2.5.2.tar.xz.asc
+Source4 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-6.2.5.2.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA
@@ -26,6 +26,7 @@ BuildRequires : bison
 BuildRequires : bluez-dev
 BuildRequires : boost-dev
 BuildRequires : buildreq-distutils3
+BuildRequires : buildreq-mvn
 BuildRequires : bzip2-dev
 BuildRequires : clucene-core-dev
 BuildRequires : coinmp-dev
@@ -205,7 +206,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562658046
+export SOURCE_DATE_EPOCH=1565137497
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -260,7 +261,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags} MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1562658046
+export SOURCE_DATE_EPOCH=1565137497
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp COPYING %{buildroot}/usr/share/package-licenses/libreoffice/COPYING
