@@ -5,14 +5,14 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 6.2.5.2
-Release  : 22
-URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-6.2.5.2.tar.xz
-Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-6.2.5.2.tar.xz
-Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-dictionaries-6.2.5.2.tar.xz
-Source2  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-help-6.2.5.2.tar.xz
-Source3  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-translations-6.2.5.2.tar.xz
-Source4 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.2.5/libreoffice-6.2.5.2.tar.xz.asc
+Version  : 6.3.0.4
+Release  : 23
+URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.0/libreoffice-6.3.0.4.tar.xz
+Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.0/libreoffice-6.3.0.4.tar.xz
+Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.0/libreoffice-dictionaries-6.3.0.4.tar.xz
+Source2  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.0/libreoffice-help-6.3.0.4.tar.xz
+Source3  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.0/libreoffice-translations-6.3.0.4.tar.xz
+Source4 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.0/libreoffice-6.3.0.4.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA
@@ -193,20 +193,20 @@ man components for the libreoffice package.
 
 
 %prep
-%setup -q -n libreoffice-6.2.5.2
+%setup -q -n libreoffice-6.3.0.4
 cd ..
-%setup -q -T -D -n libreoffice-6.2.5.2 -b 1
+%setup -q -T -D -n libreoffice-6.3.0.4 -b 1
 cd ..
-%setup -q -T -D -n libreoffice-6.2.5.2 -b 2
+%setup -q -T -D -n libreoffice-6.3.0.4 -b 2
 cd ..
-%setup -q -T -D -n libreoffice-6.2.5.2 -b 3
+%setup -q -T -D -n libreoffice-6.3.0.4 -b 3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565137497
+export SOURCE_DATE_EPOCH=1565635332
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -261,7 +261,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags} MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1565137497
+export SOURCE_DATE_EPOCH=1565635332
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp COPYING %{buildroot}/usr/share/package-licenses/libreoffice/COPYING
@@ -271,7 +271,6 @@ cp bin/text_cat/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/bin_
 cp bin/text_cat/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/bin_text_cat_Copyright
 cp compilerplugins/LICENSE.TXT %{buildroot}/usr/share/package-licenses/libreoffice/compilerplugins_LICENSE.TXT
 cp connectivity/source/drivers/mork/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/connectivity_source_drivers_mork_license.txt
-cp desktop/source/deployment/gui/license_dialog.cxx %{buildroot}/usr/share/package-licenses/libreoffice/desktop_source_deployment_gui_license_dialog.cxx
 cp desktop/source/deployment/gui/license_dialog.hxx %{buildroot}/usr/share/package-licenses/libreoffice/desktop_source_deployment_gui_license_dialog.hxx
 cp dictionaries/an_ES/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_an_ES_LICENSES-en.txt
 cp dictionaries/ar/COPYING.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_ar_COPYING.txt
@@ -313,6 +312,7 @@ cp dictionaries/vi/LICENSES-vi.txt %{buildroot}/usr/share/package-licenses/libre
 cp extras/source/autocorr/lang/hr/licence.md %{buildroot}/usr/share/package-licenses/libreoffice/extras_source_autocorr_lang_hr_licence.md
 cp icon-themes/breeze/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_breeze_COPYING
 cp icon-themes/breeze_dark/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_breeze_dark_COPYING
+cp icon-themes/breeze_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_breeze_svg_COPYING
 cp icon-themes/colibre/COPYING-ICONS %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_colibre_COPYING-ICONS
 cp icon-themes/colibre_svg/COPYING-ICONS %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_colibre_svg_COPYING-ICONS
 cp icon-themes/elementary/Copyrights %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_elementary_Copyrights
@@ -321,12 +321,13 @@ cp icon-themes/elementary_svg/Copyrights %{buildroot}/usr/share/package-licenses
 cp icon-themes/elementary_svg/LICENSE.GPL %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_elementary_svg_LICENSE.GPL
 cp icon-themes/karasa_jaga/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_karasa_jaga_COPYING
 cp icon-themes/karasa_jaga/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_karasa_jaga_LICENSE
+cp icon-themes/karasa_jaga_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_karasa_jaga_svg_COPYING
+cp icon-themes/karasa_jaga_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_karasa_jaga_svg_LICENSE
 cp icon-themes/sifr_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/icon-themes_sifr_svg_LICENSE
 cp odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.idl %{buildroot}/usr/share/package-licenses/libreoffice/odk_examples_DevelopersGuide_Components_SimpleLicense_LicenseTest.idl
 cp odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.java %{buildroot}/usr/share/package-licenses/libreoffice/odk_examples_DevelopersGuide_Components_SimpleLicense_LicenseTest.java
 cp offapi/com/sun/star/deployment/LicenseException.idl %{buildroot}/usr/share/package-licenses/libreoffice/offapi_com_sun_star_deployment_LicenseException.idl
 cp offapi/com/sun/star/deployment/ui/LicenseDialog.idl %{buildroot}/usr/share/package-licenses/libreoffice/offapi_com_sun_star_deployment_ui_LicenseDialog.idl
-cp readlicense_oo/license/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/readlicense_oo_license_LICENSE
 cp readlicense_oo/license/NOTICE %{buildroot}/usr/share/package-licenses/libreoffice/readlicense_oo_license_NOTICE
 cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/libreoffice/sfx2_uiconfig_ui_licensedialog.ui
 %make_install distro-pack-install
@@ -335,7 +336,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/CREDITS.fodt
 /usr/lib64/libreoffice/LICENSE
-/usr/lib64/libreoffice/LICENSE.fodt
 /usr/lib64/libreoffice/LICENSE.html
 /usr/lib64/libreoffice/NOTICE
 /usr/lib64/libreoffice/help/en-US/default.css
@@ -386,6 +386,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/help/en-US/sdraw.idxl/segments_3
 /usr/lib64/libreoffice/help/en-US/sdraw.jar
 /usr/lib64/libreoffice/help/en-US/sdraw.key
+/usr/lib64/libreoffice/help/en-US/sdraw.tree
 /usr/lib64/libreoffice/help/en-US/shared.jar
 /usr/lib64/libreoffice/help/en-US/shared.tree
 /usr/lib64/libreoffice/help/en-US/simpress.cfg
@@ -446,6 +447,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/program/officehelper.py
 /usr/lib64/libreoffice/program/oosplash
 /usr/lib64/libreoffice/program/opencl/cl-test.ods
+/usr/lib64/libreoffice/program/opencltest
 /usr/lib64/libreoffice/program/opengl/areaHashCRC64TFragmentShader.glsl
 /usr/lib64/libreoffice/program/opengl/areaScaleFastFragmentShader.glsl
 /usr/lib64/libreoffice/program/opengl/areaScaleFragmentShader.glsl
@@ -1372,6 +1374,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/images_karasa_jaga.zip
 /usr/lib64/libreoffice/share/config/images_sifr.zip
 /usr/lib64/libreoffice/share/config/images_sifr_dark.zip
+/usr/lib64/libreoffice/share/config/images_sifr_svg.zip
 /usr/lib64/libreoffice/share/config/images_tango.zip
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/aboutconfigdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/aboutconfigvaluedialog.ui
@@ -1396,6 +1399,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/borderbackgrounddialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/borderpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/breaknumberoption.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/bulletandposition.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/calloutdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/calloutpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/cellalignment.ui
@@ -1539,7 +1543,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/searchattrdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/searchformatdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/securityoptionsdialog.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/select_persona_dialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/selectpathdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/shadowtabpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/showcoldialog.ui
@@ -1561,6 +1564,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/textdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/textflowpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/thesaurus.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/tipofthedaydialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/transparencytabpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/tsaurldialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/twolinespage.ui
@@ -1639,6 +1643,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/userdetailspage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/desktop/ui/dependenciesdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/desktop/ui/extensionmanager.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/desktop/ui/extensionmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/desktop/ui/installforalldialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/desktop/ui/licensedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/desktop/ui/showlicensedialog.ui
@@ -1822,7 +1827,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/toolbar/insertcellsbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/toolbar/linesbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/toolbar/mediaobjectbar.xml
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/toolbar/moreformcontrols.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/toolbar/notebookbarshortcuts.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/toolbar/previewbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/toolbar/singlemode.xml
@@ -1837,6 +1841,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/allheaderfooterdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/analysisofvariancedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/autoformattable.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/autosum.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/cellprotectionpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/changesourcedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/chardialog.ui
@@ -1858,7 +1863,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/datafielddialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/datafieldoptionsdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/dataform.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/dataprovider.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/dataformfragment.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/dataproviderdlg.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/dataproviderentry.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/datastreams.ui
@@ -1880,6 +1885,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/footerdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/formatcellsdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/formulacalculationoptions.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/fourieranalysisdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/functionpanel.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/goalseekdlg.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/groupbydate.ui
@@ -1923,6 +1929,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/pagetemplatedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/paradialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/paratemplatedialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/passfragment.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/pastespecial.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/pivotfielddialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/pivotfilterdialog.ui
@@ -2101,12 +2108,13 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/linesbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/masterviewtoolbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/mediaobjectbar.xml
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/moreformcontrols.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/notebookbarshortcuts.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/optimizetablebar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/optionsbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/positionbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/rectanglesbar.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/redactedexportbar.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/redactionbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/standardbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/starshapes.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/symbolshapes.xml
@@ -2130,8 +2138,10 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/insertslidesdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/namedesign.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/notebookbar.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/notebookbar_compact.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/notebookbar_groupedbar_compact.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/notebookbar_groupedbar_full.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/notebookbar_single.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/paranumberingtab.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/queryunlinkimagedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/vectorize.ui
@@ -2177,7 +2187,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sglobal/toolbar/insertbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sglobal/toolbar/insertobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sglobal/toolbar/mediaobjectbar.xml
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/sglobal/toolbar/moreformcontrols.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sglobal/toolbar/numobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sglobal/toolbar/oleobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sglobal/toolbar/optimizetablebar.xml
@@ -2254,7 +2263,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/linesbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/masterviewtoolbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/mediaobjectbar.xml
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/moreformcontrols.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/notebookbarshortcuts.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/optimizetablebar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/optionsbar.xml
@@ -2280,7 +2288,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/customanimationfragment.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/customanimationproperties.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/customanimationspanel.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/customanimationspanelhorizontal.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/customanimationtexttab.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/customanimationtimingtab.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/customslideshows.ui
@@ -2301,6 +2308,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/mastermenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/navigatorpanel.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/notebookbar.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/notebookbar_compact.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/notebookbar_groupedbar_compact.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/notebookbar_groupedbar_full.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/notebookbar_groups.ui
@@ -2341,7 +2349,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/symdefinedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/spropctrlr/ui/controlfontdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/spropctrlr/ui/datatypedialog.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/spropctrlr/ui/fieldlinkrow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/spropctrlr/ui/formlinksdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/spropctrlr/ui/labelselectiondialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/spropctrlr/ui/listselectdialog.ui
@@ -2436,7 +2443,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swform/toolbar/insertobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swform/toolbar/mailmerge.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swform/toolbar/mediaobjectbar.xml
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swform/toolbar/moreformcontrols.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swform/toolbar/numobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swform/toolbar/oleobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swform/toolbar/optimizetablebar.xml
@@ -2490,7 +2496,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swreport/toolbar/insertobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swreport/toolbar/mailmerge.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swreport/toolbar/mediaobjectbar.xml
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swreport/toolbar/moreformcontrols.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swreport/toolbar/numobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swreport/toolbar/oleobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swreport/toolbar/optimizetablebar.xml
@@ -2503,6 +2508,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swreport/toolbar/toolbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swreport/toolbar/viewerbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/menubar/menubar.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/menubar/mscompatibleformsmenu.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/popupmenu/anchor.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/popupmenu/annotation.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/popupmenu/draw.xml
@@ -2549,7 +2555,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/linesbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/mailmerge.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/mediaobjectbar.xml
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/moreformcontrols.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/navigationobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/notebookbarshortcuts.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/numobjectbar.xml
@@ -2568,11 +2573,13 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/abstractdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/addentrydialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/addressblockdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/addressfragment.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/alreadyexistsdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/annotationmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/asciifilterdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/asksearchdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/assignfieldsdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/assignfragment.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/assignstylesdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/attachnamedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/authenticationsettingsdialog.ui
@@ -2602,6 +2609,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/datasourcesunavailabledialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/dropcapspage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/dropdownfielddialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/dropdownformfielddialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/editcategories.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/editfielddialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/editsectiondialog.ui
@@ -2704,6 +2712,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/paradialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/picturedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/picturepage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/previewmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/previewzoomdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/printeroptions.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/printmergedialog.ui
@@ -2757,6 +2766,8 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/tocindexpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/tocstylespage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/tokenwidget.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/toxbuttonwidget.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/toxentrywidget.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/viewoptionspage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/warndatasourcedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/warnemaildialog.ui
@@ -2807,7 +2818,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swxform/toolbar/insertobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swxform/toolbar/mailmerge.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swxform/toolbar/mediaobjectbar.xml
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swxform/toolbar/moreformcontrols.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swxform/toolbar/numobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swxform/toolbar/oleobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swxform/toolbar/optimizetablebar.xml
@@ -2845,6 +2855,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/helpsearchpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/inputdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/licensedialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/linefragment.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/linkeditdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/loadtemplatedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/managestylepage.ui
@@ -2873,6 +2884,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/simpress/transitions-ogl.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/simpress/transitions.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/addresstemplatedialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/datewindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/fileviewmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/graphicexport.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/inputbox.ui
@@ -2960,6 +2972,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebararea.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebargraphic.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarline.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarlists.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarparagraph.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarpossize.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarshadow.ui
@@ -2983,10 +2996,12 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/config/soffice.cfg/uui/ui/simplenameclash.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/uui/ui/sslwarndialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/uui/ui/unknownauthdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/aboutbox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/cupspassworddialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/editmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/errornocontentdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/errornoprinterdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/moreoptionsdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/printdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/printerdevicepage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/printerpaperpage.ui
@@ -4104,34 +4119,73 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/share/template/common/wizard/styles/pool.ots
 /usr/lib64/libreoffice/share/template/common/wizard/styles/pumpkin.ots
 /usr/lib64/libreoffice/share/template/common/wizard/styles/xos.ots
-/usr/lib64/libreoffice/share/template/wizard/bitmap/Import_1.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/Import_3.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/Import_4.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/MS-Import_2-1.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/MS-Import_2-2.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/MS-Import_2-3.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/XML-Import_2-1.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/XML-Import_2-2.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/XML-Import_2-3.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/XML-Import_2-4.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/cancel_down.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/cancel_up.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/down.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/end.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/euro_1.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/euro_2.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/euro_3.bmp
+/usr/lib64/libreoffice/share/template/wizard/bitmap/Import_1.png
+/usr/lib64/libreoffice/share/template/wizard/bitmap/Import_3.png
+/usr/lib64/libreoffice/share/template/wizard/bitmap/Import_4.png
+/usr/lib64/libreoffice/share/template/wizard/bitmap/MS-Import_2-1.png
+/usr/lib64/libreoffice/share/template/wizard/bitmap/MS-Import_2-2.png
+/usr/lib64/libreoffice/share/template/wizard/bitmap/MS-Import_2-3.png
+/usr/lib64/libreoffice/share/template/wizard/bitmap/XML-Import_2-1.png
+/usr/lib64/libreoffice/share/template/wizard/bitmap/XML-Import_2-2.png
+/usr/lib64/libreoffice/share/template/wizard/bitmap/XML-Import_2-3.png
+/usr/lib64/libreoffice/share/template/wizard/bitmap/XML-Import_2-4.png
+/usr/lib64/libreoffice/share/template/wizard/bitmap/euro_1.png
+/usr/lib64/libreoffice/share/template/wizard/bitmap/euro_2.png
+/usr/lib64/libreoffice/share/template/wizard/bitmap/euro_3.png
 /usr/lib64/libreoffice/share/template/wizard/bitmap/ftpconnected.gif
 /usr/lib64/libreoffice/share/template/wizard/bitmap/ftpconnecting.gif
 /usr/lib64/libreoffice/share/template/wizard/bitmap/ftperror.gif
 /usr/lib64/libreoffice/share/template/wizard/bitmap/ftpunknown.gif
-/usr/lib64/libreoffice/share/template/wizard/bitmap/maximize.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/minimize.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/okay_down.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/okay_up.bmp
-/usr/lib64/libreoffice/share/template/wizard/bitmap/report.bmp
+/usr/lib64/libreoffice/share/template/wizard/bitmap/maximize.png
+/usr/lib64/libreoffice/share/template/wizard/bitmap/minimize.png
 /usr/lib64/libreoffice/share/template/wizard/bitmap/tutorial_background.gif
-/usr/lib64/libreoffice/share/template/wizard/bitmap/up.bmp
+/usr/lib64/libreoffice/share/theme_definitions/ios/arrow-down.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/arrow-up.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/combobox-button-disabled.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/combobox-button.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/combobox-disabled.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/combobox.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/common-rect-disabled.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/common-rect-focus-slim.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/common-rect-focus.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/common-rect.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/definition.xml
+/usr/lib64/libreoffice/share/theme_definitions/ios/pushbutton-default.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/pushbutton-disabled.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/pushbutton-rollover.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/scrollbar-horizontal.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/scrollbar-vertical.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/slider-button-disabled.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/slider-button.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/spinbox-left-disabled.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/spinbox-left-pressed.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/spinbox-left.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/spinbox-right-disabled.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/spinbox-right-pressed.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/spinbox-right.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/switch-off-disabled.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/switch-off-pressed.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/switch-off.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/switch-on-disabled.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/switch-on-pressed.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/switch-on.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/tabitem-first-selected.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/tabitem-first.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/tabitem-last-selected.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/tabitem-last.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/tabitem-middle-selected.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/tabitem-middle.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/tick-off-disabled.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/tick-off-pressed.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/tick-off.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/tick-on-disabled.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/tick-on-pressed.svg
+/usr/lib64/libreoffice/share/theme_definitions/ios/tick-on.svg
+/usr/lib64/libreoffice/share/tipoftheday/tipoftheday.png
+/usr/lib64/libreoffice/share/tipoftheday/tipoftheday_c.png
+/usr/lib64/libreoffice/share/tipoftheday/tipoftheday_d.png
+/usr/lib64/libreoffice/share/tipoftheday/tipoftheday_i.png
+/usr/lib64/libreoffice/share/tipoftheday/tipoftheday_w.png
 /usr/lib64/libreoffice/share/wizards/resources_en_US.properties
 /usr/lib64/libreoffice/share/wordbook/en-GB.dic
 /usr/lib64/libreoffice/share/wordbook/en-US.dic
@@ -5314,6 +5368,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleAction.idl
 /usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleComponent.idl
 /usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleContext.idl
+/usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleContext2.idl
 /usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleEditableText.idl
 /usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleEventBroadcaster.idl
 /usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleEventListener.idl
@@ -5638,6 +5693,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/share/idl/libreoffice/com/sun/star/awt/XPrinter.idl
 /usr/share/idl/libreoffice/com/sun/star/awt/XPrinterPropertySet.idl
 /usr/share/idl/libreoffice/com/sun/star/awt/XPrinterServer.idl
+/usr/share/idl/libreoffice/com/sun/star/awt/XPrinterServer2.idl
 /usr/share/idl/libreoffice/com/sun/star/awt/XProgressBar.idl
 /usr/share/idl/libreoffice/com/sun/star/awt/XProgressMonitor.idl
 /usr/share/idl/libreoffice/com/sun/star/awt/XRadioButton.idl
@@ -8799,6 +8855,8 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/share/idl/libreoffice/com/sun/star/text/XPagePrintable.idl
 /usr/share/idl/libreoffice/com/sun/star/text/XParagraphAppend.idl
 /usr/share/idl/libreoffice/com/sun/star/text/XParagraphCursor.idl
+/usr/share/idl/libreoffice/com/sun/star/text/XPasteBroadcaster.idl
+/usr/share/idl/libreoffice/com/sun/star/text/XPasteListener.idl
 /usr/share/idl/libreoffice/com/sun/star/text/XRedline.idl
 /usr/share/idl/libreoffice/com/sun/star/text/XReferenceMarksSupplier.idl
 /usr/share/idl/libreoffice/com/sun/star/text/XRelativeTextContentInsert.idl
@@ -9907,6 +9965,7 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/program/libmsformslo.so
 /usr/lib64/libreoffice/program/libmswordlo.so
 /usr/lib64/libreoffice/program/libmtfrendererlo.so
+/usr/lib64/libreoffice/program/libmysql_jdbclo.so
 /usr/lib64/libreoffice/program/libmysqlclo.so
 /usr/lib64/libreoffice/program/libnamingservicelo.so
 /usr/lib64/libreoffice/program/libnumbertextlo.so
@@ -9926,7 +9985,6 @@ cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/lib
 /usr/lib64/libreoffice/program/libproxyfaclo.so
 /usr/lib64/libreoffice/program/libpythonloaderlo.so
 /usr/lib64/libreoffice/program/libpyuno.so
-/usr/lib64/libreoffice/program/librecentfile.so
 /usr/lib64/libreoffice/program/libreflectionlo.so
 /usr/lib64/libreoffice/program/libreglo.so
 /usr/lib64/libreoffice/program/libsal_textenclo.so
