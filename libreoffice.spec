@@ -5,17 +5,17 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 6.3.0.4
-Release  : 23
-URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.0/libreoffice-6.3.0.4.tar.xz
-Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.0/libreoffice-6.3.0.4.tar.xz
-Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.0/libreoffice-dictionaries-6.3.0.4.tar.xz
-Source2  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.0/libreoffice-help-6.3.0.4.tar.xz
-Source3  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.0/libreoffice-translations-6.3.0.4.tar.xz
-Source4 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.0/libreoffice-6.3.0.4.tar.xz.asc
+Version  : 6.3.1.2
+Release  : 24
+URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.1/libreoffice-6.3.1.2.tar.xz
+Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.1/libreoffice-6.3.1.2.tar.xz
+Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.1/libreoffice-dictionaries-6.3.1.2.tar.xz
+Source2  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.1/libreoffice-help-6.3.1.2.tar.xz
+Source3  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.1/libreoffice-translations-6.3.1.2.tar.xz
+Source4 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.1/libreoffice-6.3.1.2.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
-License  : Apache-2.0 BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA
+License  : Apache-2.0 BSD-3-Clause BSD-3-Clause-Clear CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 HPND ICU LGPL-2.0 LGPL-2.1 LGPL-3.0 MIT MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA OFL-1.0 Python-2.0 W3C
 Requires: libreoffice-bin = %{version}-%{release}
 Requires: libreoffice-data = %{version}-%{release}
 Requires: libreoffice-lib = %{version}-%{release}
@@ -193,20 +193,20 @@ man components for the libreoffice package.
 
 
 %prep
-%setup -q -n libreoffice-6.3.0.4
+%setup -q -n libreoffice-6.3.1.2
 cd ..
-%setup -q -T -D -n libreoffice-6.3.0.4 -b 1
+%setup -q -T -D -n libreoffice-6.3.1.2 -b 1
 cd ..
-%setup -q -T -D -n libreoffice-6.3.0.4 -b 2
+%setup -q -T -D -n libreoffice-6.3.1.2 -b 2
 cd ..
-%setup -q -T -D -n libreoffice-6.3.0.4 -b 3
+%setup -q -T -D -n libreoffice-6.3.1.2 -b 3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565635332
+export SOURCE_DATE_EPOCH=1568162721
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -261,7 +261,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags} MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1565635332
+export SOURCE_DATE_EPOCH=1568162721
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp COPYING %{buildroot}/usr/share/package-licenses/libreoffice/COPYING
@@ -271,6 +271,7 @@ cp bin/text_cat/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/bin_
 cp bin/text_cat/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/bin_text_cat_Copyright
 cp compilerplugins/LICENSE.TXT %{buildroot}/usr/share/package-licenses/libreoffice/compilerplugins_LICENSE.TXT
 cp connectivity/source/drivers/mork/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/connectivity_source_drivers_mork_license.txt
+cp desktop/source/deployment/gui/license_dialog.cxx %{buildroot}/usr/share/package-licenses/libreoffice/desktop_source_deployment_gui_license_dialog.cxx
 cp desktop/source/deployment/gui/license_dialog.hxx %{buildroot}/usr/share/package-licenses/libreoffice/desktop_source_deployment_gui_license_dialog.hxx
 cp dictionaries/an_ES/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_an_ES_LICENSES-en.txt
 cp dictionaries/ar/COPYING.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_ar_COPYING.txt
@@ -283,6 +284,7 @@ cp dictionaries/de/COPYING_GPLv3 %{buildroot}/usr/share/package-licenses/libreof
 cp dictionaries/de/COPYING_LGPL_v2.0.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_de_COPYING_LGPL_v2.0.txt
 cp dictionaries/de/COPYING_LGPL_v2.1.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_de_COPYING_LGPL_v2.1.txt
 cp dictionaries/de/COPYING_OASIS.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_de_COPYING_OASIS.txt
+cp dictionaries/en/WordNet_license.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_en_WordNet_license.txt
 cp dictionaries/en/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_en_license.txt
 cp dictionaries/gd_GB/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_gd_GB_LICENSES-en.txt
 cp dictionaries/gl/COPYING_th_gl %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_gl_COPYING_th_gl
@@ -291,6 +293,7 @@ cp dictionaries/hi_IN/Copyright %{buildroot}/usr/share/package-licenses/libreoff
 cp dictionaries/id/LICENSE-dict %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_id_LICENSE-dict
 cp dictionaries/id/LICENSE-thes %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_id_LICENSE-thes
 cp dictionaries/is/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_is_license.txt
+cp dictionaries/it_IT/legacy/it_IT_license.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_it_IT_legacy_it_IT_license.txt
 cp dictionaries/kmr_Latn/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_kmr_Latn_license.txt
 cp dictionaries/lt_LT/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_lt_LT_COPYING
 cp dictionaries/lv_LV/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/dictionaries_lv_LV_license.txt
@@ -329,6 +332,7 @@ cp odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.java %{buil
 cp offapi/com/sun/star/deployment/LicenseException.idl %{buildroot}/usr/share/package-licenses/libreoffice/offapi_com_sun_star_deployment_LicenseException.idl
 cp offapi/com/sun/star/deployment/ui/LicenseDialog.idl %{buildroot}/usr/share/package-licenses/libreoffice/offapi_com_sun_star_deployment_ui_LicenseDialog.idl
 cp readlicense_oo/license/NOTICE %{buildroot}/usr/share/package-licenses/libreoffice/readlicense_oo_license_NOTICE
+cp readlicense_oo/license/license.xml %{buildroot}/usr/share/package-licenses/libreoffice/readlicense_oo_license_license.xml
 cp sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/libreoffice/sfx2_uiconfig_ui_licensedialog.ui
 %make_install distro-pack-install
 
