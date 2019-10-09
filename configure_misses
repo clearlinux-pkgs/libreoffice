@@ -45,7 +45,7 @@ Configure miss: gnucp
 Configure miss: whether to enable the GStreamer 0.10 avmedia backend
 Configure miss: whether to enable the VLC avmedia backend
 Configure miss: whether to build PDFium
-Configure miss: /run/user/1001
+Configure miss: /run/user/1000
 Configure miss: whether to build the Wiki Publisher extension
 Configure miss: whether to build the Report Builder
 Configure miss: whether to build support for scripts in BeanShell

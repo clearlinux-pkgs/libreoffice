@@ -5,14 +5,14 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 6.3.1.2
-Release  : 25
-URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.1/libreoffice-6.3.1.2.tar.xz
-Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.1/libreoffice-6.3.1.2.tar.xz
-Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.1/libreoffice-dictionaries-6.3.1.2.tar.xz
-Source2  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.1/libreoffice-help-6.3.1.2.tar.xz
-Source3  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.1/libreoffice-translations-6.3.1.2.tar.xz
-Source4 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.1/libreoffice-6.3.1.2.tar.xz.asc
+Version  : 6.3.2.2
+Release  : 26
+URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.2/libreoffice-6.3.2.2.tar.xz
+Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.2/libreoffice-6.3.2.2.tar.xz
+Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.2/libreoffice-dictionaries-6.3.2.2.tar.xz
+Source2  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.2/libreoffice-help-6.3.2.2.tar.xz
+Source3  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.2/libreoffice-translations-6.3.2.2.tar.xz
+Source4 : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.2/libreoffice-6.3.2.2.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause BSD-3-Clause-Clear CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 HPND ICU LGPL-2.0 LGPL-2.1 LGPL-3.0 MIT MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA OFL-1.0 Python-2.0 W3C
@@ -44,6 +44,7 @@ BuildRequires : gnutls-dev
 BuildRequires : gobject-introspection-dev
 BuildRequires : gperf
 BuildRequires : gpgme-dev
+BuildRequires : gradle
 BuildRequires : hyphen-dev
 BuildRequires : icu4c-dev
 BuildRequires : krb5-dev
@@ -193,20 +194,20 @@ man components for the libreoffice package.
 
 
 %prep
-%setup -q -n libreoffice-6.3.1.2
+%setup -q -n libreoffice-6.3.2.2
 cd ..
-%setup -q -T -D -n libreoffice-6.3.1.2 -b 1
+%setup -q -T -D -n libreoffice-6.3.2.2 -b 1
 cd ..
-%setup -q -T -D -n libreoffice-6.3.1.2 -b 2
+%setup -q -T -D -n libreoffice-6.3.2.2 -b 2
 cd ..
-%setup -q -T -D -n libreoffice-6.3.1.2 -b 3
+%setup -q -T -D -n libreoffice-6.3.2.2 -b 3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568162721
+export SOURCE_DATE_EPOCH=1570659149
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -258,10 +259,10 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 --enable-release-build \
 --with-myspell-dicts \
 --with-help
-make  %{?_smp_mflags} MAKECMDGOALS=build build
+make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1568162721
+export SOURCE_DATE_EPOCH=1570659149
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp COPYING %{buildroot}/usr/share/package-licenses/libreoffice/COPYING
