@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 6.3.2.2
-Release  : 27
+Release  : 28
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.2/libreoffice-6.3.2.2.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.2/libreoffice-6.3.2.2.tar.xz
 Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.2/libreoffice-dictionaries-6.3.2.2.tar.xz
@@ -132,9 +132,11 @@ BuildRequires : python3-dev
 BuildRequires : serf-dev
 BuildRequires : ucpp
 BuildRequires : unixODBC-dev
+BuildRequires : util-linux
 BuildRequires : valgrind
 BuildRequires : vlc-dev
 Patch1: 0001-Do-not-clean-destdir.patch
+Patch2: Fix_build_with_poppler-0.82.patch
 
 %description
 a dummy package
@@ -214,13 +216,14 @@ cd ..
 cd ..
 %setup -q -T -D -n libreoffice-6.3.2.2 -b 3
 %patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570818392
+export SOURCE_DATE_EPOCH=1572317599
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -275,7 +278,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1570818392
+export SOURCE_DATE_EPOCH=1572317599
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-6.3.2.2/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
