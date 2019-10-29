@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 6.3.2.2
-Release  : 28
+Release  : 29
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.2/libreoffice-6.3.2.2.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.2/libreoffice-6.3.2.2.tar.xz
 Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.2/libreoffice-dictionaries-6.3.2.2.tar.xz
@@ -209,12 +209,13 @@ man components for the libreoffice package.
 
 %prep
 %setup -q -n libreoffice-6.3.2.2
-cd ..
-%setup -q -T -D -n libreoffice-6.3.2.2 -b 1
-cd ..
-%setup -q -T -D -n libreoffice-6.3.2.2 -b 2
-cd ..
-%setup -q -T -D -n libreoffice-6.3.2.2 -b 3
+cd %{_builddir}
+tar xf %{_sourcedir}/libreoffice-dictionaries-6.3.2.2.tar.xz
+cd %{_builddir}
+tar xf %{_sourcedir}/libreoffice-help-6.3.2.2.tar.xz
+cd %{_builddir}
+tar xf %{_sourcedir}/libreoffice-translations-6.3.2.2.tar.xz
+cd %{_builddir}/libreoffice-6.3.2.2
 %patch1 -p1
 %patch2 -p1
 
@@ -223,7 +224,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1572317599
+export SOURCE_DATE_EPOCH=1572371967
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -278,7 +279,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1572317599
+export SOURCE_DATE_EPOCH=1572371967
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-6.3.2.2/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
@@ -352,6 +353,11 @@ cp %{_builddir}/libreoffice-6.3.2.2/readlicense_oo/license/NOTICE %{buildroot}/u
 cp %{_builddir}/libreoffice-6.3.2.2/readlicense_oo/license/license.xml %{buildroot}/usr/share/package-licenses/libreoffice/660c5aea149e0f4293534dbef4b04bfa73e84f00
 cp %{_builddir}/libreoffice-6.3.2.2/sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/libreoffice/fe5e18070d6a90bf7d69beebdc904b20d20932de
 %make_install distro-pack-install
+## Remove excluded files
+rm -f %{buildroot}/usr/lib64/libreoffice/sdk/classes
+rm -f %{buildroot}/usr/lib64/libreoffice/sdk/docs
+rm -f %{buildroot}/usr/lib64/libreoffice/sdk/include
+rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 
 %files
 %defattr(-,root,root,-)
@@ -642,11 +648,9 @@ cp %{_builddir}/libreoffice-6.3.2.2/sfx2/uiconfig/ui/licensedialog.ui %{buildroo
 /usr/lib64/libreoffice/sdk/bin/uno-skeletonmaker
 /usr/lib64/libreoffice/sdk/bin/unoapploader
 /usr/lib64/libreoffice/sdk/bin/unoidl-check
-/usr/lib64/libreoffice/sdk/classes
 /usr/lib64/libreoffice/sdk/config.guess
 /usr/lib64/libreoffice/sdk/config.sub
 /usr/lib64/libreoffice/sdk/configure.pl
-/usr/lib64/libreoffice/sdk/docs
 /usr/lib64/libreoffice/sdk/examples/CLI/CSharp/Spreadsheet/GeneralTableSample.cs
 /usr/lib64/libreoffice/sdk/examples/CLI/CSharp/Spreadsheet/Makefile
 /usr/lib64/libreoffice/sdk/examples/CLI/CSharp/Spreadsheet/SpreadsheetDocHelper.cs
@@ -1166,8 +1170,6 @@ cp %{_builddir}/libreoffice-6.3.2.2/sfx2/uiconfig/ui/licensedialog.ui %{buildroo
 /usr/lib64/libreoffice/sdk/examples/python/toolpanel/toolpanel.py
 /usr/lib64/libreoffice/sdk/examples/python/toolpanel/toolpanels/poc.xdl
 /usr/lib64/libreoffice/sdk/idl
-/usr/lib64/libreoffice/sdk/include
-/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/sdk/setsdkenv_unix
 /usr/lib64/libreoffice/sdk/setsdkenv_unix.sh
 /usr/lib64/libreoffice/sdk/setsdkenv_unix.sh.in
