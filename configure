@@ -44,3 +44,4 @@
 --enable-release-build
 --with-myspell-dicts
 --with-help
+--with-lang=ALL
