@@ -61,8 +61,14 @@ my $lang_re = qr#^.*?[/_\-]($lang_join)(?:[_\-\@][a-zA-Z\-]+)?(?:[/\.].*)?$#;
 # Now use the languages pattern to sort the files.
 my %extras;
 foreach my $package (sort keys %files) {
+	# Don't touch license files
+	next if $package eq 'license';
+
 	FILE:
 	foreach my $file (sort keys %{$files{$package}}) {
+		# Don't touch filter files
+		next if $file =~ m#^/usr/lib64/libreoffice/share/filter/#;
+
 		if ($file =~ $lang_re) {
 			my $lang = lc($1);
 
