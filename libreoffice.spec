@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 6.3.3.2
-Release  : 32
+Release  : 33
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.3/libreoffice-6.3.3.2.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.3/libreoffice-6.3.3.2.tar.xz
 Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.3/libreoffice-dictionaries-6.3.3.2.tar.xz
@@ -1095,7 +1095,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1573257288
+export SOURCE_DATE_EPOCH=1573503764
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -1151,7 +1151,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1573257288
+export SOURCE_DATE_EPOCH=1573503764
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-6.3.3.2/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
@@ -4324,6 +4324,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-no/th_nn_NO_v2.idx
 /usr/lib64/libreoffice/share/extensions/package.txt
 /usr/lib64/libreoffice/share/filter/oox-drawingml-adj-names
+/usr/lib64/libreoffice/share/filter/oox-drawingml-cs-presets
 /usr/lib64/libreoffice/share/filter/vml-shape-types
 /usr/lib64/libreoffice/share/fonts/truetype/fc_local.conf
 /usr/lib64/libreoffice/share/fonts/truetype/opens___.ttf
@@ -12630,7 +12631,6 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-cs/hyph_cs_CZ.dic
 /usr/lib64/libreoffice/share/extensions/dict-cs/thes_cs_CZ.dat
 /usr/lib64/libreoffice/share/extensions/dict-cs/thes_cs_CZ.idx
-/usr/lib64/libreoffice/share/filter/oox-drawingml-cs-presets
 /usr/lib64/libreoffice/share/registry/Langpack-cs.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_cs.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_cs.xcd
