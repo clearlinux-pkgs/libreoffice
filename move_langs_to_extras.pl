@@ -84,7 +84,7 @@ foreach my $lang (sort keys %extras) {
 	# Don't put the default English files into a separate package
 	next LANG if $lang eq 'en';
 
-	my $filename = "lang_${lang}_extras";
+	my $filename = "lang-${lang}_extras";
 
 	open(my $fh, '>', $filename)
 		or die "Failed to create $filename: $!";
