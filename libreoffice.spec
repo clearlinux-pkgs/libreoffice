@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 6.3.3.2
-Release  : 33
+Release  : 34
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.3/libreoffice-6.3.3.2.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.3/libreoffice-6.3.3.2.tar.xz
 Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.3/libreoffice-dictionaries-6.3.3.2.tar.xz
@@ -180,876 +180,876 @@ Requires: libreoffice-man = %{version}-%{release}
 doc components for the libreoffice package.
 
 
-%package extras-lang_af
-Summary: extras-lang_af components for the libreoffice package.
+%package extras-lang-af
+Summary: extras-lang-af components for the libreoffice package.
 Group: Default
 
-%description extras-lang_af
-extras-lang_af components for the libreoffice package.
+%description extras-lang-af
+extras-lang-af components for the libreoffice package.
 
 
-%package extras-lang_am
-Summary: extras-lang_am components for the libreoffice package.
+%package extras-lang-am
+Summary: extras-lang-am components for the libreoffice package.
 Group: Default
 
-%description extras-lang_am
-extras-lang_am components for the libreoffice package.
+%description extras-lang-am
+extras-lang-am components for the libreoffice package.
 
 
-%package extras-lang_ar
-Summary: extras-lang_ar components for the libreoffice package.
+%package extras-lang-ar
+Summary: extras-lang-ar components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ar
-extras-lang_ar components for the libreoffice package.
+%description extras-lang-ar
+extras-lang-ar components for the libreoffice package.
 
 
-%package extras-lang_as
-Summary: extras-lang_as components for the libreoffice package.
+%package extras-lang-as
+Summary: extras-lang-as components for the libreoffice package.
 Group: Default
 
-%description extras-lang_as
-extras-lang_as components for the libreoffice package.
+%description extras-lang-as
+extras-lang-as components for the libreoffice package.
 
 
-%package extras-lang_ast
-Summary: extras-lang_ast components for the libreoffice package.
+%package extras-lang-ast
+Summary: extras-lang-ast components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ast
-extras-lang_ast components for the libreoffice package.
+%description extras-lang-ast
+extras-lang-ast components for the libreoffice package.
 
 
-%package extras-lang_be
-Summary: extras-lang_be components for the libreoffice package.
+%package extras-lang-be
+Summary: extras-lang-be components for the libreoffice package.
 Group: Default
 
-%description extras-lang_be
-extras-lang_be components for the libreoffice package.
+%description extras-lang-be
+extras-lang-be components for the libreoffice package.
 
 
-%package extras-lang_bg
-Summary: extras-lang_bg components for the libreoffice package.
+%package extras-lang-bg
+Summary: extras-lang-bg components for the libreoffice package.
 Group: Default
 
-%description extras-lang_bg
-extras-lang_bg components for the libreoffice package.
+%description extras-lang-bg
+extras-lang-bg components for the libreoffice package.
 
 
-%package extras-lang_bn
-Summary: extras-lang_bn components for the libreoffice package.
+%package extras-lang-bn
+Summary: extras-lang-bn components for the libreoffice package.
 Group: Default
 
-%description extras-lang_bn
-extras-lang_bn components for the libreoffice package.
+%description extras-lang-bn
+extras-lang-bn components for the libreoffice package.
 
 
-%package extras-lang_bo
-Summary: extras-lang_bo components for the libreoffice package.
+%package extras-lang-bo
+Summary: extras-lang-bo components for the libreoffice package.
 Group: Default
 
-%description extras-lang_bo
-extras-lang_bo components for the libreoffice package.
+%description extras-lang-bo
+extras-lang-bo components for the libreoffice package.
 
 
-%package extras-lang_br
-Summary: extras-lang_br components for the libreoffice package.
+%package extras-lang-br
+Summary: extras-lang-br components for the libreoffice package.
 Group: Default
 
-%description extras-lang_br
-extras-lang_br components for the libreoffice package.
+%description extras-lang-br
+extras-lang-br components for the libreoffice package.
 
 
-%package extras-lang_brx
-Summary: extras-lang_brx components for the libreoffice package.
+%package extras-lang-brx
+Summary: extras-lang-brx components for the libreoffice package.
 Group: Default
 
-%description extras-lang_brx
-extras-lang_brx components for the libreoffice package.
+%description extras-lang-brx
+extras-lang-brx components for the libreoffice package.
 
 
-%package extras-lang_bs
-Summary: extras-lang_bs components for the libreoffice package.
+%package extras-lang-bs
+Summary: extras-lang-bs components for the libreoffice package.
 Group: Default
 
-%description extras-lang_bs
-extras-lang_bs components for the libreoffice package.
+%description extras-lang-bs
+extras-lang-bs components for the libreoffice package.
 
 
-%package extras-lang_ca
-Summary: extras-lang_ca components for the libreoffice package.
+%package extras-lang-ca
+Summary: extras-lang-ca components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ca
-extras-lang_ca components for the libreoffice package.
+%description extras-lang-ca
+extras-lang-ca components for the libreoffice package.
 
 
-%package extras-lang_cs
-Summary: extras-lang_cs components for the libreoffice package.
+%package extras-lang-cs
+Summary: extras-lang-cs components for the libreoffice package.
 Group: Default
 
-%description extras-lang_cs
-extras-lang_cs components for the libreoffice package.
+%description extras-lang-cs
+extras-lang-cs components for the libreoffice package.
 
 
-%package extras-lang_cy
-Summary: extras-lang_cy components for the libreoffice package.
+%package extras-lang-cy
+Summary: extras-lang-cy components for the libreoffice package.
 Group: Default
 
-%description extras-lang_cy
-extras-lang_cy components for the libreoffice package.
+%description extras-lang-cy
+extras-lang-cy components for the libreoffice package.
 
 
-%package extras-lang_da
-Summary: extras-lang_da components for the libreoffice package.
+%package extras-lang-da
+Summary: extras-lang-da components for the libreoffice package.
 Group: Default
 
-%description extras-lang_da
-extras-lang_da components for the libreoffice package.
+%description extras-lang-da
+extras-lang-da components for the libreoffice package.
 
 
-%package extras-lang_de
-Summary: extras-lang_de components for the libreoffice package.
+%package extras-lang-de
+Summary: extras-lang-de components for the libreoffice package.
 Group: Default
 
-%description extras-lang_de
-extras-lang_de components for the libreoffice package.
+%description extras-lang-de
+extras-lang-de components for the libreoffice package.
 
 
-%package extras-lang_dgo
-Summary: extras-lang_dgo components for the libreoffice package.
+%package extras-lang-dgo
+Summary: extras-lang-dgo components for the libreoffice package.
 Group: Default
 
-%description extras-lang_dgo
-extras-lang_dgo components for the libreoffice package.
+%description extras-lang-dgo
+extras-lang-dgo components for the libreoffice package.
 
 
-%package extras-lang_dsb
-Summary: extras-lang_dsb components for the libreoffice package.
+%package extras-lang-dsb
+Summary: extras-lang-dsb components for the libreoffice package.
 Group: Default
 
-%description extras-lang_dsb
-extras-lang_dsb components for the libreoffice package.
+%description extras-lang-dsb
+extras-lang-dsb components for the libreoffice package.
 
 
-%package extras-lang_dz
-Summary: extras-lang_dz components for the libreoffice package.
+%package extras-lang-dz
+Summary: extras-lang-dz components for the libreoffice package.
 Group: Default
 
-%description extras-lang_dz
-extras-lang_dz components for the libreoffice package.
+%description extras-lang-dz
+extras-lang-dz components for the libreoffice package.
 
 
-%package extras-lang_el
-Summary: extras-lang_el components for the libreoffice package.
+%package extras-lang-el
+Summary: extras-lang-el components for the libreoffice package.
 Group: Default
 
-%description extras-lang_el
-extras-lang_el components for the libreoffice package.
+%description extras-lang-el
+extras-lang-el components for the libreoffice package.
 
 
-%package extras-lang_eo
-Summary: extras-lang_eo components for the libreoffice package.
+%package extras-lang-eo
+Summary: extras-lang-eo components for the libreoffice package.
 Group: Default
 
-%description extras-lang_eo
-extras-lang_eo components for the libreoffice package.
+%description extras-lang-eo
+extras-lang-eo components for the libreoffice package.
 
 
-%package extras-lang_es
-Summary: extras-lang_es components for the libreoffice package.
+%package extras-lang-es
+Summary: extras-lang-es components for the libreoffice package.
 Group: Default
 
-%description extras-lang_es
-extras-lang_es components for the libreoffice package.
+%description extras-lang-es
+extras-lang-es components for the libreoffice package.
 
 
-%package extras-lang_et
-Summary: extras-lang_et components for the libreoffice package.
+%package extras-lang-et
+Summary: extras-lang-et components for the libreoffice package.
 Group: Default
 
-%description extras-lang_et
-extras-lang_et components for the libreoffice package.
+%description extras-lang-et
+extras-lang-et components for the libreoffice package.
 
 
-%package extras-lang_eu
-Summary: extras-lang_eu components for the libreoffice package.
+%package extras-lang-eu
+Summary: extras-lang-eu components for the libreoffice package.
 Group: Default
 
-%description extras-lang_eu
-extras-lang_eu components for the libreoffice package.
+%description extras-lang-eu
+extras-lang-eu components for the libreoffice package.
 
 
-%package extras-lang_fa
-Summary: extras-lang_fa components for the libreoffice package.
+%package extras-lang-fa
+Summary: extras-lang-fa components for the libreoffice package.
 Group: Default
 
-%description extras-lang_fa
-extras-lang_fa components for the libreoffice package.
+%description extras-lang-fa
+extras-lang-fa components for the libreoffice package.
 
 
-%package extras-lang_fi
-Summary: extras-lang_fi components for the libreoffice package.
+%package extras-lang-fi
+Summary: extras-lang-fi components for the libreoffice package.
 Group: Default
 
-%description extras-lang_fi
-extras-lang_fi components for the libreoffice package.
+%description extras-lang-fi
+extras-lang-fi components for the libreoffice package.
 
 
-%package extras-lang_fr
-Summary: extras-lang_fr components for the libreoffice package.
+%package extras-lang-fr
+Summary: extras-lang-fr components for the libreoffice package.
 Group: Default
 
-%description extras-lang_fr
-extras-lang_fr components for the libreoffice package.
+%description extras-lang-fr
+extras-lang-fr components for the libreoffice package.
 
 
-%package extras-lang_fy
-Summary: extras-lang_fy components for the libreoffice package.
+%package extras-lang-fy
+Summary: extras-lang-fy components for the libreoffice package.
 Group: Default
 
-%description extras-lang_fy
-extras-lang_fy components for the libreoffice package.
+%description extras-lang-fy
+extras-lang-fy components for the libreoffice package.
 
 
-%package extras-lang_ga
-Summary: extras-lang_ga components for the libreoffice package.
+%package extras-lang-ga
+Summary: extras-lang-ga components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ga
-extras-lang_ga components for the libreoffice package.
+%description extras-lang-ga
+extras-lang-ga components for the libreoffice package.
 
 
-%package extras-lang_gd
-Summary: extras-lang_gd components for the libreoffice package.
+%package extras-lang-gd
+Summary: extras-lang-gd components for the libreoffice package.
 Group: Default
 
-%description extras-lang_gd
-extras-lang_gd components for the libreoffice package.
+%description extras-lang-gd
+extras-lang-gd components for the libreoffice package.
 
 
-%package extras-lang_gl
-Summary: extras-lang_gl components for the libreoffice package.
+%package extras-lang-gl
+Summary: extras-lang-gl components for the libreoffice package.
 Group: Default
 
-%description extras-lang_gl
-extras-lang_gl components for the libreoffice package.
+%description extras-lang-gl
+extras-lang-gl components for the libreoffice package.
 
 
-%package extras-lang_gu
-Summary: extras-lang_gu components for the libreoffice package.
+%package extras-lang-gu
+Summary: extras-lang-gu components for the libreoffice package.
 Group: Default
 
-%description extras-lang_gu
-extras-lang_gu components for the libreoffice package.
+%description extras-lang-gu
+extras-lang-gu components for the libreoffice package.
 
 
-%package extras-lang_gug
-Summary: extras-lang_gug components for the libreoffice package.
+%package extras-lang-gug
+Summary: extras-lang-gug components for the libreoffice package.
 Group: Default
 
-%description extras-lang_gug
-extras-lang_gug components for the libreoffice package.
+%description extras-lang-gug
+extras-lang-gug components for the libreoffice package.
 
 
-%package extras-lang_he
-Summary: extras-lang_he components for the libreoffice package.
+%package extras-lang-he
+Summary: extras-lang-he components for the libreoffice package.
 Group: Default
 
-%description extras-lang_he
-extras-lang_he components for the libreoffice package.
+%description extras-lang-he
+extras-lang-he components for the libreoffice package.
 
 
-%package extras-lang_hi
-Summary: extras-lang_hi components for the libreoffice package.
+%package extras-lang-hi
+Summary: extras-lang-hi components for the libreoffice package.
 Group: Default
 
-%description extras-lang_hi
-extras-lang_hi components for the libreoffice package.
+%description extras-lang-hi
+extras-lang-hi components for the libreoffice package.
 
 
-%package extras-lang_hr
-Summary: extras-lang_hr components for the libreoffice package.
+%package extras-lang-hr
+Summary: extras-lang-hr components for the libreoffice package.
 Group: Default
 
-%description extras-lang_hr
-extras-lang_hr components for the libreoffice package.
+%description extras-lang-hr
+extras-lang-hr components for the libreoffice package.
 
 
-%package extras-lang_hsb
-Summary: extras-lang_hsb components for the libreoffice package.
+%package extras-lang-hsb
+Summary: extras-lang-hsb components for the libreoffice package.
 Group: Default
 
-%description extras-lang_hsb
-extras-lang_hsb components for the libreoffice package.
+%description extras-lang-hsb
+extras-lang-hsb components for the libreoffice package.
 
 
-%package extras-lang_hu
-Summary: extras-lang_hu components for the libreoffice package.
+%package extras-lang-hu
+Summary: extras-lang-hu components for the libreoffice package.
 Group: Default
 
-%description extras-lang_hu
-extras-lang_hu components for the libreoffice package.
+%description extras-lang-hu
+extras-lang-hu components for the libreoffice package.
 
 
-%package extras-lang_id
-Summary: extras-lang_id components for the libreoffice package.
+%package extras-lang-id
+Summary: extras-lang-id components for the libreoffice package.
 Group: Default
 
-%description extras-lang_id
-extras-lang_id components for the libreoffice package.
+%description extras-lang-id
+extras-lang-id components for the libreoffice package.
 
 
-%package extras-lang_is
-Summary: extras-lang_is components for the libreoffice package.
+%package extras-lang-is
+Summary: extras-lang-is components for the libreoffice package.
 Group: Default
 
-%description extras-lang_is
-extras-lang_is components for the libreoffice package.
+%description extras-lang-is
+extras-lang-is components for the libreoffice package.
 
 
-%package extras-lang_it
-Summary: extras-lang_it components for the libreoffice package.
+%package extras-lang-it
+Summary: extras-lang-it components for the libreoffice package.
 Group: Default
 
-%description extras-lang_it
-extras-lang_it components for the libreoffice package.
+%description extras-lang-it
+extras-lang-it components for the libreoffice package.
 
 
-%package extras-lang_ja
-Summary: extras-lang_ja components for the libreoffice package.
+%package extras-lang-ja
+Summary: extras-lang-ja components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ja
-extras-lang_ja components for the libreoffice package.
+%description extras-lang-ja
+extras-lang-ja components for the libreoffice package.
 
 
-%package extras-lang_ka
-Summary: extras-lang_ka components for the libreoffice package.
+%package extras-lang-ka
+Summary: extras-lang-ka components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ka
-extras-lang_ka components for the libreoffice package.
+%description extras-lang-ka
+extras-lang-ka components for the libreoffice package.
 
 
-%package extras-lang_kab
-Summary: extras-lang_kab components for the libreoffice package.
+%package extras-lang-kab
+Summary: extras-lang-kab components for the libreoffice package.
 Group: Default
 
-%description extras-lang_kab
-extras-lang_kab components for the libreoffice package.
+%description extras-lang-kab
+extras-lang-kab components for the libreoffice package.
 
 
-%package extras-lang_kk
-Summary: extras-lang_kk components for the libreoffice package.
+%package extras-lang-kk
+Summary: extras-lang-kk components for the libreoffice package.
 Group: Default
 
-%description extras-lang_kk
-extras-lang_kk components for the libreoffice package.
+%description extras-lang-kk
+extras-lang-kk components for the libreoffice package.
 
 
-%package extras-lang_km
-Summary: extras-lang_km components for the libreoffice package.
+%package extras-lang-km
+Summary: extras-lang-km components for the libreoffice package.
 Group: Default
 
-%description extras-lang_km
-extras-lang_km components for the libreoffice package.
+%description extras-lang-km
+extras-lang-km components for the libreoffice package.
 
 
-%package extras-lang_kmr
-Summary: extras-lang_kmr components for the libreoffice package.
+%package extras-lang-kmr
+Summary: extras-lang-kmr components for the libreoffice package.
 Group: Default
 
-%description extras-lang_kmr
-extras-lang_kmr components for the libreoffice package.
+%description extras-lang-kmr
+extras-lang-kmr components for the libreoffice package.
 
 
-%package extras-lang_kn
-Summary: extras-lang_kn components for the libreoffice package.
+%package extras-lang-kn
+Summary: extras-lang-kn components for the libreoffice package.
 Group: Default
 
-%description extras-lang_kn
-extras-lang_kn components for the libreoffice package.
+%description extras-lang-kn
+extras-lang-kn components for the libreoffice package.
 
 
-%package extras-lang_ko
-Summary: extras-lang_ko components for the libreoffice package.
+%package extras-lang-ko
+Summary: extras-lang-ko components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ko
-extras-lang_ko components for the libreoffice package.
+%description extras-lang-ko
+extras-lang-ko components for the libreoffice package.
 
 
-%package extras-lang_kok
-Summary: extras-lang_kok components for the libreoffice package.
+%package extras-lang-kok
+Summary: extras-lang-kok components for the libreoffice package.
 Group: Default
 
-%description extras-lang_kok
-extras-lang_kok components for the libreoffice package.
+%description extras-lang-kok
+extras-lang-kok components for the libreoffice package.
 
 
-%package extras-lang_ks
-Summary: extras-lang_ks components for the libreoffice package.
+%package extras-lang-ks
+Summary: extras-lang-ks components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ks
-extras-lang_ks components for the libreoffice package.
+%description extras-lang-ks
+extras-lang-ks components for the libreoffice package.
 
 
-%package extras-lang_lb
-Summary: extras-lang_lb components for the libreoffice package.
+%package extras-lang-lb
+Summary: extras-lang-lb components for the libreoffice package.
 Group: Default
 
-%description extras-lang_lb
-extras-lang_lb components for the libreoffice package.
+%description extras-lang-lb
+extras-lang-lb components for the libreoffice package.
 
 
-%package extras-lang_lo
-Summary: extras-lang_lo components for the libreoffice package.
+%package extras-lang-lo
+Summary: extras-lang-lo components for the libreoffice package.
 Group: Default
 
-%description extras-lang_lo
-extras-lang_lo components for the libreoffice package.
+%description extras-lang-lo
+extras-lang-lo components for the libreoffice package.
 
 
-%package extras-lang_lt
-Summary: extras-lang_lt components for the libreoffice package.
+%package extras-lang-lt
+Summary: extras-lang-lt components for the libreoffice package.
 Group: Default
 
-%description extras-lang_lt
-extras-lang_lt components for the libreoffice package.
+%description extras-lang-lt
+extras-lang-lt components for the libreoffice package.
 
 
-%package extras-lang_lv
-Summary: extras-lang_lv components for the libreoffice package.
+%package extras-lang-lv
+Summary: extras-lang-lv components for the libreoffice package.
 Group: Default
 
-%description extras-lang_lv
-extras-lang_lv components for the libreoffice package.
+%description extras-lang-lv
+extras-lang-lv components for the libreoffice package.
 
 
-%package extras-lang_mai
-Summary: extras-lang_mai components for the libreoffice package.
+%package extras-lang-mai
+Summary: extras-lang-mai components for the libreoffice package.
 Group: Default
 
-%description extras-lang_mai
-extras-lang_mai components for the libreoffice package.
+%description extras-lang-mai
+extras-lang-mai components for the libreoffice package.
 
 
-%package extras-lang_mk
-Summary: extras-lang_mk components for the libreoffice package.
+%package extras-lang-mk
+Summary: extras-lang-mk components for the libreoffice package.
 Group: Default
 
-%description extras-lang_mk
-extras-lang_mk components for the libreoffice package.
+%description extras-lang-mk
+extras-lang-mk components for the libreoffice package.
 
 
-%package extras-lang_ml
-Summary: extras-lang_ml components for the libreoffice package.
+%package extras-lang-ml
+Summary: extras-lang-ml components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ml
-extras-lang_ml components for the libreoffice package.
+%description extras-lang-ml
+extras-lang-ml components for the libreoffice package.
 
 
-%package extras-lang_mn
-Summary: extras-lang_mn components for the libreoffice package.
+%package extras-lang-mn
+Summary: extras-lang-mn components for the libreoffice package.
 Group: Default
 
-%description extras-lang_mn
-extras-lang_mn components for the libreoffice package.
+%description extras-lang-mn
+extras-lang-mn components for the libreoffice package.
 
 
-%package extras-lang_mni
-Summary: extras-lang_mni components for the libreoffice package.
+%package extras-lang-mni
+Summary: extras-lang-mni components for the libreoffice package.
 Group: Default
 
-%description extras-lang_mni
-extras-lang_mni components for the libreoffice package.
+%description extras-lang-mni
+extras-lang-mni components for the libreoffice package.
 
 
-%package extras-lang_mr
-Summary: extras-lang_mr components for the libreoffice package.
+%package extras-lang-mr
+Summary: extras-lang-mr components for the libreoffice package.
 Group: Default
 
-%description extras-lang_mr
-extras-lang_mr components for the libreoffice package.
+%description extras-lang-mr
+extras-lang-mr components for the libreoffice package.
 
 
-%package extras-lang_my
-Summary: extras-lang_my components for the libreoffice package.
+%package extras-lang-my
+Summary: extras-lang-my components for the libreoffice package.
 Group: Default
 
-%description extras-lang_my
-extras-lang_my components for the libreoffice package.
+%description extras-lang-my
+extras-lang-my components for the libreoffice package.
 
 
-%package extras-lang_nb
-Summary: extras-lang_nb components for the libreoffice package.
+%package extras-lang-nb
+Summary: extras-lang-nb components for the libreoffice package.
 Group: Default
 
-%description extras-lang_nb
-extras-lang_nb components for the libreoffice package.
+%description extras-lang-nb
+extras-lang-nb components for the libreoffice package.
 
 
-%package extras-lang_ne
-Summary: extras-lang_ne components for the libreoffice package.
+%package extras-lang-ne
+Summary: extras-lang-ne components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ne
-extras-lang_ne components for the libreoffice package.
+%description extras-lang-ne
+extras-lang-ne components for the libreoffice package.
 
 
-%package extras-lang_nl
-Summary: extras-lang_nl components for the libreoffice package.
+%package extras-lang-nl
+Summary: extras-lang-nl components for the libreoffice package.
 Group: Default
 
-%description extras-lang_nl
-extras-lang_nl components for the libreoffice package.
+%description extras-lang-nl
+extras-lang-nl components for the libreoffice package.
 
 
-%package extras-lang_nn
-Summary: extras-lang_nn components for the libreoffice package.
+%package extras-lang-nn
+Summary: extras-lang-nn components for the libreoffice package.
 Group: Default
 
-%description extras-lang_nn
-extras-lang_nn components for the libreoffice package.
+%description extras-lang-nn
+extras-lang-nn components for the libreoffice package.
 
 
-%package extras-lang_nr
-Summary: extras-lang_nr components for the libreoffice package.
+%package extras-lang-nr
+Summary: extras-lang-nr components for the libreoffice package.
 Group: Default
 
-%description extras-lang_nr
-extras-lang_nr components for the libreoffice package.
+%description extras-lang-nr
+extras-lang-nr components for the libreoffice package.
 
 
-%package extras-lang_nso
-Summary: extras-lang_nso components for the libreoffice package.
+%package extras-lang-nso
+Summary: extras-lang-nso components for the libreoffice package.
 Group: Default
 
-%description extras-lang_nso
-extras-lang_nso components for the libreoffice package.
+%description extras-lang-nso
+extras-lang-nso components for the libreoffice package.
 
 
-%package extras-lang_oc
-Summary: extras-lang_oc components for the libreoffice package.
+%package extras-lang-oc
+Summary: extras-lang-oc components for the libreoffice package.
 Group: Default
 
-%description extras-lang_oc
-extras-lang_oc components for the libreoffice package.
+%description extras-lang-oc
+extras-lang-oc components for the libreoffice package.
 
 
-%package extras-lang_om
-Summary: extras-lang_om components for the libreoffice package.
+%package extras-lang-om
+Summary: extras-lang-om components for the libreoffice package.
 Group: Default
 
-%description extras-lang_om
-extras-lang_om components for the libreoffice package.
+%description extras-lang-om
+extras-lang-om components for the libreoffice package.
 
 
-%package extras-lang_or
-Summary: extras-lang_or components for the libreoffice package.
+%package extras-lang-or
+Summary: extras-lang-or components for the libreoffice package.
 Group: Default
 
-%description extras-lang_or
-extras-lang_or components for the libreoffice package.
+%description extras-lang-or
+extras-lang-or components for the libreoffice package.
 
 
-%package extras-lang_pa
-Summary: extras-lang_pa components for the libreoffice package.
+%package extras-lang-pa
+Summary: extras-lang-pa components for the libreoffice package.
 Group: Default
 
-%description extras-lang_pa
-extras-lang_pa components for the libreoffice package.
+%description extras-lang-pa
+extras-lang-pa components for the libreoffice package.
 
 
-%package extras-lang_pl
-Summary: extras-lang_pl components for the libreoffice package.
+%package extras-lang-pl
+Summary: extras-lang-pl components for the libreoffice package.
 Group: Default
 
-%description extras-lang_pl
-extras-lang_pl components for the libreoffice package.
+%description extras-lang-pl
+extras-lang-pl components for the libreoffice package.
 
 
-%package extras-lang_pt
-Summary: extras-lang_pt components for the libreoffice package.
+%package extras-lang-pt
+Summary: extras-lang-pt components for the libreoffice package.
 Group: Default
 
-%description extras-lang_pt
-extras-lang_pt components for the libreoffice package.
+%description extras-lang-pt
+extras-lang-pt components for the libreoffice package.
 
 
-%package extras-lang_ro
-Summary: extras-lang_ro components for the libreoffice package.
+%package extras-lang-ro
+Summary: extras-lang-ro components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ro
-extras-lang_ro components for the libreoffice package.
+%description extras-lang-ro
+extras-lang-ro components for the libreoffice package.
 
 
-%package extras-lang_ru
-Summary: extras-lang_ru components for the libreoffice package.
+%package extras-lang-ru
+Summary: extras-lang-ru components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ru
-extras-lang_ru components for the libreoffice package.
+%description extras-lang-ru
+extras-lang-ru components for the libreoffice package.
 
 
-%package extras-lang_rw
-Summary: extras-lang_rw components for the libreoffice package.
+%package extras-lang-rw
+Summary: extras-lang-rw components for the libreoffice package.
 Group: Default
 
-%description extras-lang_rw
-extras-lang_rw components for the libreoffice package.
+%description extras-lang-rw
+extras-lang-rw components for the libreoffice package.
 
 
-%package extras-lang_sa
-Summary: extras-lang_sa components for the libreoffice package.
+%package extras-lang-sa
+Summary: extras-lang-sa components for the libreoffice package.
 Group: Default
 
-%description extras-lang_sa
-extras-lang_sa components for the libreoffice package.
+%description extras-lang-sa
+extras-lang-sa components for the libreoffice package.
 
 
-%package extras-lang_sat
-Summary: extras-lang_sat components for the libreoffice package.
+%package extras-lang-sat
+Summary: extras-lang-sat components for the libreoffice package.
 Group: Default
 
-%description extras-lang_sat
-extras-lang_sat components for the libreoffice package.
+%description extras-lang-sat
+extras-lang-sat components for the libreoffice package.
 
 
-%package extras-lang_sd
-Summary: extras-lang_sd components for the libreoffice package.
+%package extras-lang-sd
+Summary: extras-lang-sd components for the libreoffice package.
 Group: Default
 
-%description extras-lang_sd
-extras-lang_sd components for the libreoffice package.
+%description extras-lang-sd
+extras-lang-sd components for the libreoffice package.
 
 
-%package extras-lang_si
-Summary: extras-lang_si components for the libreoffice package.
+%package extras-lang-si
+Summary: extras-lang-si components for the libreoffice package.
 Group: Default
 
-%description extras-lang_si
-extras-lang_si components for the libreoffice package.
+%description extras-lang-si
+extras-lang-si components for the libreoffice package.
 
 
-%package extras-lang_sid
-Summary: extras-lang_sid components for the libreoffice package.
+%package extras-lang-sid
+Summary: extras-lang-sid components for the libreoffice package.
 Group: Default
 
-%description extras-lang_sid
-extras-lang_sid components for the libreoffice package.
+%description extras-lang-sid
+extras-lang-sid components for the libreoffice package.
 
 
-%package extras-lang_sk
-Summary: extras-lang_sk components for the libreoffice package.
+%package extras-lang-sk
+Summary: extras-lang-sk components for the libreoffice package.
 Group: Default
 
-%description extras-lang_sk
-extras-lang_sk components for the libreoffice package.
+%description extras-lang-sk
+extras-lang-sk components for the libreoffice package.
 
 
-%package extras-lang_sl
-Summary: extras-lang_sl components for the libreoffice package.
+%package extras-lang-sl
+Summary: extras-lang-sl components for the libreoffice package.
 Group: Default
 
-%description extras-lang_sl
-extras-lang_sl components for the libreoffice package.
+%description extras-lang-sl
+extras-lang-sl components for the libreoffice package.
 
 
-%package extras-lang_sq
-Summary: extras-lang_sq components for the libreoffice package.
+%package extras-lang-sq
+Summary: extras-lang-sq components for the libreoffice package.
 Group: Default
 
-%description extras-lang_sq
-extras-lang_sq components for the libreoffice package.
+%description extras-lang-sq
+extras-lang-sq components for the libreoffice package.
 
 
-%package extras-lang_sr
-Summary: extras-lang_sr components for the libreoffice package.
+%package extras-lang-sr
+Summary: extras-lang-sr components for the libreoffice package.
 Group: Default
 
-%description extras-lang_sr
-extras-lang_sr components for the libreoffice package.
+%description extras-lang-sr
+extras-lang-sr components for the libreoffice package.
 
 
-%package extras-lang_ss
-Summary: extras-lang_ss components for the libreoffice package.
+%package extras-lang-ss
+Summary: extras-lang-ss components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ss
-extras-lang_ss components for the libreoffice package.
+%description extras-lang-ss
+extras-lang-ss components for the libreoffice package.
 
 
-%package extras-lang_st
-Summary: extras-lang_st components for the libreoffice package.
+%package extras-lang-st
+Summary: extras-lang-st components for the libreoffice package.
 Group: Default
 
-%description extras-lang_st
-extras-lang_st components for the libreoffice package.
+%description extras-lang-st
+extras-lang-st components for the libreoffice package.
 
 
-%package extras-lang_sv
-Summary: extras-lang_sv components for the libreoffice package.
+%package extras-lang-sv
+Summary: extras-lang-sv components for the libreoffice package.
 Group: Default
 
-%description extras-lang_sv
-extras-lang_sv components for the libreoffice package.
+%description extras-lang-sv
+extras-lang-sv components for the libreoffice package.
 
 
-%package extras-lang_sw
-Summary: extras-lang_sw components for the libreoffice package.
+%package extras-lang-sw
+Summary: extras-lang-sw components for the libreoffice package.
 Group: Default
 
-%description extras-lang_sw
-extras-lang_sw components for the libreoffice package.
+%description extras-lang-sw
+extras-lang-sw components for the libreoffice package.
 
 
-%package extras-lang_szl
-Summary: extras-lang_szl components for the libreoffice package.
+%package extras-lang-szl
+Summary: extras-lang-szl components for the libreoffice package.
 Group: Default
 
-%description extras-lang_szl
-extras-lang_szl components for the libreoffice package.
+%description extras-lang-szl
+extras-lang-szl components for the libreoffice package.
 
 
-%package extras-lang_ta
-Summary: extras-lang_ta components for the libreoffice package.
+%package extras-lang-ta
+Summary: extras-lang-ta components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ta
-extras-lang_ta components for the libreoffice package.
+%description extras-lang-ta
+extras-lang-ta components for the libreoffice package.
 
 
-%package extras-lang_te
-Summary: extras-lang_te components for the libreoffice package.
+%package extras-lang-te
+Summary: extras-lang-te components for the libreoffice package.
 Group: Default
 
-%description extras-lang_te
-extras-lang_te components for the libreoffice package.
+%description extras-lang-te
+extras-lang-te components for the libreoffice package.
 
 
-%package extras-lang_tg
-Summary: extras-lang_tg components for the libreoffice package.
+%package extras-lang-tg
+Summary: extras-lang-tg components for the libreoffice package.
 Group: Default
 
-%description extras-lang_tg
-extras-lang_tg components for the libreoffice package.
+%description extras-lang-tg
+extras-lang-tg components for the libreoffice package.
 
 
-%package extras-lang_th
-Summary: extras-lang_th components for the libreoffice package.
+%package extras-lang-th
+Summary: extras-lang-th components for the libreoffice package.
 Group: Default
 
-%description extras-lang_th
-extras-lang_th components for the libreoffice package.
+%description extras-lang-th
+extras-lang-th components for the libreoffice package.
 
 
-%package extras-lang_tn
-Summary: extras-lang_tn components for the libreoffice package.
+%package extras-lang-tn
+Summary: extras-lang-tn components for the libreoffice package.
 Group: Default
 
-%description extras-lang_tn
-extras-lang_tn components for the libreoffice package.
+%description extras-lang-tn
+extras-lang-tn components for the libreoffice package.
 
 
-%package extras-lang_tr
-Summary: extras-lang_tr components for the libreoffice package.
+%package extras-lang-tr
+Summary: extras-lang-tr components for the libreoffice package.
 Group: Default
 
-%description extras-lang_tr
-extras-lang_tr components for the libreoffice package.
+%description extras-lang-tr
+extras-lang-tr components for the libreoffice package.
 
 
-%package extras-lang_ts
-Summary: extras-lang_ts components for the libreoffice package.
+%package extras-lang-ts
+Summary: extras-lang-ts components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ts
-extras-lang_ts components for the libreoffice package.
+%description extras-lang-ts
+extras-lang-ts components for the libreoffice package.
 
 
-%package extras-lang_tt
-Summary: extras-lang_tt components for the libreoffice package.
+%package extras-lang-tt
+Summary: extras-lang-tt components for the libreoffice package.
 Group: Default
 
-%description extras-lang_tt
-extras-lang_tt components for the libreoffice package.
+%description extras-lang-tt
+extras-lang-tt components for the libreoffice package.
 
 
-%package extras-lang_ug
-Summary: extras-lang_ug components for the libreoffice package.
+%package extras-lang-ug
+Summary: extras-lang-ug components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ug
-extras-lang_ug components for the libreoffice package.
+%description extras-lang-ug
+extras-lang-ug components for the libreoffice package.
 
 
-%package extras-lang_uk
-Summary: extras-lang_uk components for the libreoffice package.
+%package extras-lang-uk
+Summary: extras-lang-uk components for the libreoffice package.
 Group: Default
 
-%description extras-lang_uk
-extras-lang_uk components for the libreoffice package.
+%description extras-lang-uk
+extras-lang-uk components for the libreoffice package.
 
 
-%package extras-lang_uz
-Summary: extras-lang_uz components for the libreoffice package.
+%package extras-lang-uz
+Summary: extras-lang-uz components for the libreoffice package.
 Group: Default
 
-%description extras-lang_uz
-extras-lang_uz components for the libreoffice package.
+%description extras-lang-uz
+extras-lang-uz components for the libreoffice package.
 
 
-%package extras-lang_ve
-Summary: extras-lang_ve components for the libreoffice package.
+%package extras-lang-ve
+Summary: extras-lang-ve components for the libreoffice package.
 Group: Default
 
-%description extras-lang_ve
-extras-lang_ve components for the libreoffice package.
+%description extras-lang-ve
+extras-lang-ve components for the libreoffice package.
 
 
-%package extras-lang_vec
-Summary: extras-lang_vec components for the libreoffice package.
+%package extras-lang-vec
+Summary: extras-lang-vec components for the libreoffice package.
 Group: Default
 
-%description extras-lang_vec
-extras-lang_vec components for the libreoffice package.
+%description extras-lang-vec
+extras-lang-vec components for the libreoffice package.
 
 
-%package extras-lang_vi
-Summary: extras-lang_vi components for the libreoffice package.
+%package extras-lang-vi
+Summary: extras-lang-vi components for the libreoffice package.
 Group: Default
 
-%description extras-lang_vi
-extras-lang_vi components for the libreoffice package.
+%description extras-lang-vi
+extras-lang-vi components for the libreoffice package.
 
 
-%package extras-lang_xh
-Summary: extras-lang_xh components for the libreoffice package.
+%package extras-lang-xh
+Summary: extras-lang-xh components for the libreoffice package.
 Group: Default
 
-%description extras-lang_xh
-extras-lang_xh components for the libreoffice package.
+%description extras-lang-xh
+extras-lang-xh components for the libreoffice package.
 
 
-%package extras-lang_zh
-Summary: extras-lang_zh components for the libreoffice package.
+%package extras-lang-zh
+Summary: extras-lang-zh components for the libreoffice package.
 Group: Default
 
-%description extras-lang_zh
-extras-lang_zh components for the libreoffice package.
+%description extras-lang-zh
+extras-lang-zh components for the libreoffice package.
 
 
-%package extras-lang_zu
-Summary: extras-lang_zu components for the libreoffice package.
+%package extras-lang-zu
+Summary: extras-lang-zu components for the libreoffice package.
 Group: Default
 
-%description extras-lang_zu
-extras-lang_zu components for the libreoffice package.
+%description extras-lang-zu
+extras-lang-zu components for the libreoffice package.
 
 
 %package lib
@@ -1095,7 +1095,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1573503764
+export SOURCE_DATE_EPOCH=1573603861
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -1151,7 +1151,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1573503764
+export SOURCE_DATE_EPOCH=1573603861
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-6.3.3.2/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
@@ -11031,7 +11031,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 %defattr(0644,root,root,0755)
 %doc /usr/share/doc/libreoffice/*
 
-%files extras-lang_af
+%files extras-lang-af
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/avmedia.mo
@@ -11080,7 +11080,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_af.xcd
 /usr/lib64/libreoffice/share/wizards/resources_af.properties
 
-%files extras-lang_am
+%files extras-lang-am
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/am/default.css
 /usr/lib64/libreoffice/help/am/err.html
@@ -11199,7 +11199,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_am.xcd
 /usr/lib64/libreoffice/share/wizards/resources_am.properties
 
-%files extras-lang_ar
+%files extras-lang-ar
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/ar/default.css
 /usr/lib64/libreoffice/help/ar/err.html
@@ -11329,7 +11329,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ar.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ar.properties
 
-%files extras-lang_as
+%files extras-lang-as
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/as/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/as/LC_MESSAGES/avmedia.mo
@@ -11370,7 +11370,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_as.xcd
 /usr/lib64/libreoffice/share/wizards/resources_as.properties
 
-%files extras-lang_ast
+%files extras-lang-ast
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/ast/default.css
 /usr/lib64/libreoffice/help/ast/err.html
@@ -11489,7 +11489,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ast.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ast.properties
 
-%files extras-lang_be
+%files extras-lang-be
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/be/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/be/LC_MESSAGES/avmedia.mo
@@ -11536,7 +11536,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_be.xcd
 /usr/lib64/libreoffice/share/wizards/resources_be.properties
 
-%files extras-lang_bg
+%files extras-lang-bg
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/bg/default.css
 /usr/lib64/libreoffice/help/bg/err.html
@@ -11670,7 +11670,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_bg.xcd
 /usr/lib64/libreoffice/share/wizards/resources_bg.properties
 
-%files extras-lang_bn
+%files extras-lang-bn
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/bn-IN/default.css
 /usr/lib64/libreoffice/help/bn-IN/err.html
@@ -11911,7 +11911,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/wizards/resources_bn.properties
 /usr/lib64/libreoffice/share/wizards/resources_bn_IN.properties
 
-%files extras-lang_bo
+%files extras-lang-bo
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/bo/default.css
 /usr/lib64/libreoffice/help/bo/err.html
@@ -12038,7 +12038,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_bo.xcd
 /usr/lib64/libreoffice/share/wizards/resources_bo.properties
 
-%files extras-lang_br
+%files extras-lang-br
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/br/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/br/LC_MESSAGES/avmedia.mo
@@ -12085,7 +12085,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_br.xcd
 /usr/lib64/libreoffice/share/wizards/resources_br.properties
 
-%files extras-lang_brx
+%files extras-lang-brx
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/brx/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/brx/LC_MESSAGES/avmedia.mo
@@ -12126,7 +12126,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_brx.xcd
 /usr/lib64/libreoffice/share/wizards/resources_brx.properties
 
-%files extras-lang_bs
+%files extras-lang-bs
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/bs/default.css
 /usr/lib64/libreoffice/help/bs/err.html
@@ -12251,7 +12251,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_bs.xcd
 /usr/lib64/libreoffice/share/wizards/resources_bs.properties
 
-%files extras-lang_ca
+%files extras-lang-ca
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/ca-valencia/default.css
 /usr/lib64/libreoffice/help/ca-valencia/err.html
@@ -12502,7 +12502,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/wizards/resources_ca.properties
 /usr/lib64/libreoffice/share/wizards/resources_ca_valencia.properties
 
-%files extras-lang_cs
+%files extras-lang-cs
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/cs/default.css
 /usr/lib64/libreoffice/help/cs/err.html
@@ -12636,7 +12636,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_cs.xcd
 /usr/lib64/libreoffice/share/wizards/resources_cs.properties
 
-%files extras-lang_cy
+%files extras-lang-cy
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/cy/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/cy/LC_MESSAGES/avmedia.mo
@@ -12677,7 +12677,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_cy.xcd
 /usr/lib64/libreoffice/share/wizards/resources_cy.properties
 
-%files extras-lang_da
+%files extras-lang-da
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/da/default.css
 /usr/lib64/libreoffice/help/da/err.html
@@ -12819,7 +12819,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_da.xcd
 /usr/lib64/libreoffice/share/wizards/resources_da.properties
 
-%files extras-lang_de
+%files extras-lang-de
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/de/default.css
 /usr/lib64/libreoffice/help/de/err.html
@@ -12970,7 +12970,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_de.xcd
 /usr/lib64/libreoffice/share/wizards/resources_de.properties
 
-%files extras-lang_dgo
+%files extras-lang-dgo
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/dgo/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/dgo/LC_MESSAGES/avmedia.mo
@@ -13011,7 +13011,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_dgo.xcd
 /usr/lib64/libreoffice/share/wizards/resources_dgo.properties
 
-%files extras-lang_dsb
+%files extras-lang-dsb
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/avmedia.mo
@@ -13053,7 +13053,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_dsb.xcd
 /usr/lib64/libreoffice/share/wizards/resources_dsb.properties
 
-%files extras-lang_dz
+%files extras-lang-dz
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/dz/default.css
 /usr/lib64/libreoffice/help/dz/err.html
@@ -13173,7 +13173,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_dz.xcd
 /usr/lib64/libreoffice/share/wizards/resources_dz.properties
 
-%files extras-lang_el
+%files extras-lang-el
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/el/default.css
 /usr/lib64/libreoffice/help/el/err.html
@@ -13301,7 +13301,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_el.xcd
 /usr/lib64/libreoffice/share/wizards/resources_el.properties
 
-%files extras-lang_eo
+%files extras-lang-eo
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/eo/default.css
 /usr/lib64/libreoffice/help/eo/err.html
@@ -13420,7 +13420,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_eo.xcd
 /usr/lib64/libreoffice/share/wizards/resources_eo.properties
 
-%files extras-lang_es
+%files extras-lang-es
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/es/default.css
 /usr/lib64/libreoffice/help/es/err.html
@@ -13557,7 +13557,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_es.xcd
 /usr/lib64/libreoffice/share/wizards/resources_es.properties
 
-%files extras-lang_et
+%files extras-lang-et
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/et/default.css
 /usr/lib64/libreoffice/help/et/err.html
@@ -13685,7 +13685,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_et.xcd
 /usr/lib64/libreoffice/share/wizards/resources_et.properties
 
-%files extras-lang_eu
+%files extras-lang-eu
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/eu/default.css
 /usr/lib64/libreoffice/help/eu/err.html
@@ -13804,7 +13804,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_eu.xcd
 /usr/lib64/libreoffice/share/wizards/resources_eu.properties
 
-%files extras-lang_fa
+%files extras-lang-fa
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/fa/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/fa/LC_MESSAGES/avmedia.mo
@@ -13848,7 +13848,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_fa.xcd
 /usr/lib64/libreoffice/share/wizards/resources_fa.properties
 
-%files extras-lang_fi
+%files extras-lang-fi
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/fi/default.css
 /usr/lib64/libreoffice/help/fi/err.html
@@ -13969,7 +13969,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_fi.xcd
 /usr/lib64/libreoffice/share/wizards/resources_fi.properties
 
-%files extras-lang_fr
+%files extras-lang-fr
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/fr/default.css
 /usr/lib64/libreoffice/help/fr/err.html
@@ -14108,7 +14108,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_fr.xcd
 /usr/lib64/libreoffice/share/wizards/resources_fr.properties
 
-%files extras-lang_fy
+%files extras-lang-fy
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/fy/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/fy/LC_MESSAGES/avmedia.mo
@@ -14149,7 +14149,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_fy.xcd
 /usr/lib64/libreoffice/share/wizards/resources_fy.properties
 
-%files extras-lang_ga
+%files extras-lang-ga
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/avmedia.mo
@@ -14191,7 +14191,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ga.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ga.properties
 
-%files extras-lang_gd
+%files extras-lang-gd
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/gd/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/gd/LC_MESSAGES/avmedia.mo
@@ -14239,7 +14239,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_gd.xcd
 /usr/lib64/libreoffice/share/wizards/resources_gd.properties
 
-%files extras-lang_gl
+%files extras-lang-gl
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/gl/default.css
 /usr/lib64/libreoffice/help/gl/err.html
@@ -14374,7 +14374,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_gl.xcd
 /usr/lib64/libreoffice/share/wizards/resources_gl.properties
 
-%files extras-lang_gu
+%files extras-lang-gu
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/gu/default.css
 /usr/lib64/libreoffice/help/gu/err.html
@@ -14500,7 +14500,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_gu.xcd
 /usr/lib64/libreoffice/share/wizards/resources_gu.properties
 
-%files extras-lang_gug
+%files extras-lang-gug
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/gug/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/gug/LC_MESSAGES/avmedia.mo
@@ -14541,7 +14541,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_gug.xcd
 /usr/lib64/libreoffice/share/wizards/resources_gug.properties
 
-%files extras-lang_he
+%files extras-lang-he
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/he/default.css
 /usr/lib64/libreoffice/help/he/err.html
@@ -14668,7 +14668,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_he.xcd
 /usr/lib64/libreoffice/share/wizards/resources_he.properties
 
-%files extras-lang_hi
+%files extras-lang-hi
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/hi/default.css
 /usr/lib64/libreoffice/help/hi/err.html
@@ -14796,7 +14796,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_hi.xcd
 /usr/lib64/libreoffice/share/wizards/resources_hi.properties
 
-%files extras-lang_hr
+%files extras-lang-hr
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/hr/default.css
 /usr/lib64/libreoffice/help/hr/err.html
@@ -14925,7 +14925,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_hr.xcd
 /usr/lib64/libreoffice/share/wizards/resources_hr.properties
 
-%files extras-lang_hsb
+%files extras-lang-hsb
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/hsb/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/hsb/LC_MESSAGES/avmedia.mo
@@ -14967,7 +14967,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_hsb.xcd
 /usr/lib64/libreoffice/share/wizards/resources_hsb.properties
 
-%files extras-lang_hu
+%files extras-lang-hu
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/hu/default.css
 /usr/lib64/libreoffice/help/hu/err.html
@@ -15238,7 +15238,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_hu.xcd
 /usr/lib64/libreoffice/share/wizards/resources_hu.properties
 
-%files extras-lang_id
+%files extras-lang-id
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/id/default.css
 /usr/lib64/libreoffice/help/id/err.html
@@ -15368,7 +15368,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_id.xcd
 /usr/lib64/libreoffice/share/wizards/resources_id.properties
 
-%files extras-lang_is
+%files extras-lang-is
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/is/default.css
 /usr/lib64/libreoffice/help/is/err.html
@@ -15498,7 +15498,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_is.xcd
 /usr/lib64/libreoffice/share/wizards/resources_is.properties
 
-%files extras-lang_it
+%files extras-lang-it
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/it/default.css
 /usr/lib64/libreoffice/help/it/err.html
@@ -15634,7 +15634,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_it.xcd
 /usr/lib64/libreoffice/share/wizards/resources_it.properties
 
-%files extras-lang_ja
+%files extras-lang-ja
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/ja/default.css
 /usr/lib64/libreoffice/help/ja/err.html
@@ -15760,7 +15760,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ja.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ja.properties
 
-%files extras-lang_ka
+%files extras-lang-ka
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/ka/default.css
 /usr/lib64/libreoffice/help/ka/err.html
@@ -15879,7 +15879,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ka.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ka.properties
 
-%files extras-lang_kab
+%files extras-lang-kab
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/kab/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/kab/LC_MESSAGES/avmedia.mo
@@ -15920,7 +15920,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_kab.xcd
 /usr/lib64/libreoffice/share/wizards/resources_kab.properties
 
-%files extras-lang_kk
+%files extras-lang-kk
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/kk/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/kk/LC_MESSAGES/avmedia.mo
@@ -15961,7 +15961,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_kk.xcd
 /usr/lib64/libreoffice/share/wizards/resources_kk.properties
 
-%files extras-lang_km
+%files extras-lang-km
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/km/default.css
 /usr/lib64/libreoffice/help/km/err.html
@@ -16085,7 +16085,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_km.xcd
 /usr/lib64/libreoffice/share/wizards/resources_km.properties
 
-%files extras-lang_kmr
+%files extras-lang-kmr
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/kmr@latin/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/kmr@latin/LC_MESSAGES/avmedia.mo
@@ -16126,7 +16126,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_kmr-Latn.xcd
 /usr/lib64/libreoffice/share/wizards/resources_kmr_Latn.properties
 
-%files extras-lang_kn
+%files extras-lang-kn
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/kn/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/kn/LC_MESSAGES/avmedia.mo
@@ -16167,7 +16167,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_kn.xcd
 /usr/lib64/libreoffice/share/wizards/resources_kn.properties
 
-%files extras-lang_ko
+%files extras-lang-ko
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/ko/default.css
 /usr/lib64/libreoffice/help/ko/err.html
@@ -16292,7 +16292,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ko.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ko.properties
 
-%files extras-lang_kok
+%files extras-lang-kok
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/kok/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/kok/LC_MESSAGES/avmedia.mo
@@ -16333,7 +16333,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_kok.xcd
 /usr/lib64/libreoffice/share/wizards/resources_kok.properties
 
-%files extras-lang_ks
+%files extras-lang-ks
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/ks/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/ks/LC_MESSAGES/avmedia.mo
@@ -16374,7 +16374,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ks.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ks.properties
 
-%files extras-lang_lb
+%files extras-lang-lb
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/lb/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/lb/LC_MESSAGES/avmedia.mo
@@ -16416,7 +16416,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_lb.xcd
 /usr/lib64/libreoffice/share/wizards/resources_lb.properties
 
-%files extras-lang_lo
+%files extras-lang-lo
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/lo/default.css
 /usr/lib64/libreoffice/help/lo/err.html
@@ -16543,7 +16543,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_lo.xcd
 /usr/lib64/libreoffice/share/wizards/resources_lo.properties
 
-%files extras-lang_lt
+%files extras-lang-lt
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/lt/default.css
 /usr/lib64/libreoffice/help/lt/err.html
@@ -16674,7 +16674,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_lt.xcd
 /usr/lib64/libreoffice/share/wizards/resources_lt.properties
 
-%files extras-lang_lv
+%files extras-lang-lv
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/lv/default.css
 /usr/lib64/libreoffice/help/lv/err.html
@@ -16805,7 +16805,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_lv.xcd
 /usr/lib64/libreoffice/share/wizards/resources_lv.properties
 
-%files extras-lang_mai
+%files extras-lang-mai
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/mai/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/mai/LC_MESSAGES/avmedia.mo
@@ -16846,7 +16846,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_mai.xcd
 /usr/lib64/libreoffice/share/wizards/resources_mai.properties
 
-%files extras-lang_mk
+%files extras-lang-mk
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/mk/default.css
 /usr/lib64/libreoffice/help/mk/err.html
@@ -16965,7 +16965,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_mk.xcd
 /usr/lib64/libreoffice/share/wizards/resources_mk.properties
 
-%files extras-lang_ml
+%files extras-lang-ml
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/ml/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/ml/LC_MESSAGES/avmedia.mo
@@ -17006,7 +17006,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ml.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ml.properties
 
-%files extras-lang_mn
+%files extras-lang-mn
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/mn/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/mn/LC_MESSAGES/avmedia.mo
@@ -17051,7 +17051,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_mn.xcd
 /usr/lib64/libreoffice/share/wizards/resources_mn.properties
 
-%files extras-lang_mni
+%files extras-lang-mni
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/avmedia.mo
@@ -17092,7 +17092,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_mni.xcd
 /usr/lib64/libreoffice/share/wizards/resources_mni.properties
 
-%files extras-lang_mr
+%files extras-lang-mr
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/mr/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/mr/LC_MESSAGES/avmedia.mo
@@ -17133,7 +17133,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_mr.xcd
 /usr/lib64/libreoffice/share/wizards/resources_mr.properties
 
-%files extras-lang_my
+%files extras-lang-my
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/my/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/my/LC_MESSAGES/avmedia.mo
@@ -17175,7 +17175,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_my.xcd
 /usr/lib64/libreoffice/share/wizards/resources_my.properties
 
-%files extras-lang_nb
+%files extras-lang-nb
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/nb/default.css
 /usr/lib64/libreoffice/help/nb/err.html
@@ -17297,7 +17297,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_nb.xcd
 /usr/lib64/libreoffice/share/wizards/resources_nb.properties
 
-%files extras-lang_ne
+%files extras-lang-ne
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/ne/default.css
 /usr/lib64/libreoffice/help/ne/err.html
@@ -17426,7 +17426,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ne.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ne.properties
 
-%files extras-lang_nl
+%files extras-lang-nl
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/nl/default.css
 /usr/lib64/libreoffice/help/nl/err.html
@@ -17561,7 +17561,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_nl.xcd
 /usr/lib64/libreoffice/share/wizards/resources_nl.properties
 
-%files extras-lang_nn
+%files extras-lang-nn
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/nn/default.css
 /usr/lib64/libreoffice/help/nn/err.html
@@ -17683,7 +17683,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_nn.xcd
 /usr/lib64/libreoffice/share/wizards/resources_nn.properties
 
-%files extras-lang_nr
+%files extras-lang-nr
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/nr/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/nr/LC_MESSAGES/avmedia.mo
@@ -17724,7 +17724,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_nr.xcd
 /usr/lib64/libreoffice/share/wizards/resources_nr.properties
 
-%files extras-lang_nso
+%files extras-lang-nso
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/nso/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/nso/LC_MESSAGES/avmedia.mo
@@ -17765,7 +17765,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_nso.xcd
 /usr/lib64/libreoffice/share/wizards/resources_nso.properties
 
-%files extras-lang_oc
+%files extras-lang-oc
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/avmedia.mo
@@ -17814,7 +17814,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_oc.xcd
 /usr/lib64/libreoffice/share/wizards/resources_oc.properties
 
-%files extras-lang_om
+%files extras-lang-om
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/om/default.css
 /usr/lib64/libreoffice/help/om/err.html
@@ -17933,7 +17933,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_om.xcd
 /usr/lib64/libreoffice/share/wizards/resources_om.properties
 
-%files extras-lang_or
+%files extras-lang-or
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/or/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/or/LC_MESSAGES/avmedia.mo
@@ -17975,7 +17975,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_or.xcd
 /usr/lib64/libreoffice/share/wizards/resources_or.properties
 
-%files extras-lang_pa
+%files extras-lang-pa
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/pa_IN/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/pa_IN/LC_MESSAGES/avmedia.mo
@@ -18017,7 +18017,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_pa-IN.xcd
 /usr/lib64/libreoffice/share/wizards/resources_pa_IN.properties
 
-%files extras-lang_pl
+%files extras-lang-pl
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/pl/default.css
 /usr/lib64/libreoffice/help/pl/err.html
@@ -18151,7 +18151,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_pl.xcd
 /usr/lib64/libreoffice/share/wizards/resources_pl.properties
 
-%files extras-lang_pt
+%files extras-lang-pt
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/pt-BR/default.css
 /usr/lib64/libreoffice/help/pt-BR/err.html
@@ -18432,7 +18432,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/wizards/resources_pt.properties
 /usr/lib64/libreoffice/share/wizards/resources_pt_BR.properties
 
-%files extras-lang_ro
+%files extras-lang-ro
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/ro/default.css
 /usr/lib64/libreoffice/help/ro/err.html
@@ -18566,7 +18566,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ro.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ro.properties
 
-%files extras-lang_ru
+%files extras-lang-ru
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/ru/default.css
 /usr/lib64/libreoffice/help/ru/err.html
@@ -18829,7 +18829,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ru.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ru.properties
 
-%files extras-lang_rw
+%files extras-lang-rw
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/avmedia.mo
@@ -18870,7 +18870,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_rw.xcd
 /usr/lib64/libreoffice/share/wizards/resources_rw.properties
 
-%files extras-lang_sa
+%files extras-lang-sa
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/sa_IN/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/sa_IN/LC_MESSAGES/avmedia.mo
@@ -18911,7 +18911,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_sa-IN.xcd
 /usr/lib64/libreoffice/share/wizards/resources_sa_IN.properties
 
-%files extras-lang_sat
+%files extras-lang-sat
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/avmedia.mo
@@ -18952,7 +18952,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_sat.xcd
 /usr/lib64/libreoffice/share/wizards/resources_sat.properties
 
-%files extras-lang_sd
+%files extras-lang-sd
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/avmedia.mo
@@ -18993,7 +18993,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_sd.xcd
 /usr/lib64/libreoffice/share/wizards/resources_sd.properties
 
-%files extras-lang_si
+%files extras-lang-si
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/si/default.css
 /usr/lib64/libreoffice/help/si/err.html
@@ -19118,7 +19118,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_si.xcd
 /usr/lib64/libreoffice/share/wizards/resources_si.properties
 
-%files extras-lang_sid
+%files extras-lang-sid
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/sid/default.css
 /usr/lib64/libreoffice/help/sid/err.html
@@ -19237,7 +19237,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_sid.xcd
 /usr/lib64/libreoffice/share/wizards/resources_sid.properties
 
-%files extras-lang_sk
+%files extras-lang-sk
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/sk/default.css
 /usr/lib64/libreoffice/help/sk/err.html
@@ -19375,7 +19375,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_sk.xcd
 /usr/lib64/libreoffice/share/wizards/resources_sk.properties
 
-%files extras-lang_sl
+%files extras-lang-sl
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/sl/default.css
 /usr/lib64/libreoffice/help/sl/err.html
@@ -19512,7 +19512,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/wizards/resources_sl.properties
 /usr/lib64/libreoffice/share/wordbook/sl.dic
 
-%files extras-lang_sq
+%files extras-lang-sq
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/sq/default.css
 /usr/lib64/libreoffice/help/sq/err.html
@@ -19637,7 +19637,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_sq.xcd
 /usr/lib64/libreoffice/share/wizards/resources_sq.properties
 
-%files extras-lang_sr
+%files extras-lang-sr
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/avmedia.mo
@@ -19732,7 +19732,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/wizards/resources_sr.properties
 /usr/lib64/libreoffice/share/wizards/resources_sr_Latn.properties
 
-%files extras-lang_ss
+%files extras-lang-ss
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/ss/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/ss/LC_MESSAGES/avmedia.mo
@@ -19773,7 +19773,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ss.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ss.properties
 
-%files extras-lang_st
+%files extras-lang-st
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/st/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/st/LC_MESSAGES/avmedia.mo
@@ -19814,7 +19814,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_st.xcd
 /usr/lib64/libreoffice/share/wizards/resources_st.properties
 
-%files extras-lang_sv
+%files extras-lang-sv
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/sv/default.css
 /usr/lib64/libreoffice/help/sv/err.html
@@ -19952,7 +19952,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_sv.xcd
 /usr/lib64/libreoffice/share/wizards/resources_sv.properties
 
-%files extras-lang_sw
+%files extras-lang-sw
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/sw_TZ/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/sw_TZ/LC_MESSAGES/avmedia.mo
@@ -19993,7 +19993,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_sw-TZ.xcd
 /usr/lib64/libreoffice/share/wizards/resources_sw_TZ.properties
 
-%files extras-lang_szl
+%files extras-lang-szl
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/szl/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/szl/LC_MESSAGES/avmedia.mo
@@ -20034,7 +20034,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_szl.xcd
 /usr/lib64/libreoffice/share/wizards/resources_szl.properties
 
-%files extras-lang_ta
+%files extras-lang-ta
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/ta/default.css
 /usr/lib64/libreoffice/help/ta/err.html
@@ -20154,7 +20154,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ta.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ta.properties
 
-%files extras-lang_te
+%files extras-lang-te
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/avmedia.mo
@@ -20203,7 +20203,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_te.xcd
 /usr/lib64/libreoffice/share/wizards/resources_te.properties
 
-%files extras-lang_tg
+%files extras-lang-tg
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/tg/default.css
 /usr/lib64/libreoffice/help/tg/err.html
@@ -20322,7 +20322,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_tg.xcd
 /usr/lib64/libreoffice/share/wizards/resources_tg.properties
 
-%files extras-lang_th
+%files extras-lang-th
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/th/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/th/LC_MESSAGES/avmedia.mo
@@ -20371,7 +20371,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_th.xcd
 /usr/lib64/libreoffice/share/wizards/resources_th.properties
 
-%files extras-lang_tn
+%files extras-lang-tn
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/tn/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/tn/LC_MESSAGES/avmedia.mo
@@ -20412,7 +20412,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_tn.xcd
 /usr/lib64/libreoffice/share/wizards/resources_tn.properties
 
-%files extras-lang_tr
+%files extras-lang-tr
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/tr/default.css
 /usr/lib64/libreoffice/help/tr/err.html
@@ -20535,7 +20535,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_tr.xcd
 /usr/lib64/libreoffice/share/wizards/resources_tr.properties
 
-%files extras-lang_ts
+%files extras-lang-ts
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/ts/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/ts/LC_MESSAGES/avmedia.mo
@@ -20576,7 +20576,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ts.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ts.properties
 
-%files extras-lang_tt
+%files extras-lang-tt
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/tt/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/tt/LC_MESSAGES/avmedia.mo
@@ -20617,7 +20617,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_tt.xcd
 /usr/lib64/libreoffice/share/wizards/resources_tt.properties
 
-%files extras-lang_ug
+%files extras-lang-ug
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/ug/default.css
 /usr/lib64/libreoffice/help/ug/err.html
@@ -20736,7 +20736,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ug.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ug.properties
 
-%files extras-lang_uk
+%files extras-lang-uk
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/uk/default.css
 /usr/lib64/libreoffice/help/uk/err.html
@@ -20866,7 +20866,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_uk.xcd
 /usr/lib64/libreoffice/share/wizards/resources_uk.properties
 
-%files extras-lang_uz
+%files extras-lang-uz
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/uz/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/uz/LC_MESSAGES/avmedia.mo
@@ -20907,7 +20907,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_uz.xcd
 /usr/lib64/libreoffice/share/wizards/resources_uz.properties
 
-%files extras-lang_ve
+%files extras-lang-ve
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/ve/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/ve/LC_MESSAGES/avmedia.mo
@@ -20948,7 +20948,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_ve.xcd
 /usr/lib64/libreoffice/share/wizards/resources_ve.properties
 
-%files extras-lang_vec
+%files extras-lang-vec
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/avmedia.mo
@@ -20989,7 +20989,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_vec.xcd
 /usr/lib64/libreoffice/share/wizards/resources_vec.properties
 
-%files extras-lang_vi
+%files extras-lang-vi
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/vi/default.css
 /usr/lib64/libreoffice/help/vi/err.html
@@ -21117,7 +21117,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_vi.xcd
 /usr/lib64/libreoffice/share/wizards/resources_vi.properties
 
-%files extras-lang_xh
+%files extras-lang-xh
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/xh/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/xh/LC_MESSAGES/avmedia.mo
@@ -21158,7 +21158,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_xh.xcd
 /usr/lib64/libreoffice/share/wizards/resources_xh.properties
 
-%files extras-lang_zh
+%files extras-lang-zh
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/help/zh-CN/default.css
 /usr/lib64/libreoffice/help/zh-CN/err.html
@@ -21405,7 +21405,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/wizards/resources_zh_CN.properties
 /usr/lib64/libreoffice/share/wizards/resources_zh_TW.properties
 
-%files extras-lang_zu
+%files extras-lang-zu
 %defattr(-,root,root,-)
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/avmedia.mo
