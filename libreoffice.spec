@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 6.3.3.2
-Release  : 34
+Release  : 35
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.3/libreoffice-6.3.3.2.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.3/libreoffice-6.3.3.2.tar.xz
 Source1  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.3.3/libreoffice-dictionaries-6.3.3.2.tar.xz
