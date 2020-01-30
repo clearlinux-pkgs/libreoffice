@@ -8,13 +8,13 @@ Configure miss: whether to treat the installation as read-only
 Configure miss: whether the compiler is actually Clang
 Configure miss: whether to build with additional debug utilities
 Configure miss: whether to do a debug build
-Configure miss: whether special RTTI visibility flags are needed for Clang Linux UBSan
 Configure miss: whether gcc supports -Wl,--gdb-index
 Configure miss: whether to generate debug information
 Configure miss: which package format to use
 Configure miss: whether to turn warnings to errors
 Configure miss: whether to have assert() failures abort even without --enable-debug
 Configure miss: whether we want to fetch tarballs
+Configure miss: whether to enable xapian-omega support for help
 Configure miss: whether to enable pch feature
 Configure miss: x86_64-generic-linux-gnu-readelf
 Configure miss: sys/sdt.h usability
@@ -23,9 +23,10 @@ Configure miss: sys/sdt.h
 Configure miss: whether g++ defines __cxa_eh_globals in cxxabi.h
 Configure miss: whether g++ defines __cxa_exceptions in cxxabi.h
 Configure miss: whether using C++11 causes libstdc++ 4.7.0/4.7.1 ABI breakage
+Configure miss: whether g++ supports C++2a constinit sorted vectors
 Configure miss: whether g++ has GCC bug 87150
 Configure miss: whether g++ might report false -Werror=maybe-uninitialized
-Configure miss: if gcc has a visibility bug with class-level attributes (GCC bug 26905)
+Configure miss: if g++ has a visibility bug with class-level attributes (GCC bug 26905)
 Configure miss: whether to add custom build version
 Configure miss: whether to enable export file validation
 Configure miss: Microsoft Binary File Format Validator
@@ -41,7 +42,6 @@ Configure miss: whether to enable the OpenSSL backend for rtl/cipher.h
 Configure miss: whether to use gnutls
 Configure miss: whether to build with lpsolve
 Configure miss: gnucp
-Configure miss: whether to enable the GStreamer 0.10 avmedia backend
 Configure miss: whether to enable the VLC avmedia backend
 Configure miss: whether to build PDFium
 Configure miss: /run/user/1000

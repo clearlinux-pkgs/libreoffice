@@ -45,3 +45,4 @@
 --with-myspell-dicts
 --with-help
 --with-lang=ALL
+--without-system-qrcodegen
