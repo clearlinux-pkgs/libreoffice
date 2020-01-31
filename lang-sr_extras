@@ -14,6 +14,7 @@
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/sb.mo
@@ -46,6 +47,7 @@
 /usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/sb.mo
@@ -74,6 +76,8 @@
 /usr/lib64/libreoffice/share/autocorr/acor_sr-Latn-RS.dat
 /usr/lib64/libreoffice/share/autocorr/acor_sr-ME.dat
 /usr/lib64/libreoffice/share/autocorr/acor_sr-RS.dat
+/usr/lib64/libreoffice/share/autotext/sr-Latn/standard.bau
+/usr/lib64/libreoffice/share/autotext/sr/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-sr/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-sr/README.txt
 /usr/lib64/libreoffice/share/extensions/dict-sr/description.xml

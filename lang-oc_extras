@@ -14,6 +14,7 @@
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/sb.mo
@@ -34,6 +35,7 @@
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_oc
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_oc.properties
+/usr/lib64/libreoffice/share/autotext/oc/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-oc/LICENCES-fr.txt
 /usr/lib64/libreoffice/share/extensions/dict-oc/LICENSES-en.txt
 /usr/lib64/libreoffice/share/extensions/dict-oc/META-INF/manifest.xml

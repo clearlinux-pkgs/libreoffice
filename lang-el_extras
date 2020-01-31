@@ -92,6 +92,7 @@
 /usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/sb.mo
@@ -113,6 +114,7 @@
 /usr/lib64/libreoffice/readmes/README_el
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_el.properties
 /usr/lib64/libreoffice/share/autocorr/acor_el-GR.dat
+/usr/lib64/libreoffice/share/autotext/el/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-el/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-el/README_el_GR.txt
 /usr/lib64/libreoffice/share/extensions/dict-el/README_hyph_el_GR.txt

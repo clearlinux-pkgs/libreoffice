@@ -14,6 +14,7 @@
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/sb.mo
@@ -34,6 +35,7 @@
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_rw
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_rw.properties
+/usr/lib64/libreoffice/share/autotext/rw/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-rw.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_rw.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_rw.xcd

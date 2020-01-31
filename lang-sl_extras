@@ -92,6 +92,7 @@
 /usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/sb.mo
@@ -125,6 +126,8 @@
 /usr/lib64/libreoffice/share/extensions/dict-sl/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-sl/dictionaries.xcu
 /usr/lib64/libreoffice/share/extensions/dict-sl/hyph_sl_SI.dic
+/usr/lib64/libreoffice/share/extensions/dict-sl/icon.png
+/usr/lib64/libreoffice/share/extensions/dict-sl/package-description.txt
 /usr/lib64/libreoffice/share/extensions/dict-sl/sl_SI.aff
 /usr/lib64/libreoffice/share/extensions/dict-sl/sl_SI.dic
 /usr/lib64/libreoffice/share/extensions/dict-sl/th_sl_SI_v2.dat

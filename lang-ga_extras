@@ -14,6 +14,7 @@
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/sb.mo
@@ -35,6 +36,7 @@
 /usr/lib64/libreoffice/readmes/README_ga
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ga.properties
 /usr/lib64/libreoffice/share/autocorr/acor_ga-IE.dat
+/usr/lib64/libreoffice/share/autotext/ga/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-ga.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ga.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_ga.xcd

@@ -14,6 +14,7 @@
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/sb.mo
@@ -35,6 +36,7 @@
 /usr/lib64/libreoffice/readmes/README_dsb
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_dsb.properties
 /usr/lib64/libreoffice/share/autocorr/acor_dsb.dat
+/usr/lib64/libreoffice/share/autotext/dsb/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-dsb.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_dsb.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_dsb.xcd

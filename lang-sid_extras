@@ -92,6 +92,7 @@
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/sb.mo
@@ -112,6 +113,7 @@
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_sid
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_sid.properties
+/usr/lib64/libreoffice/share/autotext/sid/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-sid.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_sid.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_sid.xcd

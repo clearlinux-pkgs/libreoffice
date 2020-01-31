@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 6.4.0.3
-Release  : 37
+Release  : 38
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.4.0/libreoffice-6.4.0.3.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.4.0/libreoffice-6.4.0.3.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/QR-Code-generator-1.4.0.tar.gz
@@ -16,7 +16,7 @@ Source4  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.4.0/libreoffice-tran
 Source5  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.4.0/libreoffice-6.4.0.3.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
-License  : Apache-2.0 BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception W3C
+License  : Apache-2.0 BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA W3C
 Requires: libreoffice-bin = %{version}-%{release}
 Requires: libreoffice-data = %{version}-%{release}
 Requires: libreoffice-lib = %{version}-%{release}
@@ -1099,7 +1099,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580368534
+export SOURCE_DATE_EPOCH=1580504429
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -1156,7 +1156,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1580368534
+export SOURCE_DATE_EPOCH=1580504429
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-6.4.0.3/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
@@ -1164,6 +1164,7 @@ cp %{_builddir}/libreoffice-6.4.0.3/COPYING.LGPL %{buildroot}/usr/share/package-
 cp %{_builddir}/libreoffice-6.4.0.3/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
 cp %{_builddir}/libreoffice-6.4.0.3/bin/text_cat/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/caeb68c46fa36651acf592771d09de7937926bb3
 cp %{_builddir}/libreoffice-6.4.0.3/bin/text_cat/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/a2987fb2ef11c7c38cd03bc5d0be22014b63f777
+cp %{_builddir}/libreoffice-6.4.0.3/compilerplugins/LICENSE.TXT %{buildroot}/usr/share/package-licenses/libreoffice/4b01a3fc1fa58d9958d9067fd7cdbe41c706f65f
 cp %{_builddir}/libreoffice-6.4.0.3/connectivity/source/drivers/mork/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/2fd7f23f9705fd591c14e2825dd03904f8337600
 cp %{_builddir}/libreoffice-6.4.0.3/desktop/source/deployment/gui/license_dialog.cxx %{buildroot}/usr/share/package-licenses/libreoffice/d643e73f4eaf1dff4abe60cfd16c4c705cbe5ede
 cp %{_builddir}/libreoffice-6.4.0.3/desktop/source/deployment/gui/license_dialog.hxx %{buildroot}/usr/share/package-licenses/libreoffice/bf72e2a87ff90d993f70935f7c80693bd883fb77
@@ -1568,29 +1569,6 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/redirectrc
 /usr/lib64/libreoffice/program/regmerge
 /usr/lib64/libreoffice/program/regview
-/usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/am/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ar/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/as/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ast/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/be/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/bg/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/bn/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/bn_IN/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/br/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/brx/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/bs/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/cs/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/cy/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/da/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/de/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/dgo/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/dz/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/en_GB/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/en_GB/LC_MESSAGES/avmedia.mo
 /usr/lib64/libreoffice/program/resource/en_GB/LC_MESSAGES/basctl.mo
@@ -1657,97 +1635,6 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/en_ZA/LC_MESSAGES/wiz.mo
 /usr/lib64/libreoffice/program/resource/en_ZA/LC_MESSAGES/wpt.mo
 /usr/lib64/libreoffice/program/resource/en_ZA/LC_MESSAGES/xsc.mo
-/usr/lib64/libreoffice/program/resource/eo/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/es/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/et/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/eu/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/fa/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/fi/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/fr/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/fy/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/gd/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/gu/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/gug/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/he/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/hi/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/hr/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/hsb/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/hu/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/id/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/is/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/it/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ja/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ka/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/kab/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/kk/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/km/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/kmr@latin/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/kn/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ko/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/kok/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ks/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/lb/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/lo/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/lt/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/lv/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/mai/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/mk/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ml/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/mn/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/mr/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/my/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/nb/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ne/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/nl/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/nn/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/nr/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/nso/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/om/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/or/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/pa_IN/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/pl/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/pt/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/pt_BR/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ro/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ru/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/sa_IN/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/si/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/sk/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/sq/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ss/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/st/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/sv/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/sw_TZ/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/szl/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ta/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/th/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/tn/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/tr/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ts/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/tt/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ug/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/uk/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/uz/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ve/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/vi/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/xh/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/zh_CN/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/zh_TW/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/sbase
 /usr/lib64/libreoffice/program/scalc
 /usr/lib64/libreoffice/program/sdraw
@@ -2419,24 +2306,6 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/autocorr/acor_en-GB.dat
 /usr/lib64/libreoffice/share/autocorr/acor_en-US.dat
 /usr/lib64/libreoffice/share/autocorr/acor_en-ZA.dat
-/usr/lib64/libreoffice/share/autotext/af/standard.bau
-/usr/lib64/libreoffice/share/autotext/am/standard.bau
-/usr/lib64/libreoffice/share/autotext/ar/standard.bau
-/usr/lib64/libreoffice/share/autotext/as/standard.bau
-/usr/lib64/libreoffice/share/autotext/ast/standard.bau
-/usr/lib64/libreoffice/share/autotext/be/standard.bau
-/usr/lib64/libreoffice/share/autotext/bn-IN/standard.bau
-/usr/lib64/libreoffice/share/autotext/bn/standard.bau
-/usr/lib64/libreoffice/share/autotext/bo/standard.bau
-/usr/lib64/libreoffice/share/autotext/br/standard.bau
-/usr/lib64/libreoffice/share/autotext/brx/standard.bau
-/usr/lib64/libreoffice/share/autotext/bs/standard.bau
-/usr/lib64/libreoffice/share/autotext/ca-valencia/standard.bau
-/usr/lib64/libreoffice/share/autotext/cy/standard.bau
-/usr/lib64/libreoffice/share/autotext/dgo/standard.bau
-/usr/lib64/libreoffice/share/autotext/dsb/standard.bau
-/usr/lib64/libreoffice/share/autotext/dz/standard.bau
-/usr/lib64/libreoffice/share/autotext/el/standard.bau
 /usr/lib64/libreoffice/share/autotext/en-GB/crdbus50.bau
 /usr/lib64/libreoffice/share/autotext/en-GB/standard.bau
 /usr/lib64/libreoffice/share/autotext/en-GB/template.bau
@@ -2444,71 +2313,6 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/autotext/en-US/standard.bau
 /usr/lib64/libreoffice/share/autotext/en-US/template.bau
 /usr/lib64/libreoffice/share/autotext/en-ZA/standard.bau
-/usr/lib64/libreoffice/share/autotext/eo/standard.bau
-/usr/lib64/libreoffice/share/autotext/et/standard.bau
-/usr/lib64/libreoffice/share/autotext/eu/standard.bau
-/usr/lib64/libreoffice/share/autotext/fy/standard.bau
-/usr/lib64/libreoffice/share/autotext/ga/standard.bau
-/usr/lib64/libreoffice/share/autotext/gd/standard.bau
-/usr/lib64/libreoffice/share/autotext/gl/standard.bau
-/usr/lib64/libreoffice/share/autotext/gu/standard.bau
-/usr/lib64/libreoffice/share/autotext/gug/standard.bau
-/usr/lib64/libreoffice/share/autotext/he/standard.bau
-/usr/lib64/libreoffice/share/autotext/hi/standard.bau
-/usr/lib64/libreoffice/share/autotext/hsb/standard.bau
-/usr/lib64/libreoffice/share/autotext/id/standard.bau
-/usr/lib64/libreoffice/share/autotext/ka/standard.bau
-/usr/lib64/libreoffice/share/autotext/kab/standard.bau
-/usr/lib64/libreoffice/share/autotext/kk/standard.bau
-/usr/lib64/libreoffice/share/autotext/kmr-Latn/standard.bau
-/usr/lib64/libreoffice/share/autotext/kn/standard.bau
-/usr/lib64/libreoffice/share/autotext/kok/standard.bau
-/usr/lib64/libreoffice/share/autotext/ks/standard.bau
-/usr/lib64/libreoffice/share/autotext/lb/standard.bau
-/usr/lib64/libreoffice/share/autotext/lo/standard.bau
-/usr/lib64/libreoffice/share/autotext/lv/standard.bau
-/usr/lib64/libreoffice/share/autotext/mai/standard.bau
-/usr/lib64/libreoffice/share/autotext/mk/standard.bau
-/usr/lib64/libreoffice/share/autotext/ml/standard.bau
-/usr/lib64/libreoffice/share/autotext/mni/standard.bau
-/usr/lib64/libreoffice/share/autotext/mr/standard.bau
-/usr/lib64/libreoffice/share/autotext/my/standard.bau
-/usr/lib64/libreoffice/share/autotext/nb/standard.bau
-/usr/lib64/libreoffice/share/autotext/ne/standard.bau
-/usr/lib64/libreoffice/share/autotext/nn/standard.bau
-/usr/lib64/libreoffice/share/autotext/nr/standard.bau
-/usr/lib64/libreoffice/share/autotext/nso/standard.bau
-/usr/lib64/libreoffice/share/autotext/oc/standard.bau
-/usr/lib64/libreoffice/share/autotext/om/standard.bau
-/usr/lib64/libreoffice/share/autotext/or/standard.bau
-/usr/lib64/libreoffice/share/autotext/pa-IN/standard.bau
-/usr/lib64/libreoffice/share/autotext/rw/standard.bau
-/usr/lib64/libreoffice/share/autotext/sa-IN/standard.bau
-/usr/lib64/libreoffice/share/autotext/sat/standard.bau
-/usr/lib64/libreoffice/share/autotext/sd/standard.bau
-/usr/lib64/libreoffice/share/autotext/si/standard.bau
-/usr/lib64/libreoffice/share/autotext/sid/standard.bau
-/usr/lib64/libreoffice/share/autotext/sq/standard.bau
-/usr/lib64/libreoffice/share/autotext/sr-Latn/standard.bau
-/usr/lib64/libreoffice/share/autotext/sr/standard.bau
-/usr/lib64/libreoffice/share/autotext/ss/standard.bau
-/usr/lib64/libreoffice/share/autotext/st/standard.bau
-/usr/lib64/libreoffice/share/autotext/sw-TZ/standard.bau
-/usr/lib64/libreoffice/share/autotext/szl/standard.bau
-/usr/lib64/libreoffice/share/autotext/ta/standard.bau
-/usr/lib64/libreoffice/share/autotext/te/standard.bau
-/usr/lib64/libreoffice/share/autotext/tg/standard.bau
-/usr/lib64/libreoffice/share/autotext/th/standard.bau
-/usr/lib64/libreoffice/share/autotext/tn/standard.bau
-/usr/lib64/libreoffice/share/autotext/ts/standard.bau
-/usr/lib64/libreoffice/share/autotext/tt/standard.bau
-/usr/lib64/libreoffice/share/autotext/ug/standard.bau
-/usr/lib64/libreoffice/share/autotext/uk/standard.bau
-/usr/lib64/libreoffice/share/autotext/uz/standard.bau
-/usr/lib64/libreoffice/share/autotext/ve/standard.bau
-/usr/lib64/libreoffice/share/autotext/vec/standard.bau
-/usr/lib64/libreoffice/share/autotext/xh/standard.bau
-/usr/lib64/libreoffice/share/autotext/zu/standard.bau
 /usr/lib64/libreoffice/share/basic/Access2Base/Application.xba
 /usr/lib64/libreoffice/share/basic/Access2Base/Collect.xba
 /usr/lib64/libreoffice/share/basic/Access2Base/CommandBar.xba
@@ -4536,8 +4340,6 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-no/th_nb_NO_v2.idx
 /usr/lib64/libreoffice/share/extensions/dict-no/th_nn_NO_v2.dat
 /usr/lib64/libreoffice/share/extensions/dict-no/th_nn_NO_v2.idx
-/usr/lib64/libreoffice/share/extensions/dict-sl/icon.png
-/usr/lib64/libreoffice/share/extensions/dict-sl/package-description.txt
 /usr/lib64/libreoffice/share/extensions/package.txt
 /usr/lib64/libreoffice/share/filter/oox-drawingml-adj-names
 /usr/lib64/libreoffice/share/filter/oox-drawingml-cs-presets
@@ -11267,6 +11069,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/sb.mo
@@ -11288,6 +11091,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/readmes/README_af
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_af.properties
 /usr/lib64/libreoffice/share/autocorr/acor_af-ZA.dat
+/usr/lib64/libreoffice/share/autotext/af/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-af/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-af/README_af_ZA.txt
 /usr/lib64/libreoffice/share/extensions/dict-af/af_ZA.aff
@@ -11394,6 +11198,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/am/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/am/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/am/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/am/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/am/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/am/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/am/LC_MESSAGES/sb.mo
@@ -11414,6 +11219,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/am/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_am
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_am.properties
+/usr/lib64/libreoffice/share/autotext/am/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-am.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_am.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_am.xcd
@@ -11513,6 +11319,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ar/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ar/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ar/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ar/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ar/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ar/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ar/LC_MESSAGES/sb.mo
@@ -11533,6 +11340,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ar/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_ar
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ar.properties
+/usr/lib64/libreoffice/share/autotext/ar/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-ar/AUTHORS.txt
 /usr/lib64/libreoffice/share/extensions/dict-ar/COPYING.txt
 /usr/lib64/libreoffice/share/extensions/dict-ar/META-INF/manifest.xml
@@ -11565,6 +11373,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/as/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/as/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/as/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/as/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/as/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/as/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/as/LC_MESSAGES/sb.mo
@@ -11585,6 +11394,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/as/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_as
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_as.properties
+/usr/lib64/libreoffice/share/autotext/as/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-as.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_as.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_as.xcd
@@ -11684,6 +11494,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ast/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ast/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ast/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ast/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ast/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ast/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ast/LC_MESSAGES/sb.mo
@@ -11704,6 +11515,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ast/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_ast
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ast.properties
+/usr/lib64/libreoffice/share/autotext/ast/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-ast.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ast.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_ast.xcd
@@ -11725,6 +11537,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/be/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/be/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/be/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/be/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/be/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/be/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/be/LC_MESSAGES/sb.mo
@@ -11745,6 +11558,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/be/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_be
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_be.properties
+/usr/lib64/libreoffice/share/autotext/be/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-be/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-be/README_be_BY.txt
 /usr/lib64/libreoffice/share/extensions/dict-be/be_BY.aff
@@ -11850,6 +11664,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/bg/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/bg/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/bg/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/bg/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/bg/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/bg/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/bg/LC_MESSAGES/sb.mo
@@ -12062,6 +11877,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/bn/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/bn/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/bn/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/bn/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/bn/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/bn/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/bn/LC_MESSAGES/sb.mo
@@ -12094,6 +11910,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/bn_IN/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/bn_IN/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/bn_IN/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/bn_IN/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/bn_IN/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/bn_IN/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/bn_IN/LC_MESSAGES/sb.mo
@@ -12116,6 +11933,8 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/readmes/README_bn-IN
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_bn.properties
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_bn_IN.properties
+/usr/lib64/libreoffice/share/autotext/bn-IN/standard.bau
+/usr/lib64/libreoffice/share/autotext/bn/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-bn/COPYING
 /usr/lib64/libreoffice/share/extensions/dict-bn/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-bn/bn_BD.aff
@@ -12225,6 +12044,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/sb.mo
@@ -12245,6 +12065,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_bo
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_bo.properties
+/usr/lib64/libreoffice/share/autotext/bo/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-bo/CHANGELOG.md
 /usr/lib64/libreoffice/share/extensions/dict-bo/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-bo/README.md
@@ -12274,6 +12095,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/br/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/br/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/br/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/br/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/br/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/br/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/br/LC_MESSAGES/sb.mo
@@ -12294,6 +12116,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/br/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_br
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_br.properties
+/usr/lib64/libreoffice/share/autotext/br/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-br/LICENSES-en.txt
 /usr/lib64/libreoffice/share/extensions/dict-br/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-br/br_FR.aff
@@ -12321,6 +12144,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/brx/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/brx/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/brx/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/brx/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/brx/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/brx/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/brx/LC_MESSAGES/sb.mo
@@ -12341,6 +12165,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/brx/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_brx
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_brx.properties
+/usr/lib64/libreoffice/share/autotext/brx/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-brx.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_brx.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_brx.xcd
@@ -12440,6 +12265,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/bs/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/bs/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/bs/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/bs/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/bs/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/bs/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/bs/LC_MESSAGES/sb.mo
@@ -12460,6 +12286,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/bs/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_bs
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_bs.properties
+/usr/lib64/libreoffice/share/autotext/bs/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-bs/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-bs/README.txt
 /usr/lib64/libreoffice/share/extensions/dict-bs/bs_BA.aff
@@ -12643,6 +12470,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/sb.mo
@@ -12675,6 +12503,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/sb.mo
@@ -12698,6 +12527,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ca.properties
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ca_valencia.properties
 /usr/lib64/libreoffice/share/autocorr/acor_ca-ES.dat
+/usr/lib64/libreoffice/share/autotext/ca-valencia/standard.bau
 /usr/lib64/libreoffice/share/autotext/ca/standard.bau
 /usr/lib64/libreoffice/share/classification/example_ca-ES.xml
 /usr/lib64/libreoffice/share/extensions/dict-ca/LICENSES-en.txt
@@ -12816,6 +12646,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/cs/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/cs/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/cs/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/cs/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/cs/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/cs/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/cs/LC_MESSAGES/sb.mo
@@ -12872,6 +12703,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/cy/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/cy/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/cy/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/cy/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/cy/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/cy/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/cy/LC_MESSAGES/sb.mo
@@ -12892,6 +12724,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/cy/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_cy
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_cy.properties
+/usr/lib64/libreoffice/share/autotext/cy/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-cy.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_cy.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_cy.xcd
@@ -12991,6 +12824,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/da/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/da/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/da/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/da/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/da/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/da/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/da/LC_MESSAGES/sb.mo
@@ -13133,6 +12967,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/de/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/de/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/de/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/de/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/de/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/de/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/de/LC_MESSAGES/sb.mo
@@ -13206,6 +13041,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/dgo/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/dgo/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/dgo/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/dgo/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/dgo/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/dgo/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/dgo/LC_MESSAGES/sb.mo
@@ -13226,6 +13062,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/dgo/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_dgo
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_dgo.properties
+/usr/lib64/libreoffice/share/autotext/dgo/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-dgo.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_dgo.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_dgo.xcd
@@ -13247,6 +13084,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/sb.mo
@@ -13268,6 +13106,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/readmes/README_dsb
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_dsb.properties
 /usr/lib64/libreoffice/share/autocorr/acor_dsb.dat
+/usr/lib64/libreoffice/share/autotext/dsb/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-dsb.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_dsb.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_dsb.xcd
@@ -13367,6 +13206,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/dz/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/dz/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/dz/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/dz/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/dz/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/dz/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/dz/LC_MESSAGES/sb.mo
@@ -13387,6 +13227,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/dz/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_dz
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_dz.properties
+/usr/lib64/libreoffice/share/autotext/dz/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-dz.xcd
 /usr/lib64/libreoffice/share/registry/ctl_dz.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_dz.xcd
@@ -13487,6 +13328,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/el/LC_MESSAGES/sb.mo
@@ -13508,6 +13350,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/readmes/README_el
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_el.properties
 /usr/lib64/libreoffice/share/autocorr/acor_el-GR.dat
+/usr/lib64/libreoffice/share/autotext/el/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-el/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-el/README_el_GR.txt
 /usr/lib64/libreoffice/share/extensions/dict-el/README_hyph_el_GR.txt
@@ -13615,6 +13458,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/eo/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/eo/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/eo/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/eo/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/eo/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/eo/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/eo/LC_MESSAGES/sb.mo
@@ -13635,6 +13479,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/eo/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_eo
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_eo.properties
+/usr/lib64/libreoffice/share/autotext/eo/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-eo.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_eo.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_eo.xcd
@@ -13735,6 +13580,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/es/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/es/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/es/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/es/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/es/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/es/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/es/LC_MESSAGES/sb.mo
@@ -13871,6 +13717,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/et/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/et/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/et/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/et/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/et/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/et/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/et/LC_MESSAGES/sb.mo
@@ -13891,6 +13738,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/et/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_et
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_et.properties
+/usr/lib64/libreoffice/share/autotext/et/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-et/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-et/README_et_EE.txt
 /usr/lib64/libreoffice/share/extensions/dict-et/README_hyph_et_EE.txt
@@ -13999,6 +13847,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/eu/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/eu/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/eu/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/eu/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/eu/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/eu/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/eu/LC_MESSAGES/sb.mo
@@ -14019,6 +13868,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/eu/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_eu
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_eu.properties
+/usr/lib64/libreoffice/share/autotext/eu/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-eu.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_eu.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_eu.xcd
@@ -14040,6 +13890,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/fa/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/fa/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/fa/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/fa/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/fa/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/fa/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/fa/LC_MESSAGES/sb.mo
@@ -14162,6 +14013,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/fi/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/fi/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/fi/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/fi/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/fi/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/fi/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/fi/LC_MESSAGES/sb.mo
@@ -14283,6 +14135,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/fr/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/fr/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/fr/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/fr/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/fr/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/fr/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/fr/LC_MESSAGES/sb.mo
@@ -14344,6 +14197,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/fy/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/fy/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/fy/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/fy/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/fy/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/fy/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/fy/LC_MESSAGES/sb.mo
@@ -14364,6 +14218,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/fy/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_fy
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_fy.properties
+/usr/lib64/libreoffice/share/autotext/fy/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-fy.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_fy.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_fy.xcd
@@ -14385,6 +14240,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ga/LC_MESSAGES/sb.mo
@@ -14406,6 +14262,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/readmes/README_ga
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ga.properties
 /usr/lib64/libreoffice/share/autocorr/acor_ga-IE.dat
+/usr/lib64/libreoffice/share/autotext/ga/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-ga.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ga.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_ga.xcd
@@ -14427,6 +14284,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/gd/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/gd/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/gd/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/gd/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/gd/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/gd/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/gd/LC_MESSAGES/sb.mo
@@ -14447,6 +14305,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/gd/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_gd
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_gd.properties
+/usr/lib64/libreoffice/share/autotext/gd/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-gd/LICENSES-en.txt
 /usr/lib64/libreoffice/share/extensions/dict-gd/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-gd/README_gd_GB.txt
@@ -14553,6 +14412,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/sb.mo
@@ -14573,6 +14433,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_gl
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_gl.properties
+/usr/lib64/libreoffice/share/autotext/gl/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-gl/COPYING_th_gl
 /usr/lib64/libreoffice/share/extensions/dict-gl/Changelog.txt
 /usr/lib64/libreoffice/share/extensions/dict-gl/GPLv3.txt
@@ -14688,6 +14549,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/gu/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/gu/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/gu/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/gu/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/gu/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/gu/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/gu/LC_MESSAGES/sb.mo
@@ -14708,6 +14570,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/gu/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_gu
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_gu.properties
+/usr/lib64/libreoffice/share/autotext/gu/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-gu/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-gu/README_gu_IN.txt
 /usr/lib64/libreoffice/share/extensions/dict-gu/description.xml
@@ -14736,6 +14599,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/gug/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/gug/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/gug/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/gug/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/gug/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/gug/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/gug/LC_MESSAGES/sb.mo
@@ -14756,6 +14620,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/gug/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_gug
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_gug.properties
+/usr/lib64/libreoffice/share/autotext/gug/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-gug.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_gug.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_gug.xcd
@@ -14855,6 +14720,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/he/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/he/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/he/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/he/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/he/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/he/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/he/LC_MESSAGES/sb.mo
@@ -14875,6 +14741,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/he/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_he
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_he.properties
+/usr/lib64/libreoffice/share/autotext/he/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-he/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-he/README_he_IL.txt
 /usr/lib64/libreoffice/share/extensions/dict-he/alphabet.png
@@ -14982,6 +14849,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/hi/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/hi/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/hi/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/hi/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/hi/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/hi/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/hi/LC_MESSAGES/sb.mo
@@ -15002,6 +14870,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/hi/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_hi
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_hi.properties
+/usr/lib64/libreoffice/share/autotext/hi/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-hi/COPYING
 /usr/lib64/libreoffice/share/extensions/dict-hi/Copyright
 /usr/lib64/libreoffice/share/extensions/dict-hi/META-INF/manifest.xml
@@ -15110,6 +14979,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/hr/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/hr/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/hr/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/hr/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/hr/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/hr/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/hr/LC_MESSAGES/sb.mo
@@ -15161,6 +15031,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/hsb/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/hsb/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/hsb/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/hsb/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/hsb/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/hsb/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/hsb/LC_MESSAGES/sb.mo
@@ -15182,6 +15053,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/readmes/README_hsb
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_hsb.properties
 /usr/lib64/libreoffice/share/autocorr/acor_hsb.dat
+/usr/lib64/libreoffice/share/autotext/hsb/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-hsb.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_hsb.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_hsb.xcd
@@ -15281,6 +15153,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/hu/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/hu/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/hu/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/hu/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/hu/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/hu/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/hu/LC_MESSAGES/sb.mo
@@ -15552,6 +15425,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/id/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/id/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/id/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/id/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/id/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/id/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/id/LC_MESSAGES/sb.mo
@@ -15572,6 +15446,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/id/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_id
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_id.properties
+/usr/lib64/libreoffice/share/autotext/id/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-id/LICENSE-dict
 /usr/lib64/libreoffice/share/extensions/dict-id/LICENSE-thes
 /usr/lib64/libreoffice/share/extensions/dict-id/META-INF/manifest.xml
@@ -15682,6 +15557,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/is/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/is/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/is/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/is/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/is/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/is/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/is/LC_MESSAGES/sb.mo
@@ -15812,6 +15688,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/it/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/it/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/it/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/it/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/it/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/it/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/it/LC_MESSAGES/sb.mo
@@ -15949,6 +15826,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ja/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ja/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ja/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ja/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ja/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ja/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ja/LC_MESSAGES/sb.mo
@@ -16074,6 +15952,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ka/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ka/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ka/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ka/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ka/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ka/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ka/LC_MESSAGES/sb.mo
@@ -16094,6 +15973,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ka/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_ka
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ka.properties
+/usr/lib64/libreoffice/share/autotext/ka/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-ka.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ka.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_ka.xcd
@@ -16115,6 +15995,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/kab/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/kab/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/kab/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/kab/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/kab/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/kab/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/kab/LC_MESSAGES/sb.mo
@@ -16135,6 +16016,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/kab/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_kab
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_kab.properties
+/usr/lib64/libreoffice/share/autotext/kab/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-kab.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_kab.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_kab.xcd
@@ -16156,6 +16038,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/kk/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/kk/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/kk/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/kk/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/kk/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/kk/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/kk/LC_MESSAGES/sb.mo
@@ -16176,6 +16059,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/kk/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_kk
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_kk.properties
+/usr/lib64/libreoffice/share/autotext/kk/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-kk.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_kk.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_kk.xcd
@@ -16275,6 +16159,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/km/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/km/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/km/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/km/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/km/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/km/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/km/LC_MESSAGES/sb.mo
@@ -16321,6 +16206,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/kmr@latin/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/kmr@latin/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/kmr@latin/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/kmr@latin/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/kmr@latin/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/kmr@latin/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/kmr@latin/LC_MESSAGES/sb.mo
@@ -16341,6 +16227,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/kmr@latin/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_kmr-Latn
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_kmr_Latn.properties
+/usr/lib64/libreoffice/share/autotext/kmr-Latn/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-kmr-Latn.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_kmr-Latn.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_kmr-Latn.xcd
@@ -16362,6 +16249,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/kn/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/kn/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/kn/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/kn/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/kn/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/kn/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/kn/LC_MESSAGES/sb.mo
@@ -16382,6 +16270,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/kn/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_kn
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_kn.properties
+/usr/lib64/libreoffice/share/autotext/kn/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-kn.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_kn.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_kn.xcd
@@ -16481,6 +16370,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ko/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ko/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ko/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ko/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ko/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ko/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ko/LC_MESSAGES/sb.mo
@@ -16528,6 +16418,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/kok/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/kok/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/kok/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/kok/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/kok/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/kok/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/kok/LC_MESSAGES/sb.mo
@@ -16548,6 +16439,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/kok/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_kok
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_kok.properties
+/usr/lib64/libreoffice/share/autotext/kok/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-kok.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_kok.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_kok.xcd
@@ -16569,6 +16461,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ks/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ks/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ks/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ks/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ks/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ks/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ks/LC_MESSAGES/sb.mo
@@ -16589,6 +16482,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ks/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_ks
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ks.properties
+/usr/lib64/libreoffice/share/autotext/ks/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-ks.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ks.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_ks.xcd
@@ -16610,6 +16504,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/lb/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/lb/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/lb/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/lb/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/lb/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/lb/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/lb/LC_MESSAGES/sb.mo
@@ -16631,6 +16526,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/readmes/README_lb
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_lb.properties
 /usr/lib64/libreoffice/share/autocorr/acor_lb-LU.dat
+/usr/lib64/libreoffice/share/autotext/lb/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-lb.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_lb.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_lb.xcd
@@ -16730,6 +16626,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/lo/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/lo/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/lo/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/lo/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/lo/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/lo/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/lo/LC_MESSAGES/sb.mo
@@ -16750,6 +16647,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/lo/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_lo
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_lo.properties
+/usr/lib64/libreoffice/share/autotext/lo/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-lo/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-lo/README_lo_LA.txt
 /usr/lib64/libreoffice/share/extensions/dict-lo/description.xml
@@ -16857,6 +16755,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/lt/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/lt/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/lt/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/lt/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/lt/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/lt/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/lt/LC_MESSAGES/sb.mo
@@ -16988,6 +16887,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/lv/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/lv/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/lv/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/lv/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/lv/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/lv/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/lv/LC_MESSAGES/sb.mo
@@ -17008,6 +16908,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/lv/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_lv
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_lv.properties
+/usr/lib64/libreoffice/share/autotext/lv/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-lv/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-lv/README_hyph_lv_LV.txt
 /usr/lib64/libreoffice/share/extensions/dict-lv/README_lv_LV.txt
@@ -17041,6 +16942,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/mai/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/mai/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/mai/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/mai/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/mai/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/mai/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/mai/LC_MESSAGES/sb.mo
@@ -17061,6 +16963,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/mai/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_mai
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_mai.properties
+/usr/lib64/libreoffice/share/autotext/mai/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-mai.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_mai.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_mai.xcd
@@ -17160,6 +17063,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/mk/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/mk/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/mk/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/mk/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/mk/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/mk/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/mk/LC_MESSAGES/sb.mo
@@ -17180,6 +17084,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/mk/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_mk
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_mk.properties
+/usr/lib64/libreoffice/share/autotext/mk/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-mk.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_mk.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_mk.xcd
@@ -17201,6 +17106,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ml/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ml/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ml/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ml/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ml/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ml/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ml/LC_MESSAGES/sb.mo
@@ -17221,6 +17127,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ml/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_ml
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ml.properties
+/usr/lib64/libreoffice/share/autotext/ml/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-ml.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ml.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_ml.xcd
@@ -17242,6 +17149,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/mn/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/mn/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/mn/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/mn/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/mn/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/mn/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/mn/LC_MESSAGES/sb.mo
@@ -17287,6 +17195,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/sb.mo
@@ -17307,6 +17216,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_mni
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_mni.properties
+/usr/lib64/libreoffice/share/autotext/mni/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-mni.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_mni.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_mni.xcd
@@ -17328,6 +17238,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/mr/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/mr/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/mr/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/mr/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/mr/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/mr/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/mr/LC_MESSAGES/sb.mo
@@ -17348,6 +17259,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/mr/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_mr
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_mr.properties
+/usr/lib64/libreoffice/share/autotext/mr/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-mr.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_mr.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_mr.xcd
@@ -17369,6 +17281,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/my/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/my/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/my/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/my/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/my/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/my/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/my/LC_MESSAGES/sb.mo
@@ -17389,6 +17302,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/my/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_my
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_my.properties
+/usr/lib64/libreoffice/share/autotext/my/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-my.xcd
 /usr/lib64/libreoffice/share/registry/ctl_my.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_my.xcd
@@ -17489,6 +17403,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/nb/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/nb/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/nb/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/nb/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/nb/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/nb/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/nb/LC_MESSAGES/sb.mo
@@ -17509,6 +17424,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/nb/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_nb
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_nb.properties
+/usr/lib64/libreoffice/share/autotext/nb/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-no/hyph_nb_NO.dic
 /usr/lib64/libreoffice/share/extensions/dict-no/nb_NO.aff
 /usr/lib64/libreoffice/share/extensions/dict-no/nb_NO.dic
@@ -17611,6 +17527,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ne/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ne/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ne/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ne/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ne/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ne/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ne/LC_MESSAGES/sb.mo
@@ -17631,6 +17548,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ne/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_ne
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ne.properties
+/usr/lib64/libreoffice/share/autotext/ne/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-ne/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-ne/README_ne_NP.txt
 /usr/lib64/libreoffice/share/extensions/dict-ne/README_th_ne_NP_v2.txt
@@ -17740,6 +17658,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/nl/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/nl/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/nl/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/nl/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/nl/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/nl/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/nl/LC_MESSAGES/sb.mo
@@ -17875,6 +17794,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/nn/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/nn/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/nn/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/nn/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/nn/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/nn/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/nn/LC_MESSAGES/sb.mo
@@ -17895,6 +17815,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/nn/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_nn
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_nn.properties
+/usr/lib64/libreoffice/share/autotext/nn/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-no/hyph_nn_NO.dic
 /usr/lib64/libreoffice/share/extensions/dict-no/nn_NO.aff
 /usr/lib64/libreoffice/share/extensions/dict-no/nn_NO.dic
@@ -17919,6 +17840,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/nr/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/nr/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/nr/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/nr/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/nr/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/nr/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/nr/LC_MESSAGES/sb.mo
@@ -17939,6 +17861,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/nr/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_nr
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_nr.properties
+/usr/lib64/libreoffice/share/autotext/nr/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-nr.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_nr.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_nr.xcd
@@ -17960,6 +17883,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/nso/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/nso/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/nso/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/nso/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/nso/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/nso/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/nso/LC_MESSAGES/sb.mo
@@ -17980,6 +17904,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/nso/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_nso
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_nso.properties
+/usr/lib64/libreoffice/share/autotext/nso/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-nso.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_nso.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_nso.xcd
@@ -18001,6 +17926,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/sb.mo
@@ -18021,6 +17947,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/oc/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_oc
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_oc.properties
+/usr/lib64/libreoffice/share/autotext/oc/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-oc/LICENCES-fr.txt
 /usr/lib64/libreoffice/share/extensions/dict-oc/LICENSES-en.txt
 /usr/lib64/libreoffice/share/extensions/dict-oc/META-INF/manifest.xml
@@ -18128,6 +18055,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/om/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/om/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/om/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/om/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/om/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/om/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/om/LC_MESSAGES/sb.mo
@@ -18148,6 +18076,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/om/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_om
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_om.properties
+/usr/lib64/libreoffice/share/autotext/om/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-om.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_om.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_om.xcd
@@ -18169,6 +18098,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/or/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/or/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/or/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/or/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/or/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/or/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/or/LC_MESSAGES/sb.mo
@@ -18189,6 +18119,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/or/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_or
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_or.properties
+/usr/lib64/libreoffice/share/autotext/or/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-or.xcd
 /usr/lib64/libreoffice/share/registry/ctl_or.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_or.xcd
@@ -18211,6 +18142,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/pa_IN/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/pa_IN/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/pa_IN/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/pa_IN/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/pa_IN/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/pa_IN/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/pa_IN/LC_MESSAGES/sb.mo
@@ -18231,6 +18163,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/pa_IN/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_pa-IN
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_pa_IN.properties
+/usr/lib64/libreoffice/share/autotext/pa-IN/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-pa-IN.xcd
 /usr/lib64/libreoffice/share/registry/ctl_pa-IN.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_pa-IN.xcd
@@ -18331,6 +18264,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/pl/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/pl/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/pl/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/pl/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/pl/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/pl/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/pl/LC_MESSAGES/sb.mo
@@ -18543,6 +18477,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/pt/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/pt/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/pt/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/pt/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/pt/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/pt/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/pt/LC_MESSAGES/sb.mo
@@ -18575,6 +18510,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/pt_BR/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/pt_BR/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/pt_BR/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/pt_BR/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/pt_BR/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/pt_BR/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/pt_BR/LC_MESSAGES/sb.mo
@@ -18746,6 +18682,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ro/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ro/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ro/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ro/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ro/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ro/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ro/LC_MESSAGES/sb.mo
@@ -18880,6 +18817,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ru/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ru/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ru/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ru/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ru/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ru/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ru/LC_MESSAGES/sb.mo
@@ -19065,6 +19003,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/sb.mo
@@ -19085,6 +19024,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/rw/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_rw
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_rw.properties
+/usr/lib64/libreoffice/share/autotext/rw/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-rw.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_rw.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_rw.xcd
@@ -19106,6 +19046,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sa_IN/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sa_IN/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sa_IN/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sa_IN/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sa_IN/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sa_IN/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sa_IN/LC_MESSAGES/sb.mo
@@ -19126,6 +19067,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sa_IN/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_sa-IN
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_sa_IN.properties
+/usr/lib64/libreoffice/share/autotext/sa-IN/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-sa-IN.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_sa-IN.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_sa-IN.xcd
@@ -19147,6 +19089,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/sb.mo
@@ -19167,6 +19110,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_sat
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_sat.properties
+/usr/lib64/libreoffice/share/autotext/sat/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-sat.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_sat.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_sat.xcd
@@ -19188,6 +19132,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/sb.mo
@@ -19208,6 +19153,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_sd
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_sd.properties
+/usr/lib64/libreoffice/share/autotext/sd/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-sd.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_sd.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_sd.xcd
@@ -19307,6 +19253,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/si/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/si/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/si/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/si/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/si/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/si/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/si/LC_MESSAGES/sb.mo
@@ -19327,6 +19274,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/si/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_si
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_si.properties
+/usr/lib64/libreoffice/share/autotext/si/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-si/LICENSES-en.txt
 /usr/lib64/libreoffice/share/extensions/dict-si/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-si/description.xml
@@ -19432,6 +19380,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/sb.mo
@@ -19452,6 +19401,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sid/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_sid
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_sid.properties
+/usr/lib64/libreoffice/share/autotext/sid/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-sid.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_sid.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_sid.xcd
@@ -19551,6 +19501,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sk/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sk/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sk/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sk/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sk/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sk/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sk/LC_MESSAGES/sb.mo
@@ -19689,6 +19640,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sl/LC_MESSAGES/sb.mo
@@ -19722,6 +19674,8 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-sl/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-sl/dictionaries.xcu
 /usr/lib64/libreoffice/share/extensions/dict-sl/hyph_sl_SI.dic
+/usr/lib64/libreoffice/share/extensions/dict-sl/icon.png
+/usr/lib64/libreoffice/share/extensions/dict-sl/package-description.txt
 /usr/lib64/libreoffice/share/extensions/dict-sl/sl_SI.aff
 /usr/lib64/libreoffice/share/extensions/dict-sl/sl_SI.dic
 /usr/lib64/libreoffice/share/extensions/dict-sl/th_sl_SI_v2.dat
@@ -19826,6 +19780,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sq/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sq/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sq/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sq/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sq/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sq/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sq/LC_MESSAGES/sb.mo
@@ -19846,6 +19801,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sq/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_sq
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_sq.properties
+/usr/lib64/libreoffice/share/autotext/sq/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-sq/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-sq/README.txt
 /usr/lib64/libreoffice/share/extensions/dict-sq/description.xml
@@ -19873,6 +19829,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sr/LC_MESSAGES/sb.mo
@@ -19905,6 +19862,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sr@latin/LC_MESSAGES/sb.mo
@@ -19933,6 +19891,8 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/autocorr/acor_sr-Latn-RS.dat
 /usr/lib64/libreoffice/share/autocorr/acor_sr-ME.dat
 /usr/lib64/libreoffice/share/autocorr/acor_sr-RS.dat
+/usr/lib64/libreoffice/share/autotext/sr-Latn/standard.bau
+/usr/lib64/libreoffice/share/autotext/sr/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-sr/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-sr/README.txt
 /usr/lib64/libreoffice/share/extensions/dict-sr/description.xml
@@ -19968,6 +19928,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ss/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ss/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ss/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ss/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ss/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ss/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ss/LC_MESSAGES/sb.mo
@@ -19988,6 +19949,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ss/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_ss
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ss.properties
+/usr/lib64/libreoffice/share/autotext/ss/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-ss.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ss.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_ss.xcd
@@ -20009,6 +19971,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/st/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/st/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/st/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/st/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/st/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/st/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/st/LC_MESSAGES/sb.mo
@@ -20029,6 +19992,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/st/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_st
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_st.properties
+/usr/lib64/libreoffice/share/autotext/st/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-st.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_st.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_st.xcd
@@ -20128,6 +20092,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sv/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sv/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sv/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sv/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sv/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sv/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sv/LC_MESSAGES/sb.mo
@@ -20188,6 +20153,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sw_TZ/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sw_TZ/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sw_TZ/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sw_TZ/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sw_TZ/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sw_TZ/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sw_TZ/LC_MESSAGES/sb.mo
@@ -20208,6 +20174,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sw_TZ/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_sw-TZ
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_sw_TZ.properties
+/usr/lib64/libreoffice/share/autotext/sw-TZ/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-sw-TZ.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_sw-TZ.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_sw-TZ.xcd
@@ -20229,6 +20196,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/szl/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/szl/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/szl/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/szl/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/szl/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/szl/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/szl/LC_MESSAGES/sb.mo
@@ -20249,6 +20217,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/szl/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_szl
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_szl.properties
+/usr/lib64/libreoffice/share/autotext/szl/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-szl.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_szl.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_szl.xcd
@@ -20348,6 +20317,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ta/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ta/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ta/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ta/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ta/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ta/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ta/LC_MESSAGES/sb.mo
@@ -20368,6 +20338,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ta/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_ta
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ta.properties
+/usr/lib64/libreoffice/share/autotext/ta/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-ta.xcd
 /usr/lib64/libreoffice/share/registry/ctl_ta.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ta.xcd
@@ -20390,6 +20361,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/sb.mo
@@ -20410,6 +20382,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_te
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_te.properties
+/usr/lib64/libreoffice/share/autotext/te/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-te/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-te/README_hyph_te_IN.txt
 /usr/lib64/libreoffice/share/extensions/dict-te/README_te_IN.txt
@@ -20517,6 +20490,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/sb.mo
@@ -20537,6 +20511,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_tg
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_tg.properties
+/usr/lib64/libreoffice/share/autotext/tg/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-tg.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_tg.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_tg.xcd
@@ -20558,6 +20533,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/th/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/th/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/th/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/th/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/th/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/th/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/th/LC_MESSAGES/sb.mo
@@ -20578,6 +20554,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/th/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_th
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_th.properties
+/usr/lib64/libreoffice/share/autotext/th/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-th/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-th/README_th_TH.txt
 /usr/lib64/libreoffice/share/extensions/dict-th/description.xml
@@ -20607,6 +20584,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/tn/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/tn/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/tn/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/tn/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/tn/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/tn/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/tn/LC_MESSAGES/sb.mo
@@ -20627,6 +20605,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/tn/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_tn
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_tn.properties
+/usr/lib64/libreoffice/share/autotext/tn/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-tn.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_tn.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_tn.xcd
@@ -20726,6 +20705,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/tr/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/tr/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/tr/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/tr/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/tr/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/tr/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/tr/LC_MESSAGES/sb.mo
@@ -20771,6 +20751,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ts/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ts/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ts/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ts/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ts/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ts/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ts/LC_MESSAGES/sb.mo
@@ -20791,6 +20772,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ts/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_ts
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ts.properties
+/usr/lib64/libreoffice/share/autotext/ts/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-ts.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ts.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_ts.xcd
@@ -20812,6 +20794,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/tt/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/tt/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/tt/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/tt/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/tt/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/tt/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/tt/LC_MESSAGES/sb.mo
@@ -20832,6 +20815,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/tt/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_tt
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_tt.properties
+/usr/lib64/libreoffice/share/autotext/tt/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-tt.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_tt.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_tt.xcd
@@ -20931,6 +20915,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ug/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ug/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ug/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ug/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ug/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ug/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ug/LC_MESSAGES/sb.mo
@@ -20951,6 +20936,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ug/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_ug
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ug.properties
+/usr/lib64/libreoffice/share/autotext/ug/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-ug.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ug.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_ug.xcd
@@ -21050,6 +21036,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/uk/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/uk/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/uk/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/uk/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/uk/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/uk/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/uk/LC_MESSAGES/sb.mo
@@ -21070,6 +21057,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/uk/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_uk
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_uk.properties
+/usr/lib64/libreoffice/share/autotext/uk/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-uk/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-uk/README_hyph_uk_UA.txt
 /usr/lib64/libreoffice/share/extensions/dict-uk/README_th_uk_UA.txt
@@ -21102,6 +21090,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/uz/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/uz/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/uz/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/uz/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/uz/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/uz/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/uz/LC_MESSAGES/sb.mo
@@ -21122,6 +21111,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/uz/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_uz
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_uz.properties
+/usr/lib64/libreoffice/share/autotext/uz/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-uz.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_uz.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_uz.xcd
@@ -21143,6 +21133,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ve/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ve/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ve/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ve/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ve/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ve/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ve/LC_MESSAGES/sb.mo
@@ -21163,6 +21154,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ve/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_ve
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ve.properties
+/usr/lib64/libreoffice/share/autotext/ve/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-ve.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ve.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_ve.xcd
@@ -21184,6 +21176,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/sb.mo
@@ -21204,6 +21197,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_vec
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_vec.properties
+/usr/lib64/libreoffice/share/autotext/vec/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-vec.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_vec.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_vec.xcd
@@ -21303,6 +21297,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/vi/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/vi/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/vi/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/vi/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/vi/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/vi/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/vi/LC_MESSAGES/sb.mo
@@ -21353,6 +21348,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/xh/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/xh/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/xh/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/xh/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/xh/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/xh/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/xh/LC_MESSAGES/sb.mo
@@ -21373,6 +21369,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/xh/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_xh
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_xh.properties
+/usr/lib64/libreoffice/share/autotext/xh/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-xh.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_xh.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_xh.xcd
@@ -21551,6 +21548,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/zh_CN/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/zh_CN/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/zh_CN/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/zh_CN/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/zh_CN/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/zh_CN/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/zh_CN/LC_MESSAGES/sb.mo
@@ -21583,6 +21581,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/zh_TW/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/zh_TW/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/zh_TW/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/zh_TW/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/zh_TW/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/zh_TW/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/zh_TW/LC_MESSAGES/sb.mo
@@ -21641,6 +21640,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/sb.mo
@@ -21661,6 +21661,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_zu
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_zu.properties
+/usr/lib64/libreoffice/share/autotext/zu/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-zu/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-zu/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-zu/dictionaries.xcu
@@ -21938,6 +21939,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/share/package-licenses/libreoffice/351344d82dfbdfd3ad1e084fe8c37539872f3ea8
 /usr/share/package-licenses/libreoffice/3d6124299beadbdf34e46a1af82771afa1216a17
 /usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
+/usr/share/package-licenses/libreoffice/4b01a3fc1fa58d9958d9067fd7cdbe41c706f65f
 /usr/share/package-licenses/libreoffice/4ee6e10f18c3762079a77e39ebd51ecdc7ee95db
 /usr/share/package-licenses/libreoffice/552e717402633ecd4b29e48ff5c293ff6baca7bd
 /usr/share/package-licenses/libreoffice/5919d75f19b76bef533d4ff10d3cca634752aaec

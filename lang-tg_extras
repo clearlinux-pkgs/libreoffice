@@ -92,6 +92,7 @@
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/sb.mo
@@ -112,6 +113,7 @@
 /usr/lib64/libreoffice/program/resource/tg/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_tg
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_tg.properties
+/usr/lib64/libreoffice/share/autotext/tg/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-tg.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_tg.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_tg.xcd

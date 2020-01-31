@@ -14,6 +14,7 @@
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/af/LC_MESSAGES/sb.mo
@@ -35,6 +36,7 @@
 /usr/lib64/libreoffice/readmes/README_af
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_af.properties
 /usr/lib64/libreoffice/share/autocorr/acor_af-ZA.dat
+/usr/lib64/libreoffice/share/autotext/af/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-af/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-af/README_af_ZA.txt
 /usr/lib64/libreoffice/share/extensions/dict-af/af_ZA.aff

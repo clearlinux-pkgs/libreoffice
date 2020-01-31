@@ -92,6 +92,7 @@
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/sb.mo
@@ -112,6 +113,7 @@
 /usr/lib64/libreoffice/program/resource/gl/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_gl
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_gl.properties
+/usr/lib64/libreoffice/share/autotext/gl/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-gl/COPYING_th_gl
 /usr/lib64/libreoffice/share/extensions/dict-gl/Changelog.txt
 /usr/lib64/libreoffice/share/extensions/dict-gl/GPLv3.txt

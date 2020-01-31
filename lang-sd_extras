@@ -14,6 +14,7 @@
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/sb.mo
@@ -34,6 +35,7 @@
 /usr/lib64/libreoffice/program/resource/sd/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_sd
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_sd.properties
+/usr/lib64/libreoffice/share/autotext/sd/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-sd.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_sd.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_sd.xcd

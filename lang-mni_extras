@@ -14,6 +14,7 @@
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/sb.mo
@@ -34,6 +35,7 @@
 /usr/lib64/libreoffice/program/resource/mni/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_mni
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_mni.properties
+/usr/lib64/libreoffice/share/autotext/mni/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-mni.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_mni.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_mni.xcd

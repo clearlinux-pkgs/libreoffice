@@ -1,0 +1,8 @@
+Run the tool move_langs_to_extras.pl to update language packs.
+
+It will generate the lang-*_extras and lang-*_extras_requires files.
+
+This is particularly important when upgrading LibreOffice, as additional
+files may be produced, but it should also be run as a quick check after
+any autospec, and the diff checked to ensure there are no changes.
+

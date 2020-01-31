@@ -14,6 +14,7 @@
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/sb.mo
@@ -34,6 +35,7 @@
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_sat
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_sat.properties
+/usr/lib64/libreoffice/share/autotext/sat/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-sat.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_sat.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_sat.xcd

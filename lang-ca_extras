@@ -170,6 +170,7 @@
 /usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ca/LC_MESSAGES/sb.mo
@@ -202,6 +203,7 @@
 /usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/ca@valencia/LC_MESSAGES/sb.mo
@@ -225,6 +227,7 @@
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ca.properties
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ca_valencia.properties
 /usr/lib64/libreoffice/share/autocorr/acor_ca-ES.dat
+/usr/lib64/libreoffice/share/autotext/ca-valencia/standard.bau
 /usr/lib64/libreoffice/share/autotext/ca/standard.bau
 /usr/lib64/libreoffice/share/classification/example_ca-ES.xml
 /usr/lib64/libreoffice/share/extensions/dict-ca/LICENSES-en.txt

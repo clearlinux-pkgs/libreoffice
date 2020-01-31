@@ -14,6 +14,7 @@
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/sb.mo
@@ -34,6 +35,7 @@
 /usr/lib64/libreoffice/program/resource/te/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_te
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_te.properties
+/usr/lib64/libreoffice/share/autotext/te/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-te/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-te/README_hyph_te_IN.txt
 /usr/lib64/libreoffice/share/extensions/dict-te/README_te_IN.txt

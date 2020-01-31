@@ -92,6 +92,7 @@
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/sb.mo
@@ -112,6 +113,7 @@
 /usr/lib64/libreoffice/program/resource/bo/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_bo
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_bo.properties
+/usr/lib64/libreoffice/share/autotext/bo/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-bo/CHANGELOG.md
 /usr/lib64/libreoffice/share/extensions/dict-bo/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-bo/README.md

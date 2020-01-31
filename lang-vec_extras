@@ -14,6 +14,7 @@
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/sb.mo
@@ -34,6 +35,7 @@
 /usr/lib64/libreoffice/program/resource/vec/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_vec
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_vec.properties
+/usr/lib64/libreoffice/share/autotext/vec/standard.bau
 /usr/lib64/libreoffice/share/registry/Langpack-vec.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_vec.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_vec.xcd

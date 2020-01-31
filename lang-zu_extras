@@ -14,6 +14,7 @@
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/fps.mo
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/frm.mo
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/oox.mo
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/pcr.mo
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/rpt.mo
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/sb.mo
@@ -34,6 +35,7 @@
 /usr/lib64/libreoffice/program/resource/zu/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_zu
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_zu.properties
+/usr/lib64/libreoffice/share/autotext/zu/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-zu/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-zu/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-zu/dictionaries.xcu
