@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 6.4.0.3
-Release  : 38
+Release  : 39
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.4.0/libreoffice-6.4.0.3.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.4.0/libreoffice-6.4.0.3.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/QR-Code-generator-1.4.0.tar.gz
@@ -28,7 +28,6 @@ BuildRequires : bison
 BuildRequires : bluez-dev
 BuildRequires : boost-dev
 BuildRequires : buildreq-distutils3
-BuildRequires : buildreq-mvn
 BuildRequires : bzip2-dev
 BuildRequires : clucene-core-dev
 BuildRequires : coinmp-dev
@@ -46,7 +45,6 @@ BuildRequires : gnutls-dev
 BuildRequires : gobject-introspection-dev
 BuildRequires : gperf
 BuildRequires : gpgme-dev
-BuildRequires : gradle
 BuildRequires : hyphen-dev
 BuildRequires : icu4c-dev
 BuildRequires : krb5-dev
@@ -1099,7 +1097,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580504429
+export SOURCE_DATE_EPOCH=1582941994
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -1156,7 +1154,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1580504429
+export SOURCE_DATE_EPOCH=1582941994
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-6.4.0.3/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
