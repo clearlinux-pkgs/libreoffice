@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 6.4.1.2
-Release  : 40
+Release  : 41
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.4.1/libreoffice-6.4.1.2.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/6.4.1/libreoffice-6.4.1.2.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/QR-Code-generator-1.4.0.tar.gz
