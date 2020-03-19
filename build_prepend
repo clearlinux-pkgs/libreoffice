@@ -1,2 +1,2 @@
-mkdir -p %{_builddir}/libreoffice-6.4.1.2/external/tarballs/
-cp %{_sourcedir}/QR-Code-generator-1.4.0.tar.gz %{_builddir}/libreoffice-6.4.1.2/external/tarballs/
+mkdir -p %{_builddir}/libreoffice-6.4.2.2/external/tarballs/
+cp %{_sourcedir}/QR-Code-generator-1.4.0.tar.gz %{_builddir}/libreoffice-6.4.2.2/external/tarballs/
