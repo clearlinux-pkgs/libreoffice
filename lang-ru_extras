@@ -39,7 +39,9 @@
 /usr/lib64/libreoffice/help/ru/sdatabase.idxl/_0.cfs
 /usr/lib64/libreoffice/help/ru/sdatabase.idxl/segments.gen
 /usr/lib64/libreoffice/help/ru/sdatabase.idxl/segments_3
+/usr/lib64/libreoffice/help/ru/sdatabase.jar
 /usr/lib64/libreoffice/help/ru/sdatabase.key
+/usr/lib64/libreoffice/help/ru/sdatabase.tree
 /usr/lib64/libreoffice/help/ru/sdraw.cfg
 /usr/lib64/libreoffice/help/ru/sdraw.db
 /usr/lib64/libreoffice/help/ru/sdraw.ht
@@ -123,7 +125,7 @@
 /usr/lib64/libreoffice/share/extensions/dict-ru/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-ru/README_Lightproof_ru_RU.txt
 /usr/lib64/libreoffice/share/extensions/dict-ru/README_ru_RU.txt
-/usr/lib64/libreoffice/share/extensions/dict-ru/README_thes_ru_RU.txt
+/usr/lib64/libreoffice/share/extensions/dict-ru/README_thes_ru_RU_M_aot_and_v2.txt
 /usr/lib64/libreoffice/share/extensions/dict-ru/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/OptionsDialog.xcs
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/OptionsDialog.xcu
@@ -143,6 +145,7 @@
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_bs.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ca.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ca_valencia.properties
+/usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ckb.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_cs.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_cy.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_da.properties
@@ -162,6 +165,7 @@
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_fa.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_fi.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_fr.properties
+/usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_fur.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_fy.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ga.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_gd.properties
@@ -255,8 +259,8 @@
 /usr/lib64/libreoffice/share/extensions/dict-ru/pythonpath/lightproof_ru_RU.py
 /usr/lib64/libreoffice/share/extensions/dict-ru/ru_RU.aff
 /usr/lib64/libreoffice/share/extensions/dict-ru/ru_RU.dic
-/usr/lib64/libreoffice/share/extensions/dict-ru/th_ru_RU_v2.dat
-/usr/lib64/libreoffice/share/extensions/dict-ru/th_ru_RU_v2.idx
+/usr/lib64/libreoffice/share/extensions/dict-ru/th_ru_RU_M_aot_and_v2.dat
+/usr/lib64/libreoffice/share/extensions/dict-ru/th_ru_RU_M_aot_and_v2.idx
 /usr/lib64/libreoffice/share/registry/Langpack-ru.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ru.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_ru.xcd

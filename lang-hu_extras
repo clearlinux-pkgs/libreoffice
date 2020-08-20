@@ -39,7 +39,9 @@
 /usr/lib64/libreoffice/help/hu/sdatabase.idxl/_0.cfs
 /usr/lib64/libreoffice/help/hu/sdatabase.idxl/segments.gen
 /usr/lib64/libreoffice/help/hu/sdatabase.idxl/segments_3
+/usr/lib64/libreoffice/help/hu/sdatabase.jar
 /usr/lib64/libreoffice/help/hu/sdatabase.key
+/usr/lib64/libreoffice/help/hu/sdatabase.tree
 /usr/lib64/libreoffice/help/hu/sdraw.cfg
 /usr/lib64/libreoffice/help/hu/sdraw.db
 /usr/lib64/libreoffice/help/hu/sdraw.ht
@@ -146,6 +148,7 @@
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_bs.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_ca.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_ca_valencia.properties
+/usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_ckb.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_cs.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_cy.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_da.properties
@@ -165,6 +168,7 @@
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_fa.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_fi.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_fr.properties
+/usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_fur.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_fy.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_ga.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_gd.properties

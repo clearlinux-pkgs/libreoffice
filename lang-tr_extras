@@ -39,7 +39,9 @@
 /usr/lib64/libreoffice/help/tr/sdatabase.idxl/_0.cfs
 /usr/lib64/libreoffice/help/tr/sdatabase.idxl/segments.gen
 /usr/lib64/libreoffice/help/tr/sdatabase.idxl/segments_3
+/usr/lib64/libreoffice/help/tr/sdatabase.jar
 /usr/lib64/libreoffice/help/tr/sdatabase.key
+/usr/lib64/libreoffice/help/tr/sdatabase.tree
 /usr/lib64/libreoffice/help/tr/sdraw.cfg
 /usr/lib64/libreoffice/help/tr/sdraw.db
 /usr/lib64/libreoffice/help/tr/sdraw.ht
@@ -117,6 +119,12 @@
 /usr/lib64/libreoffice/share/autotext/tr/crdbus50.bau
 /usr/lib64/libreoffice/share/autotext/tr/standard.bau
 /usr/lib64/libreoffice/share/autotext/tr/template.bau
+/usr/lib64/libreoffice/share/extensions/dict-tr/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-tr/README.txt
+/usr/lib64/libreoffice/share/extensions/dict-tr/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-tr/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-tr/tr_TR.aff
+/usr/lib64/libreoffice/share/extensions/dict-tr/tr_TR.dic
 /usr/lib64/libreoffice/share/registry/Langpack-tr.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_tr.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_tr.xcd
