@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 7.0.0.3
-Release  : 46
+Release  : 47
 URL      : https://download.documentfoundation.org/libreoffice/src/7.0.0/libreoffice-7.0.0.3.tar.xz
 Source0  : https://download.documentfoundation.org/libreoffice/src/7.0.0/libreoffice-7.0.0.3.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/QR-Code-generator-1.4.0.tar.gz
