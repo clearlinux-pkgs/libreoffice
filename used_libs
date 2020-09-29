@@ -41,10 +41,10 @@ libgstvideo-1.0.so.0
 libgtk-3.so.0
 libharfbuzz-icu.so.0
 libharfbuzz.so.0
-libhunspell-1.6.so.0
+libhunspell-1.7.so.0
 libhyphen.so.0
-libicui18n.so.64
-libicuuc.so.64
+libicui18n.so.67
+libicuuc.so.67
 libjpeg.so.62
 liblangtag.so.1
 liblcms2.so.2

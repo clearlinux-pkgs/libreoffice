@@ -30,7 +30,6 @@ Configure miss: whether g++ supports C++2a <span> with unsigned size_type
 Configure miss: whether g++ implements C++ DR P1155R3
 Configure miss: whether g++ might report false -Werror=maybe-uninitialized
 Configure miss: if g++ has a visibility bug with class-level attributes (GCC bug 26905)
-Configure miss: whether to add custom build version
 Configure miss: whether to enable export file validation
 Configure miss: Microsoft Binary File Format Validator
 Configure miss: whether to enable EPM for packing
