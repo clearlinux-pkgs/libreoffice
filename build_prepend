@@ -1,4 +1,4 @@
 mkdir -p $(echo %{_builddir}/libreoffice-*/external)/tarballs/
-cp %{_sourcedir}/QR-Code-generator-1.4.0.tar.gz %{_builddir}/libreoffice-*/external/tarballs/
-cp %{_sourcedir}/dtoa-20180411.tgz %{_builddir}/libreoffice-*/external/tarballs/
-cp %{_sourcedir}/skia-m84-c1baf6e1c2a5454148adb516f0f833483b5a0353.tar.xz %{_builddir}/libreoffice-*/external/tarballs/
+cp %{_sourcedir}/QR-Code-generator-*.tar.gz %{_builddir}/libreoffice-*/external/tarballs/
+cp %{_sourcedir}/dtoa-*.tgz %{_builddir}/libreoffice-*/external/tarballs/
+cp %{_sourcedir}/skia-*.tar.xz %{_builddir}/libreoffice-*/external/tarballs/
