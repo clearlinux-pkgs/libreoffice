@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 7.0.3.1
-Release  : 50
+Release  : 51
 URL      : https://download.documentfoundation.org/libreoffice/src/7.0.3/libreoffice-7.0.3.1.tar.xz
 Source0  : https://download.documentfoundation.org/libreoffice/src/7.0.3/libreoffice-7.0.3.1.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/QR-Code-generator-1.4.0.tar.gz
@@ -40,6 +40,7 @@ BuildRequires : e2fsprogs-dev
 BuildRequires : epm
 BuildRequires : fakeroot
 BuildRequires : flex
+BuildRequires : fontforge
 BuildRequires : gdb
 BuildRequires : glm-dev
 BuildRequires : gnupg
@@ -109,7 +110,6 @@ BuildRequires : pkgconfig(lcms2)
 BuildRequires : pkgconfig(libcurl)
 BuildRequires : pkgconfig(libexslt)
 BuildRequires : pkgconfig(libexttextcat)
-BuildRequires : pkgconfig(libfontforge)
 BuildRequires : pkgconfig(libnumbertext)
 BuildRequires : pkgconfig(libpq)
 BuildRequires : pkgconfig(libxml-2.0)
@@ -1127,7 +1127,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1604700524
+export SOURCE_DATE_EPOCH=1604962676
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -1184,7 +1184,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1604700524
+export SOURCE_DATE_EPOCH=1604962676
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-7.0.3.1/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02

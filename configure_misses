@@ -46,7 +46,7 @@ Configure miss: whether to build with lpsolve
 Configure miss: gnucp
 Configure miss: whether to enable the VLC avmedia backend
 Configure miss: whether to build PDFium
-Configure miss: /run/user/1000
+Configure miss: /run/user/1010
 Configure miss: whether to build the Wiki Publisher extension
 Configure miss: whether to build the Report Builder
 Configure miss: whether to build support for scripts in BeanShell
