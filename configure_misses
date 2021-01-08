@@ -19,8 +19,7 @@ Configure miss: whether we want to fetch tarballs
 Configure miss: whether to enable xapian-omega support for help
 Configure miss: whether to enable pch feature
 Configure miss: x86_64-generic-linux-gnu-readelf
-Configure miss: sys/sdt.h usability
-Configure miss: sys/sdt.h presence
+Configure miss: g++ option to enable C++11 features
 Configure miss: sys/sdt.h
 Configure miss: whether g++ defines __cxa_eh_globals in cxxabi.h
 Configure miss: whether g++ defines __cxa_exception in cxxabi.h
@@ -46,7 +45,7 @@ Configure miss: whether to build with lpsolve
 Configure miss: gnucp
 Configure miss: whether to enable the VLC avmedia backend
 Configure miss: whether to build PDFium
-Configure miss: /run/user/1010
+Configure miss: /run/user/1000
 Configure miss: whether to build the Wiki Publisher extension
 Configure miss: whether to build the Report Builder
 Configure miss: whether to build support for scripts in BeanShell
