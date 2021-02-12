@@ -5,31 +5,30 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 7.0.4.2
-Release  : 55
-URL      : https://download.documentfoundation.org/libreoffice/src/7.0.4/libreoffice-7.0.4.2.tar.xz
-Source0  : https://download.documentfoundation.org/libreoffice/src/7.0.4/libreoffice-7.0.4.2.tar.xz
+Version  : 7.1.0.3
+Release  : 56
+URL      : https://download.documentfoundation.org/libreoffice/src/7.1.0/libreoffice-7.1.0.3.tar.xz
+Source0  : https://download.documentfoundation.org/libreoffice/src/7.1.0/libreoffice-7.1.0.3.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/QR-Code-generator-1.4.0.tar.gz
 Source2  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
-Source3  : https://dev-www.libreoffice.org/src/neon-0.30.2.tar.gz
-Source4  : https://dev-www.libreoffice.org/src/skia-m85-e684c6daef6bfb774a325a069eda1f76ca6ac26c.tar.xz
-Source5  : https://download.documentfoundation.org/libreoffice/src/7.0.4/libreoffice-dictionaries-7.0.4.2.tar.xz
-Source6  : https://download.documentfoundation.org/libreoffice/src/7.0.4/libreoffice-help-7.0.4.2.tar.xz
-Source7  : https://download.documentfoundation.org/libreoffice/src/7.0.4/libreoffice-translations-7.0.4.2.tar.xz
-Source8  : https://download.documentfoundation.org/libreoffice/src/7.0.4/libreoffice-7.0.4.2.tar.xz.asc
+Source3  : https://dev-www.libreoffice.org/src/neon-0.31.1.tar.gz
+Source4  : https://dev-www.libreoffice.org/src/skia-m88-59bafeeaa7de9eb753e3778c414e01dcf013dcd8.tar.xz
+Source5  : https://download.documentfoundation.org/libreoffice/src/7.1.0/libreoffice-dictionaries-7.1.0.3.tar.xz
+Source6  : https://download.documentfoundation.org/libreoffice/src/7.1.0/libreoffice-help-7.1.0.3.tar.xz
+Source7  : https://download.documentfoundation.org/libreoffice/src/7.1.0/libreoffice-translations-7.1.0.3.tar.xz
+Source8  : https://download.documentfoundation.org/libreoffice/src/7.1.0/libreoffice-7.1.0.3.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
-License  : Apache-2.0 BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA W3C
+License  : Apache-2.0 BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception W3C
 Requires: libreoffice-bin = %{version}-%{release}
 Requires: libreoffice-data = %{version}-%{release}
 Requires: libreoffice-lib = %{version}-%{release}
-Requires: libreoffice-license = %{version}-%{release}
-Requires: libreoffice-man = %{version}-%{release}
 BuildRequires : apache-ant
 BuildRequires : apr-dev
 BuildRequires : bison
 BuildRequires : bluez-dev
 BuildRequires : boost-dev
+BuildRequires : box2d-dev
 BuildRequires : buildreq-distutils3
 BuildRequires : bzip2-dev
 BuildRequires : clucene-core-dev
@@ -142,7 +141,6 @@ a dummy package
 Summary: bin components for the libreoffice package.
 Group: Binaries
 Requires: libreoffice-data = %{version}-%{release}
-Requires: libreoffice-license = %{version}-%{release}
 
 %description bin
 bin components for the libreoffice package.
@@ -172,7 +170,6 @@ dev components for the libreoffice package.
 %package doc
 Summary: doc components for the libreoffice package.
 Group: Documentation
-Requires: libreoffice-man = %{version}-%{release}
 
 %description doc
 doc components for the libreoffice package.
@@ -1070,36 +1067,19 @@ extras-lang-zu components for the libreoffice package.
 Summary: lib components for the libreoffice package.
 Group: Libraries
 Requires: libreoffice-data = %{version}-%{release}
-Requires: libreoffice-license = %{version}-%{release}
 
 %description lib
 lib components for the libreoffice package.
 
 
-%package license
-Summary: license components for the libreoffice package.
-Group: Default
-
-%description license
-license components for the libreoffice package.
-
-
-%package man
-Summary: man components for the libreoffice package.
-Group: Default
-
-%description man
-man components for the libreoffice package.
-
-
 %prep
-%setup -q -n libreoffice-7.0.4.2
+%setup -q -n libreoffice-7.1.0.3
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-dictionaries-7.0.4.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-dictionaries-7.1.0.3.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-help-7.0.4.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-help-7.1.0.3.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-translations-7.0.4.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-translations-7.1.0.3.tar.xz
 cd %{_builddir}
 mkdir -p QR-Code-generator-1.4.0.tar
 cd QR-Code-generator-1.4.0.tar
@@ -1109,14 +1089,14 @@ mkdir -p dtoa-20180411
 cd dtoa-20180411
 tar xf %{_sourcedir}/dtoa-20180411.tgz
 cd %{_builddir}
-mkdir -p skia-m85-e684c6daef6bfb774a325a069eda1f76ca6ac26c.tar
-cd skia-m85-e684c6daef6bfb774a325a069eda1f76ca6ac26c.tar
-tar xf %{_sourcedir}/skia-m85-e684c6daef6bfb774a325a069eda1f76ca6ac26c.tar.xz
+mkdir -p skia-m88-59bafeeaa7de9eb753e3778c414e01dcf013dcd8.tar
+cd skia-m88-59bafeeaa7de9eb753e3778c414e01dcf013dcd8.tar
+tar xf %{_sourcedir}/skia-m88-59bafeeaa7de9eb753e3778c414e01dcf013dcd8.tar.xz
 cd %{_builddir}
-mkdir -p neon-0.30.2.tar
-cd neon-0.30.2.tar
-tar xf %{_sourcedir}/neon-0.30.2.tar.gz
-cd %{_builddir}/libreoffice-7.0.4.2
+mkdir -p neon-0.31.1.tar
+cd neon-0.31.1.tar
+tar xf %{_sourcedir}/neon-0.31.1.tar.gz
+cd %{_builddir}/libreoffice-7.1.0.3
 %patch1 -p1
 
 %build
@@ -1131,7 +1111,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1610148851
+export SOURCE_DATE_EPOCH=1613166409
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -1188,83 +1168,80 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1610148851
+export SOURCE_DATE_EPOCH=1613166409
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
-cp %{_builddir}/libreoffice-7.0.4.2/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/libreoffice-7.0.4.2/COPYING.LGPL %{buildroot}/usr/share/package-licenses/libreoffice/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9
-cp %{_builddir}/libreoffice-7.0.4.2/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
-cp %{_builddir}/libreoffice-7.0.4.2/bin/text_cat/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/caeb68c46fa36651acf592771d09de7937926bb3
-cp %{_builddir}/libreoffice-7.0.4.2/bin/text_cat/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/a2987fb2ef11c7c38cd03bc5d0be22014b63f777
-cp %{_builddir}/libreoffice-7.0.4.2/compilerplugins/LICENSE.TXT %{buildroot}/usr/share/package-licenses/libreoffice/4b01a3fc1fa58d9958d9067fd7cdbe41c706f65f
-cp %{_builddir}/libreoffice-7.0.4.2/connectivity/source/drivers/mork/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/2fd7f23f9705fd591c14e2825dd03904f8337600
-cp %{_builddir}/libreoffice-7.0.4.2/desktop/source/deployment/gui/license_dialog.cxx %{buildroot}/usr/share/package-licenses/libreoffice/901f6ff5addd8a2c0c83350e36baedaa3dd1d6ab
-cp %{_builddir}/libreoffice-7.0.4.2/desktop/source/deployment/gui/license_dialog.hxx %{buildroot}/usr/share/package-licenses/libreoffice/0d42bf3e84b8f5a24c66ad825733b8bcc43f374d
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/an_ES/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/981a819a0c9c4a4025d0c52b2b196b124f975d22
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/ar/COPYING.txt %{buildroot}/usr/share/package-licenses/libreoffice/2f203961eeb312e8253537e3b32b106fd968e45a
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/bg_BG/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/a5ddbc9cb6373c0bbd63da31d0190a3ed9f30fa4
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/bn_BD/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/0b184ad51ba2a79e85d2288d5fcf8a1ea0481ea4
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/br_FR/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/f9021477f3ffe66b806c98da42d1328fafee45fb
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/ca/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/4ee6e10f18c3762079a77e39ebd51ecdc7ee95db
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/de/COPYING_GPLv2 %{buildroot}/usr/share/package-licenses/libreoffice/ffafa3d581babbe799b390d4d7057d07a6dda4b2
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/de/COPYING_GPLv3 %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/de/COPYING_LGPL_v2.0.txt %{buildroot}/usr/share/package-licenses/libreoffice/ba8966e2473a9969bdcab3dc82274c817cfd98a1
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/de/COPYING_LGPL_v2.1.txt %{buildroot}/usr/share/package-licenses/libreoffice/01a6b4bf79aca9b556822601186afab86e8c4fbf
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/de/COPYING_OASIS.txt %{buildroot}/usr/share/package-licenses/libreoffice/26f94fe5a890afb135cc9fea45fdcef51c4439aa
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/en/WordNet_license.txt %{buildroot}/usr/share/package-licenses/libreoffice/ffdb86b8f5a1a5020288c7fcc996258f44bf691d
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/en/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/086522998bce7aa9e5a07c02b0336895c8940a4d
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/gd_GB/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/f5dce21518ec83c44e57f084f494634ff53ddc14
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/gl/COPYING_th_gl %{buildroot}/usr/share/package-licenses/libreoffice/73a5c65a9ad1edb175e9e3b28db6b2612abb467b
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/hi_IN/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/0b184ad51ba2a79e85d2288d5fcf8a1ea0481ea4
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/hi_IN/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/1e1ed49217c54335ff1a9c391094166d4dfe5fff
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/id/LICENSE-dict %{buildroot}/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/id/LICENSE-thes %{buildroot}/usr/share/package-licenses/libreoffice/5919d75f19b76bef533d4ff10d3cca634752aaec
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/is/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/c20a43e2449b367c09f9e5f665febc631e99848a
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/it_IT/legacy/it_IT_license.txt %{buildroot}/usr/share/package-licenses/libreoffice/a9d9e3aae241e2506e0c9ef63f26fbcffe1209e2
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/kmr_Latn/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/1efe32a14d6ac9af625ba23a893352d02de30add
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/lt_LT/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/865dcd10722390043968e224401709450c0bbb54
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/lv_LV/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/720ac006232639ed551ce48d638dee35f8d378d4
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/no/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/ffafa3d581babbe799b390d4d7057d07a6dda4b2
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/oc_FR/LICENCES-fr.txt %{buildroot}/usr/share/package-licenses/libreoffice/9d5ac27058dda3d79eb89b772e1fe479fba0de8b
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/oc_FR/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/e6e2136cad401fa53663fd04205296db2eb08b05
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/pt_PT/LICENSES.txt %{buildroot}/usr/share/package-licenses/libreoffice/552e717402633ecd4b29e48ff5c293ff6baca7bd
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/ro/COPYING.GPL %{buildroot}/usr/share/package-licenses/libreoffice/0c4fabaa9f307652fd2b2f0057b8048809cca570
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/ro/COPYING.LGPL %{buildroot}/usr/share/package-licenses/libreoffice/cf756914ec51f52f9c121be247bfda232dc6afd2
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/ro/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/aba8d76d0af67d57da3c3c321caa59f3d242386b
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/si_LK/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/98da77a33f378a25b9ab4b40dfdb4af8bdd4919f
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/sk_SK/LICENSE.txt %{buildroot}/usr/share/package-licenses/libreoffice/cb3b074e16ba14585901215392dae8054260b960
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/sv_SE/LICENSE_en_US.txt %{buildroot}/usr/share/package-licenses/libreoffice/3d6124299beadbdf34e46a1af82771afa1216a17
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/sv_SE/LICENSE_sv_SE.txt %{buildroot}/usr/share/package-licenses/libreoffice/9da09717e40fd46206f0e48ad32cb3e6e0c425d3
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/tr_TR/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/tr_TR/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/vi/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/cea402c4f150370f47b5f5e7ef461df23ec6a04d
-cp %{_builddir}/libreoffice-7.0.4.2/dictionaries/vi/LICENSES-vi.txt %{buildroot}/usr/share/package-licenses/libreoffice/75b80fb33eafe0831107b9b6f5bd7306e4b1ca46
-cp %{_builddir}/libreoffice-7.0.4.2/extras/source/autocorr/lang/hr/licence.md %{buildroot}/usr/share/package-licenses/libreoffice/dfa4d68ffb8c478209adb3ff777f33d0853d364d
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/breeze/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/breeze_dark/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/breeze_dark_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/breeze_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/colibre/COPYING-ICONS %{buildroot}/usr/share/package-licenses/libreoffice/87b4193b4a14442b39731f4a4c7fe3c405269984
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/colibre_svg/COPYING-ICONS %{buildroot}/usr/share/package-licenses/libreoffice/87b4193b4a14442b39731f4a4c7fe3c405269984
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/elementary/LICENSE.GPL %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/elementary_svg/LICENSE.GPL %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/karasa_jaga/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/f635d28c6cbaac2760d09920ba63f19ed1ef6a27
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/karasa_jaga/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/karasa_jaga_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/f635d28c6cbaac2760d09920ba63f19ed1ef6a27
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/karasa_jaga_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/sifr/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/sifr_dark/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/sifr_dark_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/sifr_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/sukapura/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b
-cp %{_builddir}/libreoffice-7.0.4.2/icon-themes/sukapura_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b
-cp %{_builddir}/libreoffice-7.0.4.2/odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.idl %{buildroot}/usr/share/package-licenses/libreoffice/cc06ca4f929598f3aa142289edb889da935360ca
-cp %{_builddir}/libreoffice-7.0.4.2/odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.java %{buildroot}/usr/share/package-licenses/libreoffice/a76a0e7e8a8c7f46a328c16110f3c1dfbf9196ad
-cp %{_builddir}/libreoffice-7.0.4.2/offapi/com/sun/star/deployment/LicenseException.idl %{buildroot}/usr/share/package-licenses/libreoffice/ea8bfbc661450e5ca8cb6d5f0c30ee3e854cb6d7
-cp %{_builddir}/libreoffice-7.0.4.2/offapi/com/sun/star/deployment/ui/LicenseDialog.idl %{buildroot}/usr/share/package-licenses/libreoffice/351344d82dfbdfd3ad1e084fe8c37539872f3ea8
-cp %{_builddir}/libreoffice-7.0.4.2/readlicense_oo/license/NOTICE %{buildroot}/usr/share/package-licenses/libreoffice/cc16e7abcfe5dc3fdc19c7d795b58f51e0dc15e0
-cp %{_builddir}/libreoffice-7.0.4.2/readlicense_oo/license/license.xml %{buildroot}/usr/share/package-licenses/libreoffice/3ffd75da8b0b4045a37f454032968fd0b31e1188
-cp %{_builddir}/libreoffice-7.0.4.2/sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/libreoffice/c407f2bc4c591b1d0aeef720a90f87b1eb35bfcf
+cp %{_builddir}/libreoffice-7.1.0.3/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/libreoffice-7.1.0.3/COPYING.LGPL %{buildroot}/usr/share/package-licenses/libreoffice/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9
+cp %{_builddir}/libreoffice-7.1.0.3/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
+cp %{_builddir}/libreoffice-7.1.0.3/bin/text_cat/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/caeb68c46fa36651acf592771d09de7937926bb3
+cp %{_builddir}/libreoffice-7.1.0.3/bin/text_cat/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/a2987fb2ef11c7c38cd03bc5d0be22014b63f777
+cp %{_builddir}/libreoffice-7.1.0.3/connectivity/source/drivers/mork/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/2fd7f23f9705fd591c14e2825dd03904f8337600
+cp %{_builddir}/libreoffice-7.1.0.3/desktop/source/deployment/gui/license_dialog.cxx %{buildroot}/usr/share/package-licenses/libreoffice/99cb4e9c2d3a86db4447c164cc3d6d2c5405b1da
+cp %{_builddir}/libreoffice-7.1.0.3/desktop/source/deployment/gui/license_dialog.hxx %{buildroot}/usr/share/package-licenses/libreoffice/fc52bdd52dcd28fcb258701ff22dc2958c735b1b
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/an_ES/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/981a819a0c9c4a4025d0c52b2b196b124f975d22
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/ar/COPYING.txt %{buildroot}/usr/share/package-licenses/libreoffice/2f203961eeb312e8253537e3b32b106fd968e45a
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/bg_BG/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/a5ddbc9cb6373c0bbd63da31d0190a3ed9f30fa4
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/bn_BD/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/0b184ad51ba2a79e85d2288d5fcf8a1ea0481ea4
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/br_FR/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/f9021477f3ffe66b806c98da42d1328fafee45fb
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/ca/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/4ee6e10f18c3762079a77e39ebd51ecdc7ee95db
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/de/COPYING_GPLv2 %{buildroot}/usr/share/package-licenses/libreoffice/ffafa3d581babbe799b390d4d7057d07a6dda4b2
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/de/COPYING_GPLv3 %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/de/COPYING_LGPL_v2.0.txt %{buildroot}/usr/share/package-licenses/libreoffice/ba8966e2473a9969bdcab3dc82274c817cfd98a1
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/de/COPYING_LGPL_v2.1.txt %{buildroot}/usr/share/package-licenses/libreoffice/01a6b4bf79aca9b556822601186afab86e8c4fbf
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/de/COPYING_OASIS.txt %{buildroot}/usr/share/package-licenses/libreoffice/26f94fe5a890afb135cc9fea45fdcef51c4439aa
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/en/WordNet_license.txt %{buildroot}/usr/share/package-licenses/libreoffice/ffdb86b8f5a1a5020288c7fcc996258f44bf691d
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/en/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/086522998bce7aa9e5a07c02b0336895c8940a4d
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/gd_GB/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/f5dce21518ec83c44e57f084f494634ff53ddc14
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/gl/COPYING_th_gl %{buildroot}/usr/share/package-licenses/libreoffice/73a5c65a9ad1edb175e9e3b28db6b2612abb467b
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/hi_IN/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/0b184ad51ba2a79e85d2288d5fcf8a1ea0481ea4
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/hi_IN/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/1e1ed49217c54335ff1a9c391094166d4dfe5fff
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/id/LICENSE-dict %{buildroot}/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/id/LICENSE-thes %{buildroot}/usr/share/package-licenses/libreoffice/5919d75f19b76bef533d4ff10d3cca634752aaec
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/is/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/c20a43e2449b367c09f9e5f665febc631e99848a
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/it_IT/legacy/it_IT_license.txt %{buildroot}/usr/share/package-licenses/libreoffice/a9d9e3aae241e2506e0c9ef63f26fbcffe1209e2
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/kmr_Latn/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/1efe32a14d6ac9af625ba23a893352d02de30add
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/lt_LT/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/865dcd10722390043968e224401709450c0bbb54
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/lv_LV/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/720ac006232639ed551ce48d638dee35f8d378d4
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/no/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/ffafa3d581babbe799b390d4d7057d07a6dda4b2
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/pt_PT/LICENSES.txt %{buildroot}/usr/share/package-licenses/libreoffice/552e717402633ecd4b29e48ff5c293ff6baca7bd
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/ro/COPYING.GPL %{buildroot}/usr/share/package-licenses/libreoffice/0c4fabaa9f307652fd2b2f0057b8048809cca570
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/ro/COPYING.LGPL %{buildroot}/usr/share/package-licenses/libreoffice/cf756914ec51f52f9c121be247bfda232dc6afd2
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/ro/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/aba8d76d0af67d57da3c3c321caa59f3d242386b
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/si_LK/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/98da77a33f378a25b9ab4b40dfdb4af8bdd4919f
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/sk_SK/LICENSE.txt %{buildroot}/usr/share/package-licenses/libreoffice/cb3b074e16ba14585901215392dae8054260b960
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/sv_SE/LICENSE_en_US.txt %{buildroot}/usr/share/package-licenses/libreoffice/3d6124299beadbdf34e46a1af82771afa1216a17
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/sv_SE/LICENSE_sv_SE.txt %{buildroot}/usr/share/package-licenses/libreoffice/9da09717e40fd46206f0e48ad32cb3e6e0c425d3
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/tr_TR/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/tr_TR/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/vi/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/cea402c4f150370f47b5f5e7ef461df23ec6a04d
+cp %{_builddir}/libreoffice-7.1.0.3/dictionaries/vi/LICENSES-vi.txt %{buildroot}/usr/share/package-licenses/libreoffice/75b80fb33eafe0831107b9b6f5bd7306e4b1ca46
+cp %{_builddir}/libreoffice-7.1.0.3/extras/source/autocorr/lang/hr/licence.md %{buildroot}/usr/share/package-licenses/libreoffice/dfa4d68ffb8c478209adb3ff777f33d0853d364d
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/breeze/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/breeze_dark/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/breeze_dark_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/breeze_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/colibre/COPYING-ICONS %{buildroot}/usr/share/package-licenses/libreoffice/87b4193b4a14442b39731f4a4c7fe3c405269984
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/colibre_svg/COPYING-ICONS %{buildroot}/usr/share/package-licenses/libreoffice/87b4193b4a14442b39731f4a4c7fe3c405269984
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/elementary/LICENSE.GPL %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/elementary_svg/LICENSE.GPL %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/karasa_jaga/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/f635d28c6cbaac2760d09920ba63f19ed1ef6a27
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/karasa_jaga/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/karasa_jaga_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/f635d28c6cbaac2760d09920ba63f19ed1ef6a27
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/karasa_jaga_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/sifr/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/sifr_dark/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/sifr_dark_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/sifr_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/sukapura/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b
+cp %{_builddir}/libreoffice-7.1.0.3/icon-themes/sukapura_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b
+cp %{_builddir}/libreoffice-7.1.0.3/odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.idl %{buildroot}/usr/share/package-licenses/libreoffice/cc06ca4f929598f3aa142289edb889da935360ca
+cp %{_builddir}/libreoffice-7.1.0.3/odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.java %{buildroot}/usr/share/package-licenses/libreoffice/a76a0e7e8a8c7f46a328c16110f3c1dfbf9196ad
+cp %{_builddir}/libreoffice-7.1.0.3/offapi/com/sun/star/deployment/LicenseException.idl %{buildroot}/usr/share/package-licenses/libreoffice/ea8bfbc661450e5ca8cb6d5f0c30ee3e854cb6d7
+cp %{_builddir}/libreoffice-7.1.0.3/offapi/com/sun/star/deployment/ui/LicenseDialog.idl %{buildroot}/usr/share/package-licenses/libreoffice/351344d82dfbdfd3ad1e084fe8c37539872f3ea8
+cp %{_builddir}/libreoffice-7.1.0.3/readlicense_oo/license/NOTICE %{buildroot}/usr/share/package-licenses/libreoffice/cc16e7abcfe5dc3fdc19c7d795b58f51e0dc15e0
+cp %{_builddir}/libreoffice-7.1.0.3/readlicense_oo/license/license.xml %{buildroot}/usr/share/package-licenses/libreoffice/ef57d304b483867d7a00ce58d320a824bc604a09
+cp %{_builddir}/libreoffice-7.1.0.3/sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/libreoffice/80a8d4bcf0ccb13b515b47b68437d9300ad4aee1
 %make_install distro-pack-install
 ## Remove excluded files
 rm -f %{buildroot}/usr/lib64/libreoffice/sdk/classes
@@ -1688,6 +1665,8 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/services/services.rdb
 /usr/lib64/libreoffice/program/setuprc
 /usr/lib64/libreoffice/program/shell/about.svg
+/usr/lib64/libreoffice/program/shell/logo-sc.svg
+/usr/lib64/libreoffice/program/shell/logo-sc_inverted.svg
 /usr/lib64/libreoffice/program/shell/logo.svg
 /usr/lib64/libreoffice/program/shell/logo_inverted.svg
 /usr/lib64/libreoffice/program/simpress
@@ -2326,27 +2305,10 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_en_GB.properties
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_en_US.properties
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_en_ZA.properties
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/lc_arrowshapes.circular-arrow.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/lc_arrowshapes.circular-leftarrow.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/lc_arrowshapes.down-arrow.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/lc_arrowshapes.up-arrow.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/lc_basicstop.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/lc_editglossary.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/lc_navigationbarleft.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/lc_newdoc.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/lc_runbasic.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/sc_arrowshapes.circular-arrow.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/sc_arrowshapes.circular-leftarrow.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/sc_arrowshapes.down-arrow.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/sc_arrowshapes.up-arrow.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/sc_basicstop.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/sc_editglossary.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/sc_navigationbarleft.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/sc_newdoc.png
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/icons/sc_runbasic.png
 /usr/lib64/libreoffice/share/Scripts/python/NamedRanges.py
+/usr/lib64/libreoffice/share/Scripts/python/ScriptForgeHelper.py
 /usr/lib64/libreoffice/share/Scripts/python/SetCellColor.py
-/usr/lib64/libreoffice/share/Scripts/python/pythonSamples/TableSample.py
+/usr/lib64/libreoffice/share/Scripts/python/TableSample.py
 /usr/lib64/libreoffice/share/autocorr/acor_en-AU.dat
 /usr/lib64/libreoffice/share/autocorr/acor_en-GB.dat
 /usr/lib64/libreoffice/share/autocorr/acor_en-US.dat
@@ -2443,9 +2405,50 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/basic/ImportWizard/Main.xba
 /usr/lib64/libreoffice/share/basic/ImportWizard/dialog.xlb
 /usr/lib64/libreoffice/share/basic/ImportWizard/script.xlb
+/usr/lib64/libreoffice/share/basic/SFDatabases/SF_Database.xba
+/usr/lib64/libreoffice/share/basic/SFDatabases/SF_Register.xba
+/usr/lib64/libreoffice/share/basic/SFDatabases/__License.xba
+/usr/lib64/libreoffice/share/basic/SFDatabases/dialog.xlb
+/usr/lib64/libreoffice/share/basic/SFDatabases/script.xlb
+/usr/lib64/libreoffice/share/basic/SFDialogs/SF_Dialog.xba
+/usr/lib64/libreoffice/share/basic/SFDialogs/SF_DialogControl.xba
+/usr/lib64/libreoffice/share/basic/SFDialogs/SF_Register.xba
+/usr/lib64/libreoffice/share/basic/SFDialogs/__License.xba
+/usr/lib64/libreoffice/share/basic/SFDialogs/dialog.xlb
+/usr/lib64/libreoffice/share/basic/SFDialogs/script.xlb
+/usr/lib64/libreoffice/share/basic/SFDocuments/SF_Base.xba
+/usr/lib64/libreoffice/share/basic/SFDocuments/SF_Calc.xba
+/usr/lib64/libreoffice/share/basic/SFDocuments/SF_Document.xba
+/usr/lib64/libreoffice/share/basic/SFDocuments/SF_Register.xba
+/usr/lib64/libreoffice/share/basic/SFDocuments/__License.xba
+/usr/lib64/libreoffice/share/basic/SFDocuments/dialog.xlb
+/usr/lib64/libreoffice/share/basic/SFDocuments/script.xlb
 /usr/lib64/libreoffice/share/basic/ScriptBindingLibrary/Highlight.xdl
 /usr/lib64/libreoffice/share/basic/ScriptBindingLibrary/dialog.xlb
 /usr/lib64/libreoffice/share/basic/ScriptBindingLibrary/script.xlb
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_Array.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_Dictionary.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_Exception.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_FileSystem.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_L10N.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_Platform.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_Root.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_Services.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_Session.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_String.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_TextStream.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_Timer.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_UI.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_Utils.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/_CodingConventions.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/_ModuleModel.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/__License.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/dialog.xlb
+/usr/lib64/libreoffice/share/basic/ScriptForge/dlgConsole.xdl
+/usr/lib64/libreoffice/share/basic/ScriptForge/dlgProgress.xdl
+/usr/lib64/libreoffice/share/basic/ScriptForge/po/ScriptForge.pot
+/usr/lib64/libreoffice/share/basic/ScriptForge/po/en.po
+/usr/lib64/libreoffice/share/basic/ScriptForge/script.xlb
 /usr/lib64/libreoffice/share/basic/Template/Autotext.xba
 /usr/lib64/libreoffice/share/basic/Template/Correspondence.xba
 /usr/lib64/libreoffice/share/basic/Template/DialogStyles.xdl
@@ -2502,6 +2505,8 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/acorexceptpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/acoroptionspage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/acorreplacepage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/additionsdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/additionsfragment.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/agingdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/applyautofmtpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/applylocalizedpage.ui
@@ -2537,8 +2542,6 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/dbregisterpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/diagramdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/dimensionlinestabpage.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/distributiondialog.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/distributionpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/editdictionarydialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/editmodulesdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/effectspage.ui
@@ -2688,6 +2691,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/textflowpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/thesaurus.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/tipofthedaydialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/toolbarmodedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/transparencytabpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/tsaurldialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/twolinespage.ui
@@ -2695,16 +2699,21 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/zoomdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/admindialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/advancedsettingsdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/appborderwindow.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/appdetailwindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/applycolpage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/appswapwindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/authentificationpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/autocharsetpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/choosedatasourcedialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/colcontrolbox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/collectionviewdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/colwidthdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/connectionpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/copytablepage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/dbaseindexdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/dbasepage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/dbtreelist.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/dbwizconnectionpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/dbwizmysqlintropage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/dbwizmysqlnativepage.ui
@@ -2712,9 +2721,11 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/dbwiztextpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/deleteallrowsdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/designsavemodifieddialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/detailwindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/directsqldialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/emptypage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/fielddescpage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/fielddescpanel.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/fielddialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/finalpagewizard.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/generalpagedialog.ui
@@ -2741,6 +2752,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/queryfilterdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/queryfuncmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/querypropertiesdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/queryview.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/relationdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/rowheightdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/savedialog.ui
@@ -2750,13 +2762,17 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/specialjdbcconnectionpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/specialsettingspage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/sqlexception.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/tableborderwindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/tabledesignrowmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/tabledesignsavemodifieddialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/tablelistbox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/tablesfilterdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/tablesfilterpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/tablesjoindialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/taskwindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/textconnectionsettings.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/textpage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/titlewindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/typeselectpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/useradmindialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/useradminpage.ui
@@ -2823,6 +2839,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/BasicIDE/ui/modulepage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/BasicIDE/ui/newlibdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/BasicIDE/ui/organizedialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/BasicIDE/ui/sortmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/StartModule/menubar/menubar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/dbapp/menubar/menubar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/dbapp/popupmenu/edit.xml
@@ -2852,6 +2869,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/dbreport/toolbar/arrowshapes.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/dbreport/toolbar/basicshapes.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/dbreport/toolbar/calloutshapes.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/dbreport/toolbar/distributebar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/dbreport/toolbar/drawbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/dbreport/toolbar/flowchartshapes.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/dbreport/toolbar/reportcontrols.xml
@@ -3003,10 +3021,12 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/descriptivestatisticsdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/doubledialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/dropmenu.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/erroralerttabpage-mobile.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/erroralerttabpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/exponentialsmoothingdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/externaldata.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/filldlg.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/filterdropdown.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/filterlist.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/floatingborderstyle.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/floatinglinestyle.ui
@@ -3023,6 +3043,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/headerfootercontent.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/headerfooterdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/imoptdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/inputbar.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/inputstringdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/insertcells.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/insertname.ui
@@ -3030,6 +3051,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/integerdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/leftfooterdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/leftheaderdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/listmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/managenamesdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/mergecellsdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/mergecolumnentry.ui
@@ -3122,6 +3144,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/ungroupdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationcriteriapage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationhelptabpage-mobile.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationhelptabpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/xmlsourcedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/zoombox.ui
@@ -3223,6 +3246,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/colorbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/commentsbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/connectorsbar.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/distributebar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/drawingobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/ellipsesbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/toolbar/extrusionobjectbar.xml
@@ -3376,6 +3400,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/commentsbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/commontaskbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/connectorsbar.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/distributebar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/drawingobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/ellipsesbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/extrusionobjectbar.xml
@@ -3467,6 +3492,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/slidedesigndialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/slidetransitionspanel.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/tabledesignpanel.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/tabviewbar.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/templatedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/menubar/menubar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/popupmenu/edit.xml
@@ -3744,6 +3770,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/bibliographyentry.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/bulletsandnumbering.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/businessdatapage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/calendar.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/cannotsavelabeldialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/captiondialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/captionoptions.ui
@@ -4008,6 +4035,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/cmisinfopage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/cmisline.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/custominfopage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/decktitlebar.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/descriptioninfopage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/dockingwindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/documentfontspage.ui
@@ -4017,6 +4045,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/editdurationdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/emojicontrol.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/errorfindemaildialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/extrabutton.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/floatingrecord.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/helpbookmarkpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/helpcontentpage.ui
@@ -4025,6 +4054,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/helpmanual.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/helpsearchpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/helpwindow.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/infobar.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/inputdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/licensedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/linefragment.ui
@@ -4035,6 +4065,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/notebookbar.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/notebookbarpopup.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/optprintpage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/paneltitlebar.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/password.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/printeroptionsdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/querysavedialog.ui
@@ -4045,6 +4076,9 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/singletabdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/startcenter.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/stylecontextmenu.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/tabbar.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/tabbarcontents.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/tabbutton.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/templatecategorydlg.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/templatedlg.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/templatepanel.ui
@@ -4058,11 +4092,15 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/simpress/transitions-ogl.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/simpress/transitions.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/addresstemplatedialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/calendar.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/checkboxcontrol.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/combocontrol.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/datewindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/editcontrol.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/emptypage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/fileviewmenu.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/fixedimagecontrol.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/fixedtextcontrol.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/graphicexport.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/inputbox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/javadisableddialog.ui
@@ -4072,6 +4110,10 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/printersetupdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/querydeletedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/restartdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/spinfieldcontrol.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/tabbaredit.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/textviewcontrol.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/thineditcontrol.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/absrecbox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/acceptrejectchangesdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/accessibilitycheckdialog.ui
@@ -4114,7 +4156,9 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/extrustiondepthdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/fillctrlbox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/filtermenu.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/filternavigator.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/findbox.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/findreplacedialog-mobile.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/findreplacedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/floatingareastyle.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/floatingcontour.ui
@@ -4132,6 +4176,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/formdatamenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/formfielddialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/formlinkwarndialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/formnavigator.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/formnavimenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/formpropertydialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/functionmenu.ui
@@ -4155,6 +4200,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/mediawindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/metricfieldbox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/namespacedialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/navigationbar.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/numberingwindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/optgridpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/paralinespacingcontrol.ui
@@ -4180,19 +4226,19 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/savemodifieddialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/selectionmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebararea.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebareffect.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarempty.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebargallery.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarglow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebargraphic.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarline.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarlists.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarparagraph.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarpossize.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarshadow.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarsoftedge.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebarstylespanel.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/sidebartextpanel.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/stylemenu.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/stylespreview.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/surfacewindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/tablewindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/textcharacterspacingcontrol.ui
@@ -4219,7 +4265,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/editmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/errornocontentdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/errornoprinterdialog.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/moreoptionsdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/menutogglebutton.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/printdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/printerdevicepage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/printerpaperpage.ui
@@ -4465,6 +4511,67 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-en/pythonpath/lightproof_opts_en.py
 /usr/lib64/libreoffice/share/extensions/dict-en/th_en_US_v2.dat
 /usr/lib64/libreoffice/share/extensions/dict-en/th_en_US_v2.idx
+/usr/lib64/libreoffice/share/extensions/dict-es/LICENSE.md
+/usr/lib64/libreoffice/share/extensions/dict-es/README_hunspell_es.txt
+/usr/lib64/libreoffice/share/extensions/dict-es/README_hyph_es.txt
+/usr/lib64/libreoffice/share/extensions/dict-es/README_th_es.txt
+/usr/lib64/libreoffice/share/extensions/dict-es/es.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_AR.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_AR.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_BO.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_BO.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_CL.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_CL.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_CO.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_CO.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_CR.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_CR.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_CU.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_CU.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_DO.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_DO.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_EC.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_EC.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_ES.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_ES.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_GQ.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_GQ.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_GT.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_GT.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_HN.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_HN.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_MX.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_MX.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_NI.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_NI.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_PA.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_PA.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_PE.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_PE.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_PH.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_PH.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_PR.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_PR.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_PY.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_PY.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_SV.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_SV.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_US.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_US.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_UY.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_UY.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/es_VE.aff
+/usr/lib64/libreoffice/share/extensions/dict-es/es_VE.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/hyph_es.dic
+/usr/lib64/libreoffice/share/extensions/dict-es/th_es_v2.dat
+/usr/lib64/libreoffice/share/extensions/dict-es/th_es_v2.idx
+/usr/lib64/libreoffice/share/extensions/dict-ko/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-ko/README_ko_KR.txt
+/usr/lib64/libreoffice/share/extensions/dict-ko/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-ko/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-ko/ko_KR.aff
+/usr/lib64/libreoffice/share/extensions/dict-ko/ko_KR.dic
 /usr/lib64/libreoffice/share/extensions/dict-no/COPYING
 /usr/lib64/libreoffice/share/extensions/dict-no/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-no/README_hyph_NO.txt
@@ -4474,9 +4581,14 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-no/th_nb_NO_v2.idx
 /usr/lib64/libreoffice/share/extensions/dict-no/th_nn_NO_v2.dat
 /usr/lib64/libreoffice/share/extensions/dict-no/th_nn_NO_v2.idx
+/usr/lib64/libreoffice/share/extensions/dict-pt-PT/README_th_pt_PT.txt
+/usr/lib64/libreoffice/share/extensions/dict-pt-PT/th_pt_PT.dat
+/usr/lib64/libreoffice/share/extensions/dict-pt-PT/th_pt_PT.idx
 /usr/lib64/libreoffice/share/extensions/package.txt
 /usr/lib64/libreoffice/share/filter/oox-drawingml-adj-names
 /usr/lib64/libreoffice/share/filter/oox-drawingml-cs-presets
+/usr/lib64/libreoffice/share/filter/signature-line-draw.svg
+/usr/lib64/libreoffice/share/filter/signature-line.svg
 /usr/lib64/libreoffice/share/filter/vml-shape-types
 /usr/lib64/libreoffice/share/fonts/truetype/fc_local.conf
 /usr/lib64/libreoffice/share/fonts/truetype/opens___.ttf
@@ -4704,7 +4816,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/res/registry_en-ZA.xcd
 /usr/lib64/libreoffice/share/registry/writer.xcd
 /usr/lib64/libreoffice/share/registry/xsltfilter.xcd
-/usr/lib64/libreoffice/share/skia/skia_blacklist_vulkan.xml
+/usr/lib64/libreoffice/share/skia/skia_denylist_vulkan.xml
 /usr/lib64/libreoffice/share/template/common/draw/bpmn.ott
 /usr/lib64/libreoffice/share/template/common/internal/html.stw
 /usr/lib64/libreoffice/share/template/common/internal/idxexample.odt
@@ -4886,11 +4998,26 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/theme_definitions/ios/tick-on-disabled.svg
 /usr/lib64/libreoffice/share/theme_definitions/ios/tick-on-pressed.svg
 /usr/lib64/libreoffice/share/theme_definitions/ios/tick-on.svg
+/usr/lib64/libreoffice/share/tipoftheday/formdocuments.png
+/usr/lib64/libreoffice/share/tipoftheday/marchingants.gif
+/usr/lib64/libreoffice/share/tipoftheday/masterdocument.png
+/usr/lib64/libreoffice/share/tipoftheday/printnote.png
+/usr/lib64/libreoffice/share/tipoftheday/statusbar.png
 /usr/lib64/libreoffice/share/tipoftheday/tipoftheday.png
 /usr/lib64/libreoffice/share/tipoftheday/tipoftheday_c.png
 /usr/lib64/libreoffice/share/tipoftheday/tipoftheday_d.png
 /usr/lib64/libreoffice/share/tipoftheday/tipoftheday_i.png
 /usr/lib64/libreoffice/share/tipoftheday/tipoftheday_w.png
+/usr/lib64/libreoffice/share/tipoftheday/toolbarmode.png
+/usr/lib64/libreoffice/share/toolbarmode/default.png
+/usr/lib64/libreoffice/share/toolbarmode/notebookbar.png
+/usr/lib64/libreoffice/share/toolbarmode/notebookbar_compact.png
+/usr/lib64/libreoffice/share/toolbarmode/notebookbar_groupedbar_compact.png
+/usr/lib64/libreoffice/share/toolbarmode/notebookbar_groupedbar_full.png
+/usr/lib64/libreoffice/share/toolbarmode/notebookbar_groups.png
+/usr/lib64/libreoffice/share/toolbarmode/notebookbar_single.png
+/usr/lib64/libreoffice/share/toolbarmode/sidebar.png
+/usr/lib64/libreoffice/share/toolbarmode/single.png
 /usr/lib64/libreoffice/share/wizards/resources_en_GB.properties
 /usr/lib64/libreoffice/share/wizards/resources_en_US.properties
 /usr/lib64/libreoffice/share/wizards/resources_en_ZA.properties
@@ -4980,13 +5107,6 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 
 %files data
 %defattr(-,root,root,-)
-/usr/share/appdata/libreoffice-base.appdata.xml
-/usr/share/appdata/libreoffice-calc.appdata.xml
-/usr/share/appdata/libreoffice-draw.appdata.xml
-/usr/share/appdata/libreoffice-impress.appdata.xml
-/usr/share/appdata/libreoffice-writer.appdata.xml
-/usr/share/appdata/org.libreoffice.kde.metainfo.xml
-/usr/share/application-registry/libreoffice.applications
 /usr/share/applications/libreoffice-base.desktop
 /usr/share/applications/libreoffice-calc.desktop
 /usr/share/applications/libreoffice-draw.desktop
@@ -4996,926 +5116,231 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/share/applications/libreoffice-writer.desktop
 /usr/share/applications/libreoffice-xsltfilter.desktop
 /usr/share/bash-completion/completions/libreoffice.sh
-/usr/share/icons/gnome/128x128/apps/libreoffice-base.png
-/usr/share/icons/gnome/128x128/apps/libreoffice-base.svg
-/usr/share/icons/gnome/128x128/apps/libreoffice-calc.png
-/usr/share/icons/gnome/128x128/apps/libreoffice-calc.svg
-/usr/share/icons/gnome/128x128/apps/libreoffice-chart.png
-/usr/share/icons/gnome/128x128/apps/libreoffice-chart.svg
-/usr/share/icons/gnome/128x128/apps/libreoffice-draw.png
-/usr/share/icons/gnome/128x128/apps/libreoffice-draw.svg
-/usr/share/icons/gnome/128x128/apps/libreoffice-impress.png
-/usr/share/icons/gnome/128x128/apps/libreoffice-impress.svg
-/usr/share/icons/gnome/128x128/apps/libreoffice-main.png
-/usr/share/icons/gnome/128x128/apps/libreoffice-main.svg
-/usr/share/icons/gnome/128x128/apps/libreoffice-math.png
-/usr/share/icons/gnome/128x128/apps/libreoffice-math.svg
-/usr/share/icons/gnome/128x128/apps/libreoffice-startcenter.png
-/usr/share/icons/gnome/128x128/apps/libreoffice-startcenter.svg
-/usr/share/icons/gnome/128x128/apps/libreoffice-writer.png
-/usr/share/icons/gnome/128x128/apps/libreoffice-writer.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-database.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-drawing-template.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-drawing.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-empty.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-formula.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-master-document.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-presentation-template.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-presentation.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-spreadsheet-template.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-spreadsheet.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-text-template.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-text.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-web-template.svg
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/gnome/128x128/mimetypes/libreoffice-oasis-web.svg
-/usr/share/icons/gnome/16x16/apps/libreoffice-base.png
-/usr/share/icons/gnome/16x16/apps/libreoffice-base.svg
-/usr/share/icons/gnome/16x16/apps/libreoffice-calc.png
-/usr/share/icons/gnome/16x16/apps/libreoffice-calc.svg
-/usr/share/icons/gnome/16x16/apps/libreoffice-chart.png
-/usr/share/icons/gnome/16x16/apps/libreoffice-chart.svg
-/usr/share/icons/gnome/16x16/apps/libreoffice-draw.png
-/usr/share/icons/gnome/16x16/apps/libreoffice-draw.svg
-/usr/share/icons/gnome/16x16/apps/libreoffice-impress.png
-/usr/share/icons/gnome/16x16/apps/libreoffice-impress.svg
-/usr/share/icons/gnome/16x16/apps/libreoffice-main.png
-/usr/share/icons/gnome/16x16/apps/libreoffice-main.svg
-/usr/share/icons/gnome/16x16/apps/libreoffice-math.png
-/usr/share/icons/gnome/16x16/apps/libreoffice-math.svg
-/usr/share/icons/gnome/16x16/apps/libreoffice-startcenter.png
-/usr/share/icons/gnome/16x16/apps/libreoffice-startcenter.svg
-/usr/share/icons/gnome/16x16/apps/libreoffice-writer.png
-/usr/share/icons/gnome/16x16/apps/libreoffice-writer.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-extension.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-extension.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-database.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-drawing-template.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-drawing.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-empty.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-formula.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-master-document.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-presentation-template.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-presentation.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-spreadsheet-template.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-spreadsheet.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-text-template.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-text.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-web-template.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-oasis-web.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-presentation-template.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-presentation-template.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-presentation.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-presentation.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-spreadsheet-template.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-spreadsheet-template.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-spreadsheet.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-spreadsheet.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-text-template.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-text-template.svg
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-text.png
-/usr/share/icons/gnome/16x16/mimetypes/libreoffice-text.svg
-/usr/share/icons/gnome/22x22/apps/libreoffice-base.png
-/usr/share/icons/gnome/22x22/apps/libreoffice-base.svg
-/usr/share/icons/gnome/22x22/apps/libreoffice-calc.png
-/usr/share/icons/gnome/22x22/apps/libreoffice-calc.svg
-/usr/share/icons/gnome/22x22/apps/libreoffice-draw.png
-/usr/share/icons/gnome/22x22/apps/libreoffice-draw.svg
-/usr/share/icons/gnome/22x22/apps/libreoffice-impress.png
-/usr/share/icons/gnome/22x22/apps/libreoffice-impress.svg
-/usr/share/icons/gnome/22x22/apps/libreoffice-main.png
-/usr/share/icons/gnome/22x22/apps/libreoffice-main.svg
-/usr/share/icons/gnome/22x22/apps/libreoffice-math.png
-/usr/share/icons/gnome/22x22/apps/libreoffice-math.svg
-/usr/share/icons/gnome/22x22/apps/libreoffice-startcenter.png
-/usr/share/icons/gnome/22x22/apps/libreoffice-startcenter.svg
-/usr/share/icons/gnome/22x22/apps/libreoffice-writer.png
-/usr/share/icons/gnome/22x22/apps/libreoffice-writer.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-database.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-drawing-template.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-drawing.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-empty.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-formula.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-master-document.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-presentation-template.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-presentation.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-spreadsheet-template.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-spreadsheet.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-text-template.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-text.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-web-template.svg
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/gnome/22x22/mimetypes/libreoffice-oasis-web.svg
-/usr/share/icons/gnome/24x24/apps/libreoffice-base.png
-/usr/share/icons/gnome/24x24/apps/libreoffice-base.svg
-/usr/share/icons/gnome/24x24/apps/libreoffice-calc.png
-/usr/share/icons/gnome/24x24/apps/libreoffice-calc.svg
-/usr/share/icons/gnome/24x24/apps/libreoffice-draw.png
-/usr/share/icons/gnome/24x24/apps/libreoffice-draw.svg
-/usr/share/icons/gnome/24x24/apps/libreoffice-impress.png
-/usr/share/icons/gnome/24x24/apps/libreoffice-impress.svg
-/usr/share/icons/gnome/24x24/apps/libreoffice-main.png
-/usr/share/icons/gnome/24x24/apps/libreoffice-main.svg
-/usr/share/icons/gnome/24x24/apps/libreoffice-math.png
-/usr/share/icons/gnome/24x24/apps/libreoffice-math.svg
-/usr/share/icons/gnome/24x24/apps/libreoffice-startcenter.png
-/usr/share/icons/gnome/24x24/apps/libreoffice-startcenter.svg
-/usr/share/icons/gnome/24x24/apps/libreoffice-writer.png
-/usr/share/icons/gnome/24x24/apps/libreoffice-writer.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-database.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-drawing-template.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-drawing.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-empty.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-formula.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-master-document.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-presentation-template.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-presentation.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-spreadsheet-template.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-spreadsheet.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-text-template.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-text.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-web-template.svg
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/gnome/24x24/mimetypes/libreoffice-oasis-web.svg
-/usr/share/icons/gnome/256x256/apps/libreoffice-base.png
-/usr/share/icons/gnome/256x256/apps/libreoffice-base.svg
-/usr/share/icons/gnome/256x256/apps/libreoffice-calc.png
-/usr/share/icons/gnome/256x256/apps/libreoffice-calc.svg
-/usr/share/icons/gnome/256x256/apps/libreoffice-chart.png
-/usr/share/icons/gnome/256x256/apps/libreoffice-chart.svg
-/usr/share/icons/gnome/256x256/apps/libreoffice-draw.png
-/usr/share/icons/gnome/256x256/apps/libreoffice-draw.svg
-/usr/share/icons/gnome/256x256/apps/libreoffice-impress.png
-/usr/share/icons/gnome/256x256/apps/libreoffice-impress.svg
-/usr/share/icons/gnome/256x256/apps/libreoffice-main.png
-/usr/share/icons/gnome/256x256/apps/libreoffice-main.svg
-/usr/share/icons/gnome/256x256/apps/libreoffice-math.png
-/usr/share/icons/gnome/256x256/apps/libreoffice-math.svg
-/usr/share/icons/gnome/256x256/apps/libreoffice-startcenter.png
-/usr/share/icons/gnome/256x256/apps/libreoffice-startcenter.svg
-/usr/share/icons/gnome/256x256/apps/libreoffice-writer.png
-/usr/share/icons/gnome/256x256/apps/libreoffice-writer.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-database.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-drawing-template.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-drawing.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-empty.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-formula.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-master-document.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-presentation-template.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-presentation.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-spreadsheet-template.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-spreadsheet.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-text-template.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-text.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-web-template.svg
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/gnome/256x256/mimetypes/libreoffice-oasis-web.svg
-/usr/share/icons/gnome/32x32/apps/libreoffice-base.png
-/usr/share/icons/gnome/32x32/apps/libreoffice-base.svg
-/usr/share/icons/gnome/32x32/apps/libreoffice-calc.png
-/usr/share/icons/gnome/32x32/apps/libreoffice-calc.svg
-/usr/share/icons/gnome/32x32/apps/libreoffice-chart.png
-/usr/share/icons/gnome/32x32/apps/libreoffice-chart.svg
-/usr/share/icons/gnome/32x32/apps/libreoffice-draw.png
-/usr/share/icons/gnome/32x32/apps/libreoffice-draw.svg
-/usr/share/icons/gnome/32x32/apps/libreoffice-impress.png
-/usr/share/icons/gnome/32x32/apps/libreoffice-impress.svg
-/usr/share/icons/gnome/32x32/apps/libreoffice-main.png
-/usr/share/icons/gnome/32x32/apps/libreoffice-main.svg
-/usr/share/icons/gnome/32x32/apps/libreoffice-math.png
-/usr/share/icons/gnome/32x32/apps/libreoffice-math.svg
-/usr/share/icons/gnome/32x32/apps/libreoffice-startcenter.png
-/usr/share/icons/gnome/32x32/apps/libreoffice-startcenter.svg
-/usr/share/icons/gnome/32x32/apps/libreoffice-writer.png
-/usr/share/icons/gnome/32x32/apps/libreoffice-writer.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-extension.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-extension.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-math.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-math.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-database.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-drawing-template.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-drawing.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-empty.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-formula.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-master-document.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-presentation-template.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-presentation.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-spreadsheet-template.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-spreadsheet.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-text-template.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-text.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-web-template.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-oasis-web.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-presentation-template.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-presentation-template.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-presentation.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-presentation.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-spreadsheet-template.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-spreadsheet-template.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-spreadsheet.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-spreadsheet.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-text-template.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-text-template.svg
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-text.png
-/usr/share/icons/gnome/32x32/mimetypes/libreoffice-text.svg
-/usr/share/icons/gnome/48x48/apps/libreoffice-base.png
-/usr/share/icons/gnome/48x48/apps/libreoffice-base.svg
-/usr/share/icons/gnome/48x48/apps/libreoffice-calc.png
-/usr/share/icons/gnome/48x48/apps/libreoffice-calc.svg
-/usr/share/icons/gnome/48x48/apps/libreoffice-chart.png
-/usr/share/icons/gnome/48x48/apps/libreoffice-chart.svg
-/usr/share/icons/gnome/48x48/apps/libreoffice-draw.png
-/usr/share/icons/gnome/48x48/apps/libreoffice-draw.svg
-/usr/share/icons/gnome/48x48/apps/libreoffice-impress.png
-/usr/share/icons/gnome/48x48/apps/libreoffice-impress.svg
-/usr/share/icons/gnome/48x48/apps/libreoffice-main.png
-/usr/share/icons/gnome/48x48/apps/libreoffice-main.svg
-/usr/share/icons/gnome/48x48/apps/libreoffice-math.png
-/usr/share/icons/gnome/48x48/apps/libreoffice-math.svg
-/usr/share/icons/gnome/48x48/apps/libreoffice-startcenter.png
-/usr/share/icons/gnome/48x48/apps/libreoffice-startcenter.svg
-/usr/share/icons/gnome/48x48/apps/libreoffice-writer.png
-/usr/share/icons/gnome/48x48/apps/libreoffice-writer.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-extension.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-extension.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-database.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-drawing-template.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-drawing.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-empty.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-formula.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-master-document.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-presentation-template.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-presentation.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-spreadsheet-template.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-spreadsheet.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-text-template.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-text.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-web-template.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-oasis-web.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-presentation-template.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-presentation-template.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-presentation.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-presentation.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-spreadsheet-template.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-spreadsheet-template.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-spreadsheet.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-spreadsheet.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-text-template.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-text-template.svg
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-text.png
-/usr/share/icons/gnome/48x48/mimetypes/libreoffice-text.svg
-/usr/share/icons/gnome/512x512/apps/libreoffice-base.png
-/usr/share/icons/gnome/512x512/apps/libreoffice-base.svg
-/usr/share/icons/gnome/512x512/apps/libreoffice-calc.png
-/usr/share/icons/gnome/512x512/apps/libreoffice-calc.svg
-/usr/share/icons/gnome/512x512/apps/libreoffice-draw.png
-/usr/share/icons/gnome/512x512/apps/libreoffice-draw.svg
-/usr/share/icons/gnome/512x512/apps/libreoffice-impress.png
-/usr/share/icons/gnome/512x512/apps/libreoffice-impress.svg
-/usr/share/icons/gnome/512x512/apps/libreoffice-main.png
-/usr/share/icons/gnome/512x512/apps/libreoffice-main.svg
-/usr/share/icons/gnome/512x512/apps/libreoffice-math.png
-/usr/share/icons/gnome/512x512/apps/libreoffice-math.svg
-/usr/share/icons/gnome/512x512/apps/libreoffice-startcenter.png
-/usr/share/icons/gnome/512x512/apps/libreoffice-startcenter.svg
-/usr/share/icons/gnome/512x512/apps/libreoffice-writer.png
-/usr/share/icons/gnome/512x512/apps/libreoffice-writer.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-database.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-drawing-template.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-drawing.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-empty.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-formula.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-master-document.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-presentation-template.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-presentation.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-spreadsheet-template.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-spreadsheet.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-text-template.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-text.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-web-template.svg
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/gnome/512x512/mimetypes/libreoffice-oasis-web.svg
-/usr/share/icons/gnome/64x64/apps/libreoffice-base.png
-/usr/share/icons/gnome/64x64/apps/libreoffice-base.svg
-/usr/share/icons/gnome/64x64/apps/libreoffice-calc.png
-/usr/share/icons/gnome/64x64/apps/libreoffice-calc.svg
-/usr/share/icons/gnome/64x64/apps/libreoffice-draw.png
-/usr/share/icons/gnome/64x64/apps/libreoffice-draw.svg
-/usr/share/icons/gnome/64x64/apps/libreoffice-impress.png
-/usr/share/icons/gnome/64x64/apps/libreoffice-impress.svg
-/usr/share/icons/gnome/64x64/apps/libreoffice-main.png
-/usr/share/icons/gnome/64x64/apps/libreoffice-main.svg
-/usr/share/icons/gnome/64x64/apps/libreoffice-math.png
-/usr/share/icons/gnome/64x64/apps/libreoffice-math.svg
-/usr/share/icons/gnome/64x64/apps/libreoffice-startcenter.png
-/usr/share/icons/gnome/64x64/apps/libreoffice-startcenter.svg
-/usr/share/icons/gnome/64x64/apps/libreoffice-writer.png
-/usr/share/icons/gnome/64x64/apps/libreoffice-writer.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-database.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-drawing-template.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-drawing.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-empty.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-formula.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-master-document.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-presentation-template.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-presentation.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-spreadsheet-template.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-spreadsheet.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-text-template.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-text.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-web-template.svg
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/gnome/64x64/mimetypes/libreoffice-oasis-web.svg
-/usr/share/icons/gnome/scalable/apps/libreoffice-base.svg
-/usr/share/icons/gnome/scalable/apps/libreoffice-basic.svg
-/usr/share/icons/gnome/scalable/apps/libreoffice-calc.svg
-/usr/share/icons/gnome/scalable/apps/libreoffice-chart.svg
-/usr/share/icons/gnome/scalable/apps/libreoffice-draw.svg
-/usr/share/icons/gnome/scalable/apps/libreoffice-extension.svg
-/usr/share/icons/gnome/scalable/apps/libreoffice-impress.svg
-/usr/share/icons/gnome/scalable/apps/libreoffice-main.svg
-/usr/share/icons/gnome/scalable/apps/libreoffice-math.svg
-/usr/share/icons/gnome/scalable/apps/libreoffice-startcenter.svg
-/usr/share/icons/gnome/scalable/apps/libreoffice-writer.svg
-/usr/share/icons/gnome/scalable/mimetypes/libreoffice-oasis-database.svg
-/usr/share/icons/gnome/scalable/mimetypes/libreoffice-oasis-draw.svg
-/usr/share/icons/gnome/scalable/mimetypes/libreoffice-oasis-empty.svg
-/usr/share/icons/gnome/scalable/mimetypes/libreoffice-oasis-formula.svg
-/usr/share/icons/gnome/scalable/mimetypes/libreoffice-oasis-master-document.svg
-/usr/share/icons/gnome/scalable/mimetypes/libreoffice-oasis-presentation.svg
-/usr/share/icons/gnome/scalable/mimetypes/libreoffice-oasis-spreadsheet.svg
-/usr/share/icons/gnome/scalable/mimetypes/libreoffice-oasis-text.svg
-/usr/share/icons/gnome/scalable/mimetypes/libreoffice-oasis-web.svg
 /usr/share/icons/hicolor/128x128/apps/libreoffice-base.png
-/usr/share/icons/hicolor/128x128/apps/libreoffice-base.svg
 /usr/share/icons/hicolor/128x128/apps/libreoffice-calc.png
-/usr/share/icons/hicolor/128x128/apps/libreoffice-calc.svg
 /usr/share/icons/hicolor/128x128/apps/libreoffice-chart.png
-/usr/share/icons/hicolor/128x128/apps/libreoffice-chart.svg
 /usr/share/icons/hicolor/128x128/apps/libreoffice-draw.png
-/usr/share/icons/hicolor/128x128/apps/libreoffice-draw.svg
 /usr/share/icons/hicolor/128x128/apps/libreoffice-impress.png
-/usr/share/icons/hicolor/128x128/apps/libreoffice-impress.svg
 /usr/share/icons/hicolor/128x128/apps/libreoffice-main.png
-/usr/share/icons/hicolor/128x128/apps/libreoffice-main.svg
 /usr/share/icons/hicolor/128x128/apps/libreoffice-math.png
-/usr/share/icons/hicolor/128x128/apps/libreoffice-math.svg
 /usr/share/icons/hicolor/128x128/apps/libreoffice-startcenter.png
-/usr/share/icons/hicolor/128x128/apps/libreoffice-startcenter.svg
 /usr/share/icons/hicolor/128x128/apps/libreoffice-writer.png
-/usr/share/icons/hicolor/128x128/apps/libreoffice-writer.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-database.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-drawing-template.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-drawing.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-empty.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-formula.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-master-document.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-presentation-template.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-presentation.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-spreadsheet-template.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-spreadsheet.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-text-template.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-text.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-web-template.svg
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-web.svg
 /usr/share/icons/hicolor/16x16/apps/libreoffice-base.png
-/usr/share/icons/hicolor/16x16/apps/libreoffice-base.svg
 /usr/share/icons/hicolor/16x16/apps/libreoffice-calc.png
-/usr/share/icons/hicolor/16x16/apps/libreoffice-calc.svg
 /usr/share/icons/hicolor/16x16/apps/libreoffice-chart.png
-/usr/share/icons/hicolor/16x16/apps/libreoffice-chart.svg
 /usr/share/icons/hicolor/16x16/apps/libreoffice-draw.png
-/usr/share/icons/hicolor/16x16/apps/libreoffice-draw.svg
 /usr/share/icons/hicolor/16x16/apps/libreoffice-impress.png
-/usr/share/icons/hicolor/16x16/apps/libreoffice-impress.svg
 /usr/share/icons/hicolor/16x16/apps/libreoffice-main.png
-/usr/share/icons/hicolor/16x16/apps/libreoffice-main.svg
 /usr/share/icons/hicolor/16x16/apps/libreoffice-math.png
-/usr/share/icons/hicolor/16x16/apps/libreoffice-math.svg
 /usr/share/icons/hicolor/16x16/apps/libreoffice-startcenter.png
-/usr/share/icons/hicolor/16x16/apps/libreoffice-startcenter.svg
 /usr/share/icons/hicolor/16x16/apps/libreoffice-writer.png
-/usr/share/icons/hicolor/16x16/apps/libreoffice-writer.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-extension.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-extension.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-database.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-drawing-template.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-drawing.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-empty.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-formula.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-master-document.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-presentation-template.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-presentation.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-spreadsheet-template.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-spreadsheet.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-text-template.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-text.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-web-template.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-oasis-web.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-presentation-template.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-presentation-template.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-presentation.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-presentation.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-spreadsheet-template.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-spreadsheet-template.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-spreadsheet.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-spreadsheet.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-text-template.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-text-template.svg
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-text.png
-/usr/share/icons/hicolor/16x16/mimetypes/libreoffice-text.svg
 /usr/share/icons/hicolor/22x22/apps/libreoffice-base.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-base.svg
 /usr/share/icons/hicolor/22x22/apps/libreoffice-calc.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-calc.svg
 /usr/share/icons/hicolor/22x22/apps/libreoffice-draw.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-draw.svg
 /usr/share/icons/hicolor/22x22/apps/libreoffice-impress.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-impress.svg
 /usr/share/icons/hicolor/22x22/apps/libreoffice-main.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-main.svg
 /usr/share/icons/hicolor/22x22/apps/libreoffice-math.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-math.svg
 /usr/share/icons/hicolor/22x22/apps/libreoffice-startcenter.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-startcenter.svg
 /usr/share/icons/hicolor/22x22/apps/libreoffice-writer.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-writer.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-database.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-drawing-template.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-drawing.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-empty.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-formula.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-master-document.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-presentation-template.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-presentation.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-spreadsheet-template.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-spreadsheet.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-text-template.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-text.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-web-template.svg
 /usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-web.svg
 /usr/share/icons/hicolor/24x24/apps/libreoffice-base.png
-/usr/share/icons/hicolor/24x24/apps/libreoffice-base.svg
 /usr/share/icons/hicolor/24x24/apps/libreoffice-calc.png
-/usr/share/icons/hicolor/24x24/apps/libreoffice-calc.svg
 /usr/share/icons/hicolor/24x24/apps/libreoffice-draw.png
-/usr/share/icons/hicolor/24x24/apps/libreoffice-draw.svg
 /usr/share/icons/hicolor/24x24/apps/libreoffice-impress.png
-/usr/share/icons/hicolor/24x24/apps/libreoffice-impress.svg
 /usr/share/icons/hicolor/24x24/apps/libreoffice-main.png
-/usr/share/icons/hicolor/24x24/apps/libreoffice-main.svg
 /usr/share/icons/hicolor/24x24/apps/libreoffice-math.png
-/usr/share/icons/hicolor/24x24/apps/libreoffice-math.svg
 /usr/share/icons/hicolor/24x24/apps/libreoffice-startcenter.png
-/usr/share/icons/hicolor/24x24/apps/libreoffice-startcenter.svg
 /usr/share/icons/hicolor/24x24/apps/libreoffice-writer.png
-/usr/share/icons/hicolor/24x24/apps/libreoffice-writer.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-database.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-drawing-template.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-drawing.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-empty.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-formula.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-master-document.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-presentation-template.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-presentation.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-spreadsheet-template.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-spreadsheet.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-text-template.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-text.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-web-template.svg
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-web.svg
 /usr/share/icons/hicolor/256x256/apps/libreoffice-base.png
-/usr/share/icons/hicolor/256x256/apps/libreoffice-base.svg
 /usr/share/icons/hicolor/256x256/apps/libreoffice-calc.png
-/usr/share/icons/hicolor/256x256/apps/libreoffice-calc.svg
 /usr/share/icons/hicolor/256x256/apps/libreoffice-chart.png
-/usr/share/icons/hicolor/256x256/apps/libreoffice-chart.svg
 /usr/share/icons/hicolor/256x256/apps/libreoffice-draw.png
-/usr/share/icons/hicolor/256x256/apps/libreoffice-draw.svg
 /usr/share/icons/hicolor/256x256/apps/libreoffice-impress.png
-/usr/share/icons/hicolor/256x256/apps/libreoffice-impress.svg
 /usr/share/icons/hicolor/256x256/apps/libreoffice-main.png
-/usr/share/icons/hicolor/256x256/apps/libreoffice-main.svg
 /usr/share/icons/hicolor/256x256/apps/libreoffice-math.png
-/usr/share/icons/hicolor/256x256/apps/libreoffice-math.svg
 /usr/share/icons/hicolor/256x256/apps/libreoffice-startcenter.png
-/usr/share/icons/hicolor/256x256/apps/libreoffice-startcenter.svg
 /usr/share/icons/hicolor/256x256/apps/libreoffice-writer.png
-/usr/share/icons/hicolor/256x256/apps/libreoffice-writer.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-database.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-drawing-template.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-drawing.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-empty.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-formula.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-master-document.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-presentation-template.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-presentation.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-spreadsheet-template.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-spreadsheet.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-text-template.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-text.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-web-template.svg
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-web.svg
 /usr/share/icons/hicolor/32x32/apps/libreoffice-base.png
-/usr/share/icons/hicolor/32x32/apps/libreoffice-base.svg
 /usr/share/icons/hicolor/32x32/apps/libreoffice-calc.png
-/usr/share/icons/hicolor/32x32/apps/libreoffice-calc.svg
 /usr/share/icons/hicolor/32x32/apps/libreoffice-chart.png
-/usr/share/icons/hicolor/32x32/apps/libreoffice-chart.svg
 /usr/share/icons/hicolor/32x32/apps/libreoffice-draw.png
-/usr/share/icons/hicolor/32x32/apps/libreoffice-draw.svg
 /usr/share/icons/hicolor/32x32/apps/libreoffice-impress.png
-/usr/share/icons/hicolor/32x32/apps/libreoffice-impress.svg
 /usr/share/icons/hicolor/32x32/apps/libreoffice-main.png
-/usr/share/icons/hicolor/32x32/apps/libreoffice-main.svg
 /usr/share/icons/hicolor/32x32/apps/libreoffice-math.png
-/usr/share/icons/hicolor/32x32/apps/libreoffice-math.svg
 /usr/share/icons/hicolor/32x32/apps/libreoffice-startcenter.png
-/usr/share/icons/hicolor/32x32/apps/libreoffice-startcenter.svg
 /usr/share/icons/hicolor/32x32/apps/libreoffice-writer.png
-/usr/share/icons/hicolor/32x32/apps/libreoffice-writer.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-extension.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-extension.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-math.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-math.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-database.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-drawing-template.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-drawing.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-empty.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-formula.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-master-document.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-presentation-template.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-presentation.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-spreadsheet-template.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-spreadsheet.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-text-template.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-text.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-web-template.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-web.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-presentation-template.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-presentation-template.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-presentation.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-presentation.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-spreadsheet-template.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-spreadsheet-template.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-spreadsheet.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-spreadsheet.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-text-template.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-text-template.svg
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-text.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-text.svg
 /usr/share/icons/hicolor/48x48/apps/libreoffice-base.png
-/usr/share/icons/hicolor/48x48/apps/libreoffice-base.svg
 /usr/share/icons/hicolor/48x48/apps/libreoffice-calc.png
-/usr/share/icons/hicolor/48x48/apps/libreoffice-calc.svg
 /usr/share/icons/hicolor/48x48/apps/libreoffice-chart.png
-/usr/share/icons/hicolor/48x48/apps/libreoffice-chart.svg
 /usr/share/icons/hicolor/48x48/apps/libreoffice-draw.png
-/usr/share/icons/hicolor/48x48/apps/libreoffice-draw.svg
 /usr/share/icons/hicolor/48x48/apps/libreoffice-impress.png
-/usr/share/icons/hicolor/48x48/apps/libreoffice-impress.svg
 /usr/share/icons/hicolor/48x48/apps/libreoffice-main.png
-/usr/share/icons/hicolor/48x48/apps/libreoffice-main.svg
 /usr/share/icons/hicolor/48x48/apps/libreoffice-math.png
-/usr/share/icons/hicolor/48x48/apps/libreoffice-math.svg
 /usr/share/icons/hicolor/48x48/apps/libreoffice-startcenter.png
-/usr/share/icons/hicolor/48x48/apps/libreoffice-startcenter.svg
 /usr/share/icons/hicolor/48x48/apps/libreoffice-writer.png
-/usr/share/icons/hicolor/48x48/apps/libreoffice-writer.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-extension.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-extension.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-database.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-drawing-template.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-drawing.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-empty.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-formula.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-master-document.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-presentation-template.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-presentation.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-spreadsheet-template.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-spreadsheet.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-text-template.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-text.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-web-template.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-oasis-web.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-presentation-template.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-presentation-template.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-presentation.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-presentation.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-spreadsheet-template.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-spreadsheet-template.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-spreadsheet.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-spreadsheet.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-text-template.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-text-template.svg
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-text.png
-/usr/share/icons/hicolor/48x48/mimetypes/libreoffice-text.svg
 /usr/share/icons/hicolor/512x512/apps/libreoffice-base.png
-/usr/share/icons/hicolor/512x512/apps/libreoffice-base.svg
 /usr/share/icons/hicolor/512x512/apps/libreoffice-calc.png
-/usr/share/icons/hicolor/512x512/apps/libreoffice-calc.svg
 /usr/share/icons/hicolor/512x512/apps/libreoffice-draw.png
-/usr/share/icons/hicolor/512x512/apps/libreoffice-draw.svg
 /usr/share/icons/hicolor/512x512/apps/libreoffice-impress.png
-/usr/share/icons/hicolor/512x512/apps/libreoffice-impress.svg
 /usr/share/icons/hicolor/512x512/apps/libreoffice-main.png
-/usr/share/icons/hicolor/512x512/apps/libreoffice-main.svg
 /usr/share/icons/hicolor/512x512/apps/libreoffice-math.png
-/usr/share/icons/hicolor/512x512/apps/libreoffice-math.svg
 /usr/share/icons/hicolor/512x512/apps/libreoffice-startcenter.png
-/usr/share/icons/hicolor/512x512/apps/libreoffice-startcenter.svg
 /usr/share/icons/hicolor/512x512/apps/libreoffice-writer.png
-/usr/share/icons/hicolor/512x512/apps/libreoffice-writer.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-database.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-drawing-template.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-drawing.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-empty.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-formula.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-master-document.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-presentation-template.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-presentation.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-spreadsheet-template.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-spreadsheet.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-text-template.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-text.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-web-template.svg
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-web.svg
 /usr/share/icons/hicolor/64x64/apps/libreoffice-base.png
-/usr/share/icons/hicolor/64x64/apps/libreoffice-base.svg
 /usr/share/icons/hicolor/64x64/apps/libreoffice-calc.png
-/usr/share/icons/hicolor/64x64/apps/libreoffice-calc.svg
 /usr/share/icons/hicolor/64x64/apps/libreoffice-draw.png
-/usr/share/icons/hicolor/64x64/apps/libreoffice-draw.svg
 /usr/share/icons/hicolor/64x64/apps/libreoffice-impress.png
-/usr/share/icons/hicolor/64x64/apps/libreoffice-impress.svg
 /usr/share/icons/hicolor/64x64/apps/libreoffice-main.png
-/usr/share/icons/hicolor/64x64/apps/libreoffice-main.svg
 /usr/share/icons/hicolor/64x64/apps/libreoffice-math.png
-/usr/share/icons/hicolor/64x64/apps/libreoffice-math.svg
 /usr/share/icons/hicolor/64x64/apps/libreoffice-startcenter.png
-/usr/share/icons/hicolor/64x64/apps/libreoffice-startcenter.svg
 /usr/share/icons/hicolor/64x64/apps/libreoffice-writer.png
-/usr/share/icons/hicolor/64x64/apps/libreoffice-writer.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-database.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-drawing-template.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-drawing.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-empty.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-formula.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-master-document.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-presentation-template.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-presentation.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-spreadsheet-template.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-spreadsheet.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-text-template.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-text.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-web-template.svg
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-web.svg
 /usr/share/icons/hicolor/scalable/apps/libreoffice-base.svg
 /usr/share/icons/hicolor/scalable/apps/libreoffice-basic.svg
 /usr/share/icons/hicolor/scalable/apps/libreoffice-calc.svg
@@ -5927,135 +5352,6 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/share/icons/hicolor/scalable/apps/libreoffice-math.svg
 /usr/share/icons/hicolor/scalable/apps/libreoffice-startcenter.svg
 /usr/share/icons/hicolor/scalable/apps/libreoffice-writer.svg
-/usr/share/icons/hicolor/scalable/mimetypes/libreoffice-oasis-database.svg
-/usr/share/icons/hicolor/scalable/mimetypes/libreoffice-oasis-draw.svg
-/usr/share/icons/hicolor/scalable/mimetypes/libreoffice-oasis-empty.svg
-/usr/share/icons/hicolor/scalable/mimetypes/libreoffice-oasis-formula.svg
-/usr/share/icons/hicolor/scalable/mimetypes/libreoffice-oasis-master-document.svg
-/usr/share/icons/hicolor/scalable/mimetypes/libreoffice-oasis-presentation.svg
-/usr/share/icons/hicolor/scalable/mimetypes/libreoffice-oasis-spreadsheet.svg
-/usr/share/icons/hicolor/scalable/mimetypes/libreoffice-oasis-text.svg
-/usr/share/icons/hicolor/scalable/mimetypes/libreoffice-oasis-web.svg
-/usr/share/icons/locolor/16x16/apps/libreoffice-base.png
-/usr/share/icons/locolor/16x16/apps/libreoffice-base.svg
-/usr/share/icons/locolor/16x16/apps/libreoffice-calc.png
-/usr/share/icons/locolor/16x16/apps/libreoffice-calc.svg
-/usr/share/icons/locolor/16x16/apps/libreoffice-chart.png
-/usr/share/icons/locolor/16x16/apps/libreoffice-chart.svg
-/usr/share/icons/locolor/16x16/apps/libreoffice-draw.png
-/usr/share/icons/locolor/16x16/apps/libreoffice-draw.svg
-/usr/share/icons/locolor/16x16/apps/libreoffice-impress.png
-/usr/share/icons/locolor/16x16/apps/libreoffice-impress.svg
-/usr/share/icons/locolor/16x16/apps/libreoffice-main.png
-/usr/share/icons/locolor/16x16/apps/libreoffice-main.svg
-/usr/share/icons/locolor/16x16/apps/libreoffice-math.png
-/usr/share/icons/locolor/16x16/apps/libreoffice-math.svg
-/usr/share/icons/locolor/16x16/apps/libreoffice-startcenter.png
-/usr/share/icons/locolor/16x16/apps/libreoffice-startcenter.svg
-/usr/share/icons/locolor/16x16/apps/libreoffice-writer.png
-/usr/share/icons/locolor/16x16/apps/libreoffice-writer.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-extension.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-extension.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-database.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-drawing-template.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-drawing.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-empty.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-formula.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-master-document.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-presentation-template.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-presentation.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-spreadsheet-template.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-spreadsheet.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-text-template.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-text.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-web-template.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-oasis-web.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-presentation-template.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-presentation-template.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-presentation.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-presentation.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-spreadsheet-template.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-spreadsheet-template.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-spreadsheet.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-spreadsheet.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-text-template.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-text-template.svg
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-text.png
-/usr/share/icons/locolor/16x16/mimetypes/libreoffice-text.svg
-/usr/share/icons/locolor/32x32/apps/libreoffice-base.png
-/usr/share/icons/locolor/32x32/apps/libreoffice-base.svg
-/usr/share/icons/locolor/32x32/apps/libreoffice-calc.png
-/usr/share/icons/locolor/32x32/apps/libreoffice-calc.svg
-/usr/share/icons/locolor/32x32/apps/libreoffice-chart.png
-/usr/share/icons/locolor/32x32/apps/libreoffice-chart.svg
-/usr/share/icons/locolor/32x32/apps/libreoffice-draw.png
-/usr/share/icons/locolor/32x32/apps/libreoffice-draw.svg
-/usr/share/icons/locolor/32x32/apps/libreoffice-impress.png
-/usr/share/icons/locolor/32x32/apps/libreoffice-impress.svg
-/usr/share/icons/locolor/32x32/apps/libreoffice-main.png
-/usr/share/icons/locolor/32x32/apps/libreoffice-main.svg
-/usr/share/icons/locolor/32x32/apps/libreoffice-math.png
-/usr/share/icons/locolor/32x32/apps/libreoffice-math.svg
-/usr/share/icons/locolor/32x32/apps/libreoffice-startcenter.png
-/usr/share/icons/locolor/32x32/apps/libreoffice-startcenter.svg
-/usr/share/icons/locolor/32x32/apps/libreoffice-writer.png
-/usr/share/icons/locolor/32x32/apps/libreoffice-writer.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-extension.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-extension.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-formula.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-formula.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-database.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-drawing-template.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-drawing.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-empty.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-formula.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-presentation-template.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-presentation.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-spreadsheet-template.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-spreadsheet.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-text-template.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-text.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-web-template.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-web.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-oasis-web.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-presentation-template.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-presentation-template.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-presentation.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-presentation.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-spreadsheet-template.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-spreadsheet-template.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-spreadsheet.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-spreadsheet.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-text-template.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-text-template.svg
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-text.png
-/usr/share/icons/locolor/32x32/mimetypes/libreoffice-text.svg
 /usr/share/idl/libreoffice/com/sun/star/accessibility/Accessible.idl
 /usr/share/idl/libreoffice/com/sun/star/accessibility/AccessibleContext.idl
 /usr/share/idl/libreoffice/com/sun/star/accessibility/AccessibleEventId.idl
@@ -6082,7 +5378,6 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleEventListener.idl
 /usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleExtendedAttributes.idl
 /usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleExtendedComponent.idl
-/usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleGetAccFlowTo.idl
 /usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleGroupPosition.idl
 /usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleHyperlink.idl
 /usr/share/idl/libreoffice/com/sun/star/accessibility/XAccessibleHypertext.idl
@@ -6102,6 +5397,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/share/idl/libreoffice/com/sun/star/accessibility/XMSAAService.idl
 /usr/share/idl/libreoffice/com/sun/star/animations/AnimateColor.idl
 /usr/share/idl/libreoffice/com/sun/star/animations/AnimateMotion.idl
+/usr/share/idl/libreoffice/com/sun/star/animations/AnimatePhysics.idl
 /usr/share/idl/libreoffice/com/sun/star/animations/AnimateSet.idl
 /usr/share/idl/libreoffice/com/sun/star/animations/AnimationAdditiveMode.idl
 /usr/share/idl/libreoffice/com/sun/star/animations/AnimationCalcMode.idl
@@ -6128,6 +5424,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/share/idl/libreoffice/com/sun/star/animations/XAnimate.idl
 /usr/share/idl/libreoffice/com/sun/star/animations/XAnimateColor.idl
 /usr/share/idl/libreoffice/com/sun/star/animations/XAnimateMotion.idl
+/usr/share/idl/libreoffice/com/sun/star/animations/XAnimatePhysics.idl
 /usr/share/idl/libreoffice/com/sun/star/animations/XAnimateSet.idl
 /usr/share/idl/libreoffice/com/sun/star/animations/XAnimateTransform.idl
 /usr/share/idl/libreoffice/com/sun/star/animations/XAnimationListener.idl
@@ -7791,6 +7088,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/share/idl/libreoffice/com/sun/star/graphic/Graphic.idl
 /usr/share/idl/libreoffice/com/sun/star/graphic/GraphicColorMode.idl
 /usr/share/idl/libreoffice/com/sun/star/graphic/GraphicDescriptor.idl
+/usr/share/idl/libreoffice/com/sun/star/graphic/GraphicMapper.idl
 /usr/share/idl/libreoffice/com/sun/star/graphic/GraphicObject.idl
 /usr/share/idl/libreoffice/com/sun/star/graphic/GraphicProvider.idl
 /usr/share/idl/libreoffice/com/sun/star/graphic/GraphicRasterizer.idl
@@ -7803,6 +7101,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/share/idl/libreoffice/com/sun/star/graphic/SvgTools.idl
 /usr/share/idl/libreoffice/com/sun/star/graphic/XEmfParser.idl
 /usr/share/idl/libreoffice/com/sun/star/graphic/XGraphic.idl
+/usr/share/idl/libreoffice/com/sun/star/graphic/XGraphicMapper.idl
 /usr/share/idl/libreoffice/com/sun/star/graphic/XGraphicObject.idl
 /usr/share/idl/libreoffice/com/sun/star/graphic/XGraphicProvider.idl
 /usr/share/idl/libreoffice/com/sun/star/graphic/XGraphicProvider2.idl
@@ -9988,405 +9287,6 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/share/idl/libreoffice/com/sun/star/ui/dialogs/Wizard.idl
 /usr/share/idl/libreoffice/com/sun/star/ui/dialogs/WizardButton.idl
 /usr/share/idl/libreoffice/com/sun/star/ui/dialogs/WizardTravelType.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XAsynchronousExecutableDialog.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XControlAccess.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XControlInformation.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XDialogClosedListener.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XExecutableDialog.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePicker.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePicker2.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePicker3.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePickerControlAccess.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePickerListener.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePickerNotifier.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePreview.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilterGroupManager.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilterManager.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFolderPicker.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFolderPicker2.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XSLTFilterDialog.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XWizard.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XWizardController.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XWizardPage.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/test/UITest.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/test/XUIObject.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/test/XUITest.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/theModuleUIConfigurationManagerSupplier.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/theUICategoryDescription.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/theUIElementFactoryManager.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/theWindowContentFactoryManager.idl
-/usr/share/idl/libreoffice/com/sun/star/ui/theWindowStateConfiguration.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/DeploymentException.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/Exception.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/NamingService.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/RuntimeException.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/SecurityException.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/TypeClass.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/Uik.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/XAdapter.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/XAggregation.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/XComponentContext.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/XCurrentContext.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/XInterface.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/XNamingService.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/XReference.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/XUnloadingPreference.idl
-/usr/share/idl/libreoffice/com/sun/star/uno/XWeak.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/ExternalUriReferenceTranslator.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/RelativeUriExcessParentSegments.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/UriReferenceFactory.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/UriSchemeParser_vndDOTsunDOTstarDOTexpand.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/UriSchemeParser_vndDOTsunDOTstarDOTscript.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/VndSunStarPkgUrlReferenceFactory.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/XExternalUriReferenceTranslator.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/XUriReference.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/XUriReferenceFactory.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/XUriSchemeParser.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/XVndSunStarExpandUrl.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/XVndSunStarExpandUrlReference.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/XVndSunStarPkgUrlReferenceFactory.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/XVndSunStarScriptUrl.idl
-/usr/share/idl/libreoffice/com/sun/star/uri/XVndSunStarScriptUrlReference.idl
-/usr/share/idl/libreoffice/com/sun/star/util/AliasProgrammaticPair.idl
-/usr/share/idl/libreoffice/com/sun/star/util/AtomClassRequest.idl
-/usr/share/idl/libreoffice/com/sun/star/util/AtomDescription.idl
-/usr/share/idl/libreoffice/com/sun/star/util/BootstrapMacroExpander.idl
-/usr/share/idl/libreoffice/com/sun/star/util/CellProtection.idl
-/usr/share/idl/libreoffice/com/sun/star/util/ChangesEvent.idl
-/usr/share/idl/libreoffice/com/sun/star/util/ChangesSet.idl
-/usr/share/idl/libreoffice/com/sun/star/util/CloseVetoException.idl
-/usr/share/idl/libreoffice/com/sun/star/util/Color.idl
-/usr/share/idl/libreoffice/com/sun/star/util/DataEditorEvent.idl
-/usr/share/idl/libreoffice/com/sun/star/util/DataEditorEventType.idl
-/usr/share/idl/libreoffice/com/sun/star/util/Date.idl
-/usr/share/idl/libreoffice/com/sun/star/util/DateTime.idl
-/usr/share/idl/libreoffice/com/sun/star/util/DateTimeRange.idl
-/usr/share/idl/libreoffice/com/sun/star/util/DateTimeWithTimezone.idl
-/usr/share/idl/libreoffice/com/sun/star/util/DateWithTimezone.idl
-/usr/share/idl/libreoffice/com/sun/star/util/Duration.idl
-/usr/share/idl/libreoffice/com/sun/star/util/ElementChange.idl
-/usr/share/idl/libreoffice/com/sun/star/util/Endianness.idl
-/usr/share/idl/libreoffice/com/sun/star/util/InvalidStateException.idl
-/usr/share/idl/libreoffice/com/sun/star/util/JobManager.idl
-/usr/share/idl/libreoffice/com/sun/star/util/Language.idl
-/usr/share/idl/libreoffice/com/sun/star/util/MacroExpander.idl
-/usr/share/idl/libreoffice/com/sun/star/util/MalformedNumberFormatException.idl
-/usr/share/idl/libreoffice/com/sun/star/util/MeasureUnit.idl
-/usr/share/idl/libreoffice/com/sun/star/util/ModeChangeEvent.idl
-/usr/share/idl/libreoffice/com/sun/star/util/NotLockedException.idl
-/usr/share/idl/libreoffice/com/sun/star/util/NotNumericException.idl
-/usr/share/idl/libreoffice/com/sun/star/util/NumberFormat.idl
-/usr/share/idl/libreoffice/com/sun/star/util/NumberFormatProperties.idl
-/usr/share/idl/libreoffice/com/sun/star/util/NumberFormatSettings.idl
-/usr/share/idl/libreoffice/com/sun/star/util/NumberFormats.idl
-/usr/share/idl/libreoffice/com/sun/star/util/NumberFormatsSupplier.idl
-/usr/share/idl/libreoffice/com/sun/star/util/NumberFormatter.idl
-/usr/share/idl/libreoffice/com/sun/star/util/OfficeInstallationDirectories.idl
-/usr/share/idl/libreoffice/com/sun/star/util/PathSettings.idl
-/usr/share/idl/libreoffice/com/sun/star/util/PathSubstitution.idl
-/usr/share/idl/libreoffice/com/sun/star/util/ReplaceDescriptor.idl
-/usr/share/idl/libreoffice/com/sun/star/util/RevisionTag.idl
-/usr/share/idl/libreoffice/com/sun/star/util/SearchAlgorithms.idl
-/usr/share/idl/libreoffice/com/sun/star/util/SearchAlgorithms2.idl
-/usr/share/idl/libreoffice/com/sun/star/util/SearchDescriptor.idl
-/usr/share/idl/libreoffice/com/sun/star/util/SearchFlags.idl
-/usr/share/idl/libreoffice/com/sun/star/util/SearchOptions.idl
-/usr/share/idl/libreoffice/com/sun/star/util/SearchOptions2.idl
-/usr/share/idl/libreoffice/com/sun/star/util/SearchResult.idl
-/usr/share/idl/libreoffice/com/sun/star/util/SortDescriptor.idl
-/usr/share/idl/libreoffice/com/sun/star/util/SortDescriptor2.idl
-/usr/share/idl/libreoffice/com/sun/star/util/SortField.idl
-/usr/share/idl/libreoffice/com/sun/star/util/SortFieldType.idl
-/usr/share/idl/libreoffice/com/sun/star/util/Sortable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/TextSearch.idl
-/usr/share/idl/libreoffice/com/sun/star/util/TextSearch2.idl
-/usr/share/idl/libreoffice/com/sun/star/util/Time.idl
-/usr/share/idl/libreoffice/com/sun/star/util/TimeWithTimezone.idl
-/usr/share/idl/libreoffice/com/sun/star/util/TriState.idl
-/usr/share/idl/libreoffice/com/sun/star/util/URL.idl
-/usr/share/idl/libreoffice/com/sun/star/util/URLTransformer.idl
-/usr/share/idl/libreoffice/com/sun/star/util/UriAbbreviation.idl
-/usr/share/idl/libreoffice/com/sun/star/util/VetoException.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XAccounting.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XAtomServer.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XBroadcaster.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XCancellable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XChainable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XChangesBatch.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XChangesListener.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XChangesNotifier.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XChangesSet.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XCloneable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XCloseBroadcaster.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XCloseListener.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XCloseable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XDataEditor.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XDataEditorListener.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XFlushListener.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XFlushable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XImportable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XIndent.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XJobManager.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XLinkUpdate.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XLocalizedAliases.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XLockable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XMacroExpander.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XMergeable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XModeChangeApproveListener.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XModeChangeBroadcaster.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XModeChangeListener.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XModeSelector.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XModifiable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XModifiable2.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XModifyBroadcaster.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XModifyListener.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XNumberFormatPreviewer.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XNumberFormatTypes.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XNumberFormats.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XNumberFormatsSupplier.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XNumberFormatter.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XNumberFormatter2.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XOfficeInstallationDirectories.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XPathSettings.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XPropertyReplace.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XProtectable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XRefreshListener.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XRefreshable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XReplaceDescriptor.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XReplaceable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XSearchDescriptor.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XSearchable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XSortable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XStringAbbreviation.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XStringEscape.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XStringMapping.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XStringSubstitution.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XStringWidth.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XTextSearch.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XTextSearch2.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XTimeStamped.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XURLTransformer.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XUniqueIDFactory.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XUpdatable.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XUpdatable2.idl
-/usr/share/idl/libreoffice/com/sun/star/util/XVeto.idl
-/usr/share/idl/libreoffice/com/sun/star/util/theMacroExpander.idl
-/usr/share/idl/libreoffice/com/sun/star/util/theOfficeInstallationDirectories.idl
-/usr/share/idl/libreoffice/com/sun/star/util/thePathSettings.idl
-/usr/share/idl/libreoffice/com/sun/star/view/DocumentZoomType.idl
-/usr/share/idl/libreoffice/com/sun/star/view/DuplexMode.idl
-/usr/share/idl/libreoffice/com/sun/star/view/OfficeDocumentView.idl
-/usr/share/idl/libreoffice/com/sun/star/view/PaperFormat.idl
-/usr/share/idl/libreoffice/com/sun/star/view/PaperOrientation.idl
-/usr/share/idl/libreoffice/com/sun/star/view/PrintJobEvent.idl
-/usr/share/idl/libreoffice/com/sun/star/view/PrintOptions.idl
-/usr/share/idl/libreoffice/com/sun/star/view/PrintSettings.idl
-/usr/share/idl/libreoffice/com/sun/star/view/PrintableState.idl
-/usr/share/idl/libreoffice/com/sun/star/view/PrintableStateEvent.idl
-/usr/share/idl/libreoffice/com/sun/star/view/PrinterDescriptor.idl
-/usr/share/idl/libreoffice/com/sun/star/view/RenderDescriptor.idl
-/usr/share/idl/libreoffice/com/sun/star/view/RenderOptions.idl
-/usr/share/idl/libreoffice/com/sun/star/view/SelectionType.idl
-/usr/share/idl/libreoffice/com/sun/star/view/ViewSettings.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XControlAccess.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XFormLayerAccess.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XLineCursor.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XMultiSelectionSupplier.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XPrintJob.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XPrintJobBroadcaster.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XPrintJobListener.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XPrintSettingsSupplier.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XPrintable.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XPrintableBroadcaster.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XPrintableListener.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XRenderable.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XScreenCursor.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XSelectionChangeListener.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XSelectionSupplier.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XViewCursor.idl
-/usr/share/idl/libreoffice/com/sun/star/view/XViewSettingsSupplier.idl
-/usr/share/idl/libreoffice/com/sun/star/xforms/Binding.idl
-/usr/share/idl/libreoffice/com/sun/star/xforms/InvalidDataOnSubmitException.idl
-/usr/share/idl/libreoffice/com/sun/star/xforms/Model.idl
-/usr/share/idl/libreoffice/com/sun/star/xforms/XDataTypeRepository.idl
-/usr/share/idl/libreoffice/com/sun/star/xforms/XForms.idl
-/usr/share/idl/libreoffice/com/sun/star/xforms/XFormsEvent.idl
-/usr/share/idl/libreoffice/com/sun/star/xforms/XFormsSupplier.idl
-/usr/share/idl/libreoffice/com/sun/star/xforms/XFormsUIHelper1.idl
-/usr/share/idl/libreoffice/com/sun/star/xforms/XModel.idl
-/usr/share/idl/libreoffice/com/sun/star/xforms/XModel2.idl
-/usr/share/idl/libreoffice/com/sun/star/xforms/XSubmission.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/Attribute.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/AttributeContainer.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/AttributeData.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/ExportFilter.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/FastAttribute.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/ImportFilter.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/NamespaceContainer.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/ParaUserDefinedAttributesSupplier.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/TextUserDefinedAttributesSupplier.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/UserDefinedAttributesSupplier.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/XExportFilter.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/XImportFilter.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/XMLExportFilter.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/XMLImportFilter.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/CipherID.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/DigestID.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/GPGSEInitializer.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/NSSInitializer.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/SEInitializer.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/SecurityEnvironment.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/SecurityOperationStatus.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XCertificateCreator.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XCipherContext.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XCipherContextSupplier.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XDigestContext.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XDigestContextSupplier.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XMLEncryptionException.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XMLSecurityContext.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XMLSignature.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XMLSignatureException.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XNSSInitializer.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XSEInitializer.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XSecurityEnvironment.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XUriBinding.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XXMLEncryption.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XXMLEncryptionTemplate.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XXMLSecurityContext.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XXMLSecurityTemplate.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XXMLSignature.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XXMLSignatureTemplate.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/ConstOfSecurityId.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/ElementMarkPriority.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/ElementMarkType.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/ElementStackItem.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XBlockerMonitor.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XDecryptionResultBroadcaster.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XDecryptionResultListener.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XElementStackKeeper.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XEncryptionResultBroadcaster.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XEncryptionResultListener.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XKeyCollector.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XMissionTaker.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XReferenceCollector.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XReferenceResolvedBroadcaster.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XReferenceResolvedListener.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSAXEventKeeper.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSAXEventKeeperStatusChangeBroadcaster.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSAXEventKeeperStatusChangeListener.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSecuritySAXEventKeeper.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSignatureCreationResultBroadcaster.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSignatureCreationResultListener.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSignatureVerifyResultBroadcaster.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSignatureVerifyResultListener.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/csax/XCompressedDocumentHandler.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/csax/XMLAttribute.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/DOMException.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/DOMExceptionType.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/DocumentBuilder.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/NodeType.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/SAXDocumentBuilder.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/SAXDocumentBuilderState.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XAttr.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XCDATASection.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XCharacterData.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XComment.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XDOMImplementation.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XDocument.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XDocumentBuilder.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XDocumentFragment.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XDocumentType.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XElement.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XEntity.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XEntityReference.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XNamedNodeMap.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XNode.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XNodeList.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XNotation.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XProcessingInstruction.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XSAXDocumentBuilder.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XSAXDocumentBuilder2.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/XText.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/AttrChangeType.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/EventException.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/EventType.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/PhaseType.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XDocumentEvent.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XEvent.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XEventListener.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XEventTarget.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XMouseEvent.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XMutationEvent.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XUIEvent.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/views/XAbstractView.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/dom/views/XDocumentView.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/input/SaxDocumentHandler.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/input/XAttributes.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/input/XElement.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/input/XNamespaceMapping.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/input/XRoot.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/FastParser.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/FastShapeContextHandler.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/FastToken.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/FastTokenHandler.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/InputSource.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/Parser.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/SAXException.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/SAXInvalidCharacterException.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/SAXParseException.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/Writer.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XAttributeList.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XDTDHandler.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XDocumentHandler.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XEntityResolver.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XErrorHandler.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XExtendedDocumentHandler.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastAttributeList.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastContextHandler.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastDocumentHandler.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastNamespaceHandler.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastParser.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastSAXSerializable.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastShapeContextHandler.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastTokenHandler.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XLocator.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XParser.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XSAXSerializable.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/sax/XWriter.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/wrapper/XMLDocumentWrapper.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/wrapper/XMLElementWrapper.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/wrapper/XXMLDocumentWrapper.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/wrapper/XXMLElementWrapper.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/xpath/Libxml2ExtensionHandle.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XPathAPI.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XPathException.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XPathExtension.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XPathObjectType.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XXPathAPI.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XXPathExtension.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XXPathObject.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/xslt/XSLT2Transformer.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/xslt/XSLTTransformer.idl
-/usr/share/idl/libreoffice/com/sun/star/xml/xslt/XXSLTTransformer.idl
-/usr/share/idl/libreoffice/com/sun/star/xsd/Boolean.idl
-/usr/share/idl/libreoffice/com/sun/star/xsd/DataTypeClass.idl
-/usr/share/idl/libreoffice/com/sun/star/xsd/Date.idl
-/usr/share/idl/libreoffice/com/sun/star/xsd/DateTime.idl
-/usr/share/idl/libreoffice/com/sun/star/xsd/Day.idl
-/usr/share/idl/libreoffice/com/sun/star/xsd/Decimal.idl
-/usr/share/idl/libreoffice/com/sun/star/xsd/Month.idl
-/usr/share/idl/libreoffice/com/sun/star/xsd/String.idl
-/usr/share/idl/libreoffice/com/sun/star/xsd/Time.idl
-/usr/share/idl/libreoffice/com/sun/star/xsd/WhiteSpaceTreatment.idl
-/usr/share/idl/libreoffice/com/sun/star/xsd/XDataType.idl
-/usr/share/idl/libreoffice/com/sun/star/xsd/Year.idl
-/usr/share/idl/libreoffice/org/freedesktop/PackageKit/SyncDbusSessionHelper.idl
-/usr/share/idl/libreoffice/org/freedesktop/PackageKit/XModify.idl
-/usr/share/idl/libreoffice/org/freedesktop/PackageKit/XQuery.idl
-/usr/share/idl/libreoffice/org/freedesktop/PackageKit/XSyncDbusSessionHelper.idl
-/usr/share/mime-info/libreoffice.keys
-/usr/share/mime-info/libreoffice.mime
-/usr/share/mime-packages/libreoffice.xml
 
 %files dev
 %defattr(-,root,root,-)
@@ -13199,17 +12099,9 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/autotext/es/template.bau
 /usr/lib64/libreoffice/share/basic/Depot/Lang_es.xba
 /usr/lib64/libreoffice/share/extensions/dict-es/META-INF/manifest.xml
-/usr/lib64/libreoffice/share/extensions/dict-es/README_es_ANY.txt
-/usr/lib64/libreoffice/share/extensions/dict-es/README_hyph_es_ANY.txt
-/usr/lib64/libreoffice/share/extensions/dict-es/README_th_es_ANY.txt
 /usr/lib64/libreoffice/share/extensions/dict-es/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-es/dictionaries.xcu
-/usr/lib64/libreoffice/share/extensions/dict-es/es_ANY.aff
-/usr/lib64/libreoffice/share/extensions/dict-es/es_ANY.dic
-/usr/lib64/libreoffice/share/extensions/dict-es/hyph_es_ANY.dic
 /usr/lib64/libreoffice/share/extensions/dict-es/package-description.txt
-/usr/lib64/libreoffice/share/extensions/dict-es/th_es_ANY_v2.dat
-/usr/lib64/libreoffice/share/extensions/dict-es/th_es_ANY_v2.idx
 /usr/lib64/libreoffice/share/registry/Langpack-es.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_es.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_es.xcd
@@ -18264,15 +17156,12 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-pt-PT/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-pt-PT/README_hyph_pt_PT.txt
 /usr/lib64/libreoffice/share/extensions/dict-pt-PT/README_pt_PT.txt
-/usr/lib64/libreoffice/share/extensions/dict-pt-PT/README_th_pt_PT_v2.txt
 /usr/lib64/libreoffice/share/extensions/dict-pt-PT/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-pt-PT/dictionaries.xcu
 /usr/lib64/libreoffice/share/extensions/dict-pt-PT/hyph_pt_PT.dic
 /usr/lib64/libreoffice/share/extensions/dict-pt-PT/icon.png
 /usr/lib64/libreoffice/share/extensions/dict-pt-PT/pt_PT.aff
 /usr/lib64/libreoffice/share/extensions/dict-pt-PT/pt_PT.dic
-/usr/lib64/libreoffice/share/extensions/dict-pt-PT/th_pt_PT_v2.dat
-/usr/lib64/libreoffice/share/extensions/dict-pt-PT/th_pt_PT_v2.idx
 /usr/lib64/libreoffice/share/registry/Langpack-pt-BR.xcd
 /usr/lib64/libreoffice/share/registry/Langpack-pt.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_pt-BR.xcd
@@ -21468,11 +20357,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/libfps_officelo.so
 /usr/lib64/libreoffice/program/libfrmlo.so
 /usr/lib64/libreoffice/program/libfsstoragelo.so
-/usr/lib64/libreoffice/program/libfwelo.so
-/usr/lib64/libreoffice/program/libfwilo.so
 /usr/lib64/libreoffice/program/libfwklo.so
-/usr/lib64/libreoffice/program/libfwllo.so
-/usr/lib64/libreoffice/program/libfwmlo.so
 /usr/lib64/libreoffice/program/libgcc3_uno.so
 /usr/lib64/libreoffice/program/libgielo.so
 /usr/lib64/libreoffice/program/libgraphicfilterlo.so
@@ -21502,7 +20387,6 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/libloglo.so
 /usr/lib64/libreoffice/program/liblosessioninstalllo.so
 /usr/lib64/libreoffice/program/liblwpftlo.so
-/usr/lib64/libreoffice/program/libmcnttype.so
 /usr/lib64/libreoffice/program/libmigrationoo2lo.so
 /usr/lib64/libreoffice/program/libmigrationoo3lo.so
 /usr/lib64/libreoffice/program/libmorklo.so
@@ -21660,76 +20544,3 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/palette/standard.sop
 /usr/lib64/libreoffice/share/palette/styles.sod
 /usr/lib64/libreoffice/share/palette/tonal.soc
-
-%files license
-%defattr(0644,root,root,0755)
-/usr/share/package-licenses/libreoffice/01a6b4bf79aca9b556822601186afab86e8c4fbf
-/usr/share/package-licenses/libreoffice/086522998bce7aa9e5a07c02b0336895c8940a4d
-/usr/share/package-licenses/libreoffice/0b184ad51ba2a79e85d2288d5fcf8a1ea0481ea4
-/usr/share/package-licenses/libreoffice/0c4fabaa9f307652fd2b2f0057b8048809cca570
-/usr/share/package-licenses/libreoffice/0d42bf3e84b8f5a24c66ad825733b8bcc43f374d
-/usr/share/package-licenses/libreoffice/1e1ed49217c54335ff1a9c391094166d4dfe5fff
-/usr/share/package-licenses/libreoffice/1efe32a14d6ac9af625ba23a893352d02de30add
-/usr/share/package-licenses/libreoffice/26f94fe5a890afb135cc9fea45fdcef51c4439aa
-/usr/share/package-licenses/libreoffice/2f203961eeb312e8253537e3b32b106fd968e45a
-/usr/share/package-licenses/libreoffice/2fd7f23f9705fd591c14e2825dd03904f8337600
-/usr/share/package-licenses/libreoffice/351344d82dfbdfd3ad1e084fe8c37539872f3ea8
-/usr/share/package-licenses/libreoffice/3d6124299beadbdf34e46a1af82771afa1216a17
-/usr/share/package-licenses/libreoffice/3ffd75da8b0b4045a37f454032968fd0b31e1188
-/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
-/usr/share/package-licenses/libreoffice/4b01a3fc1fa58d9958d9067fd7cdbe41c706f65f
-/usr/share/package-licenses/libreoffice/4ee6e10f18c3762079a77e39ebd51ecdc7ee95db
-/usr/share/package-licenses/libreoffice/552e717402633ecd4b29e48ff5c293ff6baca7bd
-/usr/share/package-licenses/libreoffice/5919d75f19b76bef533d4ff10d3cca634752aaec
-/usr/share/package-licenses/libreoffice/720ac006232639ed551ce48d638dee35f8d378d4
-/usr/share/package-licenses/libreoffice/73a5c65a9ad1edb175e9e3b28db6b2612abb467b
-/usr/share/package-licenses/libreoffice/75b80fb33eafe0831107b9b6f5bd7306e4b1ca46
-/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-/usr/share/package-licenses/libreoffice/865dcd10722390043968e224401709450c0bbb54
-/usr/share/package-licenses/libreoffice/87b4193b4a14442b39731f4a4c7fe3c405269984
-/usr/share/package-licenses/libreoffice/901f6ff5addd8a2c0c83350e36baedaa3dd1d6ab
-/usr/share/package-licenses/libreoffice/981a819a0c9c4a4025d0c52b2b196b124f975d22
-/usr/share/package-licenses/libreoffice/98da77a33f378a25b9ab4b40dfdb4af8bdd4919f
-/usr/share/package-licenses/libreoffice/9d5ac27058dda3d79eb89b772e1fe479fba0de8b
-/usr/share/package-licenses/libreoffice/9da09717e40fd46206f0e48ad32cb3e6e0c425d3
-/usr/share/package-licenses/libreoffice/a2987fb2ef11c7c38cd03bc5d0be22014b63f777
-/usr/share/package-licenses/libreoffice/a5ddbc9cb6373c0bbd63da31d0190a3ed9f30fa4
-/usr/share/package-licenses/libreoffice/a76a0e7e8a8c7f46a328c16110f3c1dfbf9196ad
-/usr/share/package-licenses/libreoffice/a9d9e3aae241e2506e0c9ef63f26fbcffe1209e2
-/usr/share/package-licenses/libreoffice/aba8d76d0af67d57da3c3c321caa59f3d242386b
-/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
-/usr/share/package-licenses/libreoffice/ba8966e2473a9969bdcab3dc82274c817cfd98a1
-/usr/share/package-licenses/libreoffice/c20a43e2449b367c09f9e5f665febc631e99848a
-/usr/share/package-licenses/libreoffice/c407f2bc4c591b1d0aeef720a90f87b1eb35bfcf
-/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
-/usr/share/package-licenses/libreoffice/caeb68c46fa36651acf592771d09de7937926bb3
-/usr/share/package-licenses/libreoffice/cb3b074e16ba14585901215392dae8054260b960
-/usr/share/package-licenses/libreoffice/cc06ca4f929598f3aa142289edb889da935360ca
-/usr/share/package-licenses/libreoffice/cc16e7abcfe5dc3fdc19c7d795b58f51e0dc15e0
-/usr/share/package-licenses/libreoffice/cea402c4f150370f47b5f5e7ef461df23ec6a04d
-/usr/share/package-licenses/libreoffice/cf756914ec51f52f9c121be247bfda232dc6afd2
-/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
-/usr/share/package-licenses/libreoffice/dfa4d68ffb8c478209adb3ff777f33d0853d364d
-/usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b
-/usr/share/package-licenses/libreoffice/e6e2136cad401fa53663fd04205296db2eb08b05
-/usr/share/package-licenses/libreoffice/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9
-/usr/share/package-licenses/libreoffice/ea8bfbc661450e5ca8cb6d5f0c30ee3e854cb6d7
-/usr/share/package-licenses/libreoffice/f5dce21518ec83c44e57f084f494634ff53ddc14
-/usr/share/package-licenses/libreoffice/f635d28c6cbaac2760d09920ba63f19ed1ef6a27
-/usr/share/package-licenses/libreoffice/f9021477f3ffe66b806c98da42d1328fafee45fb
-/usr/share/package-licenses/libreoffice/ffafa3d581babbe799b390d4d7057d07a6dda4b2
-/usr/share/package-licenses/libreoffice/ffdb86b8f5a1a5020288c7fcc996258f44bf691d
-
-%files man
-%defattr(0644,root,root,0755)
-/usr/share/man/man1/libreoffice.1.gz
-/usr/share/man/man1/lobase.1.gz
-/usr/share/man/man1/localc.1.gz
-/usr/share/man/man1/lodraw.1.gz
-/usr/share/man/man1/loffice.1.gz
-/usr/share/man/man1/lofromtemplate.1.gz
-/usr/share/man/man1/loimpress.1.gz
-/usr/share/man/man1/lomath.1.gz
-/usr/share/man/man1/loweb.1.gz
-/usr/share/man/man1/lowriter.1.gz
-/usr/share/man/man1/unopkg.1.gz

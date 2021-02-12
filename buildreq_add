@@ -5,6 +5,7 @@ apr-dev
 bison
 bluez-dev
 boost-dev
+box2d-dev
 bzip2-dev
 clucene-core-dev
 coinmp-dev

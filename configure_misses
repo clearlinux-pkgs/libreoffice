@@ -24,6 +24,7 @@ Configure miss: sys/sdt.h
 Configure miss: whether g++ defines __cxa_eh_globals in cxxabi.h
 Configure miss: whether g++ defines __cxa_exception in cxxabi.h
 Configure miss: whether using C++11 causes libstdc++ 4.7.0/4.7.1 ABI breakage
+Configure miss: whether g++ supports a working C++20 consteval
 Configure miss: whether g++ supports C++2a constinit sorted vectors
 Configure miss: whether g++ supports C++2a <span> with unsigned size_type
 Configure miss: whether g++ implements C++ DR P1155R3
