@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 7.1.0.3
-Release  : 56
+Release  : 57
 URL      : https://download.documentfoundation.org/libreoffice/src/7.1.0/libreoffice-7.1.0.3.tar.xz
 Source0  : https://download.documentfoundation.org/libreoffice/src/7.1.0/libreoffice-7.1.0.3.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/QR-Code-generator-1.4.0.tar.gz
@@ -19,10 +19,12 @@ Source7  : https://download.documentfoundation.org/libreoffice/src/7.1.0/libreof
 Source8  : https://download.documentfoundation.org/libreoffice/src/7.1.0/libreoffice-7.1.0.3.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
-License  : Apache-2.0 BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception W3C
+License  : Apache-2.0 BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception NCSA W3C
 Requires: libreoffice-bin = %{version}-%{release}
 Requires: libreoffice-data = %{version}-%{release}
 Requires: libreoffice-lib = %{version}-%{release}
+Requires: libreoffice-license = %{version}-%{release}
+Requires: libreoffice-man = %{version}-%{release}
 BuildRequires : apache-ant
 BuildRequires : apr-dev
 BuildRequires : bison
@@ -141,6 +143,7 @@ a dummy package
 Summary: bin components for the libreoffice package.
 Group: Binaries
 Requires: libreoffice-data = %{version}-%{release}
+Requires: libreoffice-license = %{version}-%{release}
 
 %description bin
 bin components for the libreoffice package.
@@ -170,6 +173,7 @@ dev components for the libreoffice package.
 %package doc
 Summary: doc components for the libreoffice package.
 Group: Documentation
+Requires: libreoffice-man = %{version}-%{release}
 
 %description doc
 doc components for the libreoffice package.
@@ -1067,9 +1071,26 @@ extras-lang-zu components for the libreoffice package.
 Summary: lib components for the libreoffice package.
 Group: Libraries
 Requires: libreoffice-data = %{version}-%{release}
+Requires: libreoffice-license = %{version}-%{release}
 
 %description lib
 lib components for the libreoffice package.
+
+
+%package license
+Summary: license components for the libreoffice package.
+Group: Default
+
+%description license
+license components for the libreoffice package.
+
+
+%package man
+Summary: man components for the libreoffice package.
+Group: Default
+
+%description man
+man components for the libreoffice package.
 
 
 %prep
@@ -1111,7 +1132,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1613166409
+export SOURCE_DATE_EPOCH=1613186312
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -1168,7 +1189,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1613166409
+export SOURCE_DATE_EPOCH=1613186312
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-7.1.0.3/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
@@ -1176,6 +1197,7 @@ cp %{_builddir}/libreoffice-7.1.0.3/COPYING.LGPL %{buildroot}/usr/share/package-
 cp %{_builddir}/libreoffice-7.1.0.3/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
 cp %{_builddir}/libreoffice-7.1.0.3/bin/text_cat/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/caeb68c46fa36651acf592771d09de7937926bb3
 cp %{_builddir}/libreoffice-7.1.0.3/bin/text_cat/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/a2987fb2ef11c7c38cd03bc5d0be22014b63f777
+cp %{_builddir}/libreoffice-7.1.0.3/compilerplugins/LICENSE.TXT %{buildroot}/usr/share/package-licenses/libreoffice/9d7277771b9114033cfddb0195455806701d7959
 cp %{_builddir}/libreoffice-7.1.0.3/connectivity/source/drivers/mork/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/2fd7f23f9705fd591c14e2825dd03904f8337600
 cp %{_builddir}/libreoffice-7.1.0.3/desktop/source/deployment/gui/license_dialog.cxx %{buildroot}/usr/share/package-licenses/libreoffice/99cb4e9c2d3a86db4447c164cc3d6d2c5405b1da
 cp %{_builddir}/libreoffice-7.1.0.3/desktop/source/deployment/gui/license_dialog.hxx %{buildroot}/usr/share/package-licenses/libreoffice/fc52bdd52dcd28fcb258701ff22dc2958c735b1b
@@ -9287,6 +9309,411 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/share/idl/libreoffice/com/sun/star/ui/dialogs/Wizard.idl
 /usr/share/idl/libreoffice/com/sun/star/ui/dialogs/WizardButton.idl
 /usr/share/idl/libreoffice/com/sun/star/ui/dialogs/WizardTravelType.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XAsynchronousExecutableDialog.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XControlAccess.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XControlInformation.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XDialogClosedListener.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XExecutableDialog.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePicker.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePicker2.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePicker3.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePickerControlAccess.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePickerListener.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePickerNotifier.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilePreview.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilterGroupManager.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFilterManager.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFolderPicker.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XFolderPicker2.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XSLTFilterDialog.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XWizard.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XWizardController.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/dialogs/XWizardPage.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/test/UITest.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/test/XUIObject.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/test/XUITest.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/theModuleUIConfigurationManagerSupplier.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/theUICategoryDescription.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/theUIElementFactoryManager.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/theWindowContentFactoryManager.idl
+/usr/share/idl/libreoffice/com/sun/star/ui/theWindowStateConfiguration.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/DeploymentException.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/Exception.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/NamingService.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/RuntimeException.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/SecurityException.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/TypeClass.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/Uik.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/XAdapter.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/XAggregation.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/XComponentContext.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/XCurrentContext.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/XInterface.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/XNamingService.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/XReference.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/XUnloadingPreference.idl
+/usr/share/idl/libreoffice/com/sun/star/uno/XWeak.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/ExternalUriReferenceTranslator.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/RelativeUriExcessParentSegments.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/UriReferenceFactory.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/UriSchemeParser_vndDOTsunDOTstarDOTexpand.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/UriSchemeParser_vndDOTsunDOTstarDOTscript.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/VndSunStarPkgUrlReferenceFactory.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/XExternalUriReferenceTranslator.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/XUriReference.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/XUriReferenceFactory.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/XUriSchemeParser.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/XVndSunStarExpandUrl.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/XVndSunStarExpandUrlReference.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/XVndSunStarPkgUrlReferenceFactory.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/XVndSunStarScriptUrl.idl
+/usr/share/idl/libreoffice/com/sun/star/uri/XVndSunStarScriptUrlReference.idl
+/usr/share/idl/libreoffice/com/sun/star/util/AliasProgrammaticPair.idl
+/usr/share/idl/libreoffice/com/sun/star/util/AtomClassRequest.idl
+/usr/share/idl/libreoffice/com/sun/star/util/AtomDescription.idl
+/usr/share/idl/libreoffice/com/sun/star/util/BootstrapMacroExpander.idl
+/usr/share/idl/libreoffice/com/sun/star/util/CellProtection.idl
+/usr/share/idl/libreoffice/com/sun/star/util/ChangesEvent.idl
+/usr/share/idl/libreoffice/com/sun/star/util/ChangesSet.idl
+/usr/share/idl/libreoffice/com/sun/star/util/CloseVetoException.idl
+/usr/share/idl/libreoffice/com/sun/star/util/Color.idl
+/usr/share/idl/libreoffice/com/sun/star/util/DataEditorEvent.idl
+/usr/share/idl/libreoffice/com/sun/star/util/DataEditorEventType.idl
+/usr/share/idl/libreoffice/com/sun/star/util/Date.idl
+/usr/share/idl/libreoffice/com/sun/star/util/DateTime.idl
+/usr/share/idl/libreoffice/com/sun/star/util/DateTimeRange.idl
+/usr/share/idl/libreoffice/com/sun/star/util/DateTimeWithTimezone.idl
+/usr/share/idl/libreoffice/com/sun/star/util/DateWithTimezone.idl
+/usr/share/idl/libreoffice/com/sun/star/util/Duration.idl
+/usr/share/idl/libreoffice/com/sun/star/util/ElementChange.idl
+/usr/share/idl/libreoffice/com/sun/star/util/Endianness.idl
+/usr/share/idl/libreoffice/com/sun/star/util/InvalidStateException.idl
+/usr/share/idl/libreoffice/com/sun/star/util/JobManager.idl
+/usr/share/idl/libreoffice/com/sun/star/util/Language.idl
+/usr/share/idl/libreoffice/com/sun/star/util/MacroExpander.idl
+/usr/share/idl/libreoffice/com/sun/star/util/MalformedNumberFormatException.idl
+/usr/share/idl/libreoffice/com/sun/star/util/MeasureUnit.idl
+/usr/share/idl/libreoffice/com/sun/star/util/ModeChangeEvent.idl
+/usr/share/idl/libreoffice/com/sun/star/util/NotLockedException.idl
+/usr/share/idl/libreoffice/com/sun/star/util/NotNumericException.idl
+/usr/share/idl/libreoffice/com/sun/star/util/NumberFormat.idl
+/usr/share/idl/libreoffice/com/sun/star/util/NumberFormatProperties.idl
+/usr/share/idl/libreoffice/com/sun/star/util/NumberFormatSettings.idl
+/usr/share/idl/libreoffice/com/sun/star/util/NumberFormats.idl
+/usr/share/idl/libreoffice/com/sun/star/util/NumberFormatsSupplier.idl
+/usr/share/idl/libreoffice/com/sun/star/util/NumberFormatter.idl
+/usr/share/idl/libreoffice/com/sun/star/util/OfficeInstallationDirectories.idl
+/usr/share/idl/libreoffice/com/sun/star/util/PathSettings.idl
+/usr/share/idl/libreoffice/com/sun/star/util/PathSubstitution.idl
+/usr/share/idl/libreoffice/com/sun/star/util/ReplaceDescriptor.idl
+/usr/share/idl/libreoffice/com/sun/star/util/RevisionTag.idl
+/usr/share/idl/libreoffice/com/sun/star/util/SearchAlgorithms.idl
+/usr/share/idl/libreoffice/com/sun/star/util/SearchAlgorithms2.idl
+/usr/share/idl/libreoffice/com/sun/star/util/SearchDescriptor.idl
+/usr/share/idl/libreoffice/com/sun/star/util/SearchFlags.idl
+/usr/share/idl/libreoffice/com/sun/star/util/SearchOptions.idl
+/usr/share/idl/libreoffice/com/sun/star/util/SearchOptions2.idl
+/usr/share/idl/libreoffice/com/sun/star/util/SearchResult.idl
+/usr/share/idl/libreoffice/com/sun/star/util/SortDescriptor.idl
+/usr/share/idl/libreoffice/com/sun/star/util/SortDescriptor2.idl
+/usr/share/idl/libreoffice/com/sun/star/util/SortField.idl
+/usr/share/idl/libreoffice/com/sun/star/util/SortFieldType.idl
+/usr/share/idl/libreoffice/com/sun/star/util/Sortable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/TextSearch.idl
+/usr/share/idl/libreoffice/com/sun/star/util/TextSearch2.idl
+/usr/share/idl/libreoffice/com/sun/star/util/Time.idl
+/usr/share/idl/libreoffice/com/sun/star/util/TimeWithTimezone.idl
+/usr/share/idl/libreoffice/com/sun/star/util/TriState.idl
+/usr/share/idl/libreoffice/com/sun/star/util/URL.idl
+/usr/share/idl/libreoffice/com/sun/star/util/URLTransformer.idl
+/usr/share/idl/libreoffice/com/sun/star/util/UriAbbreviation.idl
+/usr/share/idl/libreoffice/com/sun/star/util/VetoException.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XAccounting.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XAtomServer.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XBroadcaster.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XCancellable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XChainable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XChangesBatch.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XChangesListener.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XChangesNotifier.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XChangesSet.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XCloneable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XCloseBroadcaster.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XCloseListener.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XCloseable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XDataEditor.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XDataEditorListener.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XFlushListener.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XFlushable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XImportable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XIndent.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XJobManager.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XLinkUpdate.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XLocalizedAliases.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XLockable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XMacroExpander.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XMergeable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XModeChangeApproveListener.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XModeChangeBroadcaster.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XModeChangeListener.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XModeSelector.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XModifiable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XModifiable2.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XModifyBroadcaster.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XModifyListener.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XNumberFormatPreviewer.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XNumberFormatTypes.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XNumberFormats.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XNumberFormatsSupplier.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XNumberFormatter.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XNumberFormatter2.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XOfficeInstallationDirectories.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XPathSettings.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XPropertyReplace.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XProtectable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XRefreshListener.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XRefreshable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XReplaceDescriptor.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XReplaceable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XSearchDescriptor.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XSearchable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XSortable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XStringAbbreviation.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XStringEscape.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XStringMapping.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XStringSubstitution.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XStringWidth.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XTextSearch.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XTextSearch2.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XTimeStamped.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XURLTransformer.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XUniqueIDFactory.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XUpdatable.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XUpdatable2.idl
+/usr/share/idl/libreoffice/com/sun/star/util/XVeto.idl
+/usr/share/idl/libreoffice/com/sun/star/util/theMacroExpander.idl
+/usr/share/idl/libreoffice/com/sun/star/util/theOfficeInstallationDirectories.idl
+/usr/share/idl/libreoffice/com/sun/star/util/thePathSettings.idl
+/usr/share/idl/libreoffice/com/sun/star/view/DocumentZoomType.idl
+/usr/share/idl/libreoffice/com/sun/star/view/DuplexMode.idl
+/usr/share/idl/libreoffice/com/sun/star/view/OfficeDocumentView.idl
+/usr/share/idl/libreoffice/com/sun/star/view/PaperFormat.idl
+/usr/share/idl/libreoffice/com/sun/star/view/PaperOrientation.idl
+/usr/share/idl/libreoffice/com/sun/star/view/PrintJobEvent.idl
+/usr/share/idl/libreoffice/com/sun/star/view/PrintOptions.idl
+/usr/share/idl/libreoffice/com/sun/star/view/PrintSettings.idl
+/usr/share/idl/libreoffice/com/sun/star/view/PrintableState.idl
+/usr/share/idl/libreoffice/com/sun/star/view/PrintableStateEvent.idl
+/usr/share/idl/libreoffice/com/sun/star/view/PrinterDescriptor.idl
+/usr/share/idl/libreoffice/com/sun/star/view/RenderDescriptor.idl
+/usr/share/idl/libreoffice/com/sun/star/view/RenderOptions.idl
+/usr/share/idl/libreoffice/com/sun/star/view/SelectionType.idl
+/usr/share/idl/libreoffice/com/sun/star/view/ViewSettings.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XControlAccess.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XFormLayerAccess.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XLineCursor.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XMultiSelectionSupplier.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XPrintJob.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XPrintJobBroadcaster.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XPrintJobListener.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XPrintSettingsSupplier.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XPrintable.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XPrintableBroadcaster.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XPrintableListener.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XRenderable.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XScreenCursor.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XSelectionChangeListener.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XSelectionSupplier.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XViewCursor.idl
+/usr/share/idl/libreoffice/com/sun/star/view/XViewSettingsSupplier.idl
+/usr/share/idl/libreoffice/com/sun/star/xforms/Binding.idl
+/usr/share/idl/libreoffice/com/sun/star/xforms/InvalidDataOnSubmitException.idl
+/usr/share/idl/libreoffice/com/sun/star/xforms/Model.idl
+/usr/share/idl/libreoffice/com/sun/star/xforms/XDataTypeRepository.idl
+/usr/share/idl/libreoffice/com/sun/star/xforms/XForms.idl
+/usr/share/idl/libreoffice/com/sun/star/xforms/XFormsEvent.idl
+/usr/share/idl/libreoffice/com/sun/star/xforms/XFormsSupplier.idl
+/usr/share/idl/libreoffice/com/sun/star/xforms/XFormsUIHelper1.idl
+/usr/share/idl/libreoffice/com/sun/star/xforms/XModel.idl
+/usr/share/idl/libreoffice/com/sun/star/xforms/XModel2.idl
+/usr/share/idl/libreoffice/com/sun/star/xforms/XSubmission.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/Attribute.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/AttributeContainer.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/AttributeData.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/ExportFilter.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/FastAttribute.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/ImportFilter.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/NamespaceContainer.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/ParaUserDefinedAttributesSupplier.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/TextUserDefinedAttributesSupplier.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/UserDefinedAttributesSupplier.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/XExportFilter.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/XImportFilter.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/XImportFilter2.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/XMLExportFilter.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/XMLImportFilter.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/CipherID.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/DigestID.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/GPGSEInitializer.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/NSSInitializer.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/NSSProfile.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/SEInitializer.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/SecurityEnvironment.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/SecurityOperationStatus.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XCertificateCreator.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XCipherContext.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XCipherContextSupplier.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XDigestContext.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XDigestContextSupplier.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XMLEncryptionException.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XMLSecurityContext.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XMLSignature.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XMLSignatureException.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XNSSInitializer.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XSEInitializer.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XSecurityEnvironment.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XUriBinding.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XXMLEncryption.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XXMLEncryptionTemplate.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XXMLSecurityContext.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XXMLSecurityTemplate.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XXMLSignature.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/XXMLSignatureTemplate.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/ConstOfSecurityId.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/ElementMarkPriority.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/ElementMarkType.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/ElementStackItem.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XBlockerMonitor.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XDecryptionResultBroadcaster.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XDecryptionResultListener.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XElementStackKeeper.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XEncryptionResultBroadcaster.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XEncryptionResultListener.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XKeyCollector.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XMissionTaker.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XReferenceCollector.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XReferenceResolvedBroadcaster.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XReferenceResolvedListener.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSAXEventKeeper.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSAXEventKeeperStatusChangeBroadcaster.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSAXEventKeeperStatusChangeListener.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSecuritySAXEventKeeper.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSignatureCreationResultBroadcaster.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSignatureCreationResultListener.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSignatureVerifyResultBroadcaster.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/crypto/sax/XSignatureVerifyResultListener.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/csax/XCompressedDocumentHandler.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/csax/XMLAttribute.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/DOMException.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/DOMExceptionType.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/DocumentBuilder.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/NodeType.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/SAXDocumentBuilder.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/SAXDocumentBuilderState.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XAttr.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XCDATASection.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XCharacterData.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XComment.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XDOMImplementation.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XDocument.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XDocumentBuilder.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XDocumentFragment.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XDocumentType.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XElement.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XEntity.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XEntityReference.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XNamedNodeMap.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XNode.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XNodeList.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XNotation.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XProcessingInstruction.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XSAXDocumentBuilder.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XSAXDocumentBuilder2.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/XText.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/AttrChangeType.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/EventException.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/EventType.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/PhaseType.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XDocumentEvent.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XEvent.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XEventListener.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XEventTarget.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XMouseEvent.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XMutationEvent.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/events/XUIEvent.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/views/XAbstractView.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/dom/views/XDocumentView.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/input/SaxDocumentHandler.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/input/XAttributes.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/input/XElement.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/input/XNamespaceMapping.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/input/XRoot.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/FastParser.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/FastShapeContextHandler.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/FastToken.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/FastTokenHandler.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/InputSource.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/Parser.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/SAXException.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/SAXInvalidCharacterException.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/SAXParseException.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/Writer.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XAttributeList.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XDTDHandler.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XDocumentHandler.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XEntityResolver.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XErrorHandler.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XExtendedDocumentHandler.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastAttributeList.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastContextHandler.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastDocumentHandler.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastNamespaceHandler.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastParser.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastSAXSerializable.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastShapeContextHandler.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XFastTokenHandler.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XLocator.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XParser.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XSAXSerializable.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/sax/XWriter.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/wrapper/XMLDocumentWrapper.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/wrapper/XMLElementWrapper.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/wrapper/XXMLDocumentWrapper.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/wrapper/XXMLElementWrapper.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/xpath/Libxml2ExtensionHandle.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XPathAPI.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XPathException.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XPathExtension.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XPathObjectType.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XXPathAPI.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XXPathExtension.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/xpath/XXPathObject.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/xslt/XSLT2Transformer.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/xslt/XSLTTransformer.idl
+/usr/share/idl/libreoffice/com/sun/star/xml/xslt/XXSLTTransformer.idl
+/usr/share/idl/libreoffice/com/sun/star/xsd/Boolean.idl
+/usr/share/idl/libreoffice/com/sun/star/xsd/DataTypeClass.idl
+/usr/share/idl/libreoffice/com/sun/star/xsd/Date.idl
+/usr/share/idl/libreoffice/com/sun/star/xsd/DateTime.idl
+/usr/share/idl/libreoffice/com/sun/star/xsd/Day.idl
+/usr/share/idl/libreoffice/com/sun/star/xsd/Decimal.idl
+/usr/share/idl/libreoffice/com/sun/star/xsd/Month.idl
+/usr/share/idl/libreoffice/com/sun/star/xsd/String.idl
+/usr/share/idl/libreoffice/com/sun/star/xsd/Time.idl
+/usr/share/idl/libreoffice/com/sun/star/xsd/WhiteSpaceTreatment.idl
+/usr/share/idl/libreoffice/com/sun/star/xsd/XDataType.idl
+/usr/share/idl/libreoffice/com/sun/star/xsd/Year.idl
+/usr/share/idl/libreoffice/org/freedesktop/PackageKit/SyncDbusSessionHelper.idl
+/usr/share/idl/libreoffice/org/freedesktop/PackageKit/XModify.idl
+/usr/share/idl/libreoffice/org/freedesktop/PackageKit/XQuery.idl
+/usr/share/idl/libreoffice/org/freedesktop/PackageKit/XSyncDbusSessionHelper.idl
+/usr/share/metainfo/libreoffice-base.appdata.xml
+/usr/share/metainfo/libreoffice-calc.appdata.xml
+/usr/share/metainfo/libreoffice-draw.appdata.xml
+/usr/share/metainfo/libreoffice-impress.appdata.xml
+/usr/share/metainfo/libreoffice-writer.appdata.xml
+/usr/share/metainfo/org.libreoffice.kde.metainfo.xml
+/usr/share/mime-packages/libreoffice.xml
 
 %files dev
 %defattr(-,root,root,-)
@@ -20544,3 +20971,74 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/palette/standard.sop
 /usr/lib64/libreoffice/share/palette/styles.sod
 /usr/lib64/libreoffice/share/palette/tonal.soc
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/libreoffice/01a6b4bf79aca9b556822601186afab86e8c4fbf
+/usr/share/package-licenses/libreoffice/086522998bce7aa9e5a07c02b0336895c8940a4d
+/usr/share/package-licenses/libreoffice/0b184ad51ba2a79e85d2288d5fcf8a1ea0481ea4
+/usr/share/package-licenses/libreoffice/0c4fabaa9f307652fd2b2f0057b8048809cca570
+/usr/share/package-licenses/libreoffice/1e1ed49217c54335ff1a9c391094166d4dfe5fff
+/usr/share/package-licenses/libreoffice/1efe32a14d6ac9af625ba23a893352d02de30add
+/usr/share/package-licenses/libreoffice/26f94fe5a890afb135cc9fea45fdcef51c4439aa
+/usr/share/package-licenses/libreoffice/2f203961eeb312e8253537e3b32b106fd968e45a
+/usr/share/package-licenses/libreoffice/2fd7f23f9705fd591c14e2825dd03904f8337600
+/usr/share/package-licenses/libreoffice/351344d82dfbdfd3ad1e084fe8c37539872f3ea8
+/usr/share/package-licenses/libreoffice/3d6124299beadbdf34e46a1af82771afa1216a17
+/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
+/usr/share/package-licenses/libreoffice/4ee6e10f18c3762079a77e39ebd51ecdc7ee95db
+/usr/share/package-licenses/libreoffice/552e717402633ecd4b29e48ff5c293ff6baca7bd
+/usr/share/package-licenses/libreoffice/5919d75f19b76bef533d4ff10d3cca634752aaec
+/usr/share/package-licenses/libreoffice/720ac006232639ed551ce48d638dee35f8d378d4
+/usr/share/package-licenses/libreoffice/73a5c65a9ad1edb175e9e3b28db6b2612abb467b
+/usr/share/package-licenses/libreoffice/75b80fb33eafe0831107b9b6f5bd7306e4b1ca46
+/usr/share/package-licenses/libreoffice/80a8d4bcf0ccb13b515b47b68437d9300ad4aee1
+/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+/usr/share/package-licenses/libreoffice/865dcd10722390043968e224401709450c0bbb54
+/usr/share/package-licenses/libreoffice/87b4193b4a14442b39731f4a4c7fe3c405269984
+/usr/share/package-licenses/libreoffice/981a819a0c9c4a4025d0c52b2b196b124f975d22
+/usr/share/package-licenses/libreoffice/98da77a33f378a25b9ab4b40dfdb4af8bdd4919f
+/usr/share/package-licenses/libreoffice/99cb4e9c2d3a86db4447c164cc3d6d2c5405b1da
+/usr/share/package-licenses/libreoffice/9d7277771b9114033cfddb0195455806701d7959
+/usr/share/package-licenses/libreoffice/9da09717e40fd46206f0e48ad32cb3e6e0c425d3
+/usr/share/package-licenses/libreoffice/a2987fb2ef11c7c38cd03bc5d0be22014b63f777
+/usr/share/package-licenses/libreoffice/a5ddbc9cb6373c0bbd63da31d0190a3ed9f30fa4
+/usr/share/package-licenses/libreoffice/a76a0e7e8a8c7f46a328c16110f3c1dfbf9196ad
+/usr/share/package-licenses/libreoffice/a9d9e3aae241e2506e0c9ef63f26fbcffe1209e2
+/usr/share/package-licenses/libreoffice/aba8d76d0af67d57da3c3c321caa59f3d242386b
+/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
+/usr/share/package-licenses/libreoffice/ba8966e2473a9969bdcab3dc82274c817cfd98a1
+/usr/share/package-licenses/libreoffice/c20a43e2449b367c09f9e5f665febc631e99848a
+/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
+/usr/share/package-licenses/libreoffice/caeb68c46fa36651acf592771d09de7937926bb3
+/usr/share/package-licenses/libreoffice/cb3b074e16ba14585901215392dae8054260b960
+/usr/share/package-licenses/libreoffice/cc06ca4f929598f3aa142289edb889da935360ca
+/usr/share/package-licenses/libreoffice/cc16e7abcfe5dc3fdc19c7d795b58f51e0dc15e0
+/usr/share/package-licenses/libreoffice/cea402c4f150370f47b5f5e7ef461df23ec6a04d
+/usr/share/package-licenses/libreoffice/cf756914ec51f52f9c121be247bfda232dc6afd2
+/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
+/usr/share/package-licenses/libreoffice/dfa4d68ffb8c478209adb3ff777f33d0853d364d
+/usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b
+/usr/share/package-licenses/libreoffice/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9
+/usr/share/package-licenses/libreoffice/ea8bfbc661450e5ca8cb6d5f0c30ee3e854cb6d7
+/usr/share/package-licenses/libreoffice/ef57d304b483867d7a00ce58d320a824bc604a09
+/usr/share/package-licenses/libreoffice/f5dce21518ec83c44e57f084f494634ff53ddc14
+/usr/share/package-licenses/libreoffice/f635d28c6cbaac2760d09920ba63f19ed1ef6a27
+/usr/share/package-licenses/libreoffice/f9021477f3ffe66b806c98da42d1328fafee45fb
+/usr/share/package-licenses/libreoffice/fc52bdd52dcd28fcb258701ff22dc2958c735b1b
+/usr/share/package-licenses/libreoffice/ffafa3d581babbe799b390d4d7057d07a6dda4b2
+/usr/share/package-licenses/libreoffice/ffdb86b8f5a1a5020288c7fcc996258f44bf691d
+
+%files man
+%defattr(0644,root,root,0755)
+/usr/share/man/man1/libreoffice.1.gz
+/usr/share/man/man1/lobase.1.gz
+/usr/share/man/man1/localc.1.gz
+/usr/share/man/man1/lodraw.1.gz
+/usr/share/man/man1/loffice.1.gz
+/usr/share/man/man1/lofromtemplate.1.gz
+/usr/share/man/man1/loimpress.1.gz
+/usr/share/man/man1/lomath.1.gz
+/usr/share/man/man1/loweb.1.gz
+/usr/share/man/man1/lowriter.1.gz
+/usr/share/man/man1/unopkg.1.gz
