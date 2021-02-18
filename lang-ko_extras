@@ -120,6 +120,12 @@
 /usr/lib64/libreoffice/share/autotext/ko/standard.bau
 /usr/lib64/libreoffice/share/autotext/ko/template.bau
 /usr/lib64/libreoffice/share/basic/Depot/Lang_ko.xba
+/usr/lib64/libreoffice/share/extensions/dict-ko/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-ko/README_ko_KR.txt
+/usr/lib64/libreoffice/share/extensions/dict-ko/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-ko/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-ko/ko_KR.aff
+/usr/lib64/libreoffice/share/extensions/dict-ko/ko_KR.dic
 /usr/lib64/libreoffice/share/registry/Langpack-ko.xcd
 /usr/lib64/libreoffice/share/registry/cjk_ko.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ko.xcd
