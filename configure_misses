@@ -1,70 +1,70 @@
-Configure miss: whether to use link-time optimization
+Configure miss: 'intro' progress settings
+Configure miss: /run/user/1000
+Configure miss: Alfresco Cloud client id and secret
+Configure miss: Google Drive client id and secret
+Configure miss: MPL subset
+Configure miss: Microsoft Binary File Format Validator
+Configure miss: OneDrive client id and secret
+Configure miss: alternative branding images directory
+Configure miss: building the ConvertTextToNumber extension
+Configure miss: building the Numbertext extension
 Configure miss: explicit AFLAGS
+Configure miss: explicit LDFLAGS
 Configure miss: explicit OBJCFLAGS
 Configure miss: explicit OBJCXXFLAGS
-Configure miss: explicit LDFLAGS
-Configure miss: whether to sign windows build
-Configure miss: whether to build with Java support
-Configure miss: whether to treat the installation as read-only
-Configure miss: whether the compiler is actually Clang
-Configure miss: whether to build with additional debug utilities
-Configure miss: whether to do a debug build
-Configure miss: whether gcc supports -Xclang -debug-info-kind=constructor
-Configure miss: whether gcc supports -Wl,--gdb-index
-Configure miss: whether to generate debug information
-Configure miss: which package format to use
-Configure miss: whether to turn warnings to errors
-Configure miss: whether to have assert() failures abort even without --enable-debug
-Configure miss: whether we want to fetch tarballs
-Configure miss: whether to enable xapian-omega support for help
-Configure miss: whether to enable pch feature
-Configure miss: x86_64-generic-linux-gnu-readelf
+Configure miss: extra build ID
+Configure miss: formula logger
 Configure miss: g++ option to enable C++11 features
+Configure miss: gnucp
+Configure miss: if g++ has a visibility bug with class-level attributes (GCC bug 26905)
 Configure miss: sys/sdt.h
 Configure miss: whether g++ defines __cxa_eh_globals in cxxabi.h
 Configure miss: whether g++ defines __cxa_exception in cxxabi.h
-Configure miss: whether using C++11 causes libstdc++ 4.7.0/4.7.1 ABI breakage
-Configure miss: whether g++ supports a working C++20 consteval
-Configure miss: whether g++ supports C++2a constinit sorted vectors
-Configure miss: whether g++ supports C++2a <span> with unsigned size_type
 Configure miss: whether g++ implements C++ DR P1155R3
 Configure miss: whether g++ might report false -Werror=maybe-uninitialized
-Configure miss: if g++ has a visibility bug with class-level attributes (GCC bug 26905)
-Configure miss: whether to enable export file validation
-Configure miss: Microsoft Binary File Format Validator
-Configure miss: whether to enable EPM for packing
-Configure miss: whether to enable Embedded OpenType support
-Configure miss: whether to bundle the MySQL/MariaDB client library
-Configure miss: whether to build the PostgreSQL SDBC driver
-Configure miss: whether to enable breakpad
-Configure miss: whether to enable fuzzers
-Configure miss: whether to execute chart XShape tests
-Configure miss: whether to disable OpenSSL usage
-Configure miss: whether to enable the OpenSSL backend for rtl/cipher.h
-Configure miss: whether to use gnutls
-Configure miss: whether to build with lpsolve
-Configure miss: gnucp
-Configure miss: whether to enable the VLC avmedia backend
+Configure miss: whether g++ supports C++2a <span> with unsigned size_type
+Configure miss: whether g++ supports C++2a constinit sorted vectors
+Configure miss: whether g++ supports a working C++20 consteval
+Configure miss: whether gcc supports -Wl,--gdb-index
+Configure miss: whether gcc supports -Xclang -debug-info-kind=constructor
+Configure miss: whether the compiler is actually Clang
 Configure miss: whether to build PDFium
-Configure miss: /run/user/1000
-Configure miss: whether to build the Wiki Publisher extension
-Configure miss: whether to build the Report Builder
 Configure miss: whether to build support for scripts in BeanShell
 Configure miss: whether to build support for scripts in JavaScript
-Configure miss: whether to enable evolution 2 support
-Configure miss: building the ConvertTextToNumber extension
-Configure miss: building the Numbertext extension
-Configure miss: whether to include third-party fonts
-Configure miss: whether to enable online update
+Configure miss: whether to build the PostgreSQL SDBC driver
+Configure miss: whether to build the Report Builder
+Configure miss: whether to build the Wiki Publisher extension
+Configure miss: whether to build with Java support
+Configure miss: whether to build with additional debug utilities
+Configure miss: whether to build with lpsolve
+Configure miss: whether to bundle the MySQL/MariaDB client library
 Configure miss: whether to create MSI with LIMITUI=1 (silent install)
-Configure miss: alternative branding images directory
-Configure miss: 'intro' progress settings
-Configure miss: extra build ID
-Configure miss: whether to install the compat oo* wrappers
-Configure miss: Google Drive client id and secret
-Configure miss: Alfresco Cloud client id and secret
-Configure miss: OneDrive client id and secret
 Configure miss: whether to create huge library
+Configure miss: whether to disable OpenSSL usage
+Configure miss: whether to do a debug build
+Configure miss: whether to enable EPM for packing
+Configure miss: whether to enable Embedded OpenType support
+Configure miss: whether to enable breakpad
+Configure miss: whether to enable evolution 2 support
+Configure miss: whether to enable export file validation
+Configure miss: whether to enable fuzzers
+Configure miss: whether to enable online update
+Configure miss: whether to enable pch feature
+Configure miss: whether to enable the OpenSSL backend for rtl/cipher.h
+Configure miss: whether to enable the VLC avmedia backend
+Configure miss: whether to enable xapian-omega support for help
+Configure miss: whether to execute chart XShape tests
+Configure miss: whether to generate debug information
+Configure miss: whether to have assert() failures abort even without --enable-debug
+Configure miss: whether to include third-party fonts
+Configure miss: whether to install the compat oo* wrappers
+Configure miss: whether to sign windows build
+Configure miss: whether to treat the installation as read-only
+Configure miss: whether to turn warnings to errors
+Configure miss: whether to use gnutls
 Configure miss: whether to use icerun wrapper
-Configure miss: MPL subset
-Configure miss: formula logger
+Configure miss: whether to use link-time optimization
+Configure miss: whether using C++11 causes libstdc++ 4.7.0/4.7.1 ABI breakage
+Configure miss: whether we want to fetch tarballs
+Configure miss: which package format to use
+Configure miss: x86_64-generic-linux-gnu-readelf
