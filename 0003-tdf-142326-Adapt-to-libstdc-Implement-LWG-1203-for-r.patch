@@ -1,0 +1,45 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Stephan Bergmann <sbergman@redhat.com>
+Date: Tue, 18 May 2021 12:58:34 +0200
+Subject: [PATCH] tdf#142326: Adapt to "libstdc++: Implement LWG 1203 for
+ rvalue iostreams"
+
+...for libstdc++ 11.2, similar to 1f3dddd6f21d91c429190ae314dadeec409f35f4
+"Adapt to "libstdc++: Implement LWG 1203 for rvalue iostreams" for libstdc++ 12.
+The libstdc++ change referenced there has been backported to the releases/gcc-11
+branch past the releases/gcc-11.1.0 tag (i.e., only towards libstdc++ 11.2) as
+<https://gcc.gnu.org/git/?p=gcc.git;a=commit;h=ca7d2f2ec9142995179a5d832a946b50de05e659>
+"libstdc++: Implement LWG 1203 for rvalue iostreams".
+
+According to
+<https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html>,
+<https://gcc.gnu.org/onlinedocs/libstdc++/manual/abi.html#abi.versioning.__GLIBCXX__>,
+and <https://gcc.gnu.org/develop.html#timeline>, the right __GLIBCXX__ value for
+libstdc++ 11.1 should be 20210427, but at least
+libstdc++-devel-11.1.1-1.fc34.x86_64 defines it as 20210428 while not including
+the above "libstdc++: Implement LWG 1203 for rvalue iostreams" commit, so use
+that value here.
+
+Change-Id: I4e2c6d6ad8156a83f5c4bc861e4a118271928a20
+Reviewed-on: https://gerrit.libreoffice.org/c/core/+/115738
+Reviewed-by: Stephan Bergmann <sbergman@redhat.com>
+Tested-by: Jenkins
+---
+ include/sal/log.hxx | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/include/sal/log.hxx b/include/sal/log.hxx
+index eeea8a9eb..a0fa902db 100644
+--- a/include/sal/log.hxx
++++ b/include/sal/log.hxx
+@@ -186,7 +186,9 @@ inline char const * unwrapStream(SAL_UNUSED_PARAMETER StreamIgnore const &) {
+ 
+     @since LibreOffice 3.5
+ */
+-#if defined _LIBCPP_VERSION || (defined _GLIBCXX_RELEASE && _GLIBCXX_RELEASE >= 12) \
++#if defined _LIBCPP_VERSION \
++    || (defined _GLIBCXX_RELEASE \
++        && (_GLIBCXX_RELEASE >= 12 || (_GLIBCXX_RELEASE == 11 && __GLIBCXX__ > 20210428))) \
+     || (defined _MSC_VER && _MSC_VER >= 1915)
+ #define SAL_STREAM(stream) \
+     (::std::ostringstream() << stream).str()

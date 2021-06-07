@@ -135,6 +135,8 @@ BuildRequires : unixODBC-dev
 BuildRequires : valgrind
 BuildRequires : vlc-dev
 Patch1: 0001-Do-not-clean-destdir.patch
+Patch2: 0002-Adapt-to-libstdc-Implement-LWG-1203-for-rvalue-iostr.patch
+Patch3: 0003-tdf-142326-Adapt-to-libstdc-Implement-LWG-1203-for-r.patch
 
 %description
 a dummy package
@@ -1119,6 +1121,8 @@ cd neon-0.31.1.tar
 tar xf %{_sourcedir}/neon-0.31.1.tar.gz
 cd %{_builddir}/libreoffice-7.1.2.2
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
 
 %build
 ## build_prepend content
@@ -1132,7 +1136,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1617394274
+export SOURCE_DATE_EPOCH=1623103149
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -1189,7 +1193,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1617394274
+export SOURCE_DATE_EPOCH=1623103149
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-7.1.2.2/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02

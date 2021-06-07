@@ -1,0 +1,70 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Stephan Bergmann <sbergman@redhat.com>
+Date: Wed, 5 May 2021 08:20:18 +0200
+Subject: [PATCH] Adapt to "libstdc++: Implement LWG 1203 for rvalue iostreams"
+
+<https://gcc.gnu.org/git/?p=gcc.git;a=commit;h=aa475c4ac80733f85ba47b109fc1900f05e810e2>
+towards GCC 12, so that now "the return type is the original rvalue stream type
+not its base class."  (And which would thus have caused issues like
+
+> sfx2/source/control/bindings.cxx:1323:19: error: dynamic_cast from rvalue to reference type '::std::ostringstream &' (aka 'basic_ostringstream<char> &')
+>                 ? SAL_STREAM("File: " << pFile << " Line: " << nLine) : ""));
+>                 ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> include/sal/log.hxx:198:6: note: expanded from macro 'SAL_STREAM'
+>     (dynamic_cast< ::std::ostringstream & >(::std::ostringstream() << stream).str())
+>      ^
+> include/sal/log.hxx:341:20: note: expanded from macro 'SAL_INFO'
+>         SAL_WHERE, stream)
+>         ~~~~~~~~~~~^~~~~~~
+> include/sal/log.hxx:155:68: note: expanded from macro 'SAL_DETAIL_LOG_STREAM'
+>                 SAL_DETAIL_LOG_STREAM_PRIVATE_(level, area, where, stream); \
+>                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+> include/sal/log.hxx:133:45: note: expanded from macro 'SAL_DETAIL_LOG_STREAM_PRIVATE_'
+>             ::sal::detail::StreamStart() << stream) == 1) \
+>                                             ^~~~~~
+
+now.  While the issue with old libstdc++ that originally prompted the
+dynamic_cast was
+
+> sfx2/source/control/bindings.cxx:1323:19: error: no member named 'str' in 'std::basic_ostream<char>'
+>                 ? SAL_STREAM("File: " << pFile << " Line: " << nLine) : ""));
+>                 ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> include/sal/log.hxx:194:40: note: expanded from macro 'SAL_STREAM'
+>     (::std::ostringstream() << stream).str()
+>                                        ^
+> include/sal/log.hxx:336:20: note: expanded from macro 'SAL_INFO'
+>         SAL_WHERE, stream)
+>         ~~~~~~~~~~~^~~~~~~
+> include/sal/log.hxx:155:68: note: expanded from macro 'SAL_DETAIL_LOG_STREAM'
+>                 SAL_DETAIL_LOG_STREAM_PRIVATE_(level, area, where, stream); \
+>                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+> include/sal/log.hxx:133:45: note: expanded from macro 'SAL_DETAIL_LOG_STREAM_PRIVATE_'
+>             ::sal::detail::StreamStart() << stream) == 1) \
+>                                             ^~~~~~
+
+.)
+
+The libstdc++ macro _GLIBCXX_RELEASE is reportedly available since GCC 7.1.
+
+Change-Id: I1ee6eabb66355c1f28b9d305cbd85bac50d6b0e1
+Reviewed-on: https://gerrit.libreoffice.org/c/core/+/115121
+Tested-by: Jenkins
+Reviewed-by: Stephan Bergmann <sbergman@redhat.com>
+---
+ include/sal/log.hxx | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/include/sal/log.hxx b/include/sal/log.hxx
+index 6bb0d1b43..eeea8a9eb 100644
+--- a/include/sal/log.hxx
++++ b/include/sal/log.hxx
+@@ -186,7 +186,8 @@ inline char const * unwrapStream(SAL_UNUSED_PARAMETER StreamIgnore const &) {
+ 
+     @since LibreOffice 3.5
+ */
+-#if defined _LIBCPP_VERSION || (defined _MSC_VER && _MSC_VER >= 1915)
++#if defined _LIBCPP_VERSION || (defined _GLIBCXX_RELEASE && _GLIBCXX_RELEASE >= 12) \
++    || (defined _MSC_VER && _MSC_VER >= 1915)
+ #define SAL_STREAM(stream) \
+     (::std::ostringstream() << stream).str()
+ #else
