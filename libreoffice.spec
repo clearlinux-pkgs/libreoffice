@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 7.1.3.2
-Release  : 64
+Release  : 65
 URL      : https://download.documentfoundation.org/libreoffice/src/7.1.3/libreoffice-7.1.3.2.tar.xz
 Source0  : https://download.documentfoundation.org/libreoffice/src/7.1.3/libreoffice-7.1.3.2.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/QR-Code-generator-1.4.0.tar.gz
@@ -137,6 +137,7 @@ BuildRequires : vlc-dev
 Patch1: 0001-Do-not-clean-destdir.patch
 Patch2: 0002-Adapt-to-libstdc-Implement-LWG-1203-for-rvalue-iostr.patch
 Patch3: 0003-tdf-142326-Adapt-to-libstdc-Implement-LWG-1203-for-r.patch
+Patch4: 0004-bison-3.8-fix.patch
 
 %description
 a dummy package
@@ -1123,6 +1124,7 @@ cd %{_builddir}/libreoffice-7.1.3.2
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 ## build_prepend content
@@ -1136,7 +1138,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1623174717
+export SOURCE_DATE_EPOCH=1637042599
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -1193,7 +1195,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1623174717
+export SOURCE_DATE_EPOCH=1637042599
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-7.1.3.2/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
@@ -1229,6 +1231,7 @@ cp %{_builddir}/libreoffice-7.1.3.2/dictionaries/kmr_Latn/license.txt %{buildroo
 cp %{_builddir}/libreoffice-7.1.3.2/dictionaries/lt_LT/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/865dcd10722390043968e224401709450c0bbb54
 cp %{_builddir}/libreoffice-7.1.3.2/dictionaries/lv_LV/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/720ac006232639ed551ce48d638dee35f8d378d4
 cp %{_builddir}/libreoffice-7.1.3.2/dictionaries/no/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/ffafa3d581babbe799b390d4d7057d07a6dda4b2
+cp %{_builddir}/libreoffice-7.1.3.2/dictionaries/oc_FR/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/3ae66f1f2078ec836a60f127f4c0c6f9ff8fb811
 cp %{_builddir}/libreoffice-7.1.3.2/dictionaries/pt_PT/LICENSES.txt %{buildroot}/usr/share/package-licenses/libreoffice/552e717402633ecd4b29e48ff5c293ff6baca7bd
 cp %{_builddir}/libreoffice-7.1.3.2/dictionaries/ro/COPYING.GPL %{buildroot}/usr/share/package-licenses/libreoffice/0c4fabaa9f307652fd2b2f0057b8048809cca570
 cp %{_builddir}/libreoffice-7.1.3.2/dictionaries/ro/COPYING.LGPL %{buildroot}/usr/share/package-licenses/libreoffice/cf756914ec51f52f9c121be247bfda232dc6afd2
@@ -1269,10 +1272,10 @@ cp %{_builddir}/libreoffice-7.1.3.2/readlicense_oo/license/license.xml %{buildro
 cp %{_builddir}/libreoffice-7.1.3.2/sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/libreoffice/80a8d4bcf0ccb13b515b47b68437d9300ad4aee1
 %make_install distro-pack-install
 ## Remove excluded files
-rm -f %{buildroot}/usr/lib64/libreoffice/sdk/classes
-rm -f %{buildroot}/usr/lib64/libreoffice/sdk/docs
-rm -f %{buildroot}/usr/lib64/libreoffice/sdk/include
-rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
+rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/classes
+rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/docs
+rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/include
+rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 
 %files
 %defattr(-,root,root,-)
@@ -20987,6 +20990,7 @@ rm -f %{buildroot}/usr/lib64/libreoffice/sdk/index.html
 /usr/share/package-licenses/libreoffice/2f203961eeb312e8253537e3b32b106fd968e45a
 /usr/share/package-licenses/libreoffice/2fd7f23f9705fd591c14e2825dd03904f8337600
 /usr/share/package-licenses/libreoffice/351344d82dfbdfd3ad1e084fe8c37539872f3ea8
+/usr/share/package-licenses/libreoffice/3ae66f1f2078ec836a60f127f4c0c6f9ff8fb811
 /usr/share/package-licenses/libreoffice/3d6124299beadbdf34e46a1af82771afa1216a17
 /usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
 /usr/share/package-licenses/libreoffice/4ee6e10f18c3762079a77e39ebd51ecdc7ee95db
