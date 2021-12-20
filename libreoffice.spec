@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 7.1.3.2
-Release  : 66
+Release  : 67
 URL      : https://download.documentfoundation.org/libreoffice/src/7.1.3/libreoffice-7.1.3.2.tar.xz
 Source0  : https://download.documentfoundation.org/libreoffice/src/7.1.3/libreoffice-7.1.3.2.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/QR-Code-generator-1.4.0.tar.gz
@@ -25,7 +25,6 @@ Requires: libreoffice-data = %{version}-%{release}
 Requires: libreoffice-lib = %{version}-%{release}
 Requires: libreoffice-license = %{version}-%{release}
 Requires: libreoffice-man = %{version}-%{release}
-BuildRequires : apache-ant
 BuildRequires : apr-dev
 BuildRequires : bison
 BuildRequires : bluez-dev
