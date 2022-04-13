@@ -2,6 +2,18 @@
 use strict;
 use warnings;
 
+################################################################################
+# Create language support packages for a component.
+#
+# This program finds and scans a spec file, detects the packages files defined
+# in it, and then classifies language-support files, explicitly listing them in
+# lang-*_extras files to make autospec put them in their own packages, and via
+# lang-*_extras_requires, make *those* packages depend on the base package.
+#
+# Just run it in the package directory, then run autospec again *if* there are
+# changes in lang-*_extras or lang-*_extras_requires files.
+################################################################################
+
 # Read in the files from the spec file
 
 my $package;
@@ -25,6 +37,7 @@ while (my $line = <$spec>) {
 		next LINE;
 	}
 
+	# Identify the base package for this component
 	if (! $base_package_name && $line =~ m/^\s*Name\s*:\s*(\S+)/) {
 		$base_package_name = $1;
 		next LINE;
@@ -33,6 +46,7 @@ while (my $line = <$spec>) {
 	# Skip ahead to the %files declarations
 	next LINE unless defined $package;
 
+	# Capture the filenames for this package
 	if ($line =~ m#^/#) {
 		$files{$package}{$line}++;
 	}
@@ -50,15 +64,19 @@ foreach my $package (keys %files) {
 		# /usr/lib64/libreoffice/program/resource/zh_TW/LC_MESSAGES/vcl.mo
 		if ($file =~ m#^.*/([a-z]+)(?:[_\-\@][a-zA-Z]+)?/LC_MESSAGES#) {
 			my $lang = $1;
+
+			# Add this file's language to our list of detected languages
 			$langs{$lang}++;
 		}
 	}
 }
 
+# Create a regex that will detect all language-related files, informed by the
+# list of languages we've identified
 my $lang_join = join('|', sort keys %langs);
 my $lang_re = qr#^.*?[/_\-]($lang_join)(?:[_\-\@][a-zA-Z\-]+)?(?:[/\.].*)?$#;
 
-# Now use the languages pattern to sort the files.
+# Now use the languages pattern to bin the files by language
 my %extras;
 foreach my $package (sort keys %files) {
 	# Don't touch license files
@@ -72,16 +90,17 @@ foreach my $package (sort keys %files) {
 		if ($file =~ $lang_re) {
 			my $lang = lc($1);
 
+			# Add this file to the list of files for the detected language
 			$extras{$lang}{$file}++;
 		}
 	}
 }
 
-# We've binned the files, now generate the ${custom}_extras
+# We've binned the files, now generate the ${custom}_extras files
 LANG:
 foreach my $lang (sort keys %extras) {
 
-	# Don't put the default English files into a separate package
+	# Don't put the default English files into a separate package, though
 	next LANG if $lang eq 'en';
 
 	my $filename = "lang-${lang}_extras";
@@ -101,11 +120,11 @@ foreach my $lang (sort keys %extras) {
 	close($fh)
 		or die "$filename: $!";
 
-	# Also make it depend on the base package
+	# Also make this custom package depend on the base package via _extras_requires
 	$filename .= '_requires';
 	open($fh, '>', $filename)
 		or die "Failed to create $filename: $!";
-	print $fh "libreoffice\n";
+	print $fh "$base_package_name\n";
 	close($fh)
 		or die "$filename: $!";
 }
