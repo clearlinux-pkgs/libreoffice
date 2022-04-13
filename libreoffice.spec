@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 7.3.2.2
-Release  : 69
+Release  : 70
 URL      : https://download.documentfoundation.org/libreoffice/src/7.3.2/libreoffice-7.3.2.2.tar.xz
 Source0  : https://download.documentfoundation.org/libreoffice/src/7.3.2/libreoffice-7.3.2.2.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
@@ -22,6 +22,8 @@ License  : Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL
 Requires: libreoffice-bin = %{version}-%{release}
 Requires: libreoffice-data = %{version}-%{release}
 Requires: libreoffice-lib = %{version}-%{release}
+Requires: libreoffice-license = %{version}-%{release}
+Requires: libreoffice-man = %{version}-%{release}
 BuildRequires : apache-ant
 BuildRequires : apr-dev
 BuildRequires : bison
@@ -147,6 +149,7 @@ a dummy package
 Summary: bin components for the libreoffice package.
 Group: Binaries
 Requires: libreoffice-data = %{version}-%{release}
+Requires: libreoffice-license = %{version}-%{release}
 
 %description bin
 bin components for the libreoffice package.
@@ -1052,9 +1055,26 @@ extras-lang-zu components for the libreoffice package.
 Summary: lib components for the libreoffice package.
 Group: Libraries
 Requires: libreoffice-data = %{version}-%{release}
+Requires: libreoffice-license = %{version}-%{release}
 
 %description lib
 lib components for the libreoffice package.
+
+
+%package license
+Summary: license components for the libreoffice package.
+Group: Default
+
+%description license
+license components for the libreoffice package.
+
+
+%package man
+Summary: man components for the libreoffice package.
+Group: Default
+
+%description man
+man components for the libreoffice package.
 
 
 %prep
@@ -1092,7 +1112,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1649842321
+export SOURCE_DATE_EPOCH=1649884867
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -1150,7 +1170,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1649842321
+export SOURCE_DATE_EPOCH=1649884867
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-7.3.2.2/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
@@ -1885,7 +1905,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/basic/ScriptForge/dlgProgress.xdl
 /usr/lib64/libreoffice/share/basic/ScriptForge/po/ScriptForge.pot
 /usr/lib64/libreoffice/share/basic/ScriptForge/po/en.po
-/usr/lib64/libreoffice/share/basic/ScriptForge/po/pt.po
 /usr/lib64/libreoffice/share/basic/ScriptForge/script.xlb
 /usr/lib64/libreoffice/share/basic/Template/Autotext.xba
 /usr/lib64/libreoffice/share/basic/Template/Correspondence.xba
@@ -1919,7 +1938,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/basic/script.xlc
 /usr/lib64/libreoffice/share/calc/styles.xml
 /usr/lib64/libreoffice/share/classification/example.xml
-/usr/lib64/libreoffice/share/classification/example_zh-CN.xml
 /usr/lib64/libreoffice/share/config/images_breeze.zip
 /usr/lib64/libreoffice/share/config/images_breeze_dark.zip
 /usr/lib64/libreoffice/share/config/images_breeze_dark_svg.zip
@@ -3832,8 +3850,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-an/an_ES.dic
 /usr/lib64/libreoffice/share/extensions/dict-an/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-an/dictionaries.xcu
-/usr/lib64/libreoffice/share/extensions/dict-be/be-official.aff
-/usr/lib64/libreoffice/share/extensions/dict-be/be-official.dic
 /usr/lib64/libreoffice/share/extensions/dict-en/English.png
 /usr/lib64/libreoffice/share/extensions/dict-en/Lightproof.components
 /usr/lib64/libreoffice/share/extensions/dict-en/Lightproof.py
@@ -3997,27 +4013,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-en/pythonpath/lightproof_opts_en.py
 /usr/lib64/libreoffice/share/extensions/dict-en/th_en_US_v2.dat
 /usr/lib64/libreoffice/share/extensions/dict-en/th_en_US_v2.idx
-/usr/lib64/libreoffice/share/extensions/dict-eo/META-INF/manifest.xml
-/usr/lib64/libreoffice/share/extensions/dict-eo/desc_en.txt
-/usr/lib64/libreoffice/share/extensions/dict-eo/desc_eo.txt
-/usr/lib64/libreoffice/share/extensions/dict-eo/description.xml
-/usr/lib64/libreoffice/share/extensions/dict-eo/dictionaries.xcu
-/usr/lib64/libreoffice/share/extensions/dict-eo/eo.aff
-/usr/lib64/libreoffice/share/extensions/dict-eo/eo.dic
-/usr/lib64/libreoffice/share/extensions/dict-eo/hyph_eo.dic
-/usr/lib64/libreoffice/share/extensions/dict-eo/license-en.txt
-/usr/lib64/libreoffice/share/extensions/dict-eo/package-description.txt
-/usr/lib64/libreoffice/share/extensions/dict-eo/th_eo.dat
-/usr/lib64/libreoffice/share/extensions/dict-eo/th_eo.idx
-/usr/lib64/libreoffice/share/extensions/dict-es/RLA-ES.png
-/usr/lib64/libreoffice/share/extensions/dict-mn/META-INF/manifest.xml
-/usr/lib64/libreoffice/share/extensions/dict-mn/README_mn_MN.txt
-/usr/lib64/libreoffice/share/extensions/dict-mn/description.xml
-/usr/lib64/libreoffice/share/extensions/dict-mn/dictionaries.xcu
-/usr/lib64/libreoffice/share/extensions/dict-mn/hyph_mn_MN.dic
-/usr/lib64/libreoffice/share/extensions/dict-mn/lppl.txt
-/usr/lib64/libreoffice/share/extensions/dict-mn/mn_MN.aff
-/usr/lib64/libreoffice/share/extensions/dict-mn/mn_MN.dic
 /usr/lib64/libreoffice/share/extensions/dict-no/COPYING
 /usr/lib64/libreoffice/share/extensions/dict-no/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-no/README_hyph_NO.txt
@@ -4027,129 +4022,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-no/th_nb_NO_v2.idx
 /usr/lib64/libreoffice/share/extensions/dict-no/th_nn_NO_v2.dat
 /usr/lib64/libreoffice/share/extensions/dict-no/th_nn_NO_v2.idx
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_af.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_am.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ar.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_as.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ast.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_be.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_bg.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_bn.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_bn_IN.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_bo.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_br.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_brx.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_bs.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ca.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ca_valencia.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ckb.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_cs.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_cy.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_da.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_de.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_dgo.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_dsb.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_dz.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_el.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_en_GB.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_en_US.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_en_ZA.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_eo.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_es.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_et.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_eu.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_fa.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_fi.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_fr.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_fur.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_fy.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ga.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_gd.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_gl.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_gu.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_gug.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_he.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_hi.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_hr.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_hsb.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_hu.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_id.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_is.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_it.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ja.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ka.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_kab.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_kk.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_km.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_kmr_Latn.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_kn.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ko.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_kok.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ks.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_lb.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_lo.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_lt.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_lv.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_mai.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_mk.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ml.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_mn.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_mni.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_mr.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_my.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_nb.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ne.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_nl.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_nn.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_nr.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_nso.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_oc.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_om.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_or.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_pa_IN.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_pl.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_pt.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ro.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ru.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_rw.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sa_IN.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sat.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sd.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_si.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sid.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sk.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sl.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sq.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sr.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sr_Latn.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ss.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_st.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sv.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sw_TZ.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_szl.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ta.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_te.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_tg.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_th.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_tn.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_tr.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ts.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_tt.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ug.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_uk.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_uz.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ve.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_vec.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_vi.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_xh.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_zh_CN.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_zh_TW.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_zu.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/test_compile_rules.py
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/th_pt_BR.dat
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/th_pt_BR.idx
-/usr/lib64/libreoffice/share/extensions/dict-sq/README_hyph_sq_AL.txt
-/usr/lib64/libreoffice/share/extensions/dict-sq/hyph_sq_AL.dic
 /usr/lib64/libreoffice/share/filter/oox-drawingml-adj-names
 /usr/lib64/libreoffice/share/filter/oox-drawingml-cs-presets
 /usr/lib64/libreoffice/share/filter/signature-line-draw.svg
@@ -5446,6 +5318,8 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/autotext/be/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-be/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-be/README_be_BY.txt
+/usr/lib64/libreoffice/share/extensions/dict-be/be-official.aff
+/usr/lib64/libreoffice/share/extensions/dict-be/be-official.dic
 /usr/lib64/libreoffice/share/extensions/dict-be/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-be/dictionaries.xcu
 /usr/lib64/libreoffice/share/extensions/dict-be/hyph_be_BY.dic
@@ -7428,6 +7302,18 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/readmes/README_eo
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_eo.properties
 /usr/lib64/libreoffice/share/autotext/eo/standard.bau
+/usr/lib64/libreoffice/share/extensions/dict-eo/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-eo/desc_en.txt
+/usr/lib64/libreoffice/share/extensions/dict-eo/desc_eo.txt
+/usr/lib64/libreoffice/share/extensions/dict-eo/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-eo/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-eo/eo.aff
+/usr/lib64/libreoffice/share/extensions/dict-eo/eo.dic
+/usr/lib64/libreoffice/share/extensions/dict-eo/hyph_eo.dic
+/usr/lib64/libreoffice/share/extensions/dict-eo/license-en.txt
+/usr/lib64/libreoffice/share/extensions/dict-eo/package-description.txt
+/usr/lib64/libreoffice/share/extensions/dict-eo/th_eo.dat
+/usr/lib64/libreoffice/share/extensions/dict-eo/th_eo.idx
 /usr/lib64/libreoffice/share/registry/Langpack-eo.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_eo.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_eo.xcd
@@ -7561,6 +7447,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-es/README_hunspell_es.txt
 /usr/lib64/libreoffice/share/extensions/dict-es/README_hyph_es.txt
 /usr/lib64/libreoffice/share/extensions/dict-es/README_th_es.txt
+/usr/lib64/libreoffice/share/extensions/dict-es/RLA-ES.png
 /usr/lib64/libreoffice/share/extensions/dict-es/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-es/dictionaries.xcu
 /usr/lib64/libreoffice/share/extensions/dict-es/es.aff
@@ -11263,6 +11150,14 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/autotext/mn/crdbus50.bau
 /usr/lib64/libreoffice/share/autotext/mn/standard.bau
 /usr/lib64/libreoffice/share/autotext/mn/template.bau
+/usr/lib64/libreoffice/share/extensions/dict-mn/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-mn/README_mn_MN.txt
+/usr/lib64/libreoffice/share/extensions/dict-mn/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-mn/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-mn/hyph_mn_MN.dic
+/usr/lib64/libreoffice/share/extensions/dict-mn/lppl.txt
+/usr/lib64/libreoffice/share/extensions/dict-mn/mn_MN.aff
+/usr/lib64/libreoffice/share/extensions/dict-mn/mn_MN.dic
 /usr/lib64/libreoffice/share/registry/Langpack-mn.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_mn.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_mn.xcd
@@ -12646,6 +12541,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/autotext/pt/crdbus50.bau
 /usr/lib64/libreoffice/share/autotext/pt/standard.bau
 /usr/lib64/libreoffice/share/autotext/pt/template.bau
+/usr/lib64/libreoffice/share/basic/ScriptForge/po/pt.po
 /usr/lib64/libreoffice/share/classification/example_pt-BR.xml
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/Lightproof.components
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/Lightproof.py
@@ -12659,8 +12555,126 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/OptionsDialog.xcs
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/OptionsDialog.xcu
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR.xdl
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_af.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_am.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ar.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_as.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ast.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_be.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_bg.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_bn.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_bn_IN.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_bo.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_br.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_brx.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_bs.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ca.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ca_valencia.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ckb.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_cs.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_cy.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_da.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_de.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_dgo.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_dsb.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_dz.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_el.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_en_GB.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_en_US.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_en_ZA.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_eo.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_es.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_et.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_eu.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_fa.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_fi.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_fr.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_fur.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_fy.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ga.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_gd.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_gl.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_gu.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_gug.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_he.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_hi.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_hr.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_hsb.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_hu.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_id.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_is.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_it.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ja.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ka.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_kab.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_kk.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_km.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_kmr_Latn.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_kn.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ko.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_kok.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ks.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_lb.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_lo.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_lt.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_lv.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_mai.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_mk.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ml.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_mn.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_mni.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_mr.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_my.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_nb.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ne.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_nl.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_nn.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_nr.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_nso.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_oc.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_om.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_or.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_pa_IN.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_pl.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_pt.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_pt_BR.default
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_pt_BR.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ro.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ru.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_rw.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sa_IN.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sat.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sd.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_si.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sid.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sk.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sl.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sq.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sr.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sr_Latn.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ss.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_st.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sv.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sw_TZ.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_szl.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ta.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_te.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_tg.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_th.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_tn.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_tr.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ts.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_tt.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ug.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_uk.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_uz.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ve.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_vec.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_vi.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_xh.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_zh_CN.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_zh_TW.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_zu.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dictionaries.xcu
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/hyph_pt_BR.dic
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/icons/VERO-logo.png
@@ -12671,6 +12685,9 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/pythonpath/lightproof_impl_pt_BR.py
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/pythonpath/lightproof_opts_pt_BR.py
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/pythonpath/lightproof_pt_BR.py
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/test_compile_rules.py
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/th_pt_BR.dat
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/th_pt_BR.idx
 /usr/lib64/libreoffice/share/extensions/dict-pt-PT/LICENSES.txt
 /usr/lib64/libreoffice/share/extensions/dict-pt-PT/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-pt-PT/README_hyph_pt_PT.txt
@@ -13925,8 +13942,10 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/autotext/sq/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-sq/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-sq/README.txt
+/usr/lib64/libreoffice/share/extensions/dict-sq/README_hyph_sq_AL.txt
 /usr/lib64/libreoffice/share/extensions/dict-sq/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-sq/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-sq/hyph_sq_AL.dic
 /usr/lib64/libreoffice/share/extensions/dict-sq/sq_AL.aff
 /usr/lib64/libreoffice/share/extensions/dict-sq/sq_AL.dic
 /usr/lib64/libreoffice/share/registry/Langpack-sq.xcd
@@ -15758,6 +15777,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/autotext/zh-TW/standard.bau
 /usr/lib64/libreoffice/share/autotext/zh-TW/template.bau
 /usr/lib64/libreoffice/share/basic/Depot/Lang_zh.xba
+/usr/lib64/libreoffice/share/classification/example_zh-CN.xml
 /usr/lib64/libreoffice/share/registry/Langpack-zh-CN.xcd
 /usr/lib64/libreoffice/share/registry/Langpack-zh-TW.xcd
 /usr/lib64/libreoffice/share/registry/cjk_zh-CN.xcd
