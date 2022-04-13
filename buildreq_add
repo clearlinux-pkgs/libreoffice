@@ -29,6 +29,7 @@ icu4c-dev
 krb5-dev
 libabw-dev
 libcdr-dev
+libcuckoo-dev
 libcmis-dev
 libe-book-dev
 libepubgen-dev
@@ -50,7 +51,7 @@ libwpd-dev
 libwpg-dev
 libwps-dev
 libzmf-dev
-lxml
+pypi-lxml
 mariadb-dev
 mdds-dev
 mythes-dev
@@ -70,3 +71,4 @@ ucpp
 unixODBC-dev
 valgrind
 vlc-dev
+zxing-dev

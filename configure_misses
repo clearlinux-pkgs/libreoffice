@@ -22,15 +22,17 @@ Configure miss: whether g++ defines __cxa_eh_globals in cxxabi.h
 Configure miss: whether g++ defines __cxa_exception in cxxabi.h
 Configure miss: whether g++ implements C++ DR P1155R3
 Configure miss: whether g++ might report false -Werror=maybe-uninitialized
+Configure miss: whether g++ might report false -Werror=stringop-overflow=
+Configure miss: whether g++ supports C++20 std::atomic_ref
 Configure miss: whether g++ supports C++2a <span> with unsigned size_type
 Configure miss: whether g++ supports C++2a constinit sorted vectors
 Configure miss: whether g++ supports a working C++20 consteval
-Configure miss: whether gcc supports -Wl,--gdb-index
 Configure miss: whether gcc supports -Xclang -debug-info-kind=constructor
 Configure miss: whether the compiler is actually Clang
 Configure miss: whether to build PDFium
 Configure miss: whether to build support for scripts in BeanShell
 Configure miss: whether to build support for scripts in JavaScript
+Configure miss: whether to build the ODK
 Configure miss: whether to build the PostgreSQL SDBC driver
 Configure miss: whether to build the Report Builder
 Configure miss: whether to build the Wiki Publisher extension
@@ -51,8 +53,7 @@ Configure miss: whether to enable fuzzers
 Configure miss: whether to enable online update
 Configure miss: whether to enable pch feature
 Configure miss: whether to enable the OpenSSL backend for rtl/cipher.h
-Configure miss: whether to enable the VLC avmedia backend
-Configure miss: whether to enable xapian-omega support for help
+Configure miss: whether to enable xapian-omega support for online help
 Configure miss: whether to execute chart XShape tests
 Configure miss: whether to generate debug information
 Configure miss: whether to have assert() failures abort even without --enable-debug
@@ -64,6 +65,7 @@ Configure miss: whether to turn warnings to errors
 Configure miss: whether to use gnutls
 Configure miss: whether to use icerun wrapper
 Configure miss: whether to use link-time optimization
+Configure miss: whether to use ooenv for the instdir installation
 Configure miss: whether using C++11 causes libstdc++ 4.7.0/4.7.1 ABI breakage
 Configure miss: whether we want to fetch tarballs
 Configure miss: which package format to use

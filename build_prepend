@@ -1,5 +1,4 @@
 mkdir -p $(echo %{_builddir}/libreoffice-*/external)/tarballs/
-cp %{_sourcedir}/QR-Code-generator-*.tar.gz %{_builddir}/libreoffice-*/external/tarballs/
 cp %{_sourcedir}/dtoa-*.tgz %{_builddir}/libreoffice-*/external/tarballs/
 cp %{_sourcedir}/skia-*.tar.xz %{_builddir}/libreoffice-*/external/tarballs/
 cp %{_sourcedir}/neon-*.tar.gz %{_builddir}/libreoffice-*/external/tarballs/

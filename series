@@ -1,4 +1,2 @@
 0001-Do-not-clean-destdir.patch
-0002-Adapt-to-libstdc-Implement-LWG-1203-for-rvalue-iostr.patch
-0003-tdf-142326-Adapt-to-libstdc-Implement-LWG-1203-for-r.patch
-0004-bison-3.8-fix.patch
+0002-Revert-tdf-101630-gdrive-support-w-oAuth-and-Drive-A.patch
