@@ -39,6 +39,14 @@
 /usr/lib64/libreoffice/share/autotext/mn/crdbus50.bau
 /usr/lib64/libreoffice/share/autotext/mn/standard.bau
 /usr/lib64/libreoffice/share/autotext/mn/template.bau
+/usr/lib64/libreoffice/share/extensions/dict-mn/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-mn/README_mn_MN.txt
+/usr/lib64/libreoffice/share/extensions/dict-mn/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-mn/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-mn/hyph_mn_MN.dic
+/usr/lib64/libreoffice/share/extensions/dict-mn/lppl.txt
+/usr/lib64/libreoffice/share/extensions/dict-mn/mn_MN.aff
+/usr/lib64/libreoffice/share/extensions/dict-mn/mn_MN.dic
 /usr/lib64/libreoffice/share/registry/Langpack-mn.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_mn.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_mn.xcd

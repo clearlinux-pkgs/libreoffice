@@ -38,8 +38,8 @@
 /usr/lib64/libreoffice/share/autotext/be/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-be/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-be/README_be_BY.txt
-/usr/lib64/libreoffice/share/extensions/dict-be/be_BY.aff
-/usr/lib64/libreoffice/share/extensions/dict-be/be_BY.dic
+/usr/lib64/libreoffice/share/extensions/dict-be/be-official.aff
+/usr/lib64/libreoffice/share/extensions/dict-be/be-official.dic
 /usr/lib64/libreoffice/share/extensions/dict-be/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-be/dictionaries.xcu
 /usr/lib64/libreoffice/share/extensions/dict-be/hyph_be_BY.dic

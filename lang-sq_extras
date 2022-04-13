@@ -118,8 +118,10 @@
 /usr/lib64/libreoffice/share/autotext/sq/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-sq/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-sq/README.txt
+/usr/lib64/libreoffice/share/extensions/dict-sq/README_hyph_sq_AL.txt
 /usr/lib64/libreoffice/share/extensions/dict-sq/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-sq/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-sq/hyph_sq_AL.dic
 /usr/lib64/libreoffice/share/extensions/dict-sq/sq_AL.aff
 /usr/lib64/libreoffice/share/extensions/dict-sq/sq_AL.dic
 /usr/lib64/libreoffice/share/registry/Langpack-sq.xcd
