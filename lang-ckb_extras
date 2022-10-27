@@ -35,6 +35,13 @@
 /usr/lib64/libreoffice/program/resource/ckb/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_ckb
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ckb.properties
+/usr/lib64/libreoffice/share/extensions/dict-ckb/LICENSES-en.txt
+/usr/lib64/libreoffice/share/extensions/dict-ckb/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-ckb/ckb.aff
+/usr/lib64/libreoffice/share/extensions/dict-ckb/ckb.dic
+/usr/lib64/libreoffice/share/extensions/dict-ckb/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-ckb/description/desc_en_US.txt
+/usr/lib64/libreoffice/share/extensions/dict-ckb/dictionaries.xcu
 /usr/lib64/libreoffice/share/registry/Langpack-ckb.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ckb.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_ckb.xcd

@@ -6,7 +6,7 @@
 #
 Name     : libreoffice
 Version  : 7.4.2.3
-Release  : 74
+Release  : 75
 URL      : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-7.4.2.3.tar.xz
 Source0  : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-7.4.2.3.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
@@ -1115,7 +1115,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1666829575
+export SOURCE_DATE_EPOCH=1666835315
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -1173,7 +1173,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1666829575
+export SOURCE_DATE_EPOCH=1666835315
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
@@ -3875,13 +3875,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-an/an_ES.dic
 /usr/lib64/libreoffice/share/extensions/dict-an/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-an/dictionaries.xcu
-/usr/lib64/libreoffice/share/extensions/dict-ckb/LICENSES-en.txt
-/usr/lib64/libreoffice/share/extensions/dict-ckb/META-INF/manifest.xml
-/usr/lib64/libreoffice/share/extensions/dict-ckb/ckb.aff
-/usr/lib64/libreoffice/share/extensions/dict-ckb/ckb.dic
-/usr/lib64/libreoffice/share/extensions/dict-ckb/description.xml
-/usr/lib64/libreoffice/share/extensions/dict-ckb/description/desc_en_US.txt
-/usr/lib64/libreoffice/share/extensions/dict-ckb/dictionaries.xcu
 /usr/lib64/libreoffice/share/extensions/dict-en/English.png
 /usr/lib64/libreoffice/share/extensions/dict-en/Lightproof.components
 /usr/lib64/libreoffice/share/extensions/dict-en/Lightproof.py
@@ -6393,6 +6386,13 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/ckb/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_ckb
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ckb.properties
+/usr/lib64/libreoffice/share/extensions/dict-ckb/LICENSES-en.txt
+/usr/lib64/libreoffice/share/extensions/dict-ckb/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-ckb/ckb.aff
+/usr/lib64/libreoffice/share/extensions/dict-ckb/ckb.dic
+/usr/lib64/libreoffice/share/extensions/dict-ckb/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-ckb/description/desc_en_US.txt
+/usr/lib64/libreoffice/share/extensions/dict-ckb/dictionaries.xcu
 /usr/lib64/libreoffice/share/registry/Langpack-ckb.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ckb.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_ckb.xcd
