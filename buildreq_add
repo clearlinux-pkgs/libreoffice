@@ -12,6 +12,7 @@ coinmp-dev
 cups-dev
 curl-dev
 doxygen
+dragonbox-dev
 e2fsprogs-dev
 epm
 fakeroot
@@ -34,6 +35,7 @@ libcmis-dev
 libe-book-dev
 libepubgen-dev
 libetonyek-dev
+libfixmath-staticdev
 libfreehand-dev
 libgpg-error-dev
 libjpeg-turbo-dev

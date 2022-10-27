@@ -63,8 +63,8 @@ libpagemaker-0.0.so.0
 libpango-1.0.so.0
 libplc4.so
 libpng16.so.16
-libpoppler.so.117
-libpython3.10.so.1.0
+libpoppler.so.125
+libpython3.11.so.1.0
 libqxp-0.0.so.0
 libraptor2.so.0
 librdf.so.0
@@ -72,7 +72,9 @@ librevenge-0.0.so.0
 libsmime3.so
 libstaroffice-0.0.so.0
 libstdc++.so.6
+libtiff.so.5
 libvisio-0.1.so.1
+libwebp.so.7
 libwpd-0.10.so.10
 libwpg-0.3.so.3
 libwps-0.4.so.4

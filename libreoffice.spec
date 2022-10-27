@@ -5,20 +5,20 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 7.3.2.2
-Release  : 73
-URL      : https://download.documentfoundation.org/libreoffice/src/7.3.2/libreoffice-7.3.2.2.tar.xz
-Source0  : https://download.documentfoundation.org/libreoffice/src/7.3.2/libreoffice-7.3.2.2.tar.xz
+Version  : 7.4.2.3
+Release  : 74
+URL      : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-7.4.2.3.tar.xz
+Source0  : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-7.4.2.3.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
 Source2  : https://dev-www.libreoffice.org/src/neon-0.31.2.tar.gz
-Source3  : https://dev-www.libreoffice.org/src/skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz
-Source4  : https://download.documentfoundation.org/libreoffice/src/7.3.2/libreoffice-dictionaries-7.3.2.2.tar.xz
-Source5  : https://download.documentfoundation.org/libreoffice/src/7.3.2/libreoffice-help-7.3.2.2.tar.xz
-Source6  : https://download.documentfoundation.org/libreoffice/src/7.3.2/libreoffice-translations-7.3.2.2.tar.xz
-Source7  : https://download.documentfoundation.org/libreoffice/src/7.3.2/libreoffice-7.3.2.2.tar.xz.asc
+Source3  : https://dev-www.libreoffice.org/src/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
+Source4  : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-dictionaries-7.4.2.3.tar.xz
+Source5  : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-help-7.4.2.3.tar.xz
+Source6  : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-translations-7.4.2.3.tar.xz
+Source7  : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-7.4.2.3.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
-License  : Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-SA-3.0 CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception W3C
+License  : Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-SA-3.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception W3C
 Requires: libreoffice-bin = %{version}-%{release}
 Requires: libreoffice-data = %{version}-%{release}
 Requires: libreoffice-lib = %{version}-%{release}
@@ -37,6 +37,7 @@ BuildRequires : coinmp-dev
 BuildRequires : cups-dev
 BuildRequires : curl-dev
 BuildRequires : doxygen
+BuildRequires : dragonbox-dev
 BuildRequires : e2fsprogs-dev
 BuildRequires : epm
 BuildRequires : fakeroot
@@ -59,6 +60,7 @@ BuildRequires : libcuckoo-dev
 BuildRequires : libe-book-dev
 BuildRequires : libepubgen-dev
 BuildRequires : libetonyek-dev
+BuildRequires : libfixmath-staticdev
 BuildRequires : libfreehand-dev
 BuildRequires : libgpg-error-dev
 BuildRequires : libjpeg-turbo-dev
@@ -72,6 +74,7 @@ BuildRequires : libqxp-dev
 BuildRequires : librevenge-dev
 BuildRequires : libstaroffice-dev
 BuildRequires : libvisio-dev
+BuildRequires : libwebp-dev
 BuildRequires : libwpd-dev
 BuildRequires : libwpg-dev
 BuildRequires : libwps-dev
@@ -92,12 +95,10 @@ BuildRequires : pkgconfig(cairo)
 BuildRequires : pkgconfig(cppunit)
 BuildRequires : pkgconfig(dbus-1)
 BuildRequires : pkgconfig(dconf)
-BuildRequires : pkgconfig(fontconfig)
 BuildRequires : pkgconfig(freetype2)
 BuildRequires : pkgconfig(gio-2.0)
 BuildRequires : pkgconfig(glib-2.0)
 BuildRequires : pkgconfig(gmodule-no-export-2.0)
-BuildRequires : pkgconfig(gnutls)
 BuildRequires : pkgconfig(gobject-2.0)
 BuildRequires : pkgconfig(gstreamer-1.0)
 BuildRequires : pkgconfig(gstreamer-pbutils-1.0)
@@ -108,14 +109,14 @@ BuildRequires : pkgconfig(gtk+-unix-print-3.0)
 BuildRequires : pkgconfig(gtk4)
 BuildRequires : pkgconfig(hunspell)
 BuildRequires : pkgconfig(ice)
-BuildRequires : pkgconfig(icu-i18n)
 BuildRequires : pkgconfig(lcms2)
-BuildRequires : pkgconfig(libcurl)
 BuildRequires : pkgconfig(libexslt)
 BuildRequires : pkgconfig(libexttextcat)
 BuildRequires : pkgconfig(libnumbertext)
 BuildRequires : pkgconfig(libopenjp2)
 BuildRequires : pkgconfig(libpq)
+BuildRequires : pkgconfig(libtiff-4)
+BuildRequires : pkgconfig(libwebp)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(libxslt)
 BuildRequires : pkgconfig(poppler)
@@ -141,6 +142,7 @@ BuildRequires : vlc-dev
 BuildRequires : zxing-dev
 Patch1: 0001-Do-not-clean-destdir.patch
 Patch2: 0002-Revert-tdf-101630-gdrive-support-w-oAuth-and-Drive-A.patch
+Patch3: 0003-Find-whatever-version-of-dragonbox.patch
 
 %description
 a dummy package
@@ -1078,28 +1080,29 @@ man components for the libreoffice package.
 
 
 %prep
-%setup -q -n libreoffice-7.3.2.2
+%setup -q -n libreoffice-7.4.2.3
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-dictionaries-7.3.2.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-dictionaries-7.4.2.3.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-help-7.3.2.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-help-7.4.2.3.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-translations-7.3.2.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-translations-7.4.2.3.tar.xz
 cd %{_builddir}
 mkdir -p dtoa-20180411
 cd dtoa-20180411
 tar xf %{_sourcedir}/dtoa-20180411.tgz
 cd %{_builddir}
-mkdir -p skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar
-cd skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar
-tar xf %{_sourcedir}/skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz
+mkdir -p skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar
+cd skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar
+tar xf %{_sourcedir}/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
 cd %{_builddir}
 mkdir -p neon-0.31.2.tar
 cd neon-0.31.2.tar
 tar xf %{_sourcedir}/neon-0.31.2.tar.gz
-cd %{_builddir}/libreoffice-7.3.2.2
+cd %{_builddir}/libreoffice-7.4.2.3
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 ## build_prepend content
@@ -1112,7 +1115,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1649884867
+export SOURCE_DATE_EPOCH=1666829575
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -1170,81 +1173,79 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1649884867
+export SOURCE_DATE_EPOCH=1666829575
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
-cp %{_builddir}/libreoffice-7.3.2.2/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/libreoffice-7.3.2.2/COPYING.LGPL %{buildroot}/usr/share/package-licenses/libreoffice/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9
-cp %{_builddir}/libreoffice-7.3.2.2/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
-cp %{_builddir}/libreoffice-7.3.2.2/bin/text_cat/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/caeb68c46fa36651acf592771d09de7937926bb3
-cp %{_builddir}/libreoffice-7.3.2.2/bin/text_cat/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/a2987fb2ef11c7c38cd03bc5d0be22014b63f777
-cp %{_builddir}/libreoffice-7.3.2.2/desktop/source/deployment/gui/license_dialog.cxx %{buildroot}/usr/share/package-licenses/libreoffice/95cb917e61a51e152476a289e3e09b6f1d50b35e
-cp %{_builddir}/libreoffice-7.3.2.2/desktop/source/deployment/gui/license_dialog.hxx %{buildroot}/usr/share/package-licenses/libreoffice/fc52bdd52dcd28fcb258701ff22dc2958c735b1b
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/an_ES/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/981a819a0c9c4a4025d0c52b2b196b124f975d22
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/ar/COPYING.txt %{buildroot}/usr/share/package-licenses/libreoffice/2f203961eeb312e8253537e3b32b106fd968e45a
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/bg_BG/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/a5ddbc9cb6373c0bbd63da31d0190a3ed9f30fa4
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/bn_BD/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/0b184ad51ba2a79e85d2288d5fcf8a1ea0481ea4
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/br_FR/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/f9021477f3ffe66b806c98da42d1328fafee45fb
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/ca/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/4ee6e10f18c3762079a77e39ebd51ecdc7ee95db
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/de/COPYING_GPLv2 %{buildroot}/usr/share/package-licenses/libreoffice/ffafa3d581babbe799b390d4d7057d07a6dda4b2
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/de/COPYING_GPLv3 %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/de/COPYING_LGPL_v2.0.txt %{buildroot}/usr/share/package-licenses/libreoffice/ba8966e2473a9969bdcab3dc82274c817cfd98a1
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/de/COPYING_LGPL_v2.1.txt %{buildroot}/usr/share/package-licenses/libreoffice/01a6b4bf79aca9b556822601186afab86e8c4fbf
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/de/COPYING_OASIS.txt %{buildroot}/usr/share/package-licenses/libreoffice/26f94fe5a890afb135cc9fea45fdcef51c4439aa
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/en/WordNet_license.txt %{buildroot}/usr/share/package-licenses/libreoffice/ffdb86b8f5a1a5020288c7fcc996258f44bf691d
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/en/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/086522998bce7aa9e5a07c02b0336895c8940a4d
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/eo/license-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/gd_GB/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/f5dce21518ec83c44e57f084f494634ff53ddc14
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/gl/COPYING_th_gl %{buildroot}/usr/share/package-licenses/libreoffice/73a5c65a9ad1edb175e9e3b28db6b2612abb467b
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/hi_IN/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/0b184ad51ba2a79e85d2288d5fcf8a1ea0481ea4
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/hi_IN/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/1e1ed49217c54335ff1a9c391094166d4dfe5fff
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/id/LICENSE-dict %{buildroot}/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/id/LICENSE-thes %{buildroot}/usr/share/package-licenses/libreoffice/5919d75f19b76bef533d4ff10d3cca634752aaec
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/is/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/c20a43e2449b367c09f9e5f665febc631e99848a
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/it_IT/legacy/it_IT_license.txt %{buildroot}/usr/share/package-licenses/libreoffice/a9d9e3aae241e2506e0c9ef63f26fbcffe1209e2
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/kmr_Latn/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/1efe32a14d6ac9af625ba23a893352d02de30add
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/lt_LT/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/865dcd10722390043968e224401709450c0bbb54
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/lv_LV/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/720ac006232639ed551ce48d638dee35f8d378d4
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/no/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/ffafa3d581babbe799b390d4d7057d07a6dda4b2
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/oc_FR/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/3ae66f1f2078ec836a60f127f4c0c6f9ff8fb811
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/pt_BR/license-thes.readme %{buildroot}/usr/share/package-licenses/libreoffice/cd4d2be2fb45653d8f8923933046f5a4cb4ff882
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/pt_PT/LICENSES.txt %{buildroot}/usr/share/package-licenses/libreoffice/552e717402633ecd4b29e48ff5c293ff6baca7bd
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/ro/COPYING.GPL %{buildroot}/usr/share/package-licenses/libreoffice/0c4fabaa9f307652fd2b2f0057b8048809cca570
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/ro/COPYING.LGPL %{buildroot}/usr/share/package-licenses/libreoffice/cf756914ec51f52f9c121be247bfda232dc6afd2
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/ro/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/aba8d76d0af67d57da3c3c321caa59f3d242386b
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/si_LK/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/98da77a33f378a25b9ab4b40dfdb4af8bdd4919f
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/sk_SK/LICENSE.txt %{buildroot}/usr/share/package-licenses/libreoffice/cb3b074e16ba14585901215392dae8054260b960
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/sv_SE/LICENSE_en_US.txt %{buildroot}/usr/share/package-licenses/libreoffice/3d6124299beadbdf34e46a1af82771afa1216a17
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/sv_SE/LICENSE_sv_SE.txt %{buildroot}/usr/share/package-licenses/libreoffice/9da09717e40fd46206f0e48ad32cb3e6e0c425d3
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/tr_TR/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/tr_TR/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/vi/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/cea402c4f150370f47b5f5e7ef461df23ec6a04d
-cp %{_builddir}/libreoffice-7.3.2.2/dictionaries/vi/LICENSES-vi.txt %{buildroot}/usr/share/package-licenses/libreoffice/75b80fb33eafe0831107b9b6f5bd7306e4b1ca46
-cp %{_builddir}/libreoffice-7.3.2.2/extras/source/autocorr/lang/hr/licence.md %{buildroot}/usr/share/package-licenses/libreoffice/dfa4d68ffb8c478209adb3ff777f33d0853d364d
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/breeze/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/breeze_dark/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/breeze_dark_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/breeze_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/colibre/COPYING-ICONS %{buildroot}/usr/share/package-licenses/libreoffice/87b4193b4a14442b39731f4a4c7fe3c405269984
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/colibre_svg/COPYING-ICONS %{buildroot}/usr/share/package-licenses/libreoffice/87b4193b4a14442b39731f4a4c7fe3c405269984
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/elementary/LICENSE.GPL %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/elementary_svg/LICENSE.GPL %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/karasa_jaga/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/f635d28c6cbaac2760d09920ba63f19ed1ef6a27
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/karasa_jaga/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/karasa_jaga_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/f635d28c6cbaac2760d09920ba63f19ed1ef6a27
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/karasa_jaga_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/sifr/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/sifr_dark/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/sifr_dark_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/sifr_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/sukapura/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b
-cp %{_builddir}/libreoffice-7.3.2.2/icon-themes/sukapura_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b
-cp %{_builddir}/libreoffice-7.3.2.2/odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.idl %{buildroot}/usr/share/package-licenses/libreoffice/cc06ca4f929598f3aa142289edb889da935360ca
-cp %{_builddir}/libreoffice-7.3.2.2/odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.java %{buildroot}/usr/share/package-licenses/libreoffice/a76a0e7e8a8c7f46a328c16110f3c1dfbf9196ad
-cp %{_builddir}/libreoffice-7.3.2.2/offapi/com/sun/star/deployment/LicenseException.idl %{buildroot}/usr/share/package-licenses/libreoffice/ea8bfbc661450e5ca8cb6d5f0c30ee3e854cb6d7
-cp %{_builddir}/libreoffice-7.3.2.2/offapi/com/sun/star/deployment/ui/LicenseDialog.idl %{buildroot}/usr/share/package-licenses/libreoffice/351344d82dfbdfd3ad1e084fe8c37539872f3ea8
-cp %{_builddir}/libreoffice-7.3.2.2/readlicense_oo/license/license.xml %{buildroot}/usr/share/package-licenses/libreoffice/92ec165d76c737d6a191a01a74a5bf0dcb6c8388
-cp %{_builddir}/libreoffice-7.3.2.2/sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/libreoffice/bd26a78588f34f076d0fc1e0628b0de0cbaf7e3b
+cp %{_builddir}/libreoffice-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/libreoffice-%{version}/COPYING.LGPL %{buildroot}/usr/share/package-licenses/libreoffice/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9
+cp %{_builddir}/libreoffice-%{version}/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
+cp %{_builddir}/libreoffice-%{version}/bin/text_cat/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/caeb68c46fa36651acf592771d09de7937926bb3
+cp %{_builddir}/libreoffice-%{version}/bin/text_cat/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/a2987fb2ef11c7c38cd03bc5d0be22014b63f777
+cp %{_builddir}/libreoffice-%{version}/desktop/source/deployment/gui/license_dialog.cxx %{buildroot}/usr/share/package-licenses/libreoffice/95cb917e61a51e152476a289e3e09b6f1d50b35e
+cp %{_builddir}/libreoffice-%{version}/desktop/source/deployment/gui/license_dialog.hxx %{buildroot}/usr/share/package-licenses/libreoffice/fc52bdd52dcd28fcb258701ff22dc2958c735b1b
+cp %{_builddir}/libreoffice-%{version}/dictionaries/an_ES/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/981a819a0c9c4a4025d0c52b2b196b124f975d22
+cp %{_builddir}/libreoffice-%{version}/dictionaries/ar/COPYING.txt %{buildroot}/usr/share/package-licenses/libreoffice/2f203961eeb312e8253537e3b32b106fd968e45a
+cp %{_builddir}/libreoffice-%{version}/dictionaries/bg_BG/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/a5ddbc9cb6373c0bbd63da31d0190a3ed9f30fa4
+cp %{_builddir}/libreoffice-%{version}/dictionaries/bn_BD/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/0b184ad51ba2a79e85d2288d5fcf8a1ea0481ea4
+cp %{_builddir}/libreoffice-%{version}/dictionaries/br_FR/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/f9021477f3ffe66b806c98da42d1328fafee45fb
+cp %{_builddir}/libreoffice-%{version}/dictionaries/ca/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/4ee6e10f18c3762079a77e39ebd51ecdc7ee95db
+cp %{_builddir}/libreoffice-%{version}/dictionaries/de/COPYING_GPLv2 %{buildroot}/usr/share/package-licenses/libreoffice/ffafa3d581babbe799b390d4d7057d07a6dda4b2
+cp %{_builddir}/libreoffice-%{version}/dictionaries/de/COPYING_GPLv3 %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/libreoffice-%{version}/dictionaries/de/COPYING_LGPL_v2.0.txt %{buildroot}/usr/share/package-licenses/libreoffice/ba8966e2473a9969bdcab3dc82274c817cfd98a1
+cp %{_builddir}/libreoffice-%{version}/dictionaries/de/COPYING_LGPL_v2.1.txt %{buildroot}/usr/share/package-licenses/libreoffice/01a6b4bf79aca9b556822601186afab86e8c4fbf
+cp %{_builddir}/libreoffice-%{version}/dictionaries/de/COPYING_OASIS.txt %{buildroot}/usr/share/package-licenses/libreoffice/26f94fe5a890afb135cc9fea45fdcef51c4439aa
+cp %{_builddir}/libreoffice-%{version}/dictionaries/en/WordNet_license.txt %{buildroot}/usr/share/package-licenses/libreoffice/ffdb86b8f5a1a5020288c7fcc996258f44bf691d
+cp %{_builddir}/libreoffice-%{version}/dictionaries/en/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/086522998bce7aa9e5a07c02b0336895c8940a4d
+cp %{_builddir}/libreoffice-%{version}/dictionaries/eo/license-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/libreoffice-%{version}/dictionaries/gd_GB/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/f5dce21518ec83c44e57f084f494634ff53ddc14
+cp %{_builddir}/libreoffice-%{version}/dictionaries/gl/COPYING_th_gl %{buildroot}/usr/share/package-licenses/libreoffice/73a5c65a9ad1edb175e9e3b28db6b2612abb467b
+cp %{_builddir}/libreoffice-%{version}/dictionaries/hi_IN/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/0b184ad51ba2a79e85d2288d5fcf8a1ea0481ea4
+cp %{_builddir}/libreoffice-%{version}/dictionaries/hi_IN/Copyright %{buildroot}/usr/share/package-licenses/libreoffice/1e1ed49217c54335ff1a9c391094166d4dfe5fff
+cp %{_builddir}/libreoffice-%{version}/dictionaries/id/LICENSE-dict %{buildroot}/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
+cp %{_builddir}/libreoffice-%{version}/dictionaries/id/LICENSE-thes %{buildroot}/usr/share/package-licenses/libreoffice/5919d75f19b76bef533d4ff10d3cca634752aaec
+cp %{_builddir}/libreoffice-%{version}/dictionaries/is/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/c20a43e2449b367c09f9e5f665febc631e99848a
+cp %{_builddir}/libreoffice-%{version}/dictionaries/it_IT/legacy/it_IT_license.txt %{buildroot}/usr/share/package-licenses/libreoffice/a9d9e3aae241e2506e0c9ef63f26fbcffe1209e2
+cp %{_builddir}/libreoffice-%{version}/dictionaries/kmr_Latn/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/1efe32a14d6ac9af625ba23a893352d02de30add
+cp %{_builddir}/libreoffice-%{version}/dictionaries/lt_LT/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/865dcd10722390043968e224401709450c0bbb54
+cp %{_builddir}/libreoffice-%{version}/dictionaries/lv_LV/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/720ac006232639ed551ce48d638dee35f8d378d4
+cp %{_builddir}/libreoffice-%{version}/dictionaries/no/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/ffafa3d581babbe799b390d4d7057d07a6dda4b2
+cp %{_builddir}/libreoffice-%{version}/dictionaries/oc_FR/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/3ae66f1f2078ec836a60f127f4c0c6f9ff8fb811
+cp %{_builddir}/libreoffice-%{version}/dictionaries/pt_BR/license-thes.readme %{buildroot}/usr/share/package-licenses/libreoffice/cd4d2be2fb45653d8f8923933046f5a4cb4ff882
+cp %{_builddir}/libreoffice-%{version}/dictionaries/pt_PT/LICENSES.txt %{buildroot}/usr/share/package-licenses/libreoffice/552e717402633ecd4b29e48ff5c293ff6baca7bd
+cp %{_builddir}/libreoffice-%{version}/dictionaries/ro/COPYING.GPL %{buildroot}/usr/share/package-licenses/libreoffice/0c4fabaa9f307652fd2b2f0057b8048809cca570
+cp %{_builddir}/libreoffice-%{version}/dictionaries/ro/COPYING.LGPL %{buildroot}/usr/share/package-licenses/libreoffice/cf756914ec51f52f9c121be247bfda232dc6afd2
+cp %{_builddir}/libreoffice-%{version}/dictionaries/ro/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/aba8d76d0af67d57da3c3c321caa59f3d242386b
+cp %{_builddir}/libreoffice-%{version}/dictionaries/si_LK/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/98da77a33f378a25b9ab4b40dfdb4af8bdd4919f
+cp %{_builddir}/libreoffice-%{version}/dictionaries/sk_SK/LICENSE.txt %{buildroot}/usr/share/package-licenses/libreoffice/cb3b074e16ba14585901215392dae8054260b960
+cp %{_builddir}/libreoffice-%{version}/dictionaries/sv_SE/LICENSE_en_US.txt %{buildroot}/usr/share/package-licenses/libreoffice/3d6124299beadbdf34e46a1af82771afa1216a17
+cp %{_builddir}/libreoffice-%{version}/dictionaries/sv_SE/LICENSE_sv_SE.txt %{buildroot}/usr/share/package-licenses/libreoffice/9da09717e40fd46206f0e48ad32cb3e6e0c425d3
+cp %{_builddir}/libreoffice-%{version}/dictionaries/tr_TR/COPYING.MPL %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
+cp %{_builddir}/libreoffice-%{version}/dictionaries/tr_TR/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/d22157abc0fc0b4ae96380c09528e23cf77290a9
+cp %{_builddir}/libreoffice-%{version}/dictionaries/vi/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/cea402c4f150370f47b5f5e7ef461df23ec6a04d
+cp %{_builddir}/libreoffice-%{version}/dictionaries/vi/LICENSES-vi.txt %{buildroot}/usr/share/package-licenses/libreoffice/75b80fb33eafe0831107b9b6f5bd7306e4b1ca46
+cp %{_builddir}/libreoffice-%{version}/extras/source/autocorr/lang/hr/licence.md %{buildroot}/usr/share/package-licenses/libreoffice/dfa4d68ffb8c478209adb3ff777f33d0853d364d
+cp %{_builddir}/libreoffice-%{version}/icon-themes/breeze/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
+cp %{_builddir}/libreoffice-%{version}/icon-themes/breeze_dark/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
+cp %{_builddir}/libreoffice-%{version}/icon-themes/breeze_dark_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
+cp %{_builddir}/libreoffice-%{version}/icon-themes/breeze_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
+cp %{_builddir}/libreoffice-%{version}/icon-themes/elementary/LICENSE.GPL %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/libreoffice-%{version}/icon-themes/elementary_svg/LICENSE.GPL %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/libreoffice-%{version}/icon-themes/karasa_jaga/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/f635d28c6cbaac2760d09920ba63f19ed1ef6a27
+cp %{_builddir}/libreoffice-%{version}/icon-themes/karasa_jaga/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
+cp %{_builddir}/libreoffice-%{version}/icon-themes/karasa_jaga_svg/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/f635d28c6cbaac2760d09920ba63f19ed1ef6a27
+cp %{_builddir}/libreoffice-%{version}/icon-themes/karasa_jaga_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
+cp %{_builddir}/libreoffice-%{version}/icon-themes/sifr/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
+cp %{_builddir}/libreoffice-%{version}/icon-themes/sifr_dark/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
+cp %{_builddir}/libreoffice-%{version}/icon-themes/sifr_dark_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
+cp %{_builddir}/libreoffice-%{version}/icon-themes/sifr_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
+cp %{_builddir}/libreoffice-%{version}/icon-themes/sukapura/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b
+cp %{_builddir}/libreoffice-%{version}/icon-themes/sukapura_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b
+cp %{_builddir}/libreoffice-%{version}/odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.idl %{buildroot}/usr/share/package-licenses/libreoffice/cc06ca4f929598f3aa142289edb889da935360ca
+cp %{_builddir}/libreoffice-%{version}/odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.java %{buildroot}/usr/share/package-licenses/libreoffice/a76a0e7e8a8c7f46a328c16110f3c1dfbf9196ad
+cp %{_builddir}/libreoffice-%{version}/offapi/com/sun/star/deployment/LicenseException.idl %{buildroot}/usr/share/package-licenses/libreoffice/ea8bfbc661450e5ca8cb6d5f0c30ee3e854cb6d7
+cp %{_builddir}/libreoffice-%{version}/offapi/com/sun/star/deployment/ui/LicenseDialog.idl %{buildroot}/usr/share/package-licenses/libreoffice/351344d82dfbdfd3ad1e084fe8c37539872f3ea8
+cp %{_builddir}/libreoffice-%{version}/readlicense_oo/license/license.xml %{buildroot}/usr/share/package-licenses/libreoffice/9b9e4e4833a597754c7768378ca0f7eef5b558fe
+cp %{_builddir}/libreoffice-%{version}/sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/libreoffice/bd26a78588f34f076d0fc1e0628b0de0cbaf7e3b
 %make_install distro-pack-install
 ## Remove excluded files
 rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/classes
@@ -1874,6 +1875,13 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/basic/SFDocuments/__License.xba
 /usr/lib64/libreoffice/share/basic/SFDocuments/dialog.xlb
 /usr/lib64/libreoffice/share/basic/SFDocuments/script.xlb
+/usr/lib64/libreoffice/share/basic/SFUnitTests/SF_Register.xba
+/usr/lib64/libreoffice/share/basic/SFUnitTests/SF_UnitTest.xba
+/usr/lib64/libreoffice/share/basic/SFUnitTests/__License.xba
+/usr/lib64/libreoffice/share/basic/SFUnitTests/dialog.xlb
+/usr/lib64/libreoffice/share/basic/SFUnitTests/script.xlb
+/usr/lib64/libreoffice/share/basic/SFWidgets/SF_Menu.xba
+/usr/lib64/libreoffice/share/basic/SFWidgets/SF_MenuListener.xba
 /usr/lib64/libreoffice/share/basic/SFWidgets/SF_PopupMenu.xba
 /usr/lib64/libreoffice/share/basic/SFWidgets/SF_Register.xba
 /usr/lib64/libreoffice/share/basic/SFWidgets/__License.xba
@@ -1889,6 +1897,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/basic/ScriptForge/SF_L10N.xba
 /usr/lib64/libreoffice/share/basic/ScriptForge/SF_Platform.xba
 /usr/lib64/libreoffice/share/basic/ScriptForge/SF_PythonHelper.xba
+/usr/lib64/libreoffice/share/basic/ScriptForge/SF_Region.xba
 /usr/lib64/libreoffice/share/basic/ScriptForge/SF_Root.xba
 /usr/lib64/libreoffice/share/basic/ScriptForge/SF_Services.xba
 /usr/lib64/libreoffice/share/basic/ScriptForge/SF_Session.xba
@@ -1943,6 +1952,8 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/images_breeze_dark_svg.zip
 /usr/lib64/libreoffice/share/config/images_breeze_svg.zip
 /usr/lib64/libreoffice/share/config/images_colibre.zip
+/usr/lib64/libreoffice/share/config/images_colibre_dark.zip
+/usr/lib64/libreoffice/share/config/images_colibre_dark_svg.zip
 /usr/lib64/libreoffice/share/config/images_colibre_svg.zip
 /usr/lib64/libreoffice/share/config/images_elementary.zip
 /usr/lib64/libreoffice/share/config/images_elementary_svg.zip
@@ -2043,6 +2054,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/insertrowcolumn.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/javaclasspathdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/javastartparametersdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/langtoolconfigpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/linedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/lineendstabpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/linestyletabpage.ui
@@ -2150,6 +2162,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/textcolumnstabpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/textdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/textflowpage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/themetabpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/thesaurus.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/tipofthedaydialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/toolbarmodedialog.ui
@@ -2406,6 +2419,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/popupmenu/row_operations.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/popupmenu/rowheader.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/popupmenu/sheettab.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/popupmenu/sparkline.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/statusbar/statusbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/toolbar/alignmentbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/toolbar/arrowsbar.xml
@@ -2502,6 +2516,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/fourieranalysisdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/functionpanel.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/goalseekdlg.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/gotosheetdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/groupbydate.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/groupbynumber.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/groupdialog.ui
@@ -2601,6 +2616,8 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/sortoptionspage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/sorttransformationentry.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/sortwarning.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/sparklinedatarangedialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/sparklinedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/splitcolumnentry.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/standardfilterdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/statisticsinfopage.ui
@@ -2972,6 +2989,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/slidecontextmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/slidedesigndialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/slidetransitionspanel.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/snapmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/tabledesignpanel.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/tabviewbar.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/templatedialog.ui
@@ -2992,6 +3010,8 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/mathwindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/printeroptions.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/savedefaultsdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/sidebarelements_math.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/sidebarproperties_math.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/smathsettings.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/spacingdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/symdefinedialog.ui
@@ -3272,6 +3292,10 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/combobox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/comboboxfragment.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/conditionpage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/contentcontrolcalendar.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/contentcontroldlg.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/contentcontroldropdown.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/contentcontrollistitemdlg.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/converttexttable.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/createaddresslist.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/createauthorentry.ui
@@ -3300,7 +3324,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/fldfuncpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/fldrefpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/fldvarpage.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/floatingnavigation.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/floatingsync.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/footendnotedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/footnoteareapage.ui
@@ -3682,6 +3705,8 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/functionmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/gallerymenu1.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/gallerymenu2.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/genericcheckdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/genericcheckentry.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/grafctrlbox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/grafmodebox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/headfootformatpage.ui
@@ -3850,6 +3875,13 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-an/an_ES.dic
 /usr/lib64/libreoffice/share/extensions/dict-an/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-an/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-ckb/LICENSES-en.txt
+/usr/lib64/libreoffice/share/extensions/dict-ckb/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-ckb/ckb.aff
+/usr/lib64/libreoffice/share/extensions/dict-ckb/ckb.dic
+/usr/lib64/libreoffice/share/extensions/dict-ckb/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-ckb/description/desc_en_US.txt
+/usr/lib64/libreoffice/share/extensions/dict-ckb/dictionaries.xcu
 /usr/lib64/libreoffice/share/extensions/dict-en/English.png
 /usr/lib64/libreoffice/share/extensions/dict-en/Lightproof.components
 /usr/lib64/libreoffice/share/extensions/dict-en/Lightproof.py
@@ -15838,6 +15870,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 
 %files lib
 %defattr(-,root,root,-)
+/usr/lib64/libreoffice/program/libLanguageToollo.so
 /usr/lib64/libreoffice/program/libOGLTranslo.so
 /usr/lib64/libreoffice/program/libPresentationMinimizerlo.so
 /usr/lib64/libreoffice/program/libPresenterScreenlo.so
@@ -15884,6 +15917,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/libdesktop_detectorlo.so
 /usr/lib64/libreoffice/program/libdesktopbe1lo.so
 /usr/lib64/libreoffice/program/libdlgprovlo.so
+/usr/lib64/libreoffice/program/libdrawinglayercorelo.so
 /usr/lib64/libreoffice/program/libdrawinglayerlo.so
 /usr/lib64/libreoffice/program/libeditenglo.so
 /usr/lib64/libreoffice/program/libembobj.so
@@ -16101,11 +16135,10 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/package-licenses/libreoffice/75b80fb33eafe0831107b9b6f5bd7306e4b1ca46
 /usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
 /usr/share/package-licenses/libreoffice/865dcd10722390043968e224401709450c0bbb54
-/usr/share/package-licenses/libreoffice/87b4193b4a14442b39731f4a4c7fe3c405269984
-/usr/share/package-licenses/libreoffice/92ec165d76c737d6a191a01a74a5bf0dcb6c8388
 /usr/share/package-licenses/libreoffice/95cb917e61a51e152476a289e3e09b6f1d50b35e
 /usr/share/package-licenses/libreoffice/981a819a0c9c4a4025d0c52b2b196b124f975d22
 /usr/share/package-licenses/libreoffice/98da77a33f378a25b9ab4b40dfdb4af8bdd4919f
+/usr/share/package-licenses/libreoffice/9b9e4e4833a597754c7768378ca0f7eef5b558fe
 /usr/share/package-licenses/libreoffice/9da09717e40fd46206f0e48ad32cb3e6e0c425d3
 /usr/share/package-licenses/libreoffice/a2987fb2ef11c7c38cd03bc5d0be22014b63f777
 /usr/share/package-licenses/libreoffice/a5ddbc9cb6373c0bbd63da31d0190a3ed9f30fa4

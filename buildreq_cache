@@ -1,0 +1,4 @@
+7.4.2.3
+libwebp-dev
+pkgconfig(libtiff-4)
+pkgconfig(libwebp)
