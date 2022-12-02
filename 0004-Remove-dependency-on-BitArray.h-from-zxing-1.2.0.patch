@@ -1,0 +1,50 @@
+From a06c0eabc164cd2233cad4e159cff005951a5d06 Mon Sep 17 00:00:00 2001
+From: "Brett T. Warden" <brett.t.warden@intel.com>
+Date: Fri, 2 Dec 2022 12:06:35 -0800
+Subject: [PATCH] Remove dependency on BitArray.h from zxing-1.2.0
+
+In zxing-1.4.0, numerous headers are no longer public. Rework the
+ConvertToSVGFormat method so it uses bitmatrix.get instead of
+bitmatrix.getRow, similar to the ToSVG method in zxing itself.
+
+See https://github.com/zxing-cpp/zxing-cpp/issues/361
+
+---
+ cui/source/dialogs/QrCodeGenDialog.cxx | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/cui/source/dialogs/QrCodeGenDialog.cxx b/cui/source/dialogs/QrCodeGenDialog.cxx
+index 3e7b48e7af86..c334785d2bea 100644
+--- a/cui/source/dialogs/QrCodeGenDialog.cxx
++++ b/cui/source/dialogs/QrCodeGenDialog.cxx
+@@ -27,7 +27,6 @@
+ #endif
+ 
+ #include <BarcodeFormat.h>
+-#include <BitArray.h>
+ #include <BitMatrix.h>
+ #include <MultiFormatWriter.h>
+ #include <TextUtfEncoding.h>
+@@ -79,7 +78,6 @@ OString ConvertToSVGFormat(const ZXing::BitMatrix& bitmatrix)
+     OStringBuffer sb;
+     const int width = bitmatrix.width();
+     const int height = bitmatrix.height();
+-    ZXing::BitArray row(width);
+     sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+               "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" viewBox=\"0 0 "
+               + OString::number(width) + " " + OString::number(height)
+@@ -87,10 +85,9 @@ OString ConvertToSVGFormat(const ZXing::BitMatrix& bitmatrix)
+                 "<path d=\"");
+     for (int i = 0; i < height; ++i)
+     {
+-        bitmatrix.getRow(i, row);
+         for (int j = 0; j < width; ++j)
+         {
+-            if (row.get(j))
++            if (bitmatrix.get(j, i))
+             {
+                 sb.append("M" + OString::number(j) + "," + OString::number(i) + "h1v1h-1z");
+             }
+-- 
+2.38.1
+

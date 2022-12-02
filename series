@@ -1,3 +1,4 @@
 0001-Do-not-clean-destdir.patch
 0002-Revert-tdf-101630-gdrive-support-w-oAuth-and-Drive-A.patch
 0003-Find-whatever-version-of-dragonbox.patch
+0004-Remove-dependency-on-BitArray.h-from-zxing-1.2.0.patch

@@ -5,17 +5,17 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 7.4.2.3
-Release  : 75
-URL      : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-7.4.2.3.tar.xz
-Source0  : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-7.4.2.3.tar.xz
+Version  : 7.4.3.2
+Release  : 76
+URL      : https://download.documentfoundation.org/libreoffice/src/7.4.3/libreoffice-7.4.3.2.tar.xz
+Source0  : https://download.documentfoundation.org/libreoffice/src/7.4.3/libreoffice-7.4.3.2.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
 Source2  : https://dev-www.libreoffice.org/src/neon-0.31.2.tar.gz
 Source3  : https://dev-www.libreoffice.org/src/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
-Source4  : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-dictionaries-7.4.2.3.tar.xz
-Source5  : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-help-7.4.2.3.tar.xz
-Source6  : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-translations-7.4.2.3.tar.xz
-Source7  : https://download.documentfoundation.org/libreoffice/src/7.4.2/libreoffice-7.4.2.3.tar.xz.asc
+Source4  : https://download.documentfoundation.org/libreoffice/src/7.4.3/libreoffice-dictionaries-7.4.3.2.tar.xz
+Source5  : https://download.documentfoundation.org/libreoffice/src/7.4.3/libreoffice-help-7.4.3.2.tar.xz
+Source6  : https://download.documentfoundation.org/libreoffice/src/7.4.3/libreoffice-translations-7.4.3.2.tar.xz
+Source7  : https://download.documentfoundation.org/libreoffice/src/7.4.3/libreoffice-7.4.3.2.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-SA-3.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception W3C
@@ -143,6 +143,7 @@ BuildRequires : zxing-dev
 Patch1: 0001-Do-not-clean-destdir.patch
 Patch2: 0002-Revert-tdf-101630-gdrive-support-w-oAuth-and-Drive-A.patch
 Patch3: 0003-Find-whatever-version-of-dragonbox.patch
+Patch4: 0004-Remove-dependency-on-BitArray.h-from-zxing-1.2.0.patch
 
 %description
 a dummy package
@@ -1080,13 +1081,13 @@ man components for the libreoffice package.
 
 
 %prep
-%setup -q -n libreoffice-7.4.2.3
+%setup -q -n libreoffice-7.4.3.2
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-dictionaries-7.4.2.3.tar.xz
+tar xf %{_sourcedir}/libreoffice-dictionaries-7.4.3.2.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-help-7.4.2.3.tar.xz
+tar xf %{_sourcedir}/libreoffice-help-7.4.3.2.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-translations-7.4.2.3.tar.xz
+tar xf %{_sourcedir}/libreoffice-translations-7.4.3.2.tar.xz
 cd %{_builddir}
 mkdir -p dtoa-20180411
 cd dtoa-20180411
@@ -1099,10 +1100,11 @@ cd %{_builddir}
 mkdir -p neon-0.31.2.tar
 cd neon-0.31.2.tar
 tar xf %{_sourcedir}/neon-0.31.2.tar.gz
-cd %{_builddir}/libreoffice-7.4.2.3
+cd %{_builddir}/libreoffice-7.4.3.2
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 ## build_prepend content
@@ -1115,7 +1117,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1666835315
+export SOURCE_DATE_EPOCH=1670019015
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -1173,7 +1175,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1666835315
+export SOURCE_DATE_EPOCH=1670019015
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
