@@ -1,7 +1,7 @@
 ld-linux-x86-64.so.2
 libCoinMP.so.1
 libX11.so.6
-libZXing.so.1
+libZXing.so.3
 libabw-0.1.so.1
 libatk-1.0.so.0
 libboost_locale.so.1.77.0
@@ -63,7 +63,7 @@ libpagemaker-0.0.so.0
 libpango-1.0.so.0
 libplc4.so
 libpng16.so.16
-libpoppler.so.125
+libpoppler.so.126
 libpython3.11.so.1.0
 libqxp-0.0.so.0
 libraptor2.so.0
