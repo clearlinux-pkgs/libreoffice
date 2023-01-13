@@ -1,7 +1,7 @@
 ld-linux-x86-64.so.2
 libCoinMP.so.1
 libX11.so.6
-libZXing.so.1
+libZXing.so.3
 libabw-0.1.so.1
 libatk-1.0.so.0
 libboost_locale.so.1.77.0
