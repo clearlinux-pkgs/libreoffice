@@ -5,17 +5,17 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 7.4.4.2
-Release  : 80
-URL      : https://download.documentfoundation.org/libreoffice/src/7.4.4/libreoffice-7.4.4.2.tar.xz
-Source0  : https://download.documentfoundation.org/libreoffice/src/7.4.4/libreoffice-7.4.4.2.tar.xz
+Version  : 7.4.5.1
+Release  : 81
+URL      : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-7.4.5.1.tar.xz
+Source0  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-7.4.5.1.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
 Source2  : https://dev-www.libreoffice.org/src/neon-0.31.2.tar.gz
 Source3  : https://dev-www.libreoffice.org/src/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
-Source4  : https://download.documentfoundation.org/libreoffice/src/7.4.4/libreoffice-dictionaries-7.4.4.2.tar.xz
-Source5  : https://download.documentfoundation.org/libreoffice/src/7.4.4/libreoffice-help-7.4.4.2.tar.xz
-Source6  : https://download.documentfoundation.org/libreoffice/src/7.4.4/libreoffice-translations-7.4.4.2.tar.xz
-Source7  : https://download.documentfoundation.org/libreoffice/src/7.4.4/libreoffice-7.4.4.2.tar.xz.asc
+Source4  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-dictionaries-7.4.5.1.tar.xz
+Source5  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-help-7.4.5.1.tar.xz
+Source6  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-translations-7.4.5.1.tar.xz
+Source7  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-7.4.5.1.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-SA-3.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception W3C
@@ -1084,13 +1084,13 @@ man components for the libreoffice package.
 
 
 %prep
-%setup -q -n libreoffice-7.4.4.2
+%setup -q -n libreoffice-7.4.5.1
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-dictionaries-7.4.4.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-dictionaries-7.4.5.1.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-help-7.4.4.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-help-7.4.5.1.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-translations-7.4.4.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-translations-7.4.5.1.tar.xz
 cd %{_builddir}
 mkdir -p dtoa-20180411
 cd dtoa-20180411
@@ -1103,7 +1103,7 @@ cd %{_builddir}
 mkdir -p neon-0.31.2.tar
 cd neon-0.31.2.tar
 tar xf %{_sourcedir}/neon-0.31.2.tar.gz
-cd %{_builddir}/libreoffice-7.4.4.2
+cd %{_builddir}/libreoffice-7.4.5.1
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
@@ -1120,7 +1120,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1673634453
+export SOURCE_DATE_EPOCH=1674755002
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
@@ -1178,7 +1178,7 @@ export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -f
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1673634453
+export SOURCE_DATE_EPOCH=1674755002
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
