@@ -6,16 +6,15 @@
 #
 Name     : libreoffice
 Version  : 7.4.5.1
-Release  : 81
+Release  : 82
 URL      : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-7.4.5.1.tar.xz
 Source0  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-7.4.5.1.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
-Source2  : https://dev-www.libreoffice.org/src/neon-0.31.2.tar.gz
-Source3  : https://dev-www.libreoffice.org/src/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
-Source4  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-dictionaries-7.4.5.1.tar.xz
-Source5  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-help-7.4.5.1.tar.xz
-Source6  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-translations-7.4.5.1.tar.xz
-Source7  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-7.4.5.1.tar.xz.asc
+Source2  : https://dev-www.libreoffice.org/src/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
+Source3  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-dictionaries-7.4.5.1.tar.xz
+Source4  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-help-7.4.5.1.tar.xz
+Source5  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-translations-7.4.5.1.tar.xz
+Source6  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-7.4.5.1.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-SA-3.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception W3C
@@ -1099,10 +1098,6 @@ cd %{_builddir}
 mkdir -p skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar
 cd skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar
 tar xf %{_sourcedir}/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
-cd %{_builddir}
-mkdir -p neon-0.31.2.tar
-cd neon-0.31.2.tar
-tar xf %{_sourcedir}/neon-0.31.2.tar.gz
 cd %{_builddir}/libreoffice-7.4.5.1
 %patch1 -p1
 %patch2 -p1
@@ -1114,13 +1109,12 @@ cd %{_builddir}/libreoffice-7.4.5.1
 mkdir -p $(echo %{_builddir}/libreoffice-*/external)/tarballs/
 cp %{_sourcedir}/dtoa-*.tgz %{_builddir}/libreoffice-*/external/tarballs/
 cp %{_sourcedir}/skia-*.tar.xz %{_builddir}/libreoffice-*/external/tarballs/
-cp %{_sourcedir}/neon-*.tar.gz %{_builddir}/libreoffice-*/external/tarballs/
 ## build_prepend end
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1674755002
+export SOURCE_DATE_EPOCH=1674762394
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
@@ -1178,7 +1172,7 @@ export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -f
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1674755002
+export SOURCE_DATE_EPOCH=1674762394
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
