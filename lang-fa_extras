@@ -37,6 +37,15 @@
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_fa.properties
 /usr/lib64/libreoffice/share/autocorr/acor_fa-IR.dat
 /usr/lib64/libreoffice/share/autotext/fa/standard.bau
+/usr/lib64/libreoffice/share/extensions/dict-fa/LICENSE
+/usr/lib64/libreoffice/share/extensions/dict-fa/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-fa/README_fa_IR.txt
+/usr/lib64/libreoffice/share/extensions/dict-fa/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-fa/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-fa/fa-IR.aff
+/usr/lib64/libreoffice/share/extensions/dict-fa/fa-IR.dic
+/usr/lib64/libreoffice/share/extensions/dict-fa/icon.png
+/usr/lib64/libreoffice/share/extensions/dict-fa/package-description.txt
 /usr/lib64/libreoffice/share/registry/Langpack-fa.xcd
 /usr/lib64/libreoffice/share/registry/ctl_fa.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_fa.xcd

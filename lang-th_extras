@@ -37,9 +37,11 @@
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_th.properties
 /usr/lib64/libreoffice/share/autotext/th/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-th/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-th/README_hyph_th_TH.txt
 /usr/lib64/libreoffice/share/extensions/dict-th/README_th_TH.txt
 /usr/lib64/libreoffice/share/extensions/dict-th/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-th/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-th/hyph_th_TH.dic
 /usr/lib64/libreoffice/share/extensions/dict-th/th_TH.aff
 /usr/lib64/libreoffice/share/extensions/dict-th/th_TH.dic
 /usr/lib64/libreoffice/share/registry/Langpack-th.xcd

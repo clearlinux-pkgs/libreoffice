@@ -5,16 +5,16 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 7.4.5.1
-Release  : 82
-URL      : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-7.4.5.1.tar.xz
-Source0  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-7.4.5.1.tar.xz
+Version  : 7.5.0.3
+Release  : 83
+URL      : https://download.documentfoundation.org/libreoffice/src/7.5.0/libreoffice-7.5.0.3.tar.xz
+Source0  : https://download.documentfoundation.org/libreoffice/src/7.5.0/libreoffice-7.5.0.3.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
 Source2  : https://dev-www.libreoffice.org/src/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
-Source3  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-dictionaries-7.4.5.1.tar.xz
-Source4  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-help-7.4.5.1.tar.xz
-Source5  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-translations-7.4.5.1.tar.xz
-Source6  : https://download.documentfoundation.org/libreoffice/src/7.4.5/libreoffice-7.4.5.1.tar.xz.asc
+Source3  : https://download.documentfoundation.org/libreoffice/src/7.5.0/libreoffice-dictionaries-7.5.0.3.tar.xz
+Source4  : https://download.documentfoundation.org/libreoffice/src/7.5.0/libreoffice-help-7.5.0.3.tar.xz
+Source5  : https://download.documentfoundation.org/libreoffice/src/7.5.0/libreoffice-translations-7.5.0.3.tar.xz
+Source6  : https://download.documentfoundation.org/libreoffice/src/7.5.0/libreoffice-7.5.0.3.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-SA-3.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception W3C
@@ -95,6 +95,7 @@ BuildRequires : pkgconfig(cppunit)
 BuildRequires : pkgconfig(dbus-1)
 BuildRequires : pkgconfig(dconf)
 BuildRequires : pkgconfig(freetype2)
+BuildRequires : pkgconfig(gdk-3.0)
 BuildRequires : pkgconfig(gio-2.0)
 BuildRequires : pkgconfig(glib-2.0)
 BuildRequires : pkgconfig(gmodule-no-export-2.0)
@@ -145,7 +146,6 @@ BuildRequires : zxing-dev
 Patch1: 0001-Do-not-clean-destdir.patch
 Patch2: 0002-Revert-tdf-101630-gdrive-support-w-oAuth-and-Drive-A.patch
 Patch3: 0003-Find-whatever-version-of-dragonbox.patch
-Patch4: 0004-Remove-dependency-on-BitArray.h-from-zxing-1.2.0.patch
 
 %description
 a dummy package
@@ -1083,13 +1083,13 @@ man components for the libreoffice package.
 
 
 %prep
-%setup -q -n libreoffice-7.4.5.1
+%setup -q -n libreoffice-7.5.0.3
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-dictionaries-7.4.5.1.tar.xz
+tar xf %{_sourcedir}/libreoffice-dictionaries-7.5.0.3.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-help-7.4.5.1.tar.xz
+tar xf %{_sourcedir}/libreoffice-help-7.5.0.3.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-translations-7.4.5.1.tar.xz
+tar xf %{_sourcedir}/libreoffice-translations-7.5.0.3.tar.xz
 cd %{_builddir}
 mkdir -p dtoa-20180411
 cd dtoa-20180411
@@ -1098,11 +1098,10 @@ cd %{_builddir}
 mkdir -p skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar
 cd skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar
 tar xf %{_sourcedir}/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
-cd %{_builddir}/libreoffice-7.4.5.1
+cd %{_builddir}/libreoffice-7.5.0.3
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 %build
 ## build_prepend content
@@ -1114,7 +1113,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1674762394
+export SOURCE_DATE_EPOCH=1676065589
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
@@ -1172,7 +1171,7 @@ export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -f
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1674762394
+export SOURCE_DATE_EPOCH=1676065589
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -1196,6 +1195,7 @@ cp %{_builddir}/libreoffice-%{version}/dictionaries/de/COPYING_OASIS.txt %{build
 cp %{_builddir}/libreoffice-%{version}/dictionaries/en/WordNet_license.txt %{buildroot}/usr/share/package-licenses/libreoffice/ffdb86b8f5a1a5020288c7fcc996258f44bf691d || :
 cp %{_builddir}/libreoffice-%{version}/dictionaries/en/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/086522998bce7aa9e5a07c02b0336895c8940a4d || :
 cp %{_builddir}/libreoffice-%{version}/dictionaries/eo/license-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
+cp %{_builddir}/libreoffice-%{version}/dictionaries/fa_IR/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/2d916b125f26702c55ecd1a7aba6bf62dffb19e0 || :
 cp %{_builddir}/libreoffice-%{version}/dictionaries/gd_GB/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/f5dce21518ec83c44e57f084f494634ff53ddc14 || :
 cp %{_builddir}/libreoffice-%{version}/dictionaries/gl/COPYING_th_gl %{buildroot}/usr/share/package-licenses/libreoffice/73a5c65a9ad1edb175e9e3b28db6b2612abb467b || :
 cp %{_builddir}/libreoffice-%{version}/dictionaries/hi_IN/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/0b184ad51ba2a79e85d2288d5fcf8a1ea0481ea4 || :
@@ -1239,12 +1239,12 @@ cp %{_builddir}/libreoffice-%{version}/icon-themes/sifr_dark_svg/LICENSE %{build
 cp %{_builddir}/libreoffice-%{version}/icon-themes/sifr_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13 || :
 cp %{_builddir}/libreoffice-%{version}/icon-themes/sukapura/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b || :
 cp %{_builddir}/libreoffice-%{version}/icon-themes/sukapura_svg/LICENSE %{buildroot}/usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b || :
-cp %{_builddir}/libreoffice-%{version}/odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.idl %{buildroot}/usr/share/package-licenses/libreoffice/cc06ca4f929598f3aa142289edb889da935360ca || :
+cp %{_builddir}/libreoffice-%{version}/odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.idl %{buildroot}/usr/share/package-licenses/libreoffice/b84cab96fef495a36ca31fc11e714c0a16a758a6 || :
 cp %{_builddir}/libreoffice-%{version}/odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.java %{buildroot}/usr/share/package-licenses/libreoffice/a76a0e7e8a8c7f46a328c16110f3c1dfbf9196ad || :
-cp %{_builddir}/libreoffice-%{version}/offapi/com/sun/star/deployment/LicenseException.idl %{buildroot}/usr/share/package-licenses/libreoffice/ea8bfbc661450e5ca8cb6d5f0c30ee3e854cb6d7 || :
-cp %{_builddir}/libreoffice-%{version}/offapi/com/sun/star/deployment/ui/LicenseDialog.idl %{buildroot}/usr/share/package-licenses/libreoffice/351344d82dfbdfd3ad1e084fe8c37539872f3ea8 || :
-cp %{_builddir}/libreoffice-%{version}/readlicense_oo/license/license.xml %{buildroot}/usr/share/package-licenses/libreoffice/9b9e4e4833a597754c7768378ca0f7eef5b558fe || :
-cp %{_builddir}/libreoffice-%{version}/sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/libreoffice/bd26a78588f34f076d0fc1e0628b0de0cbaf7e3b || :
+cp %{_builddir}/libreoffice-%{version}/offapi/com/sun/star/deployment/LicenseException.idl %{buildroot}/usr/share/package-licenses/libreoffice/0750f8a342c58c97c14c2f30a7d14f5c13c88f11 || :
+cp %{_builddir}/libreoffice-%{version}/offapi/com/sun/star/deployment/ui/LicenseDialog.idl %{buildroot}/usr/share/package-licenses/libreoffice/572b30719f1bd06cb821ab3e3c2660073ed0a744 || :
+cp %{_builddir}/libreoffice-%{version}/readlicense_oo/license/license.xml %{buildroot}/usr/share/package-licenses/libreoffice/4bee7df5012ba95a69e9912849cb61fac748dde7 || :
+cp %{_builddir}/libreoffice-%{version}/sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/libreoffice/0169a4be13bb4c785992df830ac21a8df2116c8f || :
 %make_install distro-pack-install
 ## Remove excluded files
 rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/classes
@@ -1563,7 +1563,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/pythonloader.unorc
 /usr/lib64/libreoffice/program/pythonscript.py
 /usr/lib64/libreoffice/program/redirectrc
-/usr/lib64/libreoffice/program/regmerge
 /usr/lib64/libreoffice/program/regview
 /usr/lib64/libreoffice/program/resource/common/fonts/opens___.ttf
 /usr/lib64/libreoffice/program/resource/en_GB/LC_MESSAGES/acc.mo
@@ -1851,6 +1850,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/basic/ImportWizard/dialog.xlb
 /usr/lib64/libreoffice/share/basic/ImportWizard/script.xlb
 /usr/lib64/libreoffice/share/basic/SFDatabases/SF_Database.xba
+/usr/lib64/libreoffice/share/basic/SFDatabases/SF_Datasheet.xba
 /usr/lib64/libreoffice/share/basic/SFDatabases/SF_Register.xba
 /usr/lib64/libreoffice/share/basic/SFDatabases/__License.xba
 /usr/lib64/libreoffice/share/basic/SFDatabases/dialog.xlb
@@ -2081,6 +2081,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/optbasicidepage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/optchartcolorspage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/optctlpage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/optdeeplpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/optemailpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/optfltrembedpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/optfltrpage.ui
@@ -2168,6 +2169,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/transparencytabpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/tsaurldialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/twolinespage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/widgettestdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/wordcompletionpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/cui/ui/zoomdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/admindialog.ui
@@ -2663,6 +2665,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/combobox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/datarangedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/dlg_DataLabel.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/dlg_InsertDataTable.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/dlg_InsertErrorBars.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/dlg_InsertLegend.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/imagefragment.ui
@@ -2686,6 +2689,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/tp_DataLabel.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/tp_DataPointOption.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/tp_DataSource.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/tp_DataTable.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/tp_ErrorBars.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/tp_LegendPosition.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/schart/ui/tp_PolarOptions.ui
@@ -2786,6 +2790,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/insertlayer.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/insertslidesdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/namedesign.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/navigatorcontextmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/notebookbar.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/notebookbar_compact.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/notebookbar_groupedbar_compact.ui
@@ -2977,6 +2982,12 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/optimpressgeneralpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/pagesfieldbox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/photoalbum.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/pmimagespage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/pminfodialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/pmintropage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/pmobjectspage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/pmslidespage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/pmsummarypage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/presentationdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/prntopts.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/simpress/ui/publishingdialog.ui
@@ -3001,7 +3012,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/toolbar/toolbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/alignmentdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/catalogdialog.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/dockingelements.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/editwindow.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/fontdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/smath/ui/fontsizedialog.ui
@@ -3247,6 +3257,17 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/oleobjectbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/optimizetablebar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/previewobjectbar.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/singlemode-annotation.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/singlemode-draw.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/singlemode-drawtext.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/singlemode-form.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/singlemode-frame.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/singlemode-graphic.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/singlemode-media.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/singlemode-ole.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/singlemode-printpreview.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/singlemode-table.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/singlemode-text.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/singlemode.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/standardbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/starshapes.xml
@@ -3291,6 +3312,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/combobox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/comboboxfragment.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/conditionpage.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/contentcontrolaliasbutton.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/contentcontrolcalendar.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/contentcontroldlg.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/contentcontroldropdown.ui
@@ -3387,6 +3409,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/notebookbar_online.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/notebookbar_single.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/numberingnamedialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/numberinput.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/numparapage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/objectdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/optcaptionpage.ui
@@ -3426,7 +3449,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/querycontinuebegindialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/querycontinueenddialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/querydefaultcompatdialog.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/queryredlinedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/querysavelabeldialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/readonlymenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/renameautotextdialog.ui
@@ -3471,6 +3493,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/tokenwidget.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/toxbuttonwidget.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/toxentrywidget.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/translationdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/unfloatbutton.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/viewoptionspage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/warndatasourcedialog.ui
@@ -3558,7 +3581,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/documentpropertiesdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/editdocumentdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/editdurationdialog.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/emojicontrol.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/errorfindemaildialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/extrabutton.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/sfx/ui/floatingrecord.ui
@@ -3605,6 +3627,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/simpress/effects.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/simpress/layoutlist.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/simpress/objectlist.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/simpress/styles.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/simpress/transitions-ogl.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/simpress/transitions.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/addresstemplatedialog.ui
@@ -3628,6 +3651,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/printersetupdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/querydeletedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/restartdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/scrollbars.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/spinfieldcontrol.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/subtoolbar.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/tabbaredit.ui
@@ -3792,6 +3816,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/interimtearableparent.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/menutogglebutton3.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/menutogglebutton4.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/openlockedquerybox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/printdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/printerdevicepage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/vcl/ui/printerpaperpage.ui
@@ -3867,7 +3892,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/dtd/officedocument/1_0/table.mod
 /usr/lib64/libreoffice/share/dtd/officedocument/1_0/text.mod
 /usr/lib64/libreoffice/share/dtd/officedocument/1_0/toolbar.dtd
-/usr/lib64/libreoffice/share/emojiconfig/emoji.json
 /usr/lib64/libreoffice/share/extensions/dict-an/LICENSES-en.txt
 /usr/lib64/libreoffice/share/extensions/dict-an/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-an/an_ES.aff
@@ -4282,6 +4306,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/template/common/draw/bpmn.otg
 /usr/lib64/libreoffice/share/template/common/internal/html.stw
 /usr/lib64/libreoffice/share/template/common/internal/idxexample.odt
+/usr/lib64/libreoffice/share/template/common/l10n/zh_CN_ott_normal.ott
 /usr/lib64/libreoffice/share/template/common/officorr/Modern_business_letter_sans_serif.ott
 /usr/lib64/libreoffice/share/template/common/officorr/Modern_business_letter_serif.ott
 /usr/lib64/libreoffice/share/template/common/offimisc/Businesscard-with-logo.ott
@@ -4593,6 +4618,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/icons/hicolor/128x128/apps/libreoffice-math.png
 /usr/share/icons/hicolor/128x128/apps/libreoffice-startcenter.png
 /usr/share/icons/hicolor/128x128/apps/libreoffice-writer.png
+/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-extension.png
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-database.png
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-drawing-template.png
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-drawing.png
@@ -4607,6 +4633,12 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-text.png
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-web-template.png
 /usr/share/icons/hicolor/128x128/mimetypes/libreoffice-oasis-web.png
+/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-presentation-template.png
+/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-presentation.png
+/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-spreadsheet-template.png
+/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-spreadsheet.png
+/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-text-template.png
+/usr/share/icons/hicolor/128x128/mimetypes/libreoffice-text.png
 /usr/share/icons/hicolor/16x16/apps/libreoffice-base.png
 /usr/share/icons/hicolor/16x16/apps/libreoffice-calc.png
 /usr/share/icons/hicolor/16x16/apps/libreoffice-chart.png
@@ -4637,36 +4669,16 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-spreadsheet.png
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-text-template.png
 /usr/share/icons/hicolor/16x16/mimetypes/libreoffice-text.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-base.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-calc.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-draw.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-impress.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-main.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-math.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-startcenter.png
-/usr/share/icons/hicolor/22x22/apps/libreoffice-writer.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-database.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-drawing-template.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-drawing.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-empty.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-formula.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-master-document.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-presentation-template.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-presentation.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-spreadsheet-template.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-spreadsheet.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-text-template.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-text.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-web-template.png
-/usr/share/icons/hicolor/22x22/mimetypes/libreoffice-oasis-web.png
 /usr/share/icons/hicolor/24x24/apps/libreoffice-base.png
 /usr/share/icons/hicolor/24x24/apps/libreoffice-calc.png
+/usr/share/icons/hicolor/24x24/apps/libreoffice-chart.png
 /usr/share/icons/hicolor/24x24/apps/libreoffice-draw.png
 /usr/share/icons/hicolor/24x24/apps/libreoffice-impress.png
 /usr/share/icons/hicolor/24x24/apps/libreoffice-main.png
 /usr/share/icons/hicolor/24x24/apps/libreoffice-math.png
 /usr/share/icons/hicolor/24x24/apps/libreoffice-startcenter.png
 /usr/share/icons/hicolor/24x24/apps/libreoffice-writer.png
+/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-extension.png
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-database.png
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-drawing-template.png
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-drawing.png
@@ -4681,6 +4693,12 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-text.png
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-web-template.png
 /usr/share/icons/hicolor/24x24/mimetypes/libreoffice-oasis-web.png
+/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-presentation-template.png
+/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-presentation.png
+/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-spreadsheet-template.png
+/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-spreadsheet.png
+/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-text-template.png
+/usr/share/icons/hicolor/24x24/mimetypes/libreoffice-text.png
 /usr/share/icons/hicolor/256x256/apps/libreoffice-base.png
 /usr/share/icons/hicolor/256x256/apps/libreoffice-calc.png
 /usr/share/icons/hicolor/256x256/apps/libreoffice-chart.png
@@ -4690,6 +4708,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/icons/hicolor/256x256/apps/libreoffice-math.png
 /usr/share/icons/hicolor/256x256/apps/libreoffice-startcenter.png
 /usr/share/icons/hicolor/256x256/apps/libreoffice-writer.png
+/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-extension.png
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-database.png
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-drawing-template.png
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-drawing.png
@@ -4704,6 +4723,12 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-text.png
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-web-template.png
 /usr/share/icons/hicolor/256x256/mimetypes/libreoffice-oasis-web.png
+/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-presentation-template.png
+/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-presentation.png
+/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-spreadsheet-template.png
+/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-spreadsheet.png
+/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-text-template.png
+/usr/share/icons/hicolor/256x256/mimetypes/libreoffice-text.png
 /usr/share/icons/hicolor/32x32/apps/libreoffice-base.png
 /usr/share/icons/hicolor/32x32/apps/libreoffice-calc.png
 /usr/share/icons/hicolor/32x32/apps/libreoffice-chart.png
@@ -4714,7 +4739,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/icons/hicolor/32x32/apps/libreoffice-startcenter.png
 /usr/share/icons/hicolor/32x32/apps/libreoffice-writer.png
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-extension.png
-/usr/share/icons/hicolor/32x32/mimetypes/libreoffice-math.png
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-database.png
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-drawing-template.png
 /usr/share/icons/hicolor/32x32/mimetypes/libreoffice-oasis-drawing.png
@@ -4767,12 +4791,14 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/icons/hicolor/48x48/mimetypes/libreoffice-text.png
 /usr/share/icons/hicolor/512x512/apps/libreoffice-base.png
 /usr/share/icons/hicolor/512x512/apps/libreoffice-calc.png
+/usr/share/icons/hicolor/512x512/apps/libreoffice-chart.png
 /usr/share/icons/hicolor/512x512/apps/libreoffice-draw.png
 /usr/share/icons/hicolor/512x512/apps/libreoffice-impress.png
 /usr/share/icons/hicolor/512x512/apps/libreoffice-main.png
 /usr/share/icons/hicolor/512x512/apps/libreoffice-math.png
 /usr/share/icons/hicolor/512x512/apps/libreoffice-startcenter.png
 /usr/share/icons/hicolor/512x512/apps/libreoffice-writer.png
+/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-extension.png
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-database.png
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-drawing-template.png
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-drawing.png
@@ -4787,14 +4813,22 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-text.png
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-web-template.png
 /usr/share/icons/hicolor/512x512/mimetypes/libreoffice-oasis-web.png
+/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-presentation-template.png
+/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-presentation.png
+/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-spreadsheet-template.png
+/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-spreadsheet.png
+/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-text-template.png
+/usr/share/icons/hicolor/512x512/mimetypes/libreoffice-text.png
 /usr/share/icons/hicolor/64x64/apps/libreoffice-base.png
 /usr/share/icons/hicolor/64x64/apps/libreoffice-calc.png
+/usr/share/icons/hicolor/64x64/apps/libreoffice-chart.png
 /usr/share/icons/hicolor/64x64/apps/libreoffice-draw.png
 /usr/share/icons/hicolor/64x64/apps/libreoffice-impress.png
 /usr/share/icons/hicolor/64x64/apps/libreoffice-main.png
 /usr/share/icons/hicolor/64x64/apps/libreoffice-math.png
 /usr/share/icons/hicolor/64x64/apps/libreoffice-startcenter.png
 /usr/share/icons/hicolor/64x64/apps/libreoffice-writer.png
+/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-extension.png
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-database.png
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-drawing-template.png
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-drawing.png
@@ -4809,12 +4843,17 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-text.png
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-web-template.png
 /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-web.png
+/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-presentation-template.png
+/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-presentation.png
+/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-spreadsheet-template.png
+/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-spreadsheet.png
+/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-text-template.png
+/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-text.png
 /usr/share/icons/hicolor/scalable/apps/libreoffice-base.svg
 /usr/share/icons/hicolor/scalable/apps/libreoffice-basic.svg
 /usr/share/icons/hicolor/scalable/apps/libreoffice-calc.svg
 /usr/share/icons/hicolor/scalable/apps/libreoffice-chart.svg
 /usr/share/icons/hicolor/scalable/apps/libreoffice-draw.svg
-/usr/share/icons/hicolor/scalable/apps/libreoffice-extension.svg
 /usr/share/icons/hicolor/scalable/apps/libreoffice-impress.svg
 /usr/share/icons/hicolor/scalable/apps/libreoffice-main.svg
 /usr/share/icons/hicolor/scalable/apps/libreoffice-math.svg
@@ -6917,6 +6956,86 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 
 %files extras-lang-dsb
 %defattr(-,root,root,-)
+/usr/lib64/libreoffice/help/dsb/default.css
+/usr/lib64/libreoffice/help/dsb/err.html
+/usr/lib64/libreoffice/help/dsb/highcontrast1.css
+/usr/lib64/libreoffice/help/dsb/highcontrast2.css
+/usr/lib64/libreoffice/help/dsb/highcontrastblack.css
+/usr/lib64/libreoffice/help/dsb/highcontrastwhite.css
+/usr/lib64/libreoffice/help/dsb/sbasic.cfg
+/usr/lib64/libreoffice/help/dsb/sbasic.db
+/usr/lib64/libreoffice/help/dsb/sbasic.ht
+/usr/lib64/libreoffice/help/dsb/sbasic.idxl/_0.cfs
+/usr/lib64/libreoffice/help/dsb/sbasic.idxl/segments.gen
+/usr/lib64/libreoffice/help/dsb/sbasic.idxl/segments_3
+/usr/lib64/libreoffice/help/dsb/sbasic.jar
+/usr/lib64/libreoffice/help/dsb/sbasic.key
+/usr/lib64/libreoffice/help/dsb/sbasic.tree
+/usr/lib64/libreoffice/help/dsb/scalc.cfg
+/usr/lib64/libreoffice/help/dsb/scalc.db
+/usr/lib64/libreoffice/help/dsb/scalc.ht
+/usr/lib64/libreoffice/help/dsb/scalc.idxl/_0.cfs
+/usr/lib64/libreoffice/help/dsb/scalc.idxl/segments.gen
+/usr/lib64/libreoffice/help/dsb/scalc.idxl/segments_3
+/usr/lib64/libreoffice/help/dsb/scalc.jar
+/usr/lib64/libreoffice/help/dsb/scalc.key
+/usr/lib64/libreoffice/help/dsb/scalc.tree
+/usr/lib64/libreoffice/help/dsb/schart.cfg
+/usr/lib64/libreoffice/help/dsb/schart.db
+/usr/lib64/libreoffice/help/dsb/schart.ht
+/usr/lib64/libreoffice/help/dsb/schart.idxl/_0.cfs
+/usr/lib64/libreoffice/help/dsb/schart.idxl/segments.gen
+/usr/lib64/libreoffice/help/dsb/schart.idxl/segments_3
+/usr/lib64/libreoffice/help/dsb/schart.jar
+/usr/lib64/libreoffice/help/dsb/schart.key
+/usr/lib64/libreoffice/help/dsb/schart.tree
+/usr/lib64/libreoffice/help/dsb/sdatabase.cfg
+/usr/lib64/libreoffice/help/dsb/sdatabase.db
+/usr/lib64/libreoffice/help/dsb/sdatabase.ht
+/usr/lib64/libreoffice/help/dsb/sdatabase.idxl/_0.cfs
+/usr/lib64/libreoffice/help/dsb/sdatabase.idxl/segments.gen
+/usr/lib64/libreoffice/help/dsb/sdatabase.idxl/segments_3
+/usr/lib64/libreoffice/help/dsb/sdatabase.jar
+/usr/lib64/libreoffice/help/dsb/sdatabase.key
+/usr/lib64/libreoffice/help/dsb/sdatabase.tree
+/usr/lib64/libreoffice/help/dsb/sdraw.cfg
+/usr/lib64/libreoffice/help/dsb/sdraw.db
+/usr/lib64/libreoffice/help/dsb/sdraw.ht
+/usr/lib64/libreoffice/help/dsb/sdraw.idxl/_0.cfs
+/usr/lib64/libreoffice/help/dsb/sdraw.idxl/segments.gen
+/usr/lib64/libreoffice/help/dsb/sdraw.idxl/segments_3
+/usr/lib64/libreoffice/help/dsb/sdraw.jar
+/usr/lib64/libreoffice/help/dsb/sdraw.key
+/usr/lib64/libreoffice/help/dsb/sdraw.tree
+/usr/lib64/libreoffice/help/dsb/shared.jar
+/usr/lib64/libreoffice/help/dsb/shared.tree
+/usr/lib64/libreoffice/help/dsb/simpress.cfg
+/usr/lib64/libreoffice/help/dsb/simpress.db
+/usr/lib64/libreoffice/help/dsb/simpress.ht
+/usr/lib64/libreoffice/help/dsb/simpress.idxl/_0.cfs
+/usr/lib64/libreoffice/help/dsb/simpress.idxl/segments.gen
+/usr/lib64/libreoffice/help/dsb/simpress.idxl/segments_3
+/usr/lib64/libreoffice/help/dsb/simpress.jar
+/usr/lib64/libreoffice/help/dsb/simpress.key
+/usr/lib64/libreoffice/help/dsb/simpress.tree
+/usr/lib64/libreoffice/help/dsb/smath.cfg
+/usr/lib64/libreoffice/help/dsb/smath.db
+/usr/lib64/libreoffice/help/dsb/smath.ht
+/usr/lib64/libreoffice/help/dsb/smath.idxl/_0.cfs
+/usr/lib64/libreoffice/help/dsb/smath.idxl/segments.gen
+/usr/lib64/libreoffice/help/dsb/smath.idxl/segments_3
+/usr/lib64/libreoffice/help/dsb/smath.jar
+/usr/lib64/libreoffice/help/dsb/smath.key
+/usr/lib64/libreoffice/help/dsb/smath.tree
+/usr/lib64/libreoffice/help/dsb/swriter.cfg
+/usr/lib64/libreoffice/help/dsb/swriter.db
+/usr/lib64/libreoffice/help/dsb/swriter.ht
+/usr/lib64/libreoffice/help/dsb/swriter.idxl/_0.cfs
+/usr/lib64/libreoffice/help/dsb/swriter.idxl/segments.gen
+/usr/lib64/libreoffice/help/dsb/swriter.idxl/segments_3
+/usr/lib64/libreoffice/help/dsb/swriter.jar
+/usr/lib64/libreoffice/help/dsb/swriter.key
+/usr/lib64/libreoffice/help/dsb/swriter.tree
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/avmedia.mo
 /usr/lib64/libreoffice/program/resource/dsb/LC_MESSAGES/basctl.mo
@@ -7832,6 +7951,15 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_fa.properties
 /usr/lib64/libreoffice/share/autocorr/acor_fa-IR.dat
 /usr/lib64/libreoffice/share/autotext/fa/standard.bau
+/usr/lib64/libreoffice/share/extensions/dict-fa/LICENSE
+/usr/lib64/libreoffice/share/extensions/dict-fa/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-fa/README_fa_IR.txt
+/usr/lib64/libreoffice/share/extensions/dict-fa/description.xml
+/usr/lib64/libreoffice/share/extensions/dict-fa/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-fa/fa-IR.aff
+/usr/lib64/libreoffice/share/extensions/dict-fa/fa-IR.dic
+/usr/lib64/libreoffice/share/extensions/dict-fa/icon.png
+/usr/lib64/libreoffice/share/extensions/dict-fa/package-description.txt
 /usr/lib64/libreoffice/share/registry/Langpack-fa.xcd
 /usr/lib64/libreoffice/share/registry/ctl_fa.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_fa.xcd
@@ -8992,6 +9120,86 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 
 %files extras-lang-hsb
 %defattr(-,root,root,-)
+/usr/lib64/libreoffice/help/hsb/default.css
+/usr/lib64/libreoffice/help/hsb/err.html
+/usr/lib64/libreoffice/help/hsb/highcontrast1.css
+/usr/lib64/libreoffice/help/hsb/highcontrast2.css
+/usr/lib64/libreoffice/help/hsb/highcontrastblack.css
+/usr/lib64/libreoffice/help/hsb/highcontrastwhite.css
+/usr/lib64/libreoffice/help/hsb/sbasic.cfg
+/usr/lib64/libreoffice/help/hsb/sbasic.db
+/usr/lib64/libreoffice/help/hsb/sbasic.ht
+/usr/lib64/libreoffice/help/hsb/sbasic.idxl/_0.cfs
+/usr/lib64/libreoffice/help/hsb/sbasic.idxl/segments.gen
+/usr/lib64/libreoffice/help/hsb/sbasic.idxl/segments_3
+/usr/lib64/libreoffice/help/hsb/sbasic.jar
+/usr/lib64/libreoffice/help/hsb/sbasic.key
+/usr/lib64/libreoffice/help/hsb/sbasic.tree
+/usr/lib64/libreoffice/help/hsb/scalc.cfg
+/usr/lib64/libreoffice/help/hsb/scalc.db
+/usr/lib64/libreoffice/help/hsb/scalc.ht
+/usr/lib64/libreoffice/help/hsb/scalc.idxl/_0.cfs
+/usr/lib64/libreoffice/help/hsb/scalc.idxl/segments.gen
+/usr/lib64/libreoffice/help/hsb/scalc.idxl/segments_3
+/usr/lib64/libreoffice/help/hsb/scalc.jar
+/usr/lib64/libreoffice/help/hsb/scalc.key
+/usr/lib64/libreoffice/help/hsb/scalc.tree
+/usr/lib64/libreoffice/help/hsb/schart.cfg
+/usr/lib64/libreoffice/help/hsb/schart.db
+/usr/lib64/libreoffice/help/hsb/schart.ht
+/usr/lib64/libreoffice/help/hsb/schart.idxl/_0.cfs
+/usr/lib64/libreoffice/help/hsb/schart.idxl/segments.gen
+/usr/lib64/libreoffice/help/hsb/schart.idxl/segments_3
+/usr/lib64/libreoffice/help/hsb/schart.jar
+/usr/lib64/libreoffice/help/hsb/schart.key
+/usr/lib64/libreoffice/help/hsb/schart.tree
+/usr/lib64/libreoffice/help/hsb/sdatabase.cfg
+/usr/lib64/libreoffice/help/hsb/sdatabase.db
+/usr/lib64/libreoffice/help/hsb/sdatabase.ht
+/usr/lib64/libreoffice/help/hsb/sdatabase.idxl/_0.cfs
+/usr/lib64/libreoffice/help/hsb/sdatabase.idxl/segments.gen
+/usr/lib64/libreoffice/help/hsb/sdatabase.idxl/segments_3
+/usr/lib64/libreoffice/help/hsb/sdatabase.jar
+/usr/lib64/libreoffice/help/hsb/sdatabase.key
+/usr/lib64/libreoffice/help/hsb/sdatabase.tree
+/usr/lib64/libreoffice/help/hsb/sdraw.cfg
+/usr/lib64/libreoffice/help/hsb/sdraw.db
+/usr/lib64/libreoffice/help/hsb/sdraw.ht
+/usr/lib64/libreoffice/help/hsb/sdraw.idxl/_0.cfs
+/usr/lib64/libreoffice/help/hsb/sdraw.idxl/segments.gen
+/usr/lib64/libreoffice/help/hsb/sdraw.idxl/segments_3
+/usr/lib64/libreoffice/help/hsb/sdraw.jar
+/usr/lib64/libreoffice/help/hsb/sdraw.key
+/usr/lib64/libreoffice/help/hsb/sdraw.tree
+/usr/lib64/libreoffice/help/hsb/shared.jar
+/usr/lib64/libreoffice/help/hsb/shared.tree
+/usr/lib64/libreoffice/help/hsb/simpress.cfg
+/usr/lib64/libreoffice/help/hsb/simpress.db
+/usr/lib64/libreoffice/help/hsb/simpress.ht
+/usr/lib64/libreoffice/help/hsb/simpress.idxl/_0.cfs
+/usr/lib64/libreoffice/help/hsb/simpress.idxl/segments.gen
+/usr/lib64/libreoffice/help/hsb/simpress.idxl/segments_3
+/usr/lib64/libreoffice/help/hsb/simpress.jar
+/usr/lib64/libreoffice/help/hsb/simpress.key
+/usr/lib64/libreoffice/help/hsb/simpress.tree
+/usr/lib64/libreoffice/help/hsb/smath.cfg
+/usr/lib64/libreoffice/help/hsb/smath.db
+/usr/lib64/libreoffice/help/hsb/smath.ht
+/usr/lib64/libreoffice/help/hsb/smath.idxl/_0.cfs
+/usr/lib64/libreoffice/help/hsb/smath.idxl/segments.gen
+/usr/lib64/libreoffice/help/hsb/smath.idxl/segments_3
+/usr/lib64/libreoffice/help/hsb/smath.jar
+/usr/lib64/libreoffice/help/hsb/smath.key
+/usr/lib64/libreoffice/help/hsb/smath.tree
+/usr/lib64/libreoffice/help/hsb/swriter.cfg
+/usr/lib64/libreoffice/help/hsb/swriter.db
+/usr/lib64/libreoffice/help/hsb/swriter.ht
+/usr/lib64/libreoffice/help/hsb/swriter.idxl/_0.cfs
+/usr/lib64/libreoffice/help/hsb/swriter.idxl/segments.gen
+/usr/lib64/libreoffice/help/hsb/swriter.idxl/segments_3
+/usr/lib64/libreoffice/help/hsb/swriter.jar
+/usr/lib64/libreoffice/help/hsb/swriter.key
+/usr/lib64/libreoffice/help/hsb/swriter.tree
 /usr/lib64/libreoffice/program/resource/hsb/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/hsb/LC_MESSAGES/avmedia.mo
 /usr/lib64/libreoffice/program/resource/hsb/LC_MESSAGES/basctl.mo
@@ -11181,6 +11389,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/autotext/mn/crdbus50.bau
 /usr/lib64/libreoffice/share/autotext/mn/standard.bau
 /usr/lib64/libreoffice/share/autotext/mn/template.bau
+/usr/lib64/libreoffice/share/extensions/dict-mn/DictMN.png
 /usr/lib64/libreoffice/share/extensions/dict-mn/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-mn/README_mn_MN.txt
 /usr/lib64/libreoffice/share/extensions/dict-mn/description.xml
@@ -14733,9 +14942,11 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_th.properties
 /usr/lib64/libreoffice/share/autotext/th/standard.bau
 /usr/lib64/libreoffice/share/extensions/dict-th/META-INF/manifest.xml
+/usr/lib64/libreoffice/share/extensions/dict-th/README_hyph_th_TH.txt
 /usr/lib64/libreoffice/share/extensions/dict-th/README_th_TH.txt
 /usr/lib64/libreoffice/share/extensions/dict-th/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-th/dictionaries.xcu
+/usr/lib64/libreoffice/share/extensions/dict-th/hyph_th_TH.dic
 /usr/lib64/libreoffice/share/extensions/dict-th/th_TH.aff
 /usr/lib64/libreoffice/share/extensions/dict-th/th_TH.dic
 /usr/lib64/libreoffice/share/registry/Langpack-th.xcd
@@ -16002,7 +16213,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/libsdbc2.so
 /usr/lib64/libreoffice/program/libsdbtlo.so
 /usr/lib64/libreoffice/program/libsddlo.so
-/usr/lib64/libreoffice/program/libsdfiltlo.so
 /usr/lib64/libreoffice/program/libsdlo.so
 /usr/lib64/libreoffice/program/libsduilo.so
 /usr/lib64/libreoffice/program/libsfxlo.so
@@ -16114,20 +16324,24 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/libreoffice/0169a4be13bb4c785992df830ac21a8df2116c8f
 /usr/share/package-licenses/libreoffice/01a6b4bf79aca9b556822601186afab86e8c4fbf
+/usr/share/package-licenses/libreoffice/0750f8a342c58c97c14c2f30a7d14f5c13c88f11
 /usr/share/package-licenses/libreoffice/086522998bce7aa9e5a07c02b0336895c8940a4d
 /usr/share/package-licenses/libreoffice/0b184ad51ba2a79e85d2288d5fcf8a1ea0481ea4
 /usr/share/package-licenses/libreoffice/0c4fabaa9f307652fd2b2f0057b8048809cca570
 /usr/share/package-licenses/libreoffice/1e1ed49217c54335ff1a9c391094166d4dfe5fff
 /usr/share/package-licenses/libreoffice/1efe32a14d6ac9af625ba23a893352d02de30add
 /usr/share/package-licenses/libreoffice/26f94fe5a890afb135cc9fea45fdcef51c4439aa
+/usr/share/package-licenses/libreoffice/2d916b125f26702c55ecd1a7aba6bf62dffb19e0
 /usr/share/package-licenses/libreoffice/2f203961eeb312e8253537e3b32b106fd968e45a
-/usr/share/package-licenses/libreoffice/351344d82dfbdfd3ad1e084fe8c37539872f3ea8
 /usr/share/package-licenses/libreoffice/3ae66f1f2078ec836a60f127f4c0c6f9ff8fb811
 /usr/share/package-licenses/libreoffice/3d6124299beadbdf34e46a1af82771afa1216a17
 /usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
+/usr/share/package-licenses/libreoffice/4bee7df5012ba95a69e9912849cb61fac748dde7
 /usr/share/package-licenses/libreoffice/4ee6e10f18c3762079a77e39ebd51ecdc7ee95db
 /usr/share/package-licenses/libreoffice/552e717402633ecd4b29e48ff5c293ff6baca7bd
+/usr/share/package-licenses/libreoffice/572b30719f1bd06cb821ab3e3c2660073ed0a744
 /usr/share/package-licenses/libreoffice/5919d75f19b76bef533d4ff10d3cca634752aaec
 /usr/share/package-licenses/libreoffice/720ac006232639ed551ce48d638dee35f8d378d4
 /usr/share/package-licenses/libreoffice/73a5c65a9ad1edb175e9e3b28db6b2612abb467b
@@ -16137,7 +16351,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/package-licenses/libreoffice/95cb917e61a51e152476a289e3e09b6f1d50b35e
 /usr/share/package-licenses/libreoffice/981a819a0c9c4a4025d0c52b2b196b124f975d22
 /usr/share/package-licenses/libreoffice/98da77a33f378a25b9ab4b40dfdb4af8bdd4919f
-/usr/share/package-licenses/libreoffice/9b9e4e4833a597754c7768378ca0f7eef5b558fe
 /usr/share/package-licenses/libreoffice/9da09717e40fd46206f0e48ad32cb3e6e0c425d3
 /usr/share/package-licenses/libreoffice/a2987fb2ef11c7c38cd03bc5d0be22014b63f777
 /usr/share/package-licenses/libreoffice/a5ddbc9cb6373c0bbd63da31d0190a3ed9f30fa4
@@ -16145,13 +16358,12 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/package-licenses/libreoffice/a9d9e3aae241e2506e0c9ef63f26fbcffe1209e2
 /usr/share/package-licenses/libreoffice/aba8d76d0af67d57da3c3c321caa59f3d242386b
 /usr/share/package-licenses/libreoffice/b6d50f880188b674c13931fdeb12d6c7c454ca4d
+/usr/share/package-licenses/libreoffice/b84cab96fef495a36ca31fc11e714c0a16a758a6
 /usr/share/package-licenses/libreoffice/ba8966e2473a9969bdcab3dc82274c817cfd98a1
-/usr/share/package-licenses/libreoffice/bd26a78588f34f076d0fc1e0628b0de0cbaf7e3b
 /usr/share/package-licenses/libreoffice/c20a43e2449b367c09f9e5f665febc631e99848a
 /usr/share/package-licenses/libreoffice/c8da430cb95f9242128698ef24b1cdd1fa195b13
 /usr/share/package-licenses/libreoffice/caeb68c46fa36651acf592771d09de7937926bb3
 /usr/share/package-licenses/libreoffice/cb3b074e16ba14585901215392dae8054260b960
-/usr/share/package-licenses/libreoffice/cc06ca4f929598f3aa142289edb889da935360ca
 /usr/share/package-licenses/libreoffice/cd4d2be2fb45653d8f8923933046f5a4cb4ff882
 /usr/share/package-licenses/libreoffice/cea402c4f150370f47b5f5e7ef461df23ec6a04d
 /usr/share/package-licenses/libreoffice/cf756914ec51f52f9c121be247bfda232dc6afd2
@@ -16159,7 +16371,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/package-licenses/libreoffice/dfa4d68ffb8c478209adb3ff777f33d0853d364d
 /usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b
 /usr/share/package-licenses/libreoffice/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9
-/usr/share/package-licenses/libreoffice/ea8bfbc661450e5ca8cb6d5f0c30ee3e854cb6d7
 /usr/share/package-licenses/libreoffice/f5dce21518ec83c44e57f084f494634ff53ddc14
 /usr/share/package-licenses/libreoffice/f635d28c6cbaac2760d09920ba63f19ed1ef6a27
 /usr/share/package-licenses/libreoffice/f9021477f3ffe66b806c98da42d1328fafee45fb
