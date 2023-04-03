@@ -43,6 +43,10 @@ if git diff-index --quiet HEAD --; then
 	exit 1
 fi
 
+# Download and cache the new tarballs, since they could take longer than
+# autospec allows
+git diff Makefile | grep '^+' | grep -oE 'https?://(\S+)' | wget -N -i - || :
+
 # Build the new version
 make autospec
 
