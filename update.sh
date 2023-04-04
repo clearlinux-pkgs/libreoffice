@@ -53,8 +53,8 @@ make autospec
 # Update lang sorting
 ./move_langs_to_extras.pl
 
-# check whether anything changed
-if ! git diff-index --quiet HEAD --; then
+# check whether any lang- extras files were changed or added
+if git status | grep -qE '^\s+lang-'; then
 	# We need to re-autospec to re-package the language files
 	make autospec
 fi
