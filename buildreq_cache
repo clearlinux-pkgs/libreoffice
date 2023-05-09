@@ -1,4 +1,5 @@
-7.5.2.2
+7.5.3.2
 libwebp-dev
+pkg-config
 pkgconfig(libtiff-4)
 pkgconfig(libwebp)
