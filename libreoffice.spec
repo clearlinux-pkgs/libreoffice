@@ -6,16 +6,16 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 7.5.3.2
-Release  : 91
-URL      : https://download.documentfoundation.org/libreoffice/src/7.5.3/libreoffice-7.5.3.2.tar.xz
-Source0  : https://download.documentfoundation.org/libreoffice/src/7.5.3/libreoffice-7.5.3.2.tar.xz
+Version  : 7.5.4.2
+Release  : 92
+URL      : https://download.documentfoundation.org/libreoffice/src/7.5.4/libreoffice-7.5.4.2.tar.xz
+Source0  : https://download.documentfoundation.org/libreoffice/src/7.5.4/libreoffice-7.5.4.2.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
 Source2  : https://dev-www.libreoffice.org/src/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
-Source3  : https://download.documentfoundation.org/libreoffice/src/7.5.3/libreoffice-dictionaries-7.5.3.2.tar.xz
-Source4  : https://download.documentfoundation.org/libreoffice/src/7.5.3/libreoffice-help-7.5.3.2.tar.xz
-Source5  : https://download.documentfoundation.org/libreoffice/src/7.5.3/libreoffice-translations-7.5.3.2.tar.xz
-Source6  : https://download.documentfoundation.org/libreoffice/src/7.5.3/libreoffice-7.5.3.2.tar.xz.asc
+Source3  : https://download.documentfoundation.org/libreoffice/src/7.5.4/libreoffice-dictionaries-7.5.4.2.tar.xz
+Source4  : https://download.documentfoundation.org/libreoffice/src/7.5.4/libreoffice-help-7.5.4.2.tar.xz
+Source5  : https://download.documentfoundation.org/libreoffice/src/7.5.4/libreoffice-translations-7.5.4.2.tar.xz
+Source6  : https://download.documentfoundation.org/libreoffice/src/7.5.4/libreoffice-7.5.4.2.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-SA-3.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception W3C
@@ -88,7 +88,6 @@ BuildRequires : openjdk
 BuildRequires : openjdk-dev
 BuildRequires : openldap-dev
 BuildRequires : openssl-dev
-BuildRequires : pkg-config
 BuildRequires : pkgconfig(apr-util-1)
 BuildRequires : pkgconfig(atk)
 BuildRequires : pkgconfig(cairo)
@@ -1084,13 +1083,13 @@ man components for the libreoffice package.
 
 
 %prep
-%setup -q -n libreoffice-7.5.3.2
+%setup -q -n libreoffice-7.5.4.2
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-dictionaries-7.5.3.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-dictionaries-7.5.4.2.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-help-7.5.3.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-help-7.5.4.2.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-translations-7.5.3.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-translations-7.5.4.2.tar.xz
 cd %{_builddir}
 mkdir -p dtoa-20180411
 cd dtoa-20180411
@@ -1099,10 +1098,10 @@ cd %{_builddir}
 mkdir -p skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar
 cd skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar
 tar xf %{_sourcedir}/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
-cd %{_builddir}/libreoffice-7.5.3.2
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
+cd %{_builddir}/libreoffice-7.5.4.2
+%patch -P 1 -p1
+%patch -P 2 -p1
+%patch -P 3 -p1
 
 %build
 ## build_prepend content
@@ -1114,7 +1113,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683614206
+export SOURCE_DATE_EPOCH=1686238135
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -1172,7 +1171,7 @@ export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -f
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1683614206
+export SOURCE_DATE_EPOCH=1686238135
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
