@@ -7,7 +7,7 @@
 #
 Name     : libreoffice
 Version  : 7.5.4.2
-Release  : 93
+Release  : 94
 URL      : https://download.documentfoundation.org/libreoffice/src/7.5.4/libreoffice-7.5.4.2.tar.xz
 Source0  : https://download.documentfoundation.org/libreoffice/src/7.5.4/libreoffice-7.5.4.2.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
