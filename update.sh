@@ -54,7 +54,7 @@ make autospec
 ./move_langs_to_extras.pl
 
 # check whether any lang- extras files were changed or added
-if git status | grep -qE '^\s+lang-'; then
+if git status | grep -qE '^\s+modified:\s+lang-'; then
 	# We need to re-autospec to re-package the language files
 	make autospec
 fi
