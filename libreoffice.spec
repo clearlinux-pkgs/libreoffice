@@ -6,16 +6,16 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 7.5.5.2
-Release  : 96
-URL      : https://download.documentfoundation.org/libreoffice/src/7.5.5/libreoffice-7.5.5.2.tar.xz
-Source0  : https://download.documentfoundation.org/libreoffice/src/7.5.5/libreoffice-7.5.5.2.tar.xz
+Version  : 7.6.0.3
+Release  : 97
+URL      : https://download.documentfoundation.org/libreoffice/src/7.6.0/libreoffice-7.6.0.3.tar.xz
+Source0  : https://download.documentfoundation.org/libreoffice/src/7.6.0/libreoffice-7.6.0.3.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
-Source2  : https://dev-www.libreoffice.org/src/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
-Source3  : https://download.documentfoundation.org/libreoffice/src/7.5.5/libreoffice-dictionaries-7.5.5.2.tar.xz
-Source4  : https://download.documentfoundation.org/libreoffice/src/7.5.5/libreoffice-help-7.5.5.2.tar.xz
-Source5  : https://download.documentfoundation.org/libreoffice/src/7.5.5/libreoffice-translations-7.5.5.2.tar.xz
-Source6  : https://download.documentfoundation.org/libreoffice/src/7.5.5/libreoffice-7.5.5.2.tar.xz.asc
+Source2  : https://dev-www.libreoffice.org/src/skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar.xz
+Source3  : https://download.documentfoundation.org/libreoffice/src/7.6.0/libreoffice-dictionaries-7.6.0.3.tar.xz
+Source4  : https://download.documentfoundation.org/libreoffice/src/7.6.0/libreoffice-help-7.6.0.3.tar.xz
+Source5  : https://download.documentfoundation.org/libreoffice/src/7.6.0/libreoffice-translations-7.6.0.3.tar.xz
+Source6  : https://download.documentfoundation.org/libreoffice/src/7.6.0/libreoffice-7.6.0.3.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-SA-3.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception W3C
@@ -42,6 +42,7 @@ BuildRequires : epm
 BuildRequires : fakeroot
 BuildRequires : flex
 BuildRequires : fontforge
+BuildRequires : frozen-dev
 BuildRequires : gdb
 BuildRequires : glm-dev
 BuildRequires : gnupg
@@ -144,6 +145,7 @@ BuildRequires : zxing-dev
 Patch1: 0001-Do-not-clean-destdir.patch
 Patch2: 0002-Revert-tdf-101630-gdrive-support-w-oAuth-and-Drive-A.patch
 Patch3: 0003-Find-whatever-version-of-dragonbox.patch
+Patch4: 0004-Guard-use-of-jfw_convertUserPathList-when-we-don-t-h.patch
 
 %description
 a dummy package
@@ -1081,25 +1083,26 @@ man components for the libreoffice package.
 
 
 %prep
-%setup -q -n libreoffice-7.5.5.2
+%setup -q -n libreoffice-7.6.0.3
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-dictionaries-7.5.5.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-dictionaries-7.6.0.3.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-help-7.5.5.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-help-7.6.0.3.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-translations-7.5.5.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-translations-7.6.0.3.tar.xz
 cd %{_builddir}
 mkdir -p dtoa-20180411
 cd dtoa-20180411
 tar xf %{_sourcedir}/dtoa-20180411.tgz
 cd %{_builddir}
-mkdir -p skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar
-cd skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar
-tar xf %{_sourcedir}/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
-cd %{_builddir}/libreoffice-7.5.5.2
+mkdir -p skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar
+cd skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar
+tar xf %{_sourcedir}/skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar.xz
+cd %{_builddir}/libreoffice-7.6.0.3
 %patch -P 1 -p1
 %patch -P 2 -p1
 %patch -P 3 -p1
+%patch -P 4 -p1
 
 %build
 ## build_prepend content
@@ -1111,7 +1114,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1689981243
+export SOURCE_DATE_EPOCH=1692721326
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -1169,7 +1172,7 @@ export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -f
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1689981243
+export SOURCE_DATE_EPOCH=1692721326
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -1243,7 +1246,7 @@ cp %{_builddir}/libreoffice-%{version}/odk/examples/DevelopersGuide/Components/S
 cp %{_builddir}/libreoffice-%{version}/odk/examples/DevelopersGuide/Components/SimpleLicense/LicenseTest.java %{buildroot}/usr/share/package-licenses/libreoffice/a76a0e7e8a8c7f46a328c16110f3c1dfbf9196ad || :
 cp %{_builddir}/libreoffice-%{version}/offapi/com/sun/star/deployment/LicenseException.idl %{buildroot}/usr/share/package-licenses/libreoffice/0750f8a342c58c97c14c2f30a7d14f5c13c88f11 || :
 cp %{_builddir}/libreoffice-%{version}/offapi/com/sun/star/deployment/ui/LicenseDialog.idl %{buildroot}/usr/share/package-licenses/libreoffice/572b30719f1bd06cb821ab3e3c2660073ed0a744 || :
-cp %{_builddir}/libreoffice-%{version}/readlicense_oo/license/license.xml %{buildroot}/usr/share/package-licenses/libreoffice/5c9aa16daa212701cf720d5ad5979861af0194dc || :
+cp %{_builddir}/libreoffice-%{version}/readlicense_oo/license/license.xml %{buildroot}/usr/share/package-licenses/libreoffice/e9395977c0ae7ed1576edf0ad262658fb2218351 || :
 cp %{_builddir}/libreoffice-%{version}/sfx2/uiconfig/ui/licensedialog.ui %{buildroot}/usr/share/package-licenses/libreoffice/0169a4be13bb4c785992df830ac21a8df2116c8f || :
 %make_install distro-pack-install
 ## Remove excluded files
@@ -1858,6 +1861,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/basic/SFDialogs/SF_Dialog.xba
 /usr/lib64/libreoffice/share/basic/SFDialogs/SF_DialogControl.xba
 /usr/lib64/libreoffice/share/basic/SFDialogs/SF_DialogListener.xba
+/usr/lib64/libreoffice/share/basic/SFDialogs/SF_DialogUtils.xba
 /usr/lib64/libreoffice/share/basic/SFDialogs/SF_Register.xba
 /usr/lib64/libreoffice/share/basic/SFDialogs/__License.xba
 /usr/lib64/libreoffice/share/basic/SFDialogs/dialog.xlb
@@ -1869,6 +1873,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/basic/SFDocuments/SF_DocumentListener.xba
 /usr/lib64/libreoffice/share/basic/SFDocuments/SF_Form.xba
 /usr/lib64/libreoffice/share/basic/SFDocuments/SF_FormControl.xba
+/usr/lib64/libreoffice/share/basic/SFDocuments/SF_FormDocument.xba
 /usr/lib64/libreoffice/share/basic/SFDocuments/SF_Register.xba
 /usr/lib64/libreoffice/share/basic/SFDocuments/SF_Writer.xba
 /usr/lib64/libreoffice/share/basic/SFDocuments/__License.xba
@@ -1883,6 +1888,8 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/basic/SFWidgets/SF_MenuListener.xba
 /usr/lib64/libreoffice/share/basic/SFWidgets/SF_PopupMenu.xba
 /usr/lib64/libreoffice/share/basic/SFWidgets/SF_Register.xba
+/usr/lib64/libreoffice/share/basic/SFWidgets/SF_Toolbar.xba
+/usr/lib64/libreoffice/share/basic/SFWidgets/SF_ToolbarButton.xba
 /usr/lib64/libreoffice/share/basic/SFWidgets/__License.xba
 /usr/lib64/libreoffice/share/basic/SFWidgets/dialog.xlb
 /usr/lib64/libreoffice/share/basic/SFWidgets/script.xlb
@@ -2225,6 +2232,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/odbcpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/parametersdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/password.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/postgrespage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/querycolmenu.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/queryfilterdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/dbaccess/ui/queryfuncmenu.ui
@@ -2501,8 +2509,8 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/deleterowentry.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/descriptivestatisticsdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/doubledialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/drawtemplatedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/dropmenu.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/erroralerttabpage-mobile.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/erroralerttabpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/exponentialsmoothingdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/externaldata.ui
@@ -2637,7 +2645,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/ungroupdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationcriteriapage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationdialog.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationhelptabpage-mobile.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationhelptabpage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/warnautocorrect.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/scalc/ui/xmlsourcedialog.ui
@@ -3279,6 +3286,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/textstylebar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/toolbar.xml
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/toolbar/viewerbar.xml
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/a11ycheckissuespanel.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/abstractdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/addentrydialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/addressblockdialog.ui
@@ -3432,6 +3440,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pageformatpanel.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pageheaderpanel.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagemargincontrol.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagenumberdlg.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pageorientationcontrol.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagesizecontrol.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagestylemenu.ui
@@ -3500,6 +3509,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/viewoptionspage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/warndatasourcedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/warnemaildialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/warnhiddensectiondialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/watermarkdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/wordcount-mobile.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/modules/swriter/ui/wordcount.ui
@@ -3663,7 +3673,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/svt/ui/thineditcontrol.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/absrecbox.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/acceptrejectchangesdialog.ui
-/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/accessibilitycheckdialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/accessibilitycheckentry.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/addconditiondialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/adddataitemdialog.ui
@@ -3793,6 +3802,8 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/textcontrolchardialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/textcontrolparadialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/textunderlinecontrol.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/themecoloreditdialog.ui
+/usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/themedialog.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/toolbarpopover.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/xformspage.ui
 /usr/lib64/libreoffice/share/config/soffice.cfg/svx/ui/xmlsecstatmenu.ui
@@ -4063,6 +4074,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-en/pythonpath/lightproof_opts_en.py
 /usr/lib64/libreoffice/share/extensions/dict-en/th_en_US_v2.dat
 /usr/lib64/libreoffice/share/extensions/dict-en/th_en_US_v2.idx
+/usr/lib64/libreoffice/share/extensions/dict-id/README-dict.adoc
 /usr/lib64/libreoffice/share/extensions/dict-no/COPYING
 /usr/lib64/libreoffice/share/extensions/dict-no/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-no/README_hyph_NO.txt
@@ -4498,11 +4510,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/tipoftheday/remove_hyperlink.png
 /usr/lib64/libreoffice/share/tipoftheday/statusbar.png
 /usr/lib64/libreoffice/share/tipoftheday/sum_sheets.png
-/usr/lib64/libreoffice/share/tipoftheday/tipoftheday.png
-/usr/lib64/libreoffice/share/tipoftheday/tipoftheday_c.png
-/usr/lib64/libreoffice/share/tipoftheday/tipoftheday_d.png
-/usr/lib64/libreoffice/share/tipoftheday/tipoftheday_i.png
-/usr/lib64/libreoffice/share/tipoftheday/tipoftheday_w.png
 /usr/lib64/libreoffice/share/tipoftheday/toolbarmode.png
 /usr/lib64/libreoffice/share/toolbarmode/default.png
 /usr/lib64/libreoffice/share/toolbarmode/notebookbar.png
@@ -9641,7 +9648,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-id/LICENSE-dict
 /usr/lib64/libreoffice/share/extensions/dict-id/LICENSE-thes
 /usr/lib64/libreoffice/share/extensions/dict-id/META-INF/manifest.xml
-/usr/lib64/libreoffice/share/extensions/dict-id/README-dict.md
 /usr/lib64/libreoffice/share/extensions/dict-id/README-thes
 /usr/lib64/libreoffice/share/extensions/dict-id/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-id/dictionaries.xcu
@@ -16085,7 +16091,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/libLanguageToollo.so
 /usr/lib64/libreoffice/program/libOGLTranslo.so
 /usr/lib64/libreoffice/program/libPresentationMinimizerlo.so
-/usr/lib64/libreoffice/program/libPresenterScreenlo.so
 /usr/lib64/libreoffice/program/libabplo.so
 /usr/lib64/libreoffice/program/libacclo.so
 /usr/lib64/libreoffice/program/libaffine_uno_uno.so
@@ -16129,6 +16134,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/libdesktop_detectorlo.so
 /usr/lib64/libreoffice/program/libdesktopbe1lo.so
 /usr/lib64/libreoffice/program/libdlgprovlo.so
+/usr/lib64/libreoffice/program/libdocmodello.so
 /usr/lib64/libreoffice/program/libdrawinglayercorelo.so
 /usr/lib64/libreoffice/program/libdrawinglayerlo.so
 /usr/lib64/libreoffice/program/libeditenglo.so
@@ -16136,7 +16142,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/libemboleobj.so
 /usr/lib64/libreoffice/program/libemfiolo.so
 /usr/lib64/libreoffice/program/libevtattlo.so
-/usr/lib64/libreoffice/program/libexpwraplo.so
 /usr/lib64/libreoffice/program/libfilelo.so
 /usr/lib64/libreoffice/program/libfilterconfiglo.so
 /usr/lib64/libreoffice/program/libflatlo.so
@@ -16344,7 +16349,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/package-licenses/libreoffice/552e717402633ecd4b29e48ff5c293ff6baca7bd
 /usr/share/package-licenses/libreoffice/572b30719f1bd06cb821ab3e3c2660073ed0a744
 /usr/share/package-licenses/libreoffice/5919d75f19b76bef533d4ff10d3cca634752aaec
-/usr/share/package-licenses/libreoffice/5c9aa16daa212701cf720d5ad5979861af0194dc
 /usr/share/package-licenses/libreoffice/720ac006232639ed551ce48d638dee35f8d378d4
 /usr/share/package-licenses/libreoffice/73a5c65a9ad1edb175e9e3b28db6b2612abb467b
 /usr/share/package-licenses/libreoffice/75b80fb33eafe0831107b9b6f5bd7306e4b1ca46
@@ -16373,6 +16377,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/package-licenses/libreoffice/dfa4d68ffb8c478209adb3ff777f33d0853d364d
 /usr/share/package-licenses/libreoffice/e18ea3c11db626436e9ca66acdb93aa2242ea90b
 /usr/share/package-licenses/libreoffice/e7d563f52bf5295e6dba1d67ac23e9f6a160fab9
+/usr/share/package-licenses/libreoffice/e9395977c0ae7ed1576edf0ad262658fb2218351
 /usr/share/package-licenses/libreoffice/f5dce21518ec83c44e57f084f494634ff53ddc14
 /usr/share/package-licenses/libreoffice/f635d28c6cbaac2760d09920ba63f19ed1ef6a27
 /usr/share/package-licenses/libreoffice/f9021477f3ffe66b806c98da42d1328fafee45fb

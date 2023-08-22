@@ -1,0 +1,44 @@
+From 0f933a16baae942ac38564ce7f40206b145d8432 Mon Sep 17 00:00:00 2001
+From: "Brett T. Warden" <brett.t.warden@intel.com>
+Date: Tue, 22 Aug 2023 08:28:32 -0700
+Subject: [PATCH] Guard use of jfw_convertUserPathList when we don't have Java
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+When building --without-java (HAVE_FEATURE_JAVA=0):
+
+/builddir/build/BUILD/libreoffice-7.6.0.3/cui/source/options/optjava.cxx: In member function ‘void SvxJavaClassPathDlg::SetClassPath(const rtl::OUString&)’:
+/builddir/build/BUILD/libreoffice-7.6.0.3/cui/source/options/optjava.cxx:945:29: error: ‘jfw_convertUserPathList’ was not declared in this scope
+  945 |         std::vector paths = jfw_convertUserPathList(_rPath);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~
+make[1]: *** [/builddir/build/BUILD/libreoffice-7.6.0.3/solenv/gbuild/LinkTarget.mk:337: /builddir/build/BUILD/libreoffice-7.6.0.3/workdir/CxxObject/cui/source/options/optjava.o] Error 1
+---
+ cui/source/options/optjava.cxx | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/cui/source/options/optjava.cxx b/cui/source/options/optjava.cxx
+index 17f128ce9b3b..3bdafb3230c5 100644
+--- a/cui/source/options/optjava.cxx
++++ b/cui/source/options/optjava.cxx
+@@ -937,6 +937,7 @@ OUString SvxJavaClassPathDlg::GetClassPath() const
+ 
+ void SvxJavaClassPathDlg::SetClassPath( const OUString& _rPath )
+ {
++#if HAVE_FEATURE_JAVA
+     if ( m_sOldPath.isEmpty() )
+         m_sOldPath = _rPath;
+     m_xPathList->clear();
+@@ -962,6 +963,9 @@ void SvxJavaClassPathDlg::SetClassPath( const OUString& _rPath )
+         m_xPathList->select(0);
+     }
+     SelectHdl_Impl(*m_xPathList);
++#else
++    (void) this;
++#endif
+ }
+ 
+ /* vim:set shiftwidth=4 softtabstop=4 expandtab: */
+-- 
+2.41.0
+
