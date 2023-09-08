@@ -7,7 +7,7 @@
 #
 Name     : libreoffice
 Version  : 7.6.0.3
-Release  : 98
+Release  : 99
 URL      : https://download.documentfoundation.org/libreoffice/src/7.6.0/libreoffice-7.6.0.3.tar.xz
 Source0  : https://download.documentfoundation.org/libreoffice/src/7.6.0/libreoffice-7.6.0.3.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
