@@ -26,8 +26,10 @@ NEW_VERSION=$(perl -pe "s|^${PKG}-(\d+(?:\.\d+)+).*|\$1|" "${TARS}" | head -1)
 NEW_VERSION_DIR=${NEW_VERSION%.*}
 CURRENT_VERSION="$(rpmspec --srpm -q --qf="%{VERSION}" $PKG.spec)"
 
-if [[ "${CURRENT_VERSION}" = "${NEW_VERSION}" ]]; then
-	exit
+if [[ "$1" != "--force" ]]; then
+	if [[ "${CURRENT_VERSION}" = "${NEW_VERSION}" ]]; then
+		exit
+	fi
 fi
 
 # Update the version for source and archive tarballs in Makefile
