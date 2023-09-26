@@ -6,16 +6,16 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 7.6.1.2
-Release  : 103
-URL      : https://download.documentfoundation.org/libreoffice/src/7.6.1/libreoffice-7.6.1.2.tar.xz
-Source0  : https://download.documentfoundation.org/libreoffice/src/7.6.1/libreoffice-7.6.1.2.tar.xz
+Version  : 7.6.2.1
+Release  : 104
+URL      : https://download.documentfoundation.org/libreoffice/src/7.6.2/libreoffice-7.6.2.1.tar.xz
+Source0  : https://download.documentfoundation.org/libreoffice/src/7.6.2/libreoffice-7.6.2.1.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
 Source2  : https://dev-www.libreoffice.org/src/skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar.xz
-Source3  : https://download.documentfoundation.org/libreoffice/src/7.6.1/libreoffice-dictionaries-7.6.1.2.tar.xz
-Source4  : https://download.documentfoundation.org/libreoffice/src/7.6.1/libreoffice-help-7.6.1.2.tar.xz
-Source5  : https://download.documentfoundation.org/libreoffice/src/7.6.1/libreoffice-translations-7.6.1.2.tar.xz
-Source6  : https://download.documentfoundation.org/libreoffice/src/7.6.1/libreoffice-7.6.1.2.tar.xz.asc
+Source3  : https://download.documentfoundation.org/libreoffice/src/7.6.2/libreoffice-dictionaries-7.6.2.1.tar.xz
+Source4  : https://download.documentfoundation.org/libreoffice/src/7.6.2/libreoffice-help-7.6.2.1.tar.xz
+Source5  : https://download.documentfoundation.org/libreoffice/src/7.6.2/libreoffice-translations-7.6.2.1.tar.xz
+Source6  : https://download.documentfoundation.org/libreoffice/src/7.6.2/libreoffice-7.6.2.1.tar.xz.asc
 Summary  : This is a dummy package
 Group    : Development/Tools
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-SA-3.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception W3C
@@ -1083,13 +1083,13 @@ man components for the libreoffice package.
 
 
 %prep
-%setup -q -n libreoffice-7.6.1.2
+%setup -q -n libreoffice-7.6.2.1
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-dictionaries-7.6.1.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-dictionaries-7.6.2.1.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-help-7.6.1.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-help-7.6.2.1.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-translations-7.6.1.2.tar.xz
+tar xf %{_sourcedir}/libreoffice-translations-7.6.2.1.tar.xz
 cd %{_builddir}
 mkdir -p dtoa-20180411
 cd dtoa-20180411
@@ -1098,7 +1098,7 @@ cd %{_builddir}
 mkdir -p skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar
 cd skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar
 tar xf %{_sourcedir}/skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar.xz
-cd %{_builddir}/libreoffice-7.6.1.2
+cd %{_builddir}/libreoffice-7.6.2.1
 %patch -P 1 -p1
 %patch -P 2 -p1
 %patch -P 3 -p1
@@ -1114,7 +1114,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1695147664
+export SOURCE_DATE_EPOCH=1695769073
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -1172,7 +1172,7 @@ export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -f
 make  %{?_smp_mflags}  MAKECMDGOALS=build build
 
 %install
-export SOURCE_DATE_EPOCH=1695147664
+export SOURCE_DATE_EPOCH=1695769073
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -1209,7 +1209,6 @@ cp %{_builddir}/libreoffice-%{version}/dictionaries/kmr_Latn/license.txt %{build
 cp %{_builddir}/libreoffice-%{version}/dictionaries/lt_LT/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/865dcd10722390043968e224401709450c0bbb54 || :
 cp %{_builddir}/libreoffice-%{version}/dictionaries/lv_LV/license.txt %{buildroot}/usr/share/package-licenses/libreoffice/720ac006232639ed551ce48d638dee35f8d378d4 || :
 cp %{_builddir}/libreoffice-%{version}/dictionaries/no/COPYING %{buildroot}/usr/share/package-licenses/libreoffice/ffafa3d581babbe799b390d4d7057d07a6dda4b2 || :
-cp %{_builddir}/libreoffice-%{version}/dictionaries/oc_FR/LICENSES-en.txt %{buildroot}/usr/share/package-licenses/libreoffice/3ae66f1f2078ec836a60f127f4c0c6f9ff8fb811 || :
 cp %{_builddir}/libreoffice-%{version}/dictionaries/pt_BR/license-thes.readme %{buildroot}/usr/share/package-licenses/libreoffice/cd4d2be2fb45653d8f8923933046f5a4cb4ff882 || :
 cp %{_builddir}/libreoffice-%{version}/dictionaries/pt_PT/LICENSES.txt %{buildroot}/usr/share/package-licenses/libreoffice/552e717402633ecd4b29e48ff5c293ff6baca7bd || :
 cp %{_builddir}/libreoffice-%{version}/dictionaries/ro/COPYING.GPL %{buildroot}/usr/share/package-licenses/libreoffice/0c4fabaa9f307652fd2b2f0057b8048809cca570 || :
@@ -16342,7 +16341,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/package-licenses/libreoffice/26f94fe5a890afb135cc9fea45fdcef51c4439aa
 /usr/share/package-licenses/libreoffice/2d916b125f26702c55ecd1a7aba6bf62dffb19e0
 /usr/share/package-licenses/libreoffice/2f203961eeb312e8253537e3b32b106fd968e45a
-/usr/share/package-licenses/libreoffice/3ae66f1f2078ec836a60f127f4c0c6f9ff8fb811
 /usr/share/package-licenses/libreoffice/3d6124299beadbdf34e46a1af82771afa1216a17
 /usr/share/package-licenses/libreoffice/49d4c0ce1a16601f1e265d446b6c5ea6b512f27c
 /usr/share/package-licenses/libreoffice/4ee6e10f18c3762079a77e39ebd51ecdc7ee95db
