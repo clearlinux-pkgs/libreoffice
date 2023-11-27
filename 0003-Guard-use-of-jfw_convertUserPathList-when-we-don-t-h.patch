@@ -1,7 +1,12 @@
-From 0f933a16baae942ac38564ce7f40206b145d8432 Mon Sep 17 00:00:00 2001
-From: "Brett T. Warden" <brett.t.warden@intel.com>
-Date: Tue, 22 Aug 2023 08:28:32 -0700
-Subject: [PATCH] Guard use of jfw_convertUserPathList when we don't have Java
+From 219d19f135716df32f94c1e697d42c38c6d90be2 Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Mon, 27 Nov 2023 11:09:52 -0800
+Subject: [PATCH 3/3] Guard use of jfw_convertUserPathList when we don't have
+ Java
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -13,23 +18,25 @@ When building --without-java (HAVE_FEATURE_JAVA=0):
   945 |         std::vector paths = jfw_convertUserPathList(_rPath);
       |                             ^~~~~~~~~~~~~~~~~~~~~~~
 make[1]: *** [/builddir/build/BUILD/libreoffice-7.6.0.3/solenv/gbuild/LinkTarget.mk:337: /builddir/build/BUILD/libreoffice-7.6.0.3/workdir/CxxObject/cui/source/options/optjava.o] Error 1
+
+Signed-off-by: William Douglas <william.douglas@intel.com>
 ---
  cui/source/options/optjava.cxx | 4 ++++
  1 file changed, 4 insertions(+)
 
 diff --git a/cui/source/options/optjava.cxx b/cui/source/options/optjava.cxx
-index 17f128ce9b3b..3bdafb3230c5 100644
+index 64ba41c3f..91785c6a6 100644
 --- a/cui/source/options/optjava.cxx
 +++ b/cui/source/options/optjava.cxx
-@@ -937,6 +937,7 @@ OUString SvxJavaClassPathDlg::GetClassPath() const
- 
+@@ -938,6 +938,7 @@ OUString SvxJavaClassPathDlg::GetClassPath() const
+ #if HAVE_FEATURE_JAVA
  void SvxJavaClassPathDlg::SetClassPath( const OUString& _rPath )
  {
 +#if HAVE_FEATURE_JAVA
      if ( m_sOldPath.isEmpty() )
          m_sOldPath = _rPath;
      m_xPathList->clear();
-@@ -962,6 +963,9 @@ void SvxJavaClassPathDlg::SetClassPath( const OUString& _rPath )
+@@ -963,6 +964,9 @@ void SvxJavaClassPathDlg::SetClassPath( const OUString& _rPath )
          m_xPathList->select(0);
      }
      SelectHdl_Impl(*m_xPathList);
@@ -37,8 +44,8 @@ index 17f128ce9b3b..3bdafb3230c5 100644
 +    (void) this;
 +#endif
  }
+ #endif
  
- /* vim:set shiftwidth=4 softtabstop=4 expandtab: */
 -- 
-2.41.0
+2.43.0
 

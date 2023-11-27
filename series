@@ -1,4 +1,3 @@
 0001-Do-not-clean-destdir.patch
-0002-Revert-tdf-101630-gdrive-support-w-oAuth-and-Drive-A.patch
-0003-Find-whatever-version-of-dragonbox.patch
-0004-Guard-use-of-jfw_convertUserPathList-when-we-don-t-h.patch
+0002-Find-whatever-version-of-dragonbox.patch
+0003-Guard-use-of-jfw_convertUserPathList-when-we-don-t-h.patch

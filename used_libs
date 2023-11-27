@@ -11,7 +11,7 @@ libcairo.so.2
 libcdr-0.1.so.1
 libclucene-contribs-lib.so.1
 libclucene-core.so.1
-libcmis-0.5.so.5
+libcmis-0.6.so.5
 libcups.so.2
 libcurl.so.4
 libdbus-1.so.3
@@ -63,8 +63,8 @@ libpagemaker-0.0.so.0
 libpango-1.0.so.0
 libplc4.so
 libpng16.so.16
-libpoppler.so.131
-libpython3.11.so.1.0
+libpoppler.so.133
+libpython3.12.so.1.0
 libqxp-0.0.so.0
 libraptor2.so.0
 librdf.so.0

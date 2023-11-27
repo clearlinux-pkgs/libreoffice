@@ -1,17 +1,17 @@
-From e87489fe78d98968c58c08bd132c29b6b26868a5 Mon Sep 17 00:00:00 2001
+From 9b8ac6ae46c2dc974d0aee592d1549d70438bd44 Mon Sep 17 00:00:00 2001
 From: "Brett T. Warden" <brett.t.warden@intel.com>
 Date: Thu, 20 Oct 2022 13:05:53 -0700
-Subject: [PATCH] Find whatever version of dragonbox
+Subject: [PATCH 2/3] Find whatever version of dragonbox
 
 ---
  configure.ac | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/configure.ac b/configure.ac
-index 08f077bd0028..655b5faa173f 100644
+index 6313193b6..a16627e2d 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -10551,7 +10551,7 @@ if test "$with_system_dragonbox" = "yes"; then
+@@ -10533,7 +10533,7 @@ if test "$with_system_dragonbox" = "yes"; then
      AC_LANG_PUSH([C++])
      save_CPPFLAGS=$CPPFLAGS
      # This is where upstream installs to, unfortunately no .pc or so...
@@ -21,5 +21,5 @@ index 08f077bd0028..655b5faa173f 100644
      AC_CHECK_HEADER([dragonbox/dragonbox.h], [],
         [AC_MSG_ERROR([dragonbox/dragonbox.h not found. install dragonbox])], [])
 -- 
-2.38.1
+2.43.0
 
