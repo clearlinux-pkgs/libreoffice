@@ -63,7 +63,7 @@ echo "Running autospec."
 make autospec
 
 # Update lang sorting
-echo "Checking language subpackages for changes.
+echo "Checking language subpackages for changes."
 ./move_langs_to_extras.pl
 
 # check whether any lang- extras files were changed or added
