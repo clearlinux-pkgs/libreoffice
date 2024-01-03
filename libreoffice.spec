@@ -9,7 +9,7 @@
 #
 Name     : libreoffice
 Version  : 7.6.4.1
-Release  : 110
+Release  : 111
 URL      : https://download.documentfoundation.org/libreoffice/src/7.6.4/libreoffice-7.6.4.1.tar.xz
 Source0  : https://download.documentfoundation.org/libreoffice/src/7.6.4/libreoffice-7.6.4.1.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
