@@ -9,7 +9,7 @@
 #
 Name     : libreoffice
 Version  : 24.2.0.3
-Release  : 113
+Release  : 114
 URL      : https://download.documentfoundation.org/libreoffice/src/24.2.0/libreoffice-24.2.0.3.tar.xz
 Source0  : https://download.documentfoundation.org/libreoffice/src/24.2.0/libreoffice-24.2.0.3.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
