@@ -74,3 +74,5 @@ unixODBC-dev
 valgrind
 vlc-dev
 zxing-dev
+frozen-dev
+zxcvbn-c-dev
