@@ -1,4 +1,4 @@
-24.2.0.3
+24.2.1.2
 pkgconfig(libargon2)
 pkgconfig(libtiff-4)
 xvfb-run
