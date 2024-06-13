@@ -19,9 +19,9 @@ git pull --ff-only
 # Look for the latest Sourcecode release
 TARS=$(mktemp)
 trap "rm -f $TARS" EXIT
-curl -sSf "$RELEASE_URL" | grep -Po "${PKG}-\d+(?:\.\d+)+(?:\.[a-z]+)+" | sort -ru > $TARS
+curl -sSf "$RELEASE_URL" | (grep -Po "${PKG}-\d+(?:\.\d+)+(?:\.[a-z]+)+" ||:) | sort -ru > $TARS
 if ! grep -q "^${PKG}" $TARS; then
-	errexit "no ${PKG} tarballs found"
+	errexit "no ${PKG} source tarballs found at ${RELEASE_URL}"
 fi
 NEW_VERSION=$(perl -pe "s|^${PKG}-(\d+(?:\.\d+)+).*|\$1|" "${TARS}" | head -1)
 NEW_VERSION_DIR=${NEW_VERSION%.*}
