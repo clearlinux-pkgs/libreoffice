@@ -17,6 +17,7 @@ echo -n "Pulling package repo changes: "
 git pull --ff-only
 
 # Look for the latest Sourcecode release
+echo "Checking latest released version at ${RELEASE_URL}"
 TARS=$(mktemp)
 trap "rm -f $TARS" EXIT
 curl -sSf "$RELEASE_URL" | (grep -Po "${PKG}-\d+(?:\.\d+)+(?:\.[a-z]+)+" ||:) | sort -ru > $TARS
