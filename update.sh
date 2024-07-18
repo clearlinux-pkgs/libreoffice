@@ -20,7 +20,7 @@ git pull --ff-only
 echo "Checking latest released version at ${RELEASE_URL}"
 TARS=$(mktemp)
 trap "rm -f $TARS" EXIT
-curl -sSf "$RELEASE_URL" | (grep -Po "${PKG}-\d+(?:\.\d+)+(?:\.[a-z]+)+" ||:) | sort -ru > $TARS
+curl --silent --show-error --fail "$RELEASE_URL" | (grep --perl-regex --only-matching "${PKG}-\d+(?:\.\d+)+(?:\.[a-z]+)+" ||:) | sort --reverse --unique > $TARS
 if ! grep -q "^${PKG}" $TARS; then
 	errexit "no ${PKG} source tarballs found at ${RELEASE_URL}"
 fi
@@ -32,7 +32,8 @@ echo "Our current version:     ${CURRENT_VERSION}"
 echo "Latest released version: ${NEW_VERSION}"
 
 if [[ "$1" != "--force" ]]; then
-	if [[ "${CURRENT_VERSION}" = "${NEW_VERSION}" ]]; then
+	# Check whether new version is greater than current version
+	if (echo ${NEW_VERSION}; echo ${CURRENT_VERSION}) | sort --version-sort --check=silent; then
 		echo "Not rebuilding. Run the script directly with --force to override:"
 		echo "$0 --force"
 		exit
