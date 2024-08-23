@@ -4,9 +4,11 @@ apr-util-1
 cppunit
 ice
 lcms2
+libargon2
 libexttextcat
 liblangtag
 libnumbertext
+libtiff-4
 raptor2
 redland
 sane-backends

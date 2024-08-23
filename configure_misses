@@ -1,5 +1,6 @@
 Configure miss: 'intro' progress settings
-Configure miss: /run/user/1004
+Configure miss: /run/user/1000
+Configure miss: /usr/bin/ccache gcc option to enable large file support
 Configure miss: Alfresco Cloud client id and secret
 Configure miss: Google Drive client id and secret
 Configure miss: MPL subset
@@ -13,27 +14,28 @@ Configure miss: explicit OBJCXXFLAGS
 Configure miss: extra build ID
 Configure miss: formula logger
 Configure miss: g++ option to enable C++11 features
-Configure miss: gcc option to enable large file support
 Configure miss: gcc-objdump
 Configure miss: gcc-readelf
 Configure miss: gcc-strip
 Configure miss: gnucp
-Configure miss: if g++ has a visibility bug with class-level attributes (GCC bug 26905)
+Configure miss: if ccache g++ has a visibility bug with class-level attributes (GCC bug 26905)
 Configure miss: jq
 Configure miss: mar online update baseurl
 Configure miss: mar online update certificateder
 Configure miss: mar online update certificatename
 Configure miss: mar online update certificatepath
-Configure miss: mar online update uploadurl
 Configure miss: sys/sdt.h
 Configure miss: whether /usr/bin/xvfb-run works...
-Configure miss: whether g++ defines __cxa_eh_globals in cxxabi.h
-Configure miss: whether g++ defines __cxa_exception in cxxabi.h
-Configure miss: whether g++ might report false -Werror=maybe-uninitialized
-Configure miss: whether g++ might report false -Werror=stringop-overflow=
-Configure miss: whether g++ supports C++2a constinit sorted vectors
-Configure miss: whether g++ supports a working C++20 consteval
-Configure miss: whether gcc supports -Xclang -debug-info-kind=constructor
+Configure miss: whether build should auto use hardening compiler flags
+Configure miss: whether ccache g++ defines __cxa_eh_globals in cxxabi.h
+Configure miss: whether ccache g++ defines __cxa_exception in cxxabi.h
+Configure miss: whether ccache g++ might report false -Werror=maybe-uninitialized
+Configure miss: whether ccache g++ might report false -Werror=stringop-overflow=
+Configure miss: whether ccache g++ supports C++2a constinit sorted vectors
+Configure miss: whether ccache g++ supports a working C++20 consteval
+Configure miss: whether ccache gcc supports -Xclang -debug-info-kind=constructor
+Configure miss: whether g++ is already ccached
+Configure miss: whether gcc is already ccached
 Configure miss: whether the compiler is actually Clang
 Configure miss: whether to build Java Websocket for the UNO remote websocket client
 Configure miss: whether to build PDFium
@@ -66,6 +68,7 @@ Configure miss: whether to generate debug information
 Configure miss: whether to have assert() failures abort even without --enable-debug
 Configure miss: whether to include third-party fonts
 Configure miss: whether to install the compat oo* wrappers
+Configure miss: whether to keep the system awake/prevent it from going into sleep/standby
 Configure miss: whether to record build config
 Configure miss: whether to sign windows build
 Configure miss: whether to treat the installation as read-only
