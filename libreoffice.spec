@@ -9,7 +9,7 @@
 #
 Name     : libreoffice
 Version  : 24.8.0.3
-Release  : 134
+Release  : 135
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/24.8.0/libreoffice-24.8.0.3.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/24.8.0/libreoffice-24.8.0.3.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
