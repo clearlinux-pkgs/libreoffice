@@ -1,4 +1,5 @@
 ld-linux-x86-64.so.2
+libClpSolver.so.1
 libCoinMP.so.1
 libX11.so.6
 libZXing.so.3
