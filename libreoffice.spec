@@ -9,7 +9,7 @@
 #
 Name     : libreoffice
 Version  : 24.8.2.1
-Release  : 139
+Release  : 140
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/24.8.2/libreoffice-24.8.2.1.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/24.8.2/libreoffice-24.8.2.1.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
@@ -1135,7 +1135,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1727833861
+export SOURCE_DATE_EPOCH=1727840310
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -1211,7 +1211,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1727833861
+export SOURCE_DATE_EPOCH=1727840310
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-%{version}/.vscode/license.code-snippets %{buildroot}/usr/share/package-licenses/libreoffice/aec1f7868322cb513e13af471981ab3a33102b58 || :
