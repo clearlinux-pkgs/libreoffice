@@ -73,6 +73,7 @@ if git status | grep -qE '^\s+modified:\s+lang-'; then
 	# We need to re-autospec to re-package the language files
 	echo "Rebuilding to update language subpackages."
 	make autospec
+	git commit --amend -m 'Rebuild to update language subpackages'
 fi
 
 echo "Sending to Koji."
