@@ -9,7 +9,7 @@
 #
 Name     : libreoffice
 Version  : 24.8.4.2
-Release  : 144
+Release  : 145
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/24.8.4/libreoffice-24.8.4.2.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/24.8.4/libreoffice-24.8.4.2.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
@@ -1143,7 +1143,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1737144412
+export SOURCE_DATE_EPOCH=1737150499
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -1219,7 +1219,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1737144412
+export SOURCE_DATE_EPOCH=1737150499
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-%{version}/.vscode/license.code-snippets %{buildroot}/usr/share/package-licenses/libreoffice/aec1f7868322cb513e13af471981ab3a33102b58 || :
@@ -1551,86 +1551,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/help/idxcaption.xsl
 /usr/lib64/libreoffice/help/idxcontent.xsl
 /usr/lib64/libreoffice/help/main_transform.xsl
-/usr/lib64/libreoffice/help/tl/default.css
-/usr/lib64/libreoffice/help/tl/err.html
-/usr/lib64/libreoffice/help/tl/highcontrast1.css
-/usr/lib64/libreoffice/help/tl/highcontrast2.css
-/usr/lib64/libreoffice/help/tl/highcontrastblack.css
-/usr/lib64/libreoffice/help/tl/highcontrastwhite.css
-/usr/lib64/libreoffice/help/tl/sbasic.cfg
-/usr/lib64/libreoffice/help/tl/sbasic.db
-/usr/lib64/libreoffice/help/tl/sbasic.ht
-/usr/lib64/libreoffice/help/tl/sbasic.idxl/_0.cfs
-/usr/lib64/libreoffice/help/tl/sbasic.idxl/segments.gen
-/usr/lib64/libreoffice/help/tl/sbasic.idxl/segments_3
-/usr/lib64/libreoffice/help/tl/sbasic.jar
-/usr/lib64/libreoffice/help/tl/sbasic.key
-/usr/lib64/libreoffice/help/tl/sbasic.tree
-/usr/lib64/libreoffice/help/tl/scalc.cfg
-/usr/lib64/libreoffice/help/tl/scalc.db
-/usr/lib64/libreoffice/help/tl/scalc.ht
-/usr/lib64/libreoffice/help/tl/scalc.idxl/_0.cfs
-/usr/lib64/libreoffice/help/tl/scalc.idxl/segments.gen
-/usr/lib64/libreoffice/help/tl/scalc.idxl/segments_3
-/usr/lib64/libreoffice/help/tl/scalc.jar
-/usr/lib64/libreoffice/help/tl/scalc.key
-/usr/lib64/libreoffice/help/tl/scalc.tree
-/usr/lib64/libreoffice/help/tl/schart.cfg
-/usr/lib64/libreoffice/help/tl/schart.db
-/usr/lib64/libreoffice/help/tl/schart.ht
-/usr/lib64/libreoffice/help/tl/schart.idxl/_0.cfs
-/usr/lib64/libreoffice/help/tl/schart.idxl/segments.gen
-/usr/lib64/libreoffice/help/tl/schart.idxl/segments_3
-/usr/lib64/libreoffice/help/tl/schart.jar
-/usr/lib64/libreoffice/help/tl/schart.key
-/usr/lib64/libreoffice/help/tl/schart.tree
-/usr/lib64/libreoffice/help/tl/sdatabase.cfg
-/usr/lib64/libreoffice/help/tl/sdatabase.db
-/usr/lib64/libreoffice/help/tl/sdatabase.ht
-/usr/lib64/libreoffice/help/tl/sdatabase.idxl/_0.cfs
-/usr/lib64/libreoffice/help/tl/sdatabase.idxl/segments.gen
-/usr/lib64/libreoffice/help/tl/sdatabase.idxl/segments_3
-/usr/lib64/libreoffice/help/tl/sdatabase.jar
-/usr/lib64/libreoffice/help/tl/sdatabase.key
-/usr/lib64/libreoffice/help/tl/sdatabase.tree
-/usr/lib64/libreoffice/help/tl/sdraw.cfg
-/usr/lib64/libreoffice/help/tl/sdraw.db
-/usr/lib64/libreoffice/help/tl/sdraw.ht
-/usr/lib64/libreoffice/help/tl/sdraw.idxl/_0.cfs
-/usr/lib64/libreoffice/help/tl/sdraw.idxl/segments.gen
-/usr/lib64/libreoffice/help/tl/sdraw.idxl/segments_3
-/usr/lib64/libreoffice/help/tl/sdraw.jar
-/usr/lib64/libreoffice/help/tl/sdraw.key
-/usr/lib64/libreoffice/help/tl/sdraw.tree
-/usr/lib64/libreoffice/help/tl/shared.jar
-/usr/lib64/libreoffice/help/tl/shared.tree
-/usr/lib64/libreoffice/help/tl/simpress.cfg
-/usr/lib64/libreoffice/help/tl/simpress.db
-/usr/lib64/libreoffice/help/tl/simpress.ht
-/usr/lib64/libreoffice/help/tl/simpress.idxl/_0.cfs
-/usr/lib64/libreoffice/help/tl/simpress.idxl/segments.gen
-/usr/lib64/libreoffice/help/tl/simpress.idxl/segments_3
-/usr/lib64/libreoffice/help/tl/simpress.jar
-/usr/lib64/libreoffice/help/tl/simpress.key
-/usr/lib64/libreoffice/help/tl/simpress.tree
-/usr/lib64/libreoffice/help/tl/smath.cfg
-/usr/lib64/libreoffice/help/tl/smath.db
-/usr/lib64/libreoffice/help/tl/smath.ht
-/usr/lib64/libreoffice/help/tl/smath.idxl/_0.cfs
-/usr/lib64/libreoffice/help/tl/smath.idxl/segments.gen
-/usr/lib64/libreoffice/help/tl/smath.idxl/segments_3
-/usr/lib64/libreoffice/help/tl/smath.jar
-/usr/lib64/libreoffice/help/tl/smath.key
-/usr/lib64/libreoffice/help/tl/smath.tree
-/usr/lib64/libreoffice/help/tl/swriter.cfg
-/usr/lib64/libreoffice/help/tl/swriter.db
-/usr/lib64/libreoffice/help/tl/swriter.ht
-/usr/lib64/libreoffice/help/tl/swriter.idxl/_0.cfs
-/usr/lib64/libreoffice/help/tl/swriter.idxl/segments.gen
-/usr/lib64/libreoffice/help/tl/swriter.idxl/segments_3
-/usr/lib64/libreoffice/help/tl/swriter.jar
-/usr/lib64/libreoffice/help/tl/swriter.key
-/usr/lib64/libreoffice/help/tl/swriter.tree
 /usr/lib64/libreoffice/presets/autotext/mytexts.bau
 /usr/lib64/libreoffice/presets/basic/Standard/Module1.xba
 /usr/lib64/libreoffice/presets/basic/Standard/dialog.xlb
@@ -15138,6 +15058,86 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 
 %files extras-lang-tl
 %defattr(-,root,root,-)
+/usr/lib64/libreoffice/help/tl/default.css
+/usr/lib64/libreoffice/help/tl/err.html
+/usr/lib64/libreoffice/help/tl/highcontrast1.css
+/usr/lib64/libreoffice/help/tl/highcontrast2.css
+/usr/lib64/libreoffice/help/tl/highcontrastblack.css
+/usr/lib64/libreoffice/help/tl/highcontrastwhite.css
+/usr/lib64/libreoffice/help/tl/sbasic.cfg
+/usr/lib64/libreoffice/help/tl/sbasic.db
+/usr/lib64/libreoffice/help/tl/sbasic.ht
+/usr/lib64/libreoffice/help/tl/sbasic.idxl/_0.cfs
+/usr/lib64/libreoffice/help/tl/sbasic.idxl/segments.gen
+/usr/lib64/libreoffice/help/tl/sbasic.idxl/segments_3
+/usr/lib64/libreoffice/help/tl/sbasic.jar
+/usr/lib64/libreoffice/help/tl/sbasic.key
+/usr/lib64/libreoffice/help/tl/sbasic.tree
+/usr/lib64/libreoffice/help/tl/scalc.cfg
+/usr/lib64/libreoffice/help/tl/scalc.db
+/usr/lib64/libreoffice/help/tl/scalc.ht
+/usr/lib64/libreoffice/help/tl/scalc.idxl/_0.cfs
+/usr/lib64/libreoffice/help/tl/scalc.idxl/segments.gen
+/usr/lib64/libreoffice/help/tl/scalc.idxl/segments_3
+/usr/lib64/libreoffice/help/tl/scalc.jar
+/usr/lib64/libreoffice/help/tl/scalc.key
+/usr/lib64/libreoffice/help/tl/scalc.tree
+/usr/lib64/libreoffice/help/tl/schart.cfg
+/usr/lib64/libreoffice/help/tl/schart.db
+/usr/lib64/libreoffice/help/tl/schart.ht
+/usr/lib64/libreoffice/help/tl/schart.idxl/_0.cfs
+/usr/lib64/libreoffice/help/tl/schart.idxl/segments.gen
+/usr/lib64/libreoffice/help/tl/schart.idxl/segments_3
+/usr/lib64/libreoffice/help/tl/schart.jar
+/usr/lib64/libreoffice/help/tl/schart.key
+/usr/lib64/libreoffice/help/tl/schart.tree
+/usr/lib64/libreoffice/help/tl/sdatabase.cfg
+/usr/lib64/libreoffice/help/tl/sdatabase.db
+/usr/lib64/libreoffice/help/tl/sdatabase.ht
+/usr/lib64/libreoffice/help/tl/sdatabase.idxl/_0.cfs
+/usr/lib64/libreoffice/help/tl/sdatabase.idxl/segments.gen
+/usr/lib64/libreoffice/help/tl/sdatabase.idxl/segments_3
+/usr/lib64/libreoffice/help/tl/sdatabase.jar
+/usr/lib64/libreoffice/help/tl/sdatabase.key
+/usr/lib64/libreoffice/help/tl/sdatabase.tree
+/usr/lib64/libreoffice/help/tl/sdraw.cfg
+/usr/lib64/libreoffice/help/tl/sdraw.db
+/usr/lib64/libreoffice/help/tl/sdraw.ht
+/usr/lib64/libreoffice/help/tl/sdraw.idxl/_0.cfs
+/usr/lib64/libreoffice/help/tl/sdraw.idxl/segments.gen
+/usr/lib64/libreoffice/help/tl/sdraw.idxl/segments_3
+/usr/lib64/libreoffice/help/tl/sdraw.jar
+/usr/lib64/libreoffice/help/tl/sdraw.key
+/usr/lib64/libreoffice/help/tl/sdraw.tree
+/usr/lib64/libreoffice/help/tl/shared.jar
+/usr/lib64/libreoffice/help/tl/shared.tree
+/usr/lib64/libreoffice/help/tl/simpress.cfg
+/usr/lib64/libreoffice/help/tl/simpress.db
+/usr/lib64/libreoffice/help/tl/simpress.ht
+/usr/lib64/libreoffice/help/tl/simpress.idxl/_0.cfs
+/usr/lib64/libreoffice/help/tl/simpress.idxl/segments.gen
+/usr/lib64/libreoffice/help/tl/simpress.idxl/segments_3
+/usr/lib64/libreoffice/help/tl/simpress.jar
+/usr/lib64/libreoffice/help/tl/simpress.key
+/usr/lib64/libreoffice/help/tl/simpress.tree
+/usr/lib64/libreoffice/help/tl/smath.cfg
+/usr/lib64/libreoffice/help/tl/smath.db
+/usr/lib64/libreoffice/help/tl/smath.ht
+/usr/lib64/libreoffice/help/tl/smath.idxl/_0.cfs
+/usr/lib64/libreoffice/help/tl/smath.idxl/segments.gen
+/usr/lib64/libreoffice/help/tl/smath.idxl/segments_3
+/usr/lib64/libreoffice/help/tl/smath.jar
+/usr/lib64/libreoffice/help/tl/smath.key
+/usr/lib64/libreoffice/help/tl/smath.tree
+/usr/lib64/libreoffice/help/tl/swriter.cfg
+/usr/lib64/libreoffice/help/tl/swriter.db
+/usr/lib64/libreoffice/help/tl/swriter.ht
+/usr/lib64/libreoffice/help/tl/swriter.idxl/_0.cfs
+/usr/lib64/libreoffice/help/tl/swriter.idxl/segments.gen
+/usr/lib64/libreoffice/help/tl/swriter.idxl/segments_3
+/usr/lib64/libreoffice/help/tl/swriter.jar
+/usr/lib64/libreoffice/help/tl/swriter.key
+/usr/lib64/libreoffice/help/tl/swriter.tree
 /usr/lib64/libreoffice/program/resource/tl/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/tl/LC_MESSAGES/avmedia.mo
 /usr/lib64/libreoffice/program/resource/tl/LC_MESSAGES/basctl.mo
