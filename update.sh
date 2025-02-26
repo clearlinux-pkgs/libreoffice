@@ -4,6 +4,8 @@ set -e -o pipefail
 PKG=libreoffice
 RELEASE_URL="https://www.libreoffice.org/download/download-libreoffice/"
 MANUAL_VERSION="$1" # Optional version to build
+CURRENT_VERSION="$(rpmspec --srpm -q --qf="%{VERSION}" $PKG.spec)"
+NEW_VERSION=""
 
 errexit() {
 	local ret=1
@@ -17,16 +19,29 @@ errexit() {
 echo -n "Pulling package repo changes: "
 git pull --ff-only
 
-# Look for the latest Sourcecode release
-echo "Checking latest released version at ${RELEASE_URL}"
-TARS=$(mktemp)
-trap "rm -f $TARS" EXIT
-curl --silent --show-error --fail "$RELEASE_URL" | (grep --perl-regex --only-matching "${PKG}-\d+(?:\.\d+)+(?:\.[a-z]+)+" ||:) | sort --reverse --unique > $TARS
-if ! grep -q "^${PKG}" $TARS && [[ "" == "${MANUAL_VERSION}" ]]; then
-	errexit "no ${PKG} source tarballs found at ${RELEASE_URL}"
+if [[ "" == "${NEW_VERSION}" ]]; then
+	# Check whether we've already found a new version
+	make update-versions
+	NEW_VERSION=$(grep "^URL" Makefile | cut --delimiter='=' --fields=2 | grep --perl-regex --only-matching "${PKG}-\d+(?:\.\d+)+" | sed "s/${PKG}-//")
 fi
-NEW_VERSION=$(perl -pe "s|^${PKG}-(\d+(?:\.\d+)+).*|\$1|" "${TARS}" | head -1)
-CURRENT_VERSION="$(rpmspec --srpm -q --qf="%{VERSION}" $PKG.spec)"
+
+if [[ "" == "${NEW_VERSION}" ]]; then
+	# Check whether we can find a new version from the LibreOffice website
+	echo "Checking latest released version at ${RELEASE_URL}"
+	TARS=$(mktemp)
+	trap "rm --force $TARS" EXIT
+	curl --silent --show-error --fail "$RELEASE_URL" | (grep --perl-regex --only-matching "${PKG}-\d+(?:\.\d+)+(?:\.[a-z]+)+" ||:) | sort --reverse --unique > $TARS
+	if grep --quiet "^${PKG}" $TARS && [[ "" == "${MANUAL_VERSION}" ]]; then
+		NEW_VERSION=$(perl -pe "s|^${PKG}-(\d+(?:\.\d+)+).*|\$1|" "${TARS}" | head -1)
+	else
+		echo "No ${PKG} source tarballs found at ${RELEASE_URL}"
+	fi
+fi
+
+# If we still don't have a new version, fail
+if [[ "" == "${NEW_VERSION}" ]]; then
+	errexit "Could not determine the new version."
+fi
 
 echo "Our current version:     ${CURRENT_VERSION}"
 echo "Latest released version: ${NEW_VERSION}"
@@ -64,7 +79,7 @@ fi
 # Download and cache the new tarballs, since they could take longer than
 # autospec allows
 echo "Downloading and caching the new tarballs to avoid autospec timeouts."
-git diff Makefile | grep '^+' | grep -oE 'https?://(\S+)' | wget -N -i - || :
+git diff Makefile | grep '^+' | grep --extended-regexp --only-matching 'https?://(\S+)' | wget --timestamping --input-file - || :
 
 # Build the new version
 echo "Running autospec."
@@ -75,11 +90,11 @@ echo "Checking language subpackages for changes."
 ./move_langs_to_extras.pl
 
 # check whether any lang- extras files were changed or added
-if git status | grep -qE '^\s+modified:\s+lang-'; then
+if git status | grep --extended-regexp --quiet '^\s+modified:\s+lang-'; then
 	# We need to re-autospec to re-package the language files
 	echo "Rebuilding to update language subpackages."
 	make autospec
-	git commit --amend -m 'Rebuild to update language subpackages'
+	git commit --amend --message 'Rebuild to update language subpackages'
 fi
 
 echo "Sending to Koji."
