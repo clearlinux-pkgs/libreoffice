@@ -1,6 +1,6 @@
 Configure miss: 'intro' progress settings
-Configure miss: /run/user/1004
-Configure miss: /usr/bin/ccache gcc option to enable large file support
+Configure miss: /run/user/1000
+Configure miss: /usr/bin/ccache gcc  option to enable large file support
 Configure miss: Alfresco Cloud client id and secret
 Configure miss: Google Drive client id and secret
 Configure miss: MPL subset
@@ -8,6 +8,7 @@ Configure miss: Microsoft Binary File Format Validator
 Configure miss: OneDrive client id and secret
 Configure miss: alternative branding images directory
 Configure miss: building the Numbertext extension
+Configure miss: dotnet
 Configure miss: explicit AFLAGS
 Configure miss: explicit OBJCFLAGS
 Configure miss: explicit OBJCXXFLAGS
@@ -53,6 +54,7 @@ Configure miss: whether to create MSI with LIMITUI=1 (silent install)
 Configure miss: whether to create huge library
 Configure miss: whether to disable OpenSSL usage
 Configure miss: whether to do a debug build
+Configure miss: whether to enable CPDB support
 Configure miss: whether to enable EPM for packing
 Configure miss: whether to enable Embedded OpenType support
 Configure miss: whether to enable breakpad
@@ -73,6 +75,7 @@ Configure miss: whether to record build config
 Configure miss: whether to sign windows build
 Configure miss: whether to treat the installation as read-only
 Configure miss: whether to turn warnings to errors
+Configure miss: whether to use MSVC /analyze
 Configure miss: whether to use icerun wrapper
 Configure miss: whether to use link-time optimization
 Configure miss: whether to use non-standard RGBA32 cairo pixel order
