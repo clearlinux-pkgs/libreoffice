@@ -252,6 +252,7 @@
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/OptionsDialog.xcs
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/OptionsDialog.xcu
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR.xdl
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ab.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_af.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_am.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ar.properties
@@ -342,6 +343,7 @@
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_rw.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sa_IN.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sat.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sat_Olck.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sd.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_si.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sid.properties

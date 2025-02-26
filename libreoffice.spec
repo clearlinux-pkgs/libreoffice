@@ -9,7 +9,7 @@
 #
 Name     : libreoffice
 Version  : 25.2.0.3
-Release  : 147
+Release  : 148
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.0/libreoffice-25.2.0.3.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.0/libreoffice-25.2.0.3.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
@@ -174,6 +174,14 @@ Group: Data
 
 %description data
 data components for the libreoffice package.
+
+
+%package extras-lang-ab
+Summary: extras-lang-ab components for the libreoffice package.
+Group: Default
+
+%description extras-lang-ab
+extras-lang-ab components for the libreoffice package.
 
 
 %package extras-lang-af
@@ -1142,7 +1150,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1740608667
+export SOURCE_DATE_EPOCH=1740612360
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -1218,7 +1226,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1740608667
+export SOURCE_DATE_EPOCH=1740612360
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-%{version}/.vscode/license.code-snippets %{buildroot}/usr/share/package-licenses/libreoffice/aec1f7868322cb513e13af471981ab3a33102b58 || :
@@ -1613,39 +1621,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/pythonscript.py
 /usr/lib64/libreoffice/program/redirectrc
 /usr/lib64/libreoffice/program/regview
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/acc.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/avmedia.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/basctl.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/chart.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/cnr.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/cui.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/dba.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/dkt.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/editeng.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/flt.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/for.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/fps.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/frm.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/fwk.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/pcr.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/rpt.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sb.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sc.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sca.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/scc.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sd.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sfx.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sm.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/svl.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/svt.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/svx.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sw.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/uui.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/vcl.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/wiz.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/wpt.mo
-/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/program/resource/common/fonts/opens___.ttf
 /usr/lib64/libreoffice/program/resource/en_GB/LC_MESSAGES/acc.mo
 /usr/lib64/libreoffice/program/resource/en_GB/LC_MESSAGES/avmedia.mo
@@ -1713,39 +1688,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/en_ZA/LC_MESSAGES/wiz.mo
 /usr/lib64/libreoffice/program/resource/en_ZA/LC_MESSAGES/wpt.mo
 /usr/lib64/libreoffice/program/resource/en_ZA/LC_MESSAGES/xsc.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/acc.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/avmedia.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/basctl.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/chart.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/cnr.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/cui.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/dba.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/dkt.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/editeng.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/flt.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/for.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/fps.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/frm.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/fwk.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/oox.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/pcr.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/rpt.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sb.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sc.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sca.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/scc.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sd.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sfx.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sm.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/svl.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/svt.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/svx.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sw.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/uui.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/vcl.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/wiz.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/wpt.mo
-/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/program/sbase
 /usr/lib64/libreoffice/program/scalc
 /usr/lib64/libreoffice/program/scriptforge.py
@@ -1855,20 +1797,16 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/wizards/ui/event/UnoDataAware.py
 /usr/lib64/libreoffice/program/wizards/ui/event/__init__.py
 /usr/lib64/libreoffice/program/xpdfimport
-/usr/lib64/libreoffice/readmes/README_ab
 /usr/lib64/libreoffice/readmes/README_en-GB
 /usr/lib64/libreoffice/readmes/README_en-US
 /usr/lib64/libreoffice/readmes/README_en-ZA
-/usr/lib64/libreoffice/readmes/README_sat-Olck
 /usr/lib64/libreoffice/share/Scripts/python/Capitalise.py
 /usr/lib64/libreoffice/share/Scripts/python/HelloWorld.py
 /usr/lib64/libreoffice/share/Scripts/python/InsertText.py
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo.py
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ab.properties
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_en_GB.properties
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_en_US.properties
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_en_ZA.properties
-/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_sat_Olck.properties
 /usr/lib64/libreoffice/share/Scripts/python/NamedRanges.py
 /usr/lib64/libreoffice/share/Scripts/python/ScriptForgeHelper.py
 /usr/lib64/libreoffice/share/Scripts/python/SetCellColor.py
@@ -2072,7 +2010,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/basic/script.xlc
 /usr/lib64/libreoffice/share/calc/styles.xml
 /usr/lib64/libreoffice/share/classification/example.xml
-/usr/lib64/libreoffice/share/classification/example_es-ES.xml
 /usr/lib64/libreoffice/share/config/images_breeze.zip
 /usr/lib64/libreoffice/share/config/images_breeze_dark.zip
 /usr/lib64/libreoffice/share/config/images_breeze_dark_svg.zip
@@ -4203,8 +4140,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-en/pythonpath/lightproof_opts_en.py
 /usr/lib64/libreoffice/share/extensions/dict-en/th_en_US_v2.dat
 /usr/lib64/libreoffice/share/extensions/dict-en/th_en_US_v2.idx
-/usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_ab.properties
-/usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_sat_Olck.properties
 /usr/lib64/libreoffice/share/extensions/dict-no/COPYING
 /usr/lib64/libreoffice/share/extensions/dict-no/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-no/README_hyph_NO.txt
@@ -4214,10 +4149,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-no/th_nb_NO_v2.idx
 /usr/lib64/libreoffice/share/extensions/dict-no/th_nn_NO_v2.dat
 /usr/lib64/libreoffice/share/extensions/dict-no/th_nn_NO_v2.idx
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ab.properties
-/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sat_Olck.properties
-/usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ab.properties
-/usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_sat_Olck.properties
 /usr/lib64/libreoffice/share/filter/oox-drawingml-adj-names
 /usr/lib64/libreoffice/share/filter/oox-drawingml-cs-presets
 /usr/lib64/libreoffice/share/filter/signature-line-draw.svg
@@ -4425,11 +4356,9 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/libreofficekit/handle_image_start.png
 /usr/lib64/libreoffice/share/psprint/driver/SGENPRT.PS
 /usr/lib64/libreoffice/share/psprint/psprint.conf
-/usr/lib64/libreoffice/share/registry/Langpack-ab.xcd
 /usr/lib64/libreoffice/share/registry/Langpack-en-GB.xcd
 /usr/lib64/libreoffice/share/registry/Langpack-en-US.xcd
 /usr/lib64/libreoffice/share/registry/Langpack-en-ZA.xcd
-/usr/lib64/libreoffice/share/registry/Langpack-sat-Olck.xcd
 /usr/lib64/libreoffice/share/registry/base.xcd
 /usr/lib64/libreoffice/share/registry/calc.xcd
 /usr/lib64/libreoffice/share/registry/draw.xcd
@@ -4444,15 +4373,11 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/registry/oo-ad-ldap.xcd.sample
 /usr/lib64/libreoffice/share/registry/oo-ldap.xcd.sample
 /usr/lib64/libreoffice/share/registry/pdfimport.xcd
-/usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ab.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_en-GB.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_en-US.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_en-ZA.xcd
-/usr/lib64/libreoffice/share/registry/res/fcfg_langpack_sat-Olck.xcd
-/usr/lib64/libreoffice/share/registry/res/registry_ab.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_en-GB.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_en-ZA.xcd
-/usr/lib64/libreoffice/share/registry/res/registry_sat-Olck.xcd
 /usr/lib64/libreoffice/share/registry/writer.xcd
 /usr/lib64/libreoffice/share/registry/xsltfilter.xcd
 /usr/lib64/libreoffice/share/skia/skia_denylist_vulkan.xml
@@ -4660,11 +4585,9 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/toolbarmode/notebookbar_single.png
 /usr/lib64/libreoffice/share/toolbarmode/sidebar.png
 /usr/lib64/libreoffice/share/toolbarmode/single.png
-/usr/lib64/libreoffice/share/wizards/resources_ab.properties
 /usr/lib64/libreoffice/share/wizards/resources_en_GB.properties
 /usr/lib64/libreoffice/share/wizards/resources_en_US.properties
 /usr/lib64/libreoffice/share/wizards/resources_en_ZA.properties
-/usr/lib64/libreoffice/share/wizards/resources_sat_Olck.properties
 /usr/lib64/libreoffice/share/wordbook/en-GB.dic
 /usr/lib64/libreoffice/share/wordbook/en-US.dic
 /usr/lib64/libreoffice/share/wordbook/hu_AkH11.dic
@@ -5016,6 +4939,48 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/share/metainfo/libreoffice-writer.appdata.xml
 /usr/share/metainfo/org.libreoffice.kde.metainfo.xml
 /usr/share/mime-packages/libreoffice.xml
+
+%files extras-lang-ab
+%defattr(-,root,root,-)
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/acc.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/avmedia.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/basctl.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/chart.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/cnr.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/cui.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/dba.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/dkt.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/editeng.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/flt.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/for.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/fps.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/frm.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/oox.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/pcr.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/rpt.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sb.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sc.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sca.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/scc.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sd.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sfx.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sm.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/svl.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/svt.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/svx.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/sw.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/uui.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/vcl.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/wiz.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/wpt.mo
+/usr/lib64/libreoffice/program/resource/ab/LC_MESSAGES/xsc.mo
+/usr/lib64/libreoffice/readmes/README_ab
+/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_ab.properties
+/usr/lib64/libreoffice/share/registry/Langpack-ab.xcd
+/usr/lib64/libreoffice/share/registry/res/fcfg_langpack_ab.xcd
+/usr/lib64/libreoffice/share/registry/res/registry_ab.xcd
+/usr/lib64/libreoffice/share/wizards/resources_ab.properties
 
 %files extras-lang-af
 %defattr(-,root,root,-)
@@ -7742,6 +7707,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/autotext/es/standard.bau
 /usr/lib64/libreoffice/share/autotext/es/template.bau
 /usr/lib64/libreoffice/share/basic/Depot/Lang_es.xba
+/usr/lib64/libreoffice/share/classification/example_es-ES.xml
 /usr/lib64/libreoffice/share/extensions/dict-es/LICENSE.md
 /usr/lib64/libreoffice/share/extensions/dict-es/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-es/README_hunspell_es.txt
@@ -9525,6 +9491,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/OptionsDialog.xcs
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/OptionsDialog.xcu
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU.xdl
+/usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_ab.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_af.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_am.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_ar.properties
@@ -9616,6 +9583,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_rw.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_sa_IN.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_sat.properties
+/usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_sat_Olck.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_sd.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_si.properties
 /usr/lib64/libreoffice/share/extensions/dict-hu/dialog/hu_HU_sid.properties
@@ -12987,6 +12955,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/OptionsDialog.xcs
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/OptionsDialog.xcu
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR.xdl
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ab.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_af.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_am.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ar.properties
@@ -13077,6 +13046,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_rw.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sa_IN.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sat.properties
+/usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sat_Olck.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sd.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_si.properties
 /usr/lib64/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sid.properties
@@ -13413,6 +13383,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/OptionsDialog.xcs
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/OptionsDialog.xcu
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU.xdl
+/usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ab.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_af.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_am.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ar.properties
@@ -13504,6 +13475,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_rw.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_sa_IN.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_sat.properties
+/usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_sat_Olck.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_sd.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_si.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_sid.properties
@@ -13672,13 +13644,52 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/wiz.mo
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/wpt.mo
 /usr/lib64/libreoffice/program/resource/sat/LC_MESSAGES/xsc.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/acc.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/avmedia.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/basctl.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/chart.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/cnr.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/cui.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/dba.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/dkt.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/editeng.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/flt.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/for.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/fps.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/frm.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/fwk.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/oox.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/pcr.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/rpt.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sb.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sc.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sca.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/scc.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sd.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sfx.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sm.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/svl.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/svt.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/svx.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/sw.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/uui.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/vcl.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/wiz.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/wpt.mo
+/usr/lib64/libreoffice/program/resource/sat_Olck/LC_MESSAGES/xsc.mo
 /usr/lib64/libreoffice/readmes/README_sat
+/usr/lib64/libreoffice/readmes/README_sat-Olck
 /usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_sat.properties
+/usr/lib64/libreoffice/share/Scripts/python/LibreLogo/LibreLogo_sat_Olck.properties
 /usr/lib64/libreoffice/share/autotext/sat/standard.bau
+/usr/lib64/libreoffice/share/registry/Langpack-sat-Olck.xcd
 /usr/lib64/libreoffice/share/registry/Langpack-sat.xcd
+/usr/lib64/libreoffice/share/registry/res/fcfg_langpack_sat-Olck.xcd
 /usr/lib64/libreoffice/share/registry/res/fcfg_langpack_sat.xcd
+/usr/lib64/libreoffice/share/registry/res/registry_sat-Olck.xcd
 /usr/lib64/libreoffice/share/registry/res/registry_sat.xcd
 /usr/lib64/libreoffice/share/wizards/resources_sat.properties
+/usr/lib64/libreoffice/share/wizards/resources_sat_Olck.properties
 
 %files extras-lang-sd
 %defattr(-,root,root,-)

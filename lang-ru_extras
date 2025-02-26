@@ -130,6 +130,7 @@
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/OptionsDialog.xcs
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/OptionsDialog.xcu
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU.xdl
+/usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ab.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_af.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_am.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ar.properties
@@ -221,6 +222,7 @@
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_rw.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_sa_IN.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_sat.properties
+/usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_sat_Olck.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_sd.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_si.properties
 /usr/lib64/libreoffice/share/extensions/dict-ru/dialog/ru_RU_sid.properties
