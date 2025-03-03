@@ -8,18 +8,18 @@
 # Source0 file verified with key 0xF434A1EFAFEEAEA3 (build@documentfoundation.org)
 #
 Name     : libreoffice
-Version  : 25.2.0.3
-Release  : 148
-URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.0/libreoffice-25.2.0.3.tar.xz
-Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.0/libreoffice-25.2.0.3.tar.xz
+Version  : 25.2.1.2
+Release  : 149
+URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.1/libreoffice-25.2.1.2.tar.xz
+Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.1/libreoffice-25.2.1.2.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
 Source2  : https://dev-www.libreoffice.org/src/skia-m130-3c64459d5df2fa9794b277f0959ed8a92552bf4c.tar.xz
-Source3  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.0/libreoffice-dictionaries-25.2.0.3.tar.xz
-Source4  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.0/libreoffice-help-25.2.0.3.tar.xz
-Source5  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.0/libreoffice-translations-25.2.0.3.tar.xz
-Source6  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.0/libreoffice-25.2.0.3.tar.xz.asc
+Source3  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.1/libreoffice-dictionaries-25.2.1.2.tar.xz
+Source4  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.1/libreoffice-help-25.2.1.2.tar.xz
+Source5  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.1/libreoffice-translations-25.2.1.2.tar.xz
+Source6  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.1/libreoffice-25.2.1.2.tar.xz.asc
 Source7  : F434A1EFAFEEAEA3.pkey
-Summary  : This is a dummy package
+Summary  : %productname desktop integration
 Group    : Development/Tools
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause CC-BY-SA-3.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0 MPL-1.1 MPL-2.0 MPL-2.0-no-copyleft-exception W3C
 Requires: libreoffice-bin = %{version}-%{release}
@@ -1120,13 +1120,13 @@ chmod 700 .gnupg
 gpg --homedir .gnupg --import %{SOURCE7}
 gpg --homedir .gnupg --status-fd 1 --verify %{SOURCE6} %{SOURCE0} > gpg.status
 grep -E '^\[GNUPG:\] (GOODSIG|EXPKEYSIG) F434A1EFAFEEAEA3' gpg.status
-%setup -q -n libreoffice-25.2.0.3
+%setup -q -n libreoffice-25.2.1.2
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-dictionaries-25.2.0.3.tar.xz
+tar xf %{_sourcedir}/libreoffice-dictionaries-25.2.1.2.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-help-25.2.0.3.tar.xz
+tar xf %{_sourcedir}/libreoffice-help-25.2.1.2.tar.xz
 cd %{_builddir}
-tar xf %{_sourcedir}/libreoffice-translations-25.2.0.3.tar.xz
+tar xf %{_sourcedir}/libreoffice-translations-25.2.1.2.tar.xz
 cd %{_builddir}
 mkdir -p dtoa-20180411
 cd dtoa-20180411
@@ -1135,7 +1135,7 @@ cd %{_builddir}
 mkdir -p skia-m130-3c64459d5df2fa9794b277f0959ed8a92552bf4c.tar
 cd skia-m130-3c64459d5df2fa9794b277f0959ed8a92552bf4c.tar
 tar xf %{_sourcedir}/skia-m130-3c64459d5df2fa9794b277f0959ed8a92552bf4c.tar.xz
-cd %{_builddir}/libreoffice-25.2.0.3
+cd %{_builddir}/libreoffice-25.2.1.2
 %patch -P 1 -p1
 %patch -P 2 -p1
 %patch -P 3 -p1
@@ -1150,7 +1150,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1740612360
+export SOURCE_DATE_EPOCH=1741037771
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -1226,7 +1226,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1740612360
+export SOURCE_DATE_EPOCH=1741037771
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-%{version}/.vscode/license.code-snippets %{buildroot}/usr/share/package-licenses/libreoffice/aec1f7868322cb513e13af471981ab3a33102b58 || :
@@ -4161,6 +4161,55 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/gallery/arrows.sdv
 /usr/lib64/libreoffice/share/gallery/arrows.str
 /usr/lib64/libreoffice/share/gallery/arrows.thm
+/usr/lib64/libreoffice/share/gallery/backgrounds.sdg
+/usr/lib64/libreoffice/share/gallery/backgrounds.sdv
+/usr/lib64/libreoffice/share/gallery/backgrounds.str
+/usr/lib64/libreoffice/share/gallery/backgrounds.thm
+/usr/lib64/libreoffice/share/gallery/backgrounds/brick-wall.png
+/usr/lib64/libreoffice/share/gallery/backgrounds/cardboard.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/circuit-board.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/cloud.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/coffee.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/color-stripes.png
+/usr/lib64/libreoffice/share/gallery/backgrounds/concrete.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/crumpled-paper.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/fence.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/floral.png
+/usr/lib64/libreoffice/share/gallery/backgrounds/fuzzy-darkgrey.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/fuzzy-grey.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/fuzzy-lightgrey.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/giraffe.png
+/usr/lib64/libreoffice/share/gallery/backgrounds/graph-paper.png
+/usr/lib64/libreoffice/share/gallery/backgrounds/ice-light.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/invoice-paper.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/leaf.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/maple-leaves.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/marble.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/painted-white.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/painted-wood.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/parchment-paper.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/pebble-light.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/pool.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/rock-wall.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/sand-light.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/sand.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/sky.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/space.png
+/usr/lib64/libreoffice/share/gallery/backgrounds/stone-gray.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/stone-wall.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/stone.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/stones.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/studio.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/surface-black.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/surface.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/texture-paper.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/tiger.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/tiles.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/white-diffusion.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/wood.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/wooden-board.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/wooden-fence.jpg
+/usr/lib64/libreoffice/share/gallery/backgrounds/zebra.png
 /usr/lib64/libreoffice/share/gallery/bigapple.gif
 /usr/lib64/libreoffice/share/gallery/bpmn.sdg
 /usr/lib64/libreoffice/share/gallery/bpmn.sdv
