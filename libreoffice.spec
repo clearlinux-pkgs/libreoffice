@@ -9,7 +9,7 @@
 #
 Name     : libreoffice
 Version  : 25.2.1.2
-Release  : 149
+Release  : 150
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.1/libreoffice-25.2.1.2.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.1/libreoffice-25.2.1.2.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
