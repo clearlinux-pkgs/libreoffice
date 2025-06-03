@@ -9,7 +9,7 @@
 #
 Name     : libreoffice
 Version  : 25.2.3.2
-Release  : 153
+Release  : 154
 URL      : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.3/libreoffice-25.2.3.2.tar.xz
 Source0  : https://ftp.osuosl.org/pub/tdf/libreoffice/src/25.2.3/libreoffice-25.2.3.2.tar.xz
 Source1  : https://dev-www.libreoffice.org/src/dtoa-20180411.tgz
@@ -1150,7 +1150,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1748914769
+export SOURCE_DATE_EPOCH=1748969425
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -1226,7 +1226,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1748914769
+export SOURCE_DATE_EPOCH=1748969425
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libreoffice
 cp %{_builddir}/libreoffice-%{version}/.vscode/license.code-snippets %{buildroot}/usr/share/package-licenses/libreoffice/aec1f7868322cb513e13af471981ab3a33102b58 || :
@@ -4140,7 +4140,6 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-en/pythonpath/lightproof_opts_en.py
 /usr/lib64/libreoffice/share/extensions/dict-en/th_en_US_v2.dat
 /usr/lib64/libreoffice/share/extensions/dict-en/th_en_US_v2.idx
-/usr/lib64/libreoffice/share/extensions/dict-es/RLA-ES.png
 /usr/lib64/libreoffice/share/extensions/dict-no/COPYING
 /usr/lib64/libreoffice/share/extensions/dict-no/META-INF/manifest.xml
 /usr/lib64/libreoffice/share/extensions/dict-no/README_hyph_NO.txt
@@ -7763,6 +7762,7 @@ rm -f %{buildroot}*/usr/lib64/libreoffice/sdk/index.html
 /usr/lib64/libreoffice/share/extensions/dict-es/README_hunspell_es.txt
 /usr/lib64/libreoffice/share/extensions/dict-es/README_hyph_es.txt
 /usr/lib64/libreoffice/share/extensions/dict-es/README_th_es.txt
+/usr/lib64/libreoffice/share/extensions/dict-es/RLA-ES.png
 /usr/lib64/libreoffice/share/extensions/dict-es/description.xml
 /usr/lib64/libreoffice/share/extensions/dict-es/dictionaries.xcu
 /usr/lib64/libreoffice/share/extensions/dict-es/es_AR.aff
